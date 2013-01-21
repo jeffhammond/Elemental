@@ -16,5 +16,5 @@ Elemental therefore provides utilities for generating many such matrices.
 .. toctree::
    :maxdepth: 2
 
-   special_matrices/deterministic
-   special_matrices/random
+   matrices/deterministic
+   matrices/random
