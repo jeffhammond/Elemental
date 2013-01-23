@@ -123,6 +123,10 @@
   </dt>
 
       
+  <dt><a href="core/dist_matrix.html#AbstractDistMatrix:T:::DistDataC">AbstractDistMatrix&lt;T&gt;::DistData (C++ function)</a>
+  </dt>
+
+      
   <dt><a href="core/dist_matrix.html#AbstractDistMatrix:T:::Empty">AbstractDistMatrix&lt;T&gt;::Empty (C++ function)</a>
   </dt>
 
@@ -194,12 +198,12 @@
   <dt><a href="core/dist_matrix.html#AbstractDistMatrix:T:::LockedViewC">AbstractDistMatrix&lt;T&gt;::LockedView (C++ function)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="core/dist_matrix.html#AbstractDistMatrix:T:::Print__ssCC">AbstractDistMatrix&lt;T&gt;::Print (C++ function)</a>, <a href="core/dist_matrix.html#AbstractDistMatrix:T:::Print__osR.ssCC">[1]</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="core/dist_matrix.html#AbstractDistMatrix:T:::ResizeTo__i.i">AbstractDistMatrix&lt;T&gt;::ResizeTo (C++ function)</a>
   </dt>
@@ -591,6 +595,34 @@
   </dt>
 
       
+  <dt><a href="core/dist_matrix.html#DistData__struct">DistData (C++ type)</a>
+  </dt>
+
+      
+  <dt><a href="core/dist_matrix.html#DistData::colAlignment__i">DistData::colAlignment (C++ member)</a>
+  </dt>
+
+      
+  <dt><a href="core/dist_matrix.html#DistData::colDist__Distribution">DistData::colDist (C++ member)</a>
+  </dt>
+
+      
+  <dt><a href="core/dist_matrix.html#DistData::diagPath__i">DistData::diagPath (C++ member)</a>
+  </dt>
+
+      
+  <dt><a href="core/dist_matrix.html#DistData::grid__GridCP">DistData::grid (C++ member)</a>
+  </dt>
+
+      
+  <dt><a href="core/dist_matrix.html#DistData::rowAlignment__i">DistData::rowAlignment (C++ member)</a>
+  </dt>
+
+      
+  <dt><a href="core/dist_matrix.html#DistData::rowDist__Distribution">DistData::rowDist (C++ member)</a>
+  </dt>
+
+      
   <dt><a href="core/dist_matrix.html#DistMatrix:Complex:double:.MC.MR:__class">DistMatrix&lt;Complex&lt;double&gt;, MC, MR&gt; (C++ type)</a>
   </dt>
 
@@ -786,6 +818,8 @@
   <dt><a href="core/dist_matrix.html#DistMatrix:F.MR.MC:__class">DistMatrix&lt;F, MR, MC&gt; (C++ type)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="core/dist_matrix.html#DistMatrix:F.MR.STAR:__class">DistMatrix&lt;F, MR, STAR&gt; (C++ type)</a>
   </dt>
@@ -806,8 +840,6 @@
   <dt><a href="core/dist_matrix.html#DistMatrix:F.STAR.STAR:__class">DistMatrix&lt;F, STAR, STAR&gt; (C++ type)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="core/dist_matrix.html#DistMatrix:F.STAR.VC:__class">DistMatrix&lt;F, STAR, VC&gt; (C++ type)</a>
   </dt>
@@ -901,27 +933,15 @@
   </dt>
 
       
-  <dt><a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::Align__i.i">DistMatrix&lt;T, MC, MR&gt;::Align (C++ function)</a>
+  <dt><a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignColsWith__AbstractDistMatrix:T:CR">DistMatrix&lt;T, MC, MR&gt;::AlignColsWith (C++ function)</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignColsWith__elem::DistDataCR">[1]</a>
   </dt>
 
       
-  <dt><a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignCols__i">DistMatrix&lt;T, MC, MR&gt;::AlignCols (C++ function)</a>
+  <dt><a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignRowsWith__AbstractDistMatrix:T:CR">DistMatrix&lt;T, MC, MR&gt;::AlignRowsWith (C++ function)</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignRowsWith__elem::DistDataCR">[1]</a>
   </dt>
 
       
-  <dt><a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignColsWith__DistMatrix:S.MC.MR:CR">DistMatrix&lt;T, MC, MR&gt;::AlignColsWith (C++ function)</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignColsWith__DistMatrix:S.MC.STAR:CR">[1]</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignColsWith__DistMatrix:S.MR.MC:CR">[2]</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignColsWith__DistMatrix:S.STAR.MC:CR">[3]</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignColsWith__DistMatrix:S.VC.STAR:CR">[4]</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignColsWith__DistMatrix:S.STAR.VC:CR">[5]</a>
-  </dt>
-
-      
-  <dt><a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignRows__i">DistMatrix&lt;T, MC, MR&gt;::AlignRows (C++ function)</a>
-  </dt>
-
-      
-  <dt><a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignRowsWith__DistMatrix:S.MC.MR:CR">DistMatrix&lt;T, MC, MR&gt;::AlignRowsWith (C++ function)</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignRowsWith__DistMatrix:S.STAR.MR:CR">[1]</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignRowsWith__DistMatrix:S.MR.MC:CR">[2]</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignRowsWith__DistMatrix:S.MR.STAR:CR">[3]</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignRowsWith__DistMatrix:S.VR.STAR:CR">[4]</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignRowsWith__DistMatrix:S.STAR.VR:CR">[5]</a>
-  </dt>
-
-      
-  <dt><a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.MC.MR:CR">DistMatrix&lt;T, MC, MR&gt;::AlignWith (C++ function)</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.MC.STAR:CR">[1]</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.STAR.MR:CR">[2]</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.MR.MC:CR">[3]</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.MR.STAR:CR">[4]</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.STAR.MC:CR">[5]</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.VC.STAR:CR">[6]</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.STAR.VC:CR">[7]</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.VR.STAR:CR">[8]</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.STAR.VR:CR">[9]</a>
+  <dt><a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignWith__AbstractDistMatrix:T:CR">DistMatrix&lt;T, MC, MR&gt;::AlignWith (C++ function)</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::AlignWith__elem::DistDataCR">[1]</a>
   </dt>
 
       

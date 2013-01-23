@@ -74,6 +74,41 @@ As of now, the following datatypes are fully supported for
 <a class="reference internal" href="#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;"><tt class="xref cpp cpp-type docutils literal"><span class="pre">DistMatrix&lt;T,U,V&gt;</span></tt></a>:
 <tt class="docutils literal"><span class="pre">int</span></tt>, <tt class="docutils literal"><span class="pre">float</span></tt>, <tt class="docutils literal"><span class="pre">double</span></tt>, <tt class="docutils literal"><span class="pre">Complex&lt;float&gt;</span></tt>, and <tt class="docutils literal"><span class="pre">Complex&lt;double&gt;</span></tt>.</p>
 </div>
+<dl class="type">
+<dt id="DistData__struct">
+<em class="property">type </em>struct <tt class="descname">DistData</tt><a class="headerlink" href="#DistData__struct" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="member">
+<dt id="DistData::colDist__Distribution">
+<a class="reference internal" href="environment.html#Distribution__enum" title="Distribution">Distribution</a> <tt class="descname">colDist</tt><a class="headerlink" href="#DistData::colDist__Distribution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="DistData::rowDist__Distribution">
+<a class="reference internal" href="environment.html#Distribution__enum" title="Distribution">Distribution</a> <tt class="descname">rowDist</tt><a class="headerlink" href="#DistData::rowDist__Distribution" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="DistData::colAlignment__i">
+int <tt class="descname">colAlignment</tt><a class="headerlink" href="#DistData::colAlignment__i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="DistData::rowAlignment__i">
+int <tt class="descname">rowAlignment</tt><a class="headerlink" href="#DistData::rowAlignment__i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="DistData::diagPath__i">
+int <tt class="descname">diagPath</tt><a class="headerlink" href="#DistData::diagPath__i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="DistData::grid__GridCP">
+<a class="reference internal" href="grid.html#Grid__class" title="Grid">const Grid*</a> <tt class="descname">grid</tt><a class="headerlink" href="#DistData::grid__GridCP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <div class="section" id="abstractdistmatrix">
 <h2>AbstractDistMatrix<a class="headerlink" href="#abstractdistmatrix" title="Permalink to this headline">¶</a></h2>
 <p>This abstract class defines the list of member functions that are guaranteed
@@ -227,6 +262,12 @@ int <tt class="descname">ColStride</tt><big>(</big><big>)</big><tt class="desccl
 <dt id="AbstractDistMatrix:T:::RowStrideC">
 int <tt class="descname">RowStride</tt><big>(</big><big>)</big><tt class="descclassname"> const</tt><a class="headerlink" href="#AbstractDistMatrix:T:::RowStrideC" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the number of columns between locally owned entries.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="AbstractDistMatrix:T:::DistDataC">
+elem::DistData <tt class="descname">DistData</tt><big>(</big><big>)</big><tt class="descclassname"> const</tt><a class="headerlink" href="#AbstractDistMatrix:T:::DistDataC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a description of the distribution and alignment information</p>
 </dd></dl>
 
 <p class="rubric">Entry manipulation</p>
@@ -749,163 +790,42 @@ void <tt class="descname">SetImagPartOfDiagonal</tt><big>(</big>const DistMatrix
 <p>All of the following clear the distributed matrix&#8217;s contents and then
 reconfigure the alignments as described.</p>
 <dl class="function">
-<dt id="DistMatrix:T.MC.MR:::Align__i.i">
-void <tt class="descname">Align</tt><big>(</big>int <em>colAlignment</em>, int <em>rowAlignment</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::Align__i.i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Specify the process row, <cite>colAlignment</cite>, and process column,
-<cite>rowAlignment</cite>, which own the top-left entry.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignCols__i">
-void <tt class="descname">AlignCols</tt><big>(</big>int <em>colAlignment</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignCols__i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Specify the process row which owns the top-left entry.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignRows__i">
-void <tt class="descname">AlignRows</tt><big>(</big>int <em>rowAlignment</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignRows__i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Specify the process column which owns the top-left entry.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.MC.MR:CR">
-void <tt class="descname">AlignWith</tt><big>(</big>const DistMatrix&lt;S, MC, MR&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.MC.MR:CR" title="Permalink to this definition">¶</a></dt>
+<dt id="DistMatrix:T.MC.MR:::AlignWith__AbstractDistMatrix:T:CR">
+void <tt class="descname">AlignWith</tt><big>(</big><a class="reference internal" href="#AbstractDistMatrix:T:__class" title="AbstractDistMatrix&lt;T&gt;">const AbstractDistMatrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignWith__AbstractDistMatrix:T:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Force the alignments to match those of <cite>A</cite>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.MC.STAR:CR">
-void <tt class="descname">AlignWith</tt><big>(</big>const DistMatrix&lt;S, MC, STAR&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.MC.STAR:CR" title="Permalink to this definition">¶</a></dt>
+<dt id="DistMatrix:T.MC.MR:::AlignWith__elem::DistDataCR">
+void <tt class="descname">AlignWith</tt><big>(</big>const elem::DistData&amp; <em>data</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignWith__elem::DistDataCR" title="Permalink to this definition">¶</a></dt>
+<dd><p>A mechanism for aligning with a distributed matrix of a different
+datatype, via <tt class="docutils literal"><span class="pre">AlignWith(</span> <span class="pre">A.DistData()</span> <span class="pre">);</span></tt></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="DistMatrix:T.MC.MR:::AlignColsWith__AbstractDistMatrix:T:CR">
+void <tt class="descname">AlignColsWith</tt><big>(</big><a class="reference internal" href="#AbstractDistMatrix:T:__class" title="AbstractDistMatrix&lt;T&gt;">const AbstractDistMatrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignColsWith__AbstractDistMatrix:T:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Force the column alignment to match that of <cite>A</cite>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.STAR.MR:CR">
-void <tt class="descname">AlignWith</tt><big>(</big>const DistMatrix&lt;S, STAR, MR&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.STAR.MR:CR" title="Permalink to this definition">¶</a></dt>
+<dt id="DistMatrix:T.MC.MR:::AlignColsWith__elem::DistDataCR">
+void <tt class="descname">AlignColsWith</tt><big>(</big>const elem::DistData&amp; <em>data</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignColsWith__elem::DistDataCR" title="Permalink to this definition">¶</a></dt>
+<dd><p>A mechanism for aligning with a distributed matrix of a different
+datatype, via <tt class="docutils literal"><span class="pre">AlignColsWith(</span> <span class="pre">A.DistData()</span> <span class="pre">);</span></tt></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="DistMatrix:T.MC.MR:::AlignRowsWith__AbstractDistMatrix:T:CR">
+void <tt class="descname">AlignRowsWith</tt><big>(</big><a class="reference internal" href="#AbstractDistMatrix:T:__class" title="AbstractDistMatrix&lt;T&gt;">const AbstractDistMatrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignRowsWith__AbstractDistMatrix:T:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Force the row alignment to match that of <cite>A</cite>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.MR.MC:CR">
-void <tt class="descname">AlignWith</tt><big>(</big>const DistMatrix&lt;S, MR, MC&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.MR.MC:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Force the column alignment to match the row alignment of <cite>A</cite> (and
-vice-versa).</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.MR.STAR:CR">
-void <tt class="descname">AlignWith</tt><big>(</big>const DistMatrix&lt;S, MR, STAR&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.MR.STAR:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Force the row alignment to match the column alignment of <cite>A</cite>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.STAR.MC:CR">
-void <tt class="descname">AlignWith</tt><big>(</big>const DistMatrix&lt;S, STAR, MC&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.STAR.MC:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Force the column alignment to match the row alignment of <cite>A</cite>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.VC.STAR:CR">
-void <tt class="descname">AlignWith</tt><big>(</big>const DistMatrix&lt;S, VC, STAR&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.VC.STAR:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Force the column alignment to be equal to that of <cite>A</cite> (modulo
-the number of process rows).</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.STAR.VC:CR">
-void <tt class="descname">AlignWith</tt><big>(</big>const DistMatrix&lt;S, STAR, VC&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.STAR.VC:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Force the column alignment to equal the row alignment of <cite>A</cite> (modulo
-the number of process rows).</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.VR.STAR:CR">
-void <tt class="descname">AlignWith</tt><big>(</big>const DistMatrix&lt;S, VR, STAR&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.VR.STAR:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Force the row alignment to equal the column alignment of <cite>A</cite> (modulo
-the number of process columns).</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.STAR.VR:CR">
-void <tt class="descname">AlignWith</tt><big>(</big>const DistMatrix&lt;S, STAR, VR&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignWith__DistMatrix:S.STAR.VR:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Force the row alignment to equal the row alignment of <cite>A</cite> (modulo
-the number of process columns).</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignColsWith__DistMatrix:S.MC.MR:CR">
-void <tt class="descname">AlignColsWith</tt><big>(</big>const DistMatrix&lt;S, MC, MR&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignColsWith__DistMatrix:S.MC.MR:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Force the column alignment to match that of <cite>A</cite>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignColsWith__DistMatrix:S.MC.STAR:CR">
-void <tt class="descname">AlignColsWith</tt><big>(</big>const DistMatrix&lt;S, MC, STAR&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignColsWith__DistMatrix:S.MC.STAR:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Force the column alignment to match that of <cite>A</cite>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignColsWith__DistMatrix:S.MR.MC:CR">
-void <tt class="descname">AlignColsWith</tt><big>(</big>const DistMatrix&lt;S, MR, MC&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignColsWith__DistMatrix:S.MR.MC:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Force the column alignment to match the row alignment of <cite>A</cite>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignColsWith__DistMatrix:S.STAR.MC:CR">
-void <tt class="descname">AlignColsWith</tt><big>(</big>const DistMatrix&lt;S, STAR, MC&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignColsWith__DistMatrix:S.STAR.MC:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Force the column alignment to match the row alignment of <cite>A</cite>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignColsWith__DistMatrix:S.VC.STAR:CR">
-void <tt class="descname">AlignColsWith</tt><big>(</big>const DistMatrix&lt;S, VC, STAR&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignColsWith__DistMatrix:S.VC.STAR:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Force the column alignment to match the column alignment of <cite>A</cite>
-(modulo the number of process rows).</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignColsWith__DistMatrix:S.STAR.VC:CR">
-void <tt class="descname">AlignColsWith</tt><big>(</big>const DistMatrix&lt;S, STAR, VC&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignColsWith__DistMatrix:S.STAR.VC:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Force the column alignment to match the row alignment of <cite>A</cite>
-(modulo the number of process rows).</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignRowsWith__DistMatrix:S.MC.MR:CR">
-void <tt class="descname">AlignRowsWith</tt><big>(</big>const DistMatrix&lt;S, MC, MR&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignRowsWith__DistMatrix:S.MC.MR:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Force the row alignment to match that of <cite>A</cite>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignRowsWith__DistMatrix:S.STAR.MR:CR">
-void <tt class="descname">AlignRowsWith</tt><big>(</big>const DistMatrix&lt;S, STAR, MR&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignRowsWith__DistMatrix:S.STAR.MR:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Force the row alignment to match that of <cite>A</cite>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignRowsWith__DistMatrix:S.MR.MC:CR">
-void <tt class="descname">AlignRowsWith</tt><big>(</big>const DistMatrix&lt;S, MR, MC&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignRowsWith__DistMatrix:S.MR.MC:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Force the row alignment to match the column alignment of <cite>A</cite>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignRowsWith__DistMatrix:S.MR.STAR:CR">
-void <tt class="descname">AlignRowsWith</tt><big>(</big>const DistMatrix&lt;S, MR, STAR&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignRowsWith__DistMatrix:S.MR.STAR:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Force the row alignment to match the column alignment of <cite>A</cite>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignRowsWith__DistMatrix:S.VR.STAR:CR">
-void <tt class="descname">AlignRowsWith</tt><big>(</big>const DistMatrix&lt;S, VR, STAR&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignRowsWith__DistMatrix:S.VR.STAR:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Force the row alignment to match the column alignment of <cite>A</cite> (modulo
-the number of process columns).</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="DistMatrix:T.MC.MR:::AlignRowsWith__DistMatrix:S.STAR.VR:CR">
-void <tt class="descname">AlignRowsWith</tt><big>(</big>const DistMatrix&lt;S, STAR, VR&gt;&amp; <em>A</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignRowsWith__DistMatrix:S.STAR.VR:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Force the row alignment to match the row alignment of <cite>A</cite> (modulo
-the number of process columns).</p>
+<dt id="DistMatrix:T.MC.MR:::AlignRowsWith__elem::DistDataCR">
+void <tt class="descname">AlignRowsWith</tt><big>(</big>const elem::DistData&amp; <em>data</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::AlignRowsWith__elem::DistDataCR" title="Permalink to this definition">¶</a></dt>
+<dd><p>A mechanism for aligning with a distributed matrix of a different
+datatype, via <tt class="docutils literal"><span class="pre">AlignRowsWith(</span> <span class="pre">A.DistData()</span> <span class="pre">);</span></tt></p>
 </dd></dl>
 
 <p class="rubric">Views</p>
