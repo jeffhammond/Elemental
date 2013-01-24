@@ -55,33 +55,13 @@
   <div class="section" id="tuning-parameters">
 <span id="blas-tuning"></span><h1>Tuning parameters<a class="headerlink" href="#tuning-parameters" title="Permalink to this headline">¶</a></h1>
 <p>The following tuning parameters have been exposed since they are
-system-dependent and can have a large impact on performance. The first two sets
-of tuning parameters, those of <tt class="docutils literal"><span class="pre">LocalHemvBlocksize</span></tt> and
-<tt class="docutils literal"><span class="pre">LocalSymvBlocksize</span></tt>, should probably be combined.</p>
-<div class="section" id="localhemvblocksize">
-<h2>LocalHemvBlocksize<a class="headerlink" href="#localhemvblocksize" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="SetLocalHemvBlocksize:T:__i">
-void <tt class="descname">SetLocalHemvBlocksize&lt;T&gt;</tt><big>(</big>int <em>blocksize</em><big>)</big><a class="headerlink" href="#SetLocalHemvBlocksize:T:__i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sets the local blocksize for the distributed <a class="reference internal" href="level2.html#Hemv__UpperOrLower.T.Matrix:T:CR.Matrix:T:CR.T.Matrix:T:R" title="Hemv"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Hemv()</span></tt></a> routine for
-datatype <tt class="docutils literal"><span class="pre">T</span></tt>. It is set to 64 by
-default and is important for the reduction of a complex Hermitian
-matrix to real symmetric tridiagonal form.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="LocalHemvBlocksize:T:">
-int <tt class="descname">LocalHemvBlocksize&lt;T&gt;</tt><big>(</big><big>)</big><a class="headerlink" href="#LocalHemvBlocksize:T:" title="Permalink to this definition">¶</a></dt>
-<dd><p>Retrieves the local <a class="reference internal" href="level2.html#Hemv__UpperOrLower.T.Matrix:T:CR.Matrix:T:CR.T.Matrix:T:R" title="Hemv"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Hemv()</span></tt></a> blocksize for datatype <tt class="docutils literal"><span class="pre">T</span></tt>.</p>
-</dd></dl>
-
-</div>
+system-dependent and can have a large impact on performance.</p>
 <div class="section" id="localsymvblocksize">
 <h2>LocalSymvBlocksize<a class="headerlink" href="#localsymvblocksize" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="SetLocalSymvBlocksize:T:__i">
 void <tt class="descname">SetLocalSymvBlocksize&lt;T&gt;</tt><big>(</big>int <em>blocksize</em><big>)</big><a class="headerlink" href="#SetLocalSymvBlocksize:T:__i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sets the local blocksize for the distributed <a class="reference internal" href="level2.html#Symv__UpperOrLower.T.Matrix:T:CR.Matrix:T:CR.T.Matrix:T:R" title="Symv"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Symv()</span></tt></a> routine for
+<dd><p>Sets the local blocksize for the distributed <a class="reference internal" href="level2.html#Symv__UpperOrLower.T.Matrix:T:CR.Matrix:T:CR.T.Matrix:T:R.b" title="Symv"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Symv()</span></tt></a> routine for
 datatype <tt class="docutils literal"><span class="pre">T</span></tt>. It is set to 64 by default and is important for the reduction
 of a real symmetric matrix to symmetric tridiagonal form.</p>
 </dd></dl>
@@ -89,7 +69,7 @@ of a real symmetric matrix to symmetric tridiagonal form.</p>
 <dl class="function">
 <dt id="LocalSymvBlocksize:T:">
 int <tt class="descname">LocalSymvBlocksize&lt;T&gt;</tt><big>(</big><big>)</big><a class="headerlink" href="#LocalSymvBlocksize:T:" title="Permalink to this definition">¶</a></dt>
-<dd><p>Retrieves the local <a class="reference internal" href="level2.html#Symv__UpperOrLower.T.Matrix:T:CR.Matrix:T:CR.T.Matrix:T:R" title="Symv"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Symv()</span></tt></a> blocksize for datatype <tt class="docutils literal"><span class="pre">T</span></tt>.</p>
+<dd><p>Retrieves the local <a class="reference internal" href="level2.html#Symv__UpperOrLower.T.Matrix:T:CR.Matrix:T:CR.T.Matrix:T:R.b" title="Symv"><tt class="xref cpp cpp-func docutils literal"><span class="pre">Symv()</span></tt></a> blocksize for datatype <tt class="docutils literal"><span class="pre">T</span></tt>.</p>
 </dd></dl>
 
 </div>
