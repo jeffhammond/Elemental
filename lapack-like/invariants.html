@@ -276,6 +276,77 @@ the maximum entrywise norm, <span class="math">\(\|A\|_2\)</span>, or <span clas
 <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">Norm</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType__enum" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#Norm__DistMatrix:F.U.V:CR.NormType" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<p>Alternatively, one may directly call the following routines (note that general Schatten norms have an extra parameter and must be directly called).</p>
+<dl class="function">
+<dt id="FrobeniusNorm__Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">FrobeniusNorm</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#FrobeniusNorm__Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="FrobeniusNorm__DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">FrobeniusNorm</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#FrobeniusNorm__DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="InfinityNorm__Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">InfinityNorm</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#InfinityNorm__Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="InfinityNorm__DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">InfinityNorm</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#InfinityNorm__DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="MaxNorm__Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">MaxNorm</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MaxNorm__Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="MaxNorm__DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">MaxNorm</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MaxNorm__DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="NuclearNorm__Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">NuclearNorm</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#NuclearNorm__Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="NuclearNorm__DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">NuclearNorm</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#NuclearNorm__DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="OneNorm__Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">OneNorm</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#OneNorm__Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="OneNorm__DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">OneNorm</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#OneNorm__DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SchattenNorm__Matrix:F:CR.typename-Base:F:::type">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SchattenNorm</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>p</em><big>)</big><a class="headerlink" href="#SchattenNorm__Matrix:F:CR.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SchattenNorm__DistMatrix:F.U.V:CR.typename-Base:F:::type">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SchattenNorm</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>p</em><big>)</big><a class="headerlink" href="#SchattenNorm__DistMatrix:F.U.V:CR.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="TwoNorm__Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">TwoNorm</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#TwoNorm__Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="TwoNorm__DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">TwoNorm</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#TwoNorm__DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="hermitiannorm">
 <h2>HermitianNorm<a class="headerlink" href="#hermitiannorm" title="Permalink to this headline">¶</a></h2>
@@ -295,6 +366,77 @@ distribution.</p>
 <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType__enum" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#HermitianNorm__UpperOrLower.DistMatrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<p>Alternatively, one may directly call the following routines (note that general Schatten norms have an extra parameter and must be directly called).</p>
+<dl class="function">
+<dt id="HermitianFrobeniusNorm__UpperOrLower.Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianFrobeniusNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HermitianFrobeniusNorm__UpperOrLower.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianFrobeniusNorm__UpperOrLower.DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianFrobeniusNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HermitianFrobeniusNorm__UpperOrLower.DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianInfinityNorm__UpperOrLower.Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianInfinityNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HermitianInfinityNorm__UpperOrLower.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianInfinityNorm__UpperOrLower.DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianInfinityNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HermitianInfinityNorm__UpperOrLower.DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianMaxNorm__UpperOrLower.Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianMaxNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HermitianMaxNorm__UpperOrLower.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianMaxNorm__UpperOrLower.DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianMaxNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HermitianMaxNorm__UpperOrLower.DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianNuclearNorm__UpperOrLower.Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianNuclearNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HermitianNuclearNorm__UpperOrLower.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianNuclearNorm__UpperOrLower.DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianNuclearNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HermitianNuclearNorm__UpperOrLower.DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianOneNorm__UpperOrLower.Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianOneNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HermitianOneNorm__UpperOrLower.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianOneNorm__UpperOrLower.DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianOneNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HermitianOneNorm__UpperOrLower.DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianSchattenNorm__UpperOrLower.Matrix:F:CR.typename-Base:F:::type">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianSchattenNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>p</em><big>)</big><a class="headerlink" href="#HermitianSchattenNorm__UpperOrLower.Matrix:F:CR.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianSchattenNorm__UpperOrLower.DistMatrix:F.U.V:CR.typename-Base:F:::type">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianSchattenNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>p</em><big>)</big><a class="headerlink" href="#HermitianSchattenNorm__UpperOrLower.DistMatrix:F.U.V:CR.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianTwoNorm__UpperOrLower.Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianTwoNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HermitianTwoNorm__UpperOrLower.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianTwoNorm__UpperOrLower.DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianTwoNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HermitianTwoNorm__UpperOrLower.DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="symmetricnorm">
 <h2>SymmetricNorm<a class="headerlink" href="#symmetricnorm" title="Permalink to this headline">¶</a></h2>
@@ -312,6 +454,77 @@ distribution.</p>
 <dl class="function">
 <dt id="SymmetricNorm__UpperOrLower.DistMatrix:F:CR.NormType">
 <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType__enum" title="NormType">NormType</a> <em>type</em><em>=FROBENIUS_NORM </em><big>)</big><a class="headerlink" href="#SymmetricNorm__UpperOrLower.DistMatrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Alternatively, one may directly call the following routines (note that general Schatten norms have an extra parameter and must be directly called).</p>
+<dl class="function">
+<dt id="SymmetricFrobeniusNorm__UpperOrLower.Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricFrobeniusNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#SymmetricFrobeniusNorm__UpperOrLower.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SymmetricFrobeniusNorm__UpperOrLower.DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricFrobeniusNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#SymmetricFrobeniusNorm__UpperOrLower.DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SymmetricInfinityNorm__UpperOrLower.Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricInfinityNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#SymmetricInfinityNorm__UpperOrLower.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SymmetricInfinityNorm__UpperOrLower.DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricInfinityNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#SymmetricInfinityNorm__UpperOrLower.DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SymmetricMaxNorm__UpperOrLower.Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricMaxNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#SymmetricMaxNorm__UpperOrLower.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SymmetricMaxNorm__UpperOrLower.DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricMaxNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#SymmetricMaxNorm__UpperOrLower.DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SymmetricNuclearNorm__UpperOrLower.Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricNuclearNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#SymmetricNuclearNorm__UpperOrLower.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SymmetricNuclearNorm__UpperOrLower.DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricNuclearNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#SymmetricNuclearNorm__UpperOrLower.DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SymmetricOneNorm__UpperOrLower.Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricOneNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#SymmetricOneNorm__UpperOrLower.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SymmetricOneNorm__UpperOrLower.DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricOneNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#SymmetricOneNorm__UpperOrLower.DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SymmetricSchattenNorm__UpperOrLower.Matrix:F:CR.typename-Base:F:::type">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricSchattenNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>p</em><big>)</big><a class="headerlink" href="#SymmetricSchattenNorm__UpperOrLower.Matrix:F:CR.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SymmetricSchattenNorm__UpperOrLower.DistMatrix:F.U.V:CR.typename-Base:F:::type">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricSchattenNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>p</em><big>)</big><a class="headerlink" href="#SymmetricSchattenNorm__UpperOrLower.DistMatrix:F.U.V:CR.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SymmetricTwoNorm__UpperOrLower.Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricTwoNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#SymmetricTwoNorm__UpperOrLower.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SymmetricTwoNorm__UpperOrLower.DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricTwoNorm</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#SymmetricTwoNorm__UpperOrLower.DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
