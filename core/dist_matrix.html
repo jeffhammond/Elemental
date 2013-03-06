@@ -145,8 +145,8 @@ int <tt class="descname">LocalWidth</tt><big>(</big><big>)</big><tt class="descc
 </dd></dl>
 
 <dl class="function">
-<dt id="AbstractDistMatrix:T:::LocalLDimC">
-int <tt class="descname">LocalLDim</tt><big>(</big><big>)</big><tt class="descclassname"> const</tt><a class="headerlink" href="#AbstractDistMatrix:T:::LocalLDimC" title="Permalink to this definition">¶</a></dt>
+<dt id="AbstractDistMatrix:T:::LDimC">
+int <tt class="descname">LDim</tt><big>(</big><big>)</big><tt class="descclassname"> const</tt><a class="headerlink" href="#AbstractDistMatrix:T:::LDimC" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the local leading dimension of the matrix.</p>
 </dd></dl>
 
@@ -164,29 +164,29 @@ const elem::Grid&amp; <tt class="descname">Grid</tt><big>(</big><big>)</big><tt 
 </dd></dl>
 
 <dl class="function">
-<dt id="AbstractDistMatrix:T:::LocalBuffer__i.i">
-T* <tt class="descname">LocalBuffer</tt><big>(</big>int <em>iLocal</em><em>=0</em>, int <em>jLocal</em><em>=0 </em><big>)</big><a class="headerlink" href="#AbstractDistMatrix:T:::LocalBuffer__i.i" title="Permalink to this definition">¶</a></dt>
+<dt id="AbstractDistMatrix:T:::Buffer__i.i">
+T* <tt class="descname">Buffer</tt><big>(</big>int <em>iLocal</em><em>=0</em>, int <em>jLocal</em><em>=0 </em><big>)</big><a class="headerlink" href="#AbstractDistMatrix:T:::Buffer__i.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a pointer to the portion of the local buffer that stores entry
 <cite>(iLocal,jLocal)</cite>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="AbstractDistMatrix:T:::LockedLocalBuffer__i.iC">
-const T* <tt class="descname">LockedLocalBuffer</tt><big>(</big>int <em>iLocal</em><em>=0</em>, int <em>jLocal</em><em>=0 </em><big>)</big><tt class="descclassname"> const</tt><a class="headerlink" href="#AbstractDistMatrix:T:::LockedLocalBuffer__i.iC" title="Permalink to this definition">¶</a></dt>
+<dt id="AbstractDistMatrix:T:::LockedBuffer__i.iC">
+const T* <tt class="descname">LockedBuffer</tt><big>(</big>int <em>iLocal</em><em>=0</em>, int <em>jLocal</em><em>=0 </em><big>)</big><tt class="descclassname"> const</tt><a class="headerlink" href="#AbstractDistMatrix:T:::LockedBuffer__i.iC" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a pointer to the portion of the local buffer that stores entry
 <cite>(iLocal,jLocal)</cite>, but do not allow for the data to be modified through
 the returned pointer.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="AbstractDistMatrix:T:::LocalMatrix">
-<a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <tt class="descname">LocalMatrix</tt><big>(</big><big>)</big><a class="headerlink" href="#AbstractDistMatrix:T:::LocalMatrix" title="Permalink to this definition">¶</a></dt>
+<dt id="AbstractDistMatrix:T:::Matrix">
+elem::Matrix&lt;T&gt;&amp; <tt class="descname">Matrix</tt><big>(</big><big>)</big><a class="headerlink" href="#AbstractDistMatrix:T:::Matrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a reference to the local matrix.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="AbstractDistMatrix:T:::LockedLocalMatrixC">
-<a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <tt class="descname">LockedLocalMatrix</tt><big>(</big><big>)</big><tt class="descclassname"> const</tt><a class="headerlink" href="#AbstractDistMatrix:T:::LockedLocalMatrixC" title="Permalink to this definition">¶</a></dt>
+<dt id="AbstractDistMatrix:T:::LockedMatrixC">
+const elem::Matrix&lt;T&gt;&amp; <tt class="descname">LockedMatrix</tt><big>(</big><big>)</big><tt class="descclassname"> const</tt><a class="headerlink" href="#AbstractDistMatrix:T:::LockedMatrixC" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return an unmodifiable reference to the local matrix.</p>
 </dd></dl>
 
