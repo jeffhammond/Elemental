@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Invariants, inner products, and divergences &mdash; Elemental 0.78-dev documentation</title>
+    <title>Invariants, inner products, norms, etc. &mdash; Elemental 0.78-dev documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -36,7 +36,7 @@
   <body>
       <div class="header"><img class="rightlogo" src="../_static/elemental_90.png" alt="Logo"/><h1 class="heading"><a href="../index.html">
           <span>Elemental 0.78-dev documentation</span></a></h1>
-        <h2 class="heading"><span>Invariants, inner products, and divergences</span></h2>
+        <h2 class="heading"><span>Invariants, inner products, norms, etc.</span></h2>
       </div>
       <div class="topnav">
       
@@ -52,8 +52,8 @@
       <div class="content">
         
         
-  <div class="section" id="invariants-inner-products-and-divergences">
-<h1>Invariants, inner products, and divergences<a class="headerlink" href="#invariants-inner-products-and-divergences" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="invariants-inner-products-norms-etc">
+<h1>Invariants, inner products, norms, etc.<a class="headerlink" href="#invariants-inner-products-norms-etc" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="condition-number">
 <h2>Condition number<a class="headerlink" href="#condition-number" title="Permalink to this headline">¶</a></h2>
 <p>The two-norm condition number</p>
@@ -690,6 +690,22 @@ F <tt class="descname">Trace</tt><big>(</big><a class="reference internal" href=
 F <tt class="descname">Trace</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Trace__DistMatrix:F:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the trace of the square matrix <cite>A</cite>.</p>
 </dd></dl>
+
+</div>
+<div class="section" id="hadamard">
+<h2>Hadamard<a class="headerlink" href="#hadamard" title="Permalink to this headline">¶</a></h2>
+<p>The Hadamard product of two <span class="math">\(m \times n\)</span> matrices <span class="math">\(A\)</span> and
+<span class="math">\(B\)</span> is given entrywise by <span class="math">\(\alpha_{i,j} \beta_{i,j}\)</span> and denoted
+by <span class="math">\(C = A \circ B\)</span>.</p>
+<dl class="function">
+<dt id="Hadamard__Matrix:F:CR.Matrix:F:CR.Matrix:F:R">
+void <tt class="descname">Hadamard</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>B</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>C</em><big>)</big><a class="headerlink" href="#Hadamard__Matrix:F:CR.Matrix:F:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Hadamard__DistMatrix:F.U.V:CR.DistMatrix:F.U.V:CR.DistMatrix:F.U.V:R">
+void <tt class="descname">Hadamard</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>B</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>C</em><big>)</big><a class="headerlink" href="#Hadamard__DistMatrix:F.U.V:CR.DistMatrix:F.U.V:CR.DistMatrix:F.U.V:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </div>
 <div class="section" id="hilbertschmidt">

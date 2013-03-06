@@ -565,18 +565,17 @@ specified grid.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="DistMatrix:T.MC.MR:::DistMatrix__i.i.b.b.i.i.elem::GridCR">
- <tt class="descname">DistMatrix</tt><big>(</big>int <em>height</em>, int <em>width</em>, bool <em>constrainedColAlignment</em>, bool <em>constrainedRowAlignment</em>, int <em>colAlignment</em>, int <em>rowAlignment</em>, const elem::Grid&amp; <em>grid</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::DistMatrix__i.i.b.b.i.i.elem::GridCR" title="Permalink to this definition">¶</a></dt>
+<dt id="DistMatrix:T.MC.MR:::DistMatrix__i.i.i.i.elem::GridCR">
+ <tt class="descname">DistMatrix</tt><big>(</big>int <em>height</em>, int <em>width</em>, int <em>colAlignment</em>, int <em>rowAlignment</em>, const elem::Grid&amp; <em>grid</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::DistMatrix__i.i.i.i.elem::GridCR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a <cite>height</cite> <span class="math">\(\times\)</span> <cite>width</cite> distributed matrix
 distributed over the specified process grid, but with the top-left entry
 owned by the <cite>colAlignment</cite> process row and the <cite>rowAlignment</cite>
-process column. Each of these alignments may be <em>constrained</em> to remain
-constant when redistributing data into this <a class="reference internal" href="#DistMatrix:T:__class" title="DistMatrix&lt;T&gt;"><tt class="xref cpp cpp-type docutils literal"><span class="pre">DistMatrix&lt;T&gt;</span></tt></a>.</p>
+process column.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="DistMatrix:T.MC.MR:::DistMatrix__i.i.b.b.i.i.i.elem::GridCR">
- <tt class="descname">DistMatrix</tt><big>(</big>int <em>height</em>, int <em>width</em>, bool <em>constrainedColAlignment</em>, bool <em>constrainedRowAlignment</em>, int <em>colAlignment</em>, int <em>rowAlignment</em>, int <em>ldim</em>, const elem::Grid&amp; <em>grid</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::DistMatrix__i.i.b.b.i.i.i.elem::GridCR" title="Permalink to this definition">¶</a></dt>
+<dt id="DistMatrix:T.MC.MR:::DistMatrix__i.i.i.i.i.elem::GridCR">
+ <tt class="descname">DistMatrix</tt><big>(</big>int <em>height</em>, int <em>width</em>, int <em>colAlignment</em>, int <em>rowAlignment</em>, int <em>ldim</em>, const elem::Grid&amp; <em>grid</em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::DistMatrix__i.i.i.i.i.elem::GridCR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as above, but the local leading dimension is also specified.</p>
 </dd></dl>
 
