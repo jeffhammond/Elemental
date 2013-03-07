@@ -1,0 +1,125 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Convex optimization &mdash; Elemental 0.78-dev documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.78-dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/theme_extras.js"></script>
+    <link rel="top" title="Elemental 0.78-dev documentation" href="index.html" />
+    <link rel="next" title="Special matrices" href="matrices.html" />
+    <link rel="prev" title="Tuning parameters" href="lapack-like/tuning.html" /> 
+  </head>
+  <body>
+      <div class="header"><img class="rightlogo" src="_static/elemental_90.png" alt="Logo"/><h1 class="heading"><a href="index.html">
+          <span>Elemental 0.78-dev documentation</span></a></h1>
+        <h2 class="heading"><span>Convex optimization</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="lapack-like/tuning.html">Tuning parameters</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="matrices.html">Special matrices</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="convex-optimization">
+<h1>Convex optimization<a class="headerlink" href="#convex-optimization" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="logbarrier">
+<h2>LogBarrier<a class="headerlink" href="#logbarrier" title="Permalink to this headline">¶</a></h2>
+<p>Uses a careful calculation of the log of the determinant in order to return
+the <em>log barrier</em> of a Hermitian positive-definite matrix <cite>A</cite>,
+<span class="math">\(-\log(\mbox{det}(A))\)</span>.</p>
+<dl class="function">
+<dt id="LogBarrier__UpperOrLower.Matrix:F:CR">
+<a class="reference internal" href="core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">LogBarrier</tt><big>(</big><a class="reference internal" href="core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#LogBarrier__UpperOrLower.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="LogBarrier__UpperOrLower.DistMatrix:F:CR">
+<a class="reference internal" href="core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">LogBarrier</tt><big>(</big><a class="reference internal" href="core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#LogBarrier__UpperOrLower.DistMatrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="LogBarrier__UpperOrLower.Matrix:F:R.b">
+<a class="reference internal" href="core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">LogBarrier</tt><big>(</big><a class="reference internal" href="core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, bool <em>canOverwrite</em><em>=false </em><big>)</big><a class="headerlink" href="#LogBarrier__UpperOrLower.Matrix:F:R.b" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="LogBarrier__UpperOrLower.DistMatrix:F:R.b">
+<a class="reference internal" href="core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">LogBarrier</tt><big>(</big><a class="reference internal" href="core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, bool <em>canOverwrite</em><em>=false </em><big>)</big><a class="headerlink" href="#LogBarrier__UpperOrLower.DistMatrix:F:R.b" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="logdetdivergence">
+<h2>LogDetDivergence<a class="headerlink" href="#logdetdivergence" title="Permalink to this headline">¶</a></h2>
+<p>The <em>log-det divergence</em> of a pair of <span class="math">\(n \times n\)</span> Hermitian
+positive-definite matrices <span class="math">\(A\)</span> and <span class="math">\(B\)</span> is</p>
+<div class="math">
+\[D_{ld}(A,B) = \mbox{tr}(A B^{-1}) -\log(\mbox{det}(A B^{-1})) - n,\]</div>
+<p>which can be greatly simplified using the Cholesky factors of <span class="math">\(A\)</span> and <span class="math">\(B\)</span>.
+In particular, if we set <span class="math">\(Z = L_B^{-1} L_A\)</span>, where <span class="math">\(A=L_A L_A^H\)</span> and
+<span class="math">\(B=L_B L_B^H\)</span> are Cholesky factorizations, then</p>
+<div class="math">
+\[D_{ld}(A,B) = \| Z \|_F^2 - 2 \log(\mbox{det}(Z)) - n.\]</div>
+<dl class="function">
+<dt id="LogDetDivergence__UpperOrLower.Matrix:F:CR.Matrix:F:CR">
+<a class="reference internal" href="core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">LogDetDivergence</tt><big>(</big><a class="reference internal" href="core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#LogDetDivergence__UpperOrLower.Matrix:F:CR.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="LogDetDivergence__UpperOrLower.DistMatrix:F:CR.DistMatrix:F:CR">
+<a class="reference internal" href="core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">LogDetDivergence</tt><big>(</big><a class="reference internal" href="core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#LogDetDivergence__UpperOrLower.DistMatrix:F:CR.DistMatrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="lapack-like/tuning.html">Tuning parameters</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="matrices.html">Special matrices</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2009-2013, Jack Poulson.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -212,54 +212,6 @@ expanded form which is less likely to over/under-flow.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="logbarrier">
-<h2>LogBarrier<a class="headerlink" href="#logbarrier" title="Permalink to this headline">¶</a></h2>
-<p>Uses a careful calculation of the log of the determinant in order to return
-the <em>log barrier</em> of a Hermitian positive-definite matrix <cite>A</cite>,
-<span class="math">\(-\log(\mbox{det}(A))\)</span>.</p>
-<dl class="function">
-<dt id="LogBarrier__UpperOrLower.Matrix:F:CR">
-<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">LogBarrier</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#LogBarrier__UpperOrLower.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="LogBarrier__UpperOrLower.DistMatrix:F:CR">
-<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">LogBarrier</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#LogBarrier__UpperOrLower.DistMatrix:F:CR" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="LogBarrier__UpperOrLower.Matrix:F:R.b">
-<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">LogBarrier</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, bool <em>canOverwrite</em><em>=false </em><big>)</big><a class="headerlink" href="#LogBarrier__UpperOrLower.Matrix:F:R.b" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="LogBarrier__UpperOrLower.DistMatrix:F:R.b">
-<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">LogBarrier</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, bool <em>canOverwrite</em><em>=false </em><big>)</big><a class="headerlink" href="#LogBarrier__UpperOrLower.DistMatrix:F:R.b" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</div>
-<div class="section" id="logdetdivergence">
-<h2>LogDetDivergence<a class="headerlink" href="#logdetdivergence" title="Permalink to this headline">¶</a></h2>
-<p>The <em>log-det divergence</em> of a pair of <span class="math">\(n \times n\)</span> Hermitian
-positive-definite matrices <span class="math">\(A\)</span> and <span class="math">\(B\)</span> is</p>
-<div class="math">
-\[D_{ld}(A,B) = \mbox{tr}(A B^{-1}) -\log(\mbox{det}(A B^{-1})) - n,\]</div>
-<p>which can be greatly simplified using the Cholesky factors of <span class="math">\(A\)</span> and <span class="math">\(B\)</span>.
-In particular, if we set <span class="math">\(Z = L_B^{-1} L_A\)</span>, where <span class="math">\(A=L_A L_A^H\)</span> and
-<span class="math">\(B=L_B L_B^H\)</span> are Cholesky factorizations, then</p>
-<div class="math">
-\[D_{ld}(A,B) = \| Z \|_F^2 - 2 \log(\mbox{det}(Z)) - n.\]</div>
-<dl class="function">
-<dt id="LogDetDivergence__UpperOrLower.Matrix:F:CR.Matrix:F:CR">
-<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">LogDetDivergence</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#LogDetDivergence__UpperOrLower.Matrix:F:CR.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="LogDetDivergence__UpperOrLower.DistMatrix:F:CR.DistMatrix:F:CR">
-<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">LogDetDivergence</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#LogDetDivergence__UpperOrLower.DistMatrix:F:CR.DistMatrix:F:CR" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</div>
 <div class="section" id="norm">
 <h2>Norm<a class="headerlink" href="#norm" title="Permalink to this headline">¶</a></h2>
 <p>The following routines can return either
