@@ -101,6 +101,35 @@ In particular, if we set <span class="math">\(Z = L_B^{-1} L_A\)</span>, where <
 <dd></dd></dl>
 
 </div>
+<div class="section" id="singular-value-soft-thresholding">
+<h2>Singular-value soft-thresholding<a class="headerlink" href="#singular-value-soft-thresholding" title="Permalink to this headline">¶</a></h2>
+<p>Overwrites <span class="math">\(A\)</span> with <span class="math">\(U S_{\tau}(\Sigma) V^H\)</span>, where <span class="math">\(U \Sigma V^H\)</span> is the singular-value decomposition of <span class="math">\(A\)</span> upon input and <span class="math">\(S_{\tau}\)</span> performs soft-thresholding with parameter <span class="math">\(\tau\)</span>.
+The return value is the rank of the soft-thresholded matrix.</p>
+<dl class="function">
+<dt id="SingularValueSoftThreshold__Matrix:F:R.typename-Base:F:::type">
+int <tt class="descname">SingularValueSoftThreshold</tt><big>(</big><a class="reference internal" href="core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>tau</em><big>)</big><a class="headerlink" href="#SingularValueSoftThreshold__Matrix:F:R.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SingularValueSoftThreshold__DistMatrix:F:R.typename-Base:F:::type">
+int <tt class="descname">SingularValueSoftThreshold</tt><big>(</big><a class="reference internal" href="core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>tau</em><big>)</big><a class="headerlink" href="#SingularValueSoftThreshold__DistMatrix:F:R.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="soft-thresholding">
+<h2>Soft-thresholding<a class="headerlink" href="#soft-thresholding" title="Permalink to this headline">¶</a></h2>
+<p>Overwrites each entry of <span class="math">\(A\)</span> with its soft-thresholded value.</p>
+<dl class="function">
+<dt id="SoftThreshold__Matrix:F:R.typename-Base:F:::type">
+void <tt class="descname">SoftThreshold</tt><big>(</big><a class="reference internal" href="core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>tau</em><big>)</big><a class="headerlink" href="#SoftThreshold__Matrix:F:R.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SoftThreshold__DistMatrix:F:R.typename-Base:F:::type">
+void <tt class="descname">SoftThreshold</tt><big>(</big><a class="reference internal" href="core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>tau</em><big>)</big><a class="headerlink" href="#SoftThreshold__DistMatrix:F:R.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
 </div>
 
 
