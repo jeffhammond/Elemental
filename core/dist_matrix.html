@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -8,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The DistMatrix class &mdash; Elemental 0.78-dev documentation</title>
+    <title>The DistMatrix class &mdash; Elemental 0.79-dev documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -17,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.78-dev',
+        VERSION:     '0.79-dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -28,14 +26,14 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/theme_extras.js"></script>
-    <link rel="top" title="Elemental 0.78-dev documentation" href="../index.html" />
+    <link rel="top" title="Elemental 0.79-dev documentation" href="../index.html" />
     <link rel="up" title="Core functionality" href="../core.html" />
     <link rel="next" title="Viewing" href="viewing.html" />
     <link rel="prev" title="The Grid class" href="grid.html" /> 
   </head>
   <body>
       <div class="header"><img class="rightlogo" src="../_static/elemental_90.png" alt="Logo"/><h1 class="heading"><a href="../index.html">
-          <span>Elemental 0.78-dev documentation</span></a></h1>
+          <span>Elemental 0.79-dev documentation</span></a></h1>
         <h2 class="heading"><span>The DistMatrix class</span></h2>
       </div>
       <div class="topnav">
@@ -552,14 +550,14 @@ matrix), the individual entries would be owned as follows:</p>
 to be a ring.</p>
 <p class="rubric">Constructors</p>
 <dl class="function">
-<dt>
-<tt class="descname">DistMatrix( const Grid&amp; grid=DefaultGrid() )</tt></dt>
+<dt id="DistMatrix:T.MC.MR:::DistMatrix__GridCR">
+ <tt class="descname">DistMatrix</tt><big>(</big><a class="reference internal" href="grid.html#Grid__class" title="Grid">const Grid&amp;</a> <em>grid</em><em>=DefaultGrid() </em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::DistMatrix__GridCR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a <span class="math">\(0 \times 0\)</span> distributed matrix over the specified grid.</p>
 </dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">DistMatrix( int height, int width, const Grid&amp; grid=DefaultGrid() )</tt></dt>
+<dt id="DistMatrix:T.MC.MR:::DistMatrix__i.i.GridCR">
+ <tt class="descname">DistMatrix</tt><big>(</big>int <em>height</em>, int <em>width</em>, <a class="reference internal" href="grid.html#Grid__class" title="Grid">const Grid&amp;</a> <em>grid</em><em>=DefaultGrid() </em><big>)</big><a class="headerlink" href="#DistMatrix:T.MC.MR:::DistMatrix__i.i.GridCR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a <cite>height</cite> <span class="math">\(\times\)</span> <cite>width</cite> distributed matrix over the
 specified grid.</p>
 </dd></dl>
@@ -1734,7 +1732,7 @@ cases of <a class="reference internal" href="#DistMatrix:T.STAR.STAR:__class" ti
 
     <div class="footer">
         &copy; Copyright 2009-2013, Jack Poulson.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
     </div>
   </body>
 </html>

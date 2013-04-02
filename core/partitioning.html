@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -8,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Partitioning &mdash; Elemental 0.78-dev documentation</title>
+    <title>Partitioning &mdash; Elemental 0.79-dev documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -17,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.78-dev',
+        VERSION:     '0.79-dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -28,14 +26,14 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/theme_extras.js"></script>
-    <link rel="top" title="Elemental 0.78-dev documentation" href="../index.html" />
+    <link rel="top" title="Elemental 0.79-dev documentation" href="../index.html" />
     <link rel="up" title="Core functionality" href="../core.html" />
     <link rel="next" title="Repartitioning" href="repartitioning.html" />
     <link rel="prev" title="Viewing" href="viewing.html" /> 
   </head>
   <body>
       <div class="header"><img class="rightlogo" src="../_static/elemental_90.png" alt="Logo"/><h1 class="heading"><a href="../index.html">
-          <span>Elemental 0.78-dev documentation</span></a></h1>
+          <span>Elemental 0.79-dev documentation</span></a></h1>
         <h2 class="heading"><span>Partitioning</span></h2>
       </div>
       <div class="topnav">
@@ -65,24 +63,24 @@ the submatrices cannot be modified.</p>
 \[\begin{split}A = \left(\begin{array}{c}A_T \\ A_B \end{array}\right),\end{split}\]</div>
 <p>where <span class="math">\(A_B\)</span> is of a specified height.</p>
 <dl class="function">
-<dt>
-<tt class="descname">void PartitionUp( Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; AT, Matrix&lt;T&gt;&amp; AB, int heightAB=Blocksize() )</tt></dt>
+<dt id="PartitionUp__Matrix:T:R.Matrix:T:R.Matrix:T:R.i">
+void <tt class="descname">PartitionUp</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>AT</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>AB</em>, int <em>heightAB</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#PartitionUp__Matrix:T:R.Matrix:T:R.Matrix:T:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void LockedPartitionUp( const Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; AT, Matrix&lt;T&gt;&amp; AB, int heightAB=Blocksize() )</tt></dt>
+<dt id="LockedPartitionUp__Matrix:T:CR.Matrix:T:R.Matrix:T:R.i">
+void <tt class="descname">LockedPartitionUp</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>AT</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>AB</em>, int <em>heightAB</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#LockedPartitionUp__Matrix:T:CR.Matrix:T:R.Matrix:T:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Templated over the datatype, <cite>T</cite>, of the serial matrix <cite>A</cite>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void PartitionUp( DistMatrix&lt;T,U,V&gt;&amp; A, DistMatrix&lt;T,U,V&gt;&amp; AT, DistMatrix&lt;T,U,V&gt;&amp; AB, int heightAB=Blocksize() )</tt></dt>
+<dt id="PartitionUp__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i">
+void <tt class="descname">PartitionUp</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>AT</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>AB</em>, int <em>heightAB</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#PartitionUp__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void LockedPartitionUp( const DistMatrix&lt;T,U,V&gt;&amp; A, DistMatrix&lt;T,U,V&gt;&amp; AT, DistMatrix&lt;T,U,V&gt;&amp; AB, int heightAB=Blocksize() )</tt></dt>
+<dt id="LockedPartitionUp__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i">
+void <tt class="descname">LockedPartitionUp</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>AT</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>AB</em>, int <em>heightAB</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#LockedPartitionUp__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Templated over the datatype, <cite>T</cite>, and distribution scheme, <cite>(U,V)</cite>,
 of the distributed matrix <cite>A</cite>.</p>
 </dd></dl>
@@ -95,24 +93,24 @@ of the distributed matrix <cite>A</cite>.</p>
 \[\begin{split}A = \left(\begin{array}{c}A_T \\ A_B \end{array}\right),\end{split}\]</div>
 <p>where <span class="math">\(A_T\)</span> is of a specified height.</p>
 <dl class="function">
-<dt>
-<tt class="descname">void PartitionDown( Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; AT, Matrix&lt;T&gt;&amp; AB, int heightAT=Blocksize() )</tt></dt>
+<dt id="PartitionDown__Matrix:T:R.Matrix:T:R.Matrix:T:R.i">
+void <tt class="descname">PartitionDown</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>AT</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>AB</em>, int <em>heightAT</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#PartitionDown__Matrix:T:R.Matrix:T:R.Matrix:T:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void LockedPartitionDown( const Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; AT, Matrix&lt;T&gt;&amp; AB, int heightAT=Blocksize() )</tt></dt>
+<dt id="LockedPartitionDown__Matrix:T:CR.Matrix:T:R.Matrix:T:R.i">
+void <tt class="descname">LockedPartitionDown</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>AT</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>AB</em>, int <em>heightAT</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#LockedPartitionDown__Matrix:T:CR.Matrix:T:R.Matrix:T:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Templated over the datatype, <cite>T</cite>, of the serial matrix <cite>A</cite>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void PartitionDown( DistMatrix&lt;T,U,V&gt;&amp; A, DistMatrix&lt;T,U,V&gt;&amp; AT, DistMatrix&lt;T,U,V&gt;&amp; AB, int heightAT=Blocksize() )</tt></dt>
+<dt id="PartitionDown__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i">
+void <tt class="descname">PartitionDown</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>AT</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>AB</em>, int <em>heightAT</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#PartitionDown__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void LockedPartitionDown( const DistMatrix&lt;T,U,V&gt;&amp; A, DistMatrix&lt;T,U,V&gt;&amp; AT, DistMatrix&lt;T,U,V&gt;&amp; AB, int heightAT=Blocksize() )</tt></dt>
+<dt id="LockedPartitionDown__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i">
+void <tt class="descname">LockedPartitionDown</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>AT</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>AB</em>, int <em>heightAT</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#LockedPartitionDown__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Templated over the datatype, <cite>T</cite>, and distribution scheme, <cite>(U,V)</cite>,
 of the distributed matrix <cite>A</cite>.</p>
 </dd></dl>
@@ -125,24 +123,24 @@ of the distributed matrix <cite>A</cite>.</p>
 \[\begin{split}A = \left(\begin{array}{cc} A_L &amp; A_R \end{array}\right),\end{split}\]</div>
 <p>where <span class="math">\(A_R\)</span> is of a specified width.</p>
 <dl class="function">
-<dt>
-<tt class="descname">void PartitionLeft( Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; AL, Matrix&lt;T&gt;&amp; AR, int widthAR=Blocksize() )</tt></dt>
+<dt id="PartitionLeft__Matrix:T:R.Matrix:T:R.Matrix:T:R.i">
+void <tt class="descname">PartitionLeft</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>AL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>AR</em>, int <em>widthAR</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#PartitionLeft__Matrix:T:R.Matrix:T:R.Matrix:T:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void LockedPartitionLeft( const Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; AL, Matrix&lt;T&gt;&amp; AR, int widthAR=Blocksize() )</tt></dt>
+<dt id="LockedPartitionLeft__Matrix:T:CR.Matrix:T:R.Matrix:T:R.i">
+void <tt class="descname">LockedPartitionLeft</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>AL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>AR</em>, int <em>widthAR</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#LockedPartitionLeft__Matrix:T:CR.Matrix:T:R.Matrix:T:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Templated over the datatype, <cite>T</cite>, of the serial matrix <cite>A</cite>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void PartitionLeft( DistMatrix&lt;T,U,V&gt;&amp; A, DistMatrix&lt;T,U,V&gt;&amp; AL, DistMatrix&lt;T,U,V&gt;&amp; AR, int widthAR=Blocksize() )</tt></dt>
+<dt id="PartitionLeft__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i">
+void <tt class="descname">PartitionLeft</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>AL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>AR</em>, int <em>widthAR</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#PartitionLeft__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void LockedPartitionLeft( const DistMatrix&lt;T,U,V&gt;&amp; A, DistMatrix&lt;T,U,V&gt;&amp; AL, DistMatrix&lt;T,U,V&gt;&amp; AR, int widthAR=Blocksize() )</tt></dt>
+<dt id="LockedPartitionLeft__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i">
+void <tt class="descname">LockedPartitionLeft</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>AL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>AR</em>, int <em>widthAR</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#LockedPartitionLeft__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Templated over the datatype, <cite>T</cite>, and the distribution scheme, <cite>(U,V)</cite>,
 of the distributed matrix <cite>A</cite>.</p>
 </dd></dl>
@@ -155,24 +153,24 @@ of the distributed matrix <cite>A</cite>.</p>
 \[\begin{split}A = \left(\begin{array}{cc} A_L &amp; A_R \end{array}\right),\end{split}\]</div>
 <p>where <span class="math">\(A_L\)</span> is of a specified width.</p>
 <dl class="function">
-<dt>
-<tt class="descname">void PartitionRight( Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; AL, Matrix&lt;T&gt;&amp; AR, int widthAL=Blocksize() )</tt></dt>
+<dt id="PartitionRight__Matrix:T:R.Matrix:T:R.Matrix:T:R.i">
+void <tt class="descname">PartitionRight</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>AL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>AR</em>, int <em>widthAL</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#PartitionRight__Matrix:T:R.Matrix:T:R.Matrix:T:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void LockedPartitionRight( const Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; AL, Matrix&lt;T&gt;&amp; AR, int widthAL=Blocksize() )</tt></dt>
+<dt id="LockedPartitionRight__Matrix:T:CR.Matrix:T:R.Matrix:T:R.i">
+void <tt class="descname">LockedPartitionRight</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>AL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>AR</em>, int <em>widthAL</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#LockedPartitionRight__Matrix:T:CR.Matrix:T:R.Matrix:T:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Templated over the datatype, <cite>T</cite>, of the serial matrix <cite>A</cite>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void PartitionRight( DistMatrix&lt;T,U,V&gt;&amp; A, DistMatrix&lt;T,U,V&gt;&amp; AL, DistMatrix&lt;T,U,V&gt;&amp; AR, int widthAL=Blocksize() )</tt></dt>
+<dt id="PartitionRight__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i">
+void <tt class="descname">PartitionRight</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>AL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>AR</em>, int <em>widthAL</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#PartitionRight__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void LockedPartitionRight( const DistMatrix&lt;T,U,V&gt;&amp; A, DistMatrix&lt;T,U,V&gt;&amp; AL, DistMatrix&lt;T,U,V&gt;&amp; AR, int widthAL=Blocksize() )</tt></dt>
+<dt id="LockedPartitionRight__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i">
+void <tt class="descname">LockedPartitionRight</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>AL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>AR</em>, int <em>widthAL</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#LockedPartitionRight__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Templated over the datatype, <cite>T</cite>, and the distribution scheme, <cite>(U,V)</cite>,
 of the distributed matrix <cite>A</cite>.</p>
 </dd></dl>
@@ -186,24 +184,24 @@ of the distributed matrix <cite>A</cite>.</p>
 <p>where the diagonal of <span class="math">\(A_{BR}\)</span> lies on the main diagonal
 (aka, the <em>left</em> diagonal) of <span class="math">\(A\)</span> and is of the specified height/width.</p>
 <dl class="function">
-<dt>
-<tt class="descname">void PartitionUpDiagonal( Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; ATL, Matrix&lt;T&gt;&amp; ATR, Matrix&lt;T&gt;&amp; ABL, Matrix&lt;T&gt;&amp; ABR, int diagABR=Blocksize() )</tt></dt>
+<dt id="PartitionUpDiagonal__Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i">
+void <tt class="descname">PartitionUpDiagonal</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABR</em>, int <em>diagABR</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#PartitionUpDiagonal__Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void LockedPartitionUpDiagonal( const Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; ATL, Matrix&lt;T&gt;&amp; ATR, Matrix&lt;T&gt;&amp; ABL, Matrix&lt;T&gt;&amp; ABR, int diagABR=Blocksize() )</tt></dt>
+<dt id="LockedPartitionUpDiagonal__Matrix:T:CR.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i">
+void <tt class="descname">LockedPartitionUpDiagonal</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABR</em>, int <em>diagABR</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#LockedPartitionUpDiagonal__Matrix:T:CR.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Templated over the datatype, <cite>T</cite>, of the serial matrix <cite>A</cite>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void PartitionUpDiagonal( DistMatrix&lt;T,U,V&gt;&amp; A, DistMatrix&lt;T,U,V&gt;&amp; ATL, DistMatrix&lt;T,U,V&gt;&amp; ATR, DistMatrix&lt;T,U,V&gt;&amp; ABL, DistMatrix&lt;T,U,V&gt;&amp; ABR, int diagABR=Blocksize() )</tt></dt>
+<dt id="PartitionUpDiagonal__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i">
+void <tt class="descname">PartitionUpDiagonal</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ABR</em>, int <em>diagABR</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#PartitionUpDiagonal__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void LockedPartitionUpDiagonal( const DistMatrix&lt;T,U,V&gt;&amp; A, DistMatrix&lt;T,U,V&gt;&amp; ATL, DistMatrix&lt;T,U,V&gt;&amp; ATR, DistMatrix&lt;T,U,V&gt;&amp; ABL, DistMatrix&lt;T,U,V&gt;&amp; ABR, int diagABR=Blocksize() )</tt></dt>
+<dt id="LockedPartitionUpDiagonal__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i">
+void <tt class="descname">LockedPartitionUpDiagonal</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ABR</em>, int <em>diagABR</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#LockedPartitionUpDiagonal__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Templated over the datatype, <cite>T</cite>, and the distribution scheme, <cite>(U,V)</cite>,
 of the distributed matrix <cite>A</cite>.</p>
 </dd></dl>
@@ -213,24 +211,24 @@ of the distributed matrix <cite>A</cite>.</p>
 <h2>PartitionUpLeftDiagonal<a class="headerlink" href="#partitionupleftdiagonal" title="Permalink to this headline">¶</a></h2>
 <p>Same as <tt class="docutils literal"><span class="pre">PartitionUpDiagonal</span></tt>.</p>
 <dl class="function">
-<dt>
-<tt class="descname">void PartitionUpLeftDiagonal( Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; ATL, Matrix&lt;T&gt;&amp; ATR, Matrix&lt;T&gt;&amp; ABL, Matrix&lt;T&gt;&amp; ABR, int diagABR=Blocksize() )</tt></dt>
+<dt id="PartitionUpLeftDiagonal__Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i">
+void <tt class="descname">PartitionUpLeftDiagonal</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABR</em>, int <em>diagABR</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#PartitionUpLeftDiagonal__Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void LockedPartitionUpLeftDiagonal( const Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; ATL, Matrix&lt;T&gt;&amp; ATR, Matrix&lt;T&gt;&amp; ABL, Matrix&lt;T&gt;&amp; ABR, int diagABR=Blocksize() )</tt></dt>
+<dt id="LockedPartitionUpLeftDiagonal__Matrix:T:CR.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i">
+void <tt class="descname">LockedPartitionUpLeftDiagonal</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABR</em>, int <em>diagABR</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#LockedPartitionUpLeftDiagonal__Matrix:T:CR.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Templated over the datatype, <cite>T</cite>, of the serial matrix <cite>A</cite>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void PartitionUpLeftDiagonal( DistMatrix&lt;T,U,V&gt;&amp; A, DistMatrix&lt;T,U,V&gt;&amp; ATL, DistMatrix&lt;T,U,V&gt;&amp; ATR, DistMatrix&lt;T,U,V&gt;&amp; ABL, DistMatrix&lt;T,U,V&gt;&amp; ABR, int diagABR=Blocksize() )</tt></dt>
+<dt id="PartitionUpLeftDiagonal__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i">
+void <tt class="descname">PartitionUpLeftDiagonal</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ABR</em>, int <em>diagABR</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#PartitionUpLeftDiagonal__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void LockedPartitionUpLeftDiagonal( const DistMatrix&lt;T,U,V&gt;&amp; A, DistMatrix&lt;T,U,V&gt;&amp; ATL, DistMatrix&lt;T,U,V&gt;&amp; ATR, DistMatrix&lt;T,U,V&gt;&amp; ABL, DistMatrix&lt;T,U,V&gt;&amp; ABR, int diagABR=Blocksize() )</tt></dt>
+<dt id="LockedPartitionUpLeftDiagonal__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i">
+void <tt class="descname">LockedPartitionUpLeftDiagonal</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ABR</em>, int <em>diagABR</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#LockedPartitionUpLeftDiagonal__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Templated over the datatype, <cite>T</cite>, and the distribution scheme, <cite>(U,V)</cite>,
 of the distributed matrix <cite>A</cite>.</p>
 </dd></dl>
@@ -246,24 +244,24 @@ which is defined to include the bottom-right entry of <span class="math">\(A\)</
 of the diagonal of <span class="math">\(A_{BR}\)</span> is specified as a parameter in all of the
 following routines.</p>
 <dl class="function">
-<dt>
-<tt class="descname">void PartitionUpRightDiagonal( Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; ATL, Matrix&lt;T&gt;&amp; ATR, Matrix&lt;T&gt;&amp; ABL, Matrix&lt;T&gt;&amp; ABR, int diagABR=Blocksize() )</tt></dt>
+<dt id="PartitionUpRightDiagonal__Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i">
+void <tt class="descname">PartitionUpRightDiagonal</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABR</em>, int <em>diagABR</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#PartitionUpRightDiagonal__Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void LockedPartitionUpRightDiagonal( const Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; ATL, Matrix&lt;T&gt;&amp; ATR, Matrix&lt;T&gt;&amp; ABL, Matrix&lt;T&gt;&amp; ABR, int diagABR=Blocksize() )</tt></dt>
+<dt id="LockedPartitionUpRightDiagonal__Matrix:T:CR.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i">
+void <tt class="descname">LockedPartitionUpRightDiagonal</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABR</em>, int <em>diagABR</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#LockedPartitionUpRightDiagonal__Matrix:T:CR.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Templated over the datatype, <cite>T</cite>, of the serial matrix <cite>A</cite>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void PartitionUpRightDiagonal( DistMatrix&lt;T,U,V&gt;&amp; A, DistMatrix&lt;T,U,V&gt;&amp; ATL, DistMatrix&lt;T,U,V&gt;&amp; ATR, DistMatrix&lt;T,U,V&gt;&amp; ABL, DistMatrix&lt;T,U,V&gt;&amp; ABR, int diagABR=Blocksize() )</tt></dt>
+<dt id="PartitionUpRightDiagonal__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i">
+void <tt class="descname">PartitionUpRightDiagonal</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ABR</em>, int <em>diagABR</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#PartitionUpRightDiagonal__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void LockedPartitionUpRightDiagonal( const DistMatrix&lt;T,U,V&gt;&amp; A, DistMatrix&lt;T,U,V&gt;&amp; ATL, DistMatrix&lt;T,U,V&gt;&amp; ATR, DistMatrix&lt;T,U,V&gt;&amp; ABL, DistMatrix&lt;T,U,V&gt;&amp; ABR, int diagABR=Blocksize() )</tt></dt>
+<dt id="LockedPartitionUpRightDiagonal__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i">
+void <tt class="descname">LockedPartitionUpRightDiagonal</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ABR</em>, int <em>diagABR</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#LockedPartitionUpRightDiagonal__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Templated over the datatype, <cite>T</cite>, and the distribution scheme, <cite>(U,V)</cite>,
 of the distributed matrix <cite>A</cite>.</p>
 </dd></dl>
@@ -277,24 +275,24 @@ of the distributed matrix <cite>A</cite>.</p>
 <p>where the diagonal of <span class="math">\(A_{TL}\)</span> is of the specified length and lies on
 the main diagonal (aka, the <em>left</em> diagonal) of <span class="math">\(A\)</span>.</p>
 <dl class="function">
-<dt>
-<tt class="descname">void PartitionDownDiagonal( Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; ATL, Matrix&lt;T&gt;&amp; ATR, Matrix&lt;T&gt;&amp; ABL, Matrix&lt;T&gt;&amp; ABR, int diagATL=Blocksize() )</tt></dt>
+<dt id="PartitionDownDiagonal__Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i">
+void <tt class="descname">PartitionDownDiagonal</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABR</em>, int <em>diagATL</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#PartitionDownDiagonal__Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void LockedPartitionDownDiagonal( const Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; ATL, Matrix&lt;T&gt;&amp; ATR, Matrix&lt;T&gt;&amp; ABL, Matrix&lt;T&gt;&amp; ABR, int diagATL=Blocksize() )</tt></dt>
+<dt id="LockedPartitionDownDiagonal__Matrix:T:CR.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i">
+void <tt class="descname">LockedPartitionDownDiagonal</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABR</em>, int <em>diagATL</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#LockedPartitionDownDiagonal__Matrix:T:CR.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Templated over the datatype, <cite>T</cite>, of the serial matrix <cite>A</cite>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void PartitionDownDiagonal( DistMatrix&lt;T,U,V&gt;&amp; A, DistMatrix&lt;T,U,V&gt;&amp; ATL, DistMatrix&lt;T,U,V&gt;&amp; ATR, DistMatrix&lt;T,U,V&gt;&amp; ABL, DistMatrix&lt;T,U,V&gt;&amp; ATL, int diagABR=Blocksize() )</tt></dt>
+<dt id="PartitionDownDiagonal__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i">
+void <tt class="descname">PartitionDownDiagonal</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATL</em>, int <em>diagABR</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#PartitionDownDiagonal__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void LockedPartitionDownDiagonal( const DistMatrix&lt;T,U,V&gt;&amp; A, DistMatrix&lt;T,U,V&gt;&amp; ATL, DistMatrix&lt;T,U,V&gt;&amp; ATR, DistMatrix&lt;T,U,V&gt;&amp; ABL, DistMatrix&lt;T,U,V&gt;&amp; ABR, int diagATL=Blocksize() )</tt></dt>
+<dt id="LockedPartitionDownDiagonal__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i">
+void <tt class="descname">LockedPartitionDownDiagonal</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ABR</em>, int <em>diagATL</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#LockedPartitionDownDiagonal__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Templated over the datatype, <cite>T</cite>, and the distribution scheme, <cite>(U,V)</cite>,
 of the distributed matrix <cite>A</cite>.</p>
 </dd></dl>
@@ -304,24 +302,24 @@ of the distributed matrix <cite>A</cite>.</p>
 <h2>PartitionDownLeftDiagonal<a class="headerlink" href="#partitiondownleftdiagonal" title="Permalink to this headline">¶</a></h2>
 <p>Same as <tt class="docutils literal"><span class="pre">PartitionDownDiagonal</span></tt>.</p>
 <dl class="function">
-<dt>
-<tt class="descname">void PartitionDownLeftDiagonal( Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; ATL, Matrix&lt;T&gt;&amp; ATR, Matrix&lt;T&gt;&amp; ABL, Matrix&lt;T&gt;&amp; ABR, int diagATL=Blocksize() )</tt></dt>
+<dt id="PartitionDownLeftDiagonal__Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i">
+void <tt class="descname">PartitionDownLeftDiagonal</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABR</em>, int <em>diagATL</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#PartitionDownLeftDiagonal__Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void LockedPartitionDownLeftDiagonal( const Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; ATL, Matrix&lt;T&gt;&amp; ATR, Matrix&lt;T&gt;&amp; ABL, Matrix&lt;T&gt;&amp; ABR, int diagATL=Blocksize() )</tt></dt>
+<dt id="LockedPartitionDownLeftDiagonal__Matrix:T:CR.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i">
+void <tt class="descname">LockedPartitionDownLeftDiagonal</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABR</em>, int <em>diagATL</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#LockedPartitionDownLeftDiagonal__Matrix:T:CR.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Templated over the datatype, <cite>T</cite>, of the serial matrix <cite>A</cite>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void PartitionDownLeftDiagonal( DistMatrix&lt;T,U,V&gt;&amp; A, DistMatrix&lt;T,U,V&gt;&amp; ATL, DistMatrix&lt;T,U,V&gt;&amp; ATR, DistMatrix&lt;T,U,V&gt;&amp; ABL, DistMatrix&lt;T,U,V&gt;&amp; ATL, int diagABR=Blocksize() )</tt></dt>
+<dt id="PartitionDownLeftDiagonal__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i">
+void <tt class="descname">PartitionDownLeftDiagonal</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATL</em>, int <em>diagABR</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#PartitionDownLeftDiagonal__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void LockedPartitionDownLeftDiagonal( const DistMatrix&lt;T,U,V&gt;&amp; A, DistMatrix&lt;T,U,V&gt;&amp; ATL, DistMatrix&lt;T,U,V&gt;&amp; ATR, DistMatrix&lt;T,U,V&gt;&amp; ABL, DistMatrix&lt;T,U,V&gt;&amp; ABR, int diagATL=Blocksize() )</tt></dt>
+<dt id="LockedPartitionDownLeftDiagonal__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i">
+void <tt class="descname">LockedPartitionDownLeftDiagonal</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ABR</em>, int <em>diagATL</em><em>=Blocksize() </em><big>)</big><a class="headerlink" href="#LockedPartitionDownLeftDiagonal__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Templated over the datatype, <cite>T</cite>, and the distribution scheme, <cite>(U,V)</cite>,
 of the distributed matrix <cite>A</cite>.</p>
 </dd></dl>
@@ -337,23 +335,23 @@ the <em>right</em> diagonal of <span class="math">\(A\)</span>, which includes t
 <span class="math">\(A\)</span>.</p>
 <dl class="function">
 <dt>
-<tt class="descname">void PartitionDownLeftDiagonal( Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; ATL, Matrix&lt;T&gt;&amp; ATR, Matrix&lt;T&gt;&amp; ABL, Matrix&lt;T&gt;&amp; ABR, int diagATL=Blocksize() )</tt></dt>
+void <tt class="descname">PartitionDownLeftDiagonal</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABR</em>, int <em>diagATL</em><em>=Blocksize() </em><big>)</big></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt>
-<tt class="descname">void LockedPartitionDownLeftDiagonal( const Matrix&lt;T&gt;&amp; A, Matrix&lt;T&gt;&amp; ATL, Matrix&lt;T&gt;&amp; ATR, Matrix&lt;T&gt;&amp; ABL, Matrix&lt;T&gt;&amp; ABR, int diagATL=Blocksize() )</tt></dt>
+void <tt class="descname">LockedPartitionDownLeftDiagonal</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>ABR</em>, int <em>diagATL</em><em>=Blocksize() </em><big>)</big></dt>
 <dd><p>Templated over the datatype, <cite>T</cite>, of the serial matrix <cite>A</cite>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt>
-<tt class="descname">void PartitionDownLeftDiagonal( DistMatrix&lt;T,U,V&gt;&amp; A, DistMatrix&lt;T,U,V&gt;&amp; ATL, DistMatrix&lt;T,U,V&gt;&amp; ATR, DistMatrix&lt;T,U,V&gt;&amp; ABL, DistMatrix&lt;T,U,V&gt;&amp; ATL, int diagABR=Blocksize() )</tt></dt>
+void <tt class="descname">PartitionDownLeftDiagonal</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATL</em>, int <em>diagABR</em><em>=Blocksize() </em><big>)</big></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt>
-<tt class="descname">void LockedPartitionDownLeftDiagonal( const DistMatrix&lt;T,U,V&gt;&amp; A, DistMatrix&lt;T,U,V&gt;&amp; ATL, DistMatrix&lt;T,U,V&gt;&amp; ATR, DistMatrix&lt;T,U,V&gt;&amp; ABL, DistMatrix&lt;T,U,V&gt;&amp; ABR, int diagATL=Blocksize() )</tt></dt>
+void <tt class="descname">LockedPartitionDownLeftDiagonal</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ATR</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ABL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>ABR</em>, int <em>diagATL</em><em>=Blocksize() </em><big>)</big></dt>
 <dd><p>Templated over the datatype, <cite>T</cite>, and the distribution scheme, <cite>(U,V)</cite>,
 of the distributed matrix <cite>A</cite>.</p>
 </dd></dl>
@@ -377,7 +375,7 @@ of the distributed matrix <cite>A</cite>.</p>
 
     <div class="footer">
         &copy; Copyright 2009-2013, Jack Poulson.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
     </div>
   </body>
 </html>
