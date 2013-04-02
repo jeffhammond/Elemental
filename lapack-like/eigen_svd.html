@@ -498,8 +498,8 @@ singular vector matrices, <span class="math">\(U\)</span> and <span class="math"
 </dd></dl>
 
 <dl class="function">
-<dt id="HermitianSingularValues__UpperOrLower.DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R">
-void <tt class="descname">HermitianSingularValues</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;typename Base&lt;F&gt;::type, VR, STAR&gt;&amp; <em>s</em><big>)</big><a class="headerlink" href="#HermitianSingularValues__UpperOrLower.DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R" title="Permalink to this definition">¶</a></dt>
+<dt id="HermitianSVD__UpperOrLower.DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R">
+void <tt class="descname">HermitianSVD</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;typename Base&lt;F&gt;::type, VR, STAR&gt;&amp; <em>s</em><big>)</big><a class="headerlink" href="#HermitianSVD__UpperOrLower.DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the singular values of <span class="math">\(A\)</span> in <cite>s</cite>. Note that the appropriate
 triangle of <cite>A</cite> is overwritten during computation.</p>
 </dd></dl>
@@ -572,13 +572,13 @@ void <tt class="descname">SVD</tt><big>(</big><a class="reference internal" href
 </dd></dl>
 
 <dl class="function">
-<dt id="SingularValues__Matrix:F:R.Matrix:typename-Base:F:::type:R">
-void <tt class="descname">SingularValues</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, Matrix&lt;typename Base&lt;F&gt;::type&gt;&amp; <em>s</em><big>)</big><a class="headerlink" href="#SingularValues__Matrix:F:R.Matrix:typename-Base:F:::type:R" title="Permalink to this definition">¶</a></dt>
+<dt id="SVD__Matrix:F:R.Matrix:typename-Base:F:::type:R">
+void <tt class="descname">SVD</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, Matrix&lt;typename Base&lt;F&gt;::type&gt;&amp; <em>s</em><big>)</big><a class="headerlink" href="#SVD__Matrix:F:R.Matrix:typename-Base:F:::type:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="SingularValues__DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R">
-void <tt class="descname">SingularValues</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;typename Base&lt;F&gt;::type, VR, STAR&gt;&amp; <em>s</em><big>)</big><a class="headerlink" href="#SingularValues__DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R" title="Permalink to this definition">¶</a></dt>
+<dt id="SVD__DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R">
+void <tt class="descname">SVD</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;typename Base&lt;F&gt;::type, VR, STAR&gt;&amp; <em>s</em><big>)</big><a class="headerlink" href="#SVD__DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Forms the singular values of <span class="math">\(A\)</span> in <cite>s</cite>. Note that <cite>A</cite> is overwritten in order to compute the singular values.</p>
 </dd></dl>
 
