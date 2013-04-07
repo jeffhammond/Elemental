@@ -181,38 +181,26 @@ matrix <cite>A</cite> with eigenvalues lying in the half-open interval <span cla
 they are not sorted by default. However, this can be remedied by the appropriate
 routine from the following list:</p>
 <dl class="function">
-<dt id="SortEig__Matrix:R:R">
-void <tt class="descname">SortEig</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:R:__class" title="Matrix&lt;R&gt;">Matrix&lt;R&gt;&amp;</a> <em>w</em><big>)</big><a class="headerlink" href="#SortEig__Matrix:R:R" title="Permalink to this definition">¶</a></dt>
+<dt id="hermitian_eig::Sort__Matrix:R:R">
+void <tt class="descclassname">hermitian_eig::</tt><tt class="descname">Sort</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:R:__class" title="Matrix&lt;R&gt;">Matrix&lt;R&gt;&amp;</a> <em>w</em><big>)</big><a class="headerlink" href="#hermitian_eig::Sort__Matrix:R:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="SortEig__DistMatrix:R.VR.STAR:R">
-void <tt class="descname">SortEig</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:R.VR.STAR:__class" title="DistMatrix&lt;R, VR, STAR&gt;">DistMatrix&lt;R, VR, STAR&gt;&amp;</a> <em>w</em><big>)</big><a class="headerlink" href="#SortEig__DistMatrix:R.VR.STAR:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sort a column-vector of real eigenvalues into non-decreasing order.</p>
+<dt id="hermitian_eig::Sort__DistMatrix:R.VR.STAR:R">
+void <tt class="descclassname">hermitian_eig::</tt><tt class="descname">Sort</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:R.VR.STAR:__class" title="DistMatrix&lt;R, VR, STAR&gt;">DistMatrix&lt;R, VR, STAR&gt;&amp;</a> <em>w</em><big>)</big><a class="headerlink" href="#hermitian_eig::Sort__DistMatrix:R.VR.STAR:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort a set of eigenvalues in either ascending or descending order.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="SortEig__Matrix:R:R.Matrix:R:R">
-void <tt class="descname">SortEig</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:R:__class" title="Matrix&lt;R&gt;">Matrix&lt;R&gt;&amp;</a> <em>w</em>, <a class="reference internal" href="../core/matrix.html#Matrix:R:__class" title="Matrix&lt;R&gt;">Matrix&lt;R&gt;&amp;</a> <em>Z</em><big>)</big><a class="headerlink" href="#SortEig__Matrix:R:R.Matrix:R:R" title="Permalink to this definition">¶</a></dt>
+<dt id="hermitian_eig::Sort__Matrix:typename-Base:F:::type:R.Matrix:F:R">
+void <tt class="descclassname">hermitian_eig::</tt><tt class="descname">Sort</tt><big>(</big>Matrix&lt;typename Base&lt;F&gt;::type&gt;&amp; <em>w</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>Z</em><big>)</big><a class="headerlink" href="#hermitian_eig::Sort__Matrix:typename-Base:F:::type:R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="SortEig__DistMatrix:R.VR.STAR:R.DistMatrix:R:R">
-void <tt class="descname">SortEig</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:R.VR.STAR:__class" title="DistMatrix&lt;R, VR, STAR&gt;">DistMatrix&lt;R, VR, STAR&gt;&amp;</a> <em>w</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:R:__class" title="DistMatrix&lt;R&gt;">DistMatrix&lt;R&gt;&amp;</a> <em>Z</em><big>)</big><a class="headerlink" href="#SortEig__DistMatrix:R.VR.STAR:R.DistMatrix:R:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sort a set of real eigenpairs into non-decreasing order (based on the
-eigenvalues).</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="SortEig__Matrix:R:R.Matrix:Complex:R::R">
-void <tt class="descname">SortEig</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:R:__class" title="Matrix&lt;R&gt;">Matrix&lt;R&gt;&amp;</a> <em>w</em>, <a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>Z</em><big>)</big><a class="headerlink" href="#SortEig__Matrix:R:R.Matrix:Complex:R::R" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="SortEig__DistMatrix:R.VR.STAR:R.DistMatrix:Complex:R::R">
-void <tt class="descname">SortEig</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:R.VR.STAR:__class" title="DistMatrix&lt;R, VR, STAR&gt;">DistMatrix&lt;R, VR, STAR&gt;&amp;</a> <em>w</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R::__class" title="DistMatrix&lt;Complex&lt;R&gt;&gt;">DistMatrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>Z</em><big>)</big><a class="headerlink" href="#SortEig__DistMatrix:R.VR.STAR:R.DistMatrix:Complex:R::R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sort a set of real eigenvalues and complex eigenvectors into non-decreasing
-order (based on the eigenvalues).</p>
+<dt id="hermitian_eig::Sort__DistMatrix:typename-Base:F:::type.VR.STAR:R.DistMatrix:F:R">
+void <tt class="descclassname">hermitian_eig::</tt><tt class="descname">Sort</tt><big>(</big>DistMatrix&lt;typename Base&lt;F&gt;::type, VR, STAR&gt;&amp; <em>w</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>Z</em><big>)</big><a class="headerlink" href="#hermitian_eig::Sort__DistMatrix:typename-Base:F:::type.VR.STAR:R.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort a set of eigenpairs in either ascending or descending order
+(based on the eigenvalues).</p>
 </dd></dl>
 
 </div>
