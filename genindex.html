@@ -477,7 +477,7 @@
   </dt>
 
       
-  <dt><a href="lapack-like/solvers.html#CholeskySolve__UpperOrLower.Matrix:F:R.Matrix:F:R">CholeskySolve (C++ function)</a>, <a href="lapack-like/solvers.html#CholeskySolve__UpperOrLower.DistMatrix:F:R.DistMatrix:F:R">[1]</a>
+  <dt><a href="lapack-like/solvers.html#cholesky::SolveAfter__UpperOrLower.Orientation.Matrix:F:CR.Matrix:F:R">cholesky::SolveAfter (C++ function)</a>, <a href="lapack-like/solvers.html#cholesky::SolveAfter__UpperOrLower.Orientation.DistMatrix:F:CR.DistMatrix:F:R">[1]</a>
   </dt>
 
       
@@ -1435,15 +1435,15 @@
   </dt>
 
       
-  <dt><a href="lapack-like/solvers.html#HouseholderSolve__Orientation.Matrix:F:R.Matrix:F:CR.Matrix:F:R">HouseholderSolve (C++ function)</a>, <a href="lapack-like/solvers.html#HouseholderSolve__Orientation.DistMatrix:F:R.DistMatrix:F:CR.DistMatrix:F:R">[1]</a>
-  </dt>
-
-      
   <dt><a href="lapack-like/invariants.html#HPDDeterminant__UpperOrLower.Matrix:F:CR">HPDDeterminant (C++ function)</a>, <a href="lapack-like/invariants.html#HPDDeterminant__UpperOrLower.DistMatrix:F:CR">[1]</a>, <a href="lapack-like/invariants.html#HPDDeterminant__UpperOrLower.Matrix:F:R.b">[2]</a>, <a href="lapack-like/invariants.html#HPDDeterminant__UpperOrLower.DistMatrix:F:R.b">[3]</a>
   </dt>
 
       
   <dt><a href="lapack-like/inversion.html#HPDInverse__UpperOrLower.Matrix:F:R">HPDInverse (C++ function)</a>, <a href="lapack-like/inversion.html#HPDInverse__UpperOrLower.DistMatrix:F:R">[1]</a>
+  </dt>
+
+      
+  <dt><a href="lapack-like/solvers.html#HPDSolve__UpperOrLower.Orientation.Matrix:F:R.Matrix:F:R">HPDSolve (C++ function)</a>, <a href="lapack-like/solvers.html#HPDSolve__UpperOrLower.Orientation.DistMatrix:F:R.DistMatrix:F:R">[1]</a>
   </dt>
 
       
@@ -1491,6 +1491,12 @@
 
 <h2 id="K">K</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="matrices/deterministic.html#Kahan__F.i.Matrix:F:R">Kahan (C++ function)</a>, <a href="matrices/deterministic.html#Kahan__F.i.DistMatrix:F:R">[1]</a>
+  </dt>
+
+  </dl></td>
   <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="lapack-like/invariants.html#KyFanNorm__Matrix:F:CR.i">KyFanNorm (C++ function)</a>, <a href="lapack-like/invariants.html#KyFanNorm__DistMatrix:F.U.V:CR.i">[1]</a>
@@ -1564,6 +1570,10 @@
 
       
   <dt><a href="lapack-like/factorizations.html#LDLT__Matrix:F:R">LDLT (C++ function)</a>, <a href="lapack-like/factorizations.html#LDLT__DistMatrix:F:R">[1]</a>, <a href="lapack-like/factorizations.html#LDLT__Matrix:F:R.Matrix:F:R">[2]</a>, <a href="lapack-like/factorizations.html#LDLT__DistMatrix:F:R.DistMatrix:F.MC.STAR:R">[3]</a>
+  </dt>
+
+      
+  <dt><a href="lapack-like/solvers.html#LeastSquares__Orientation.Matrix:F:R.Matrix:F:CR.Matrix:F:R">LeastSquares (C++ function)</a>, <a href="lapack-like/solvers.html#LeastSquares__Orientation.DistMatrix:F:R.DistMatrix:F:CR.DistMatrix:F:R">[1]</a>
   </dt>
 
       
@@ -1686,6 +1696,10 @@
 
       
   <dt><a href="lapack-like/factorizations.html#LU__Matrix:F:R">LU (C++ function)</a>, <a href="lapack-like/factorizations.html#LU__DistMatrix:F:R">[1]</a>, <a href="lapack-like/factorizations.html#LU__Matrix:F:R.Matrix:i:R">[2]</a>, <a href="lapack-like/factorizations.html#LU__DistMatrix:F:R.DistMatrix:F.VC.STAR:R">[3]</a>
+  </dt>
+
+      
+  <dt><a href="lapack-like/solvers.html#lu::SolveAfter__Orientation.Matrix:F:CR.Matrix:F:R">lu::SolveAfter (C++ function)</a>, <a href="lapack-like/solvers.html#lu::SolveAfter__Orientation.DistMatrix:F:CR.DistMatrix:F:R">[1]</a>, <a href="lapack-like/solvers.html#lu::SolveAfter__Orientation.Matrix:F:CR.Matrix:i:CR.Matrix:F:R">[2]</a>, <a href="lapack-like/solvers.html#lu::SolveAfter__Orientation.DistMatrix:F:CR.DistMatrix:i.VC.STAR:CR.DistMatrix:F:R">[3]</a>
   </dt>
 
   </dl></td>
@@ -2570,12 +2584,12 @@
   <dt><a href="core/slide_partition.html#SlideLockedPartitionRight__Matrix:T:R.Matrix:T:R.Matrix:T:CR.Matrix:T:CR.Matrix:T:CR">SlideLockedPartitionRight (C++ function)</a>, <a href="core/slide_partition.html#SlideLockedPartitionRight__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:CR.DistMatrix:T.U.V:CR.DistMatrix:T.U.V:CR">[1]</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="core/slide_partition.html#SlideLockedPartitionUp__Matrix:T:R.Matrix:T:CR.Matrix:T:CR.Matrix:T:R.Matrix:T:CR">SlideLockedPartitionUp (C++ function)</a>, <a href="core/slide_partition.html#SlideLockedPartitionUp__DistMatrix:T.U.V:R.DistMatrix:T.U.V:CR.DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R.DistMatrix:T.U.V:CR">[1]</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="core/slide_partition.html#SlidePartitionDown__Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R">SlidePartitionDown (C++ function)</a>, <a href="core/slide_partition.html#SlidePartitionDown__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R">[1]</a>
   </dt>
@@ -2594,14 +2608,6 @@
 
       
   <dt><a href="convex.html#SoftThreshold__Matrix:F:R.typename-Base:F:::type">SoftThreshold (C++ function)</a>, <a href="convex.html#SoftThreshold__DistMatrix:F:R.typename-Base:F:::type">[1]</a>
-  </dt>
-
-      
-  <dt><a href="lapack-like/solvers.html#SolveAfterCholesky__UpperOrLower.Orientation.Matrix:F:CR.Matrix:F:R">SolveAfterCholesky (C++ function)</a>, <a href="lapack-like/solvers.html#SolveAfterCholesky__UpperOrLower.Orientation.DistMatrix:F:CR.DistMatrix:F:R">[1]</a>
-  </dt>
-
-      
-  <dt><a href="lapack-like/solvers.html#SolveAfterLU__Orientation.Matrix:F:CR.Matrix:F:R">SolveAfterLU (C++ function)</a>, <a href="lapack-like/solvers.html#SolveAfterLU__Orientation.DistMatrix:F:CR.DistMatrix:F:R">[1]</a>, <a href="lapack-like/solvers.html#SolveAfterLU__Orientation.Matrix:F:CR.Matrix:i:CR.Matrix:F:R">[2]</a>, <a href="lapack-like/solvers.html#SolveAfterLU__Orientation.DistMatrix:F:CR.DistMatrix:i.VC.STAR:CR.DistMatrix:F:R">[3]</a>
   </dt>
 
       

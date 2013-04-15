@@ -235,6 +235,30 @@ void <tt class="descname">MakeIdentity</tt><big>(</big><a class="reference inter
 </dd></dl>
 
 </div>
+<div class="section" id="kahan">
+<h2>Kahan<a class="headerlink" href="#kahan" title="Permalink to this headline">¶</a></h2>
+<p>For any pair <span class="math">\((\phi,\zeta)\)</span> such that <span class="math">\(|\phi|^2+|\zeta|^2=1\)</span>,
+the corresponding <span class="math">\(n \times n\)</span> Kahan matrix is given by:</p>
+<div class="math">
+\[\begin{split}K = \text{diag}(1,\phi,\ldots,\phi^{n-1}) \begin{pmatrix}
+1      &amp; -\zeta &amp; -\zeta &amp; \cdots &amp; -\zeta \\
+0      &amp; 1      &amp; -\zeta &amp; \cdots &amp; -\zeta \\
+       &amp; \ddots &amp;        &amp; \vdots &amp; \vdots \\
+\vdots &amp;        &amp;        &amp; 1      &amp; -\zeta \\
+0      &amp;        &amp; \cdots &amp;        &amp; 1 \end{pmatrix}\end{split}\]</div>
+<dl class="function">
+<dt id="Kahan__F.i.Matrix:F:R">
+void <tt class="descname">Kahan</tt><big>(</big>F <em>phi</em>, int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Kahan__F.i.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Kahan__F.i.DistMatrix:F:R">
+void <tt class="descname">Kahan</tt><big>(</big>F <em>phi</em>, int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Kahan__F.i.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the matrix <tt class="docutils literal"><span class="pre">A</span></tt> equal to the <span class="math">\(n \times n\)</span> Kahan matrix with
+the specified value for <span class="math">\(\phi\)</span>.</p>
+</dd></dl>
+
+</div>
 <div class="section" id="legendre">
 <h2>Legendre<a class="headerlink" href="#legendre" title="Permalink to this headline">¶</a></h2>
 <p>The <span class="math">\(n \times n\)</span> tridiagonal Jacobi matrix associated with the Legendre

@@ -84,9 +84,9 @@ Hermitian positive-definite matrix <span class="math">\(A\)</span> as</p>
 factor is computed in the case of upper-triangular storage). Rather than
 performing Cholesky factorization, triangular inversion, and then the Hermitian
 triangular outer product in sequence, this routine makes use of the single-sweep
-algorithm described in Bientinesi et al.&#8217;s &#8220;Families of algorithms related to the
-inversion of a symmetric positive definite matrix&#8221;, in particular, the variant 2
-algorithm from Fig. 9.</p>
+algorithm described in Bientinesi et al.&#8217;s &#8220;Families of algorithms related to
+the inversion of a symmetric positive definite matrix&#8221;, in particular, the
+variant 2 algorithm from Fig. 9.</p>
 <p>If the matrix is found to not be HPD, then a <a class="reference internal" href="../core/environment.html#NonHPDMatrixException__class" title="NonHPDMatrixException"><tt class="xref cpp cpp-type docutils literal"><span class="pre">NonHPDMatrixException</span></tt></a>
 is thrown.</p>
 <dl class="function">
