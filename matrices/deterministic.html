@@ -61,13 +61,13 @@ vectors <span class="math">\(x\)</span> and <span class="math">\(y\)</span> such
 <p>where <span class="math">\(\chi_i\)</span> is the <span class="math">\(i\)</span>&#8216;th entry of <span class="math">\(x\)</span> and <span class="math">\(\eta_j\)</span>
 is the <span class="math">\(j\)</span>&#8216;th entry of <span class="math">\(y\)</span>.</p>
 <dl class="function">
-<dt id="Cauchy__std::vector:F:CR.std::vector:F:CR.Matrix:F:R">
-void <tt class="descname">Cauchy</tt><big>(</big>const std::vector&lt;F&gt;&amp; <em>x</em>, const std::vector&lt;F&gt;&amp; <em>y</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Cauchy__std::vector:F:CR.std::vector:F:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Cauchy__Matrix:F:R.std::vector:F:CR.std::vector:F:CR">
+void <tt class="descname">Cauchy</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, const std::vector&lt;F&gt;&amp; <em>x</em>, const std::vector&lt;F&gt;&amp; <em>y</em><big>)</big><a class="headerlink" href="#Cauchy__Matrix:F:R.std::vector:F:CR.std::vector:F:CR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="Cauchy__std::vector:F:CR.std::vector:F:CR.DistMatrix:F.U.V:R">
-void <tt class="descname">Cauchy</tt><big>(</big>const std::vector&lt;F&gt;&amp; <em>x</em>, const std::vector&lt;F&gt;&amp; <em>y</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Cauchy__std::vector:F:CR.std::vector:F:CR.DistMatrix:F.U.V:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Cauchy__DistMatrix:F.U.V:R.std::vector:F:CR.std::vector:F:CR">
+void <tt class="descname">Cauchy</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em>, const std::vector&lt;F&gt;&amp; <em>x</em>, const std::vector&lt;F&gt;&amp; <em>y</em><big>)</big><a class="headerlink" href="#Cauchy__DistMatrix:F.U.V:R.std::vector:F:CR.std::vector:F:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a Cauchy matrix using the defining vectors, <span class="math">\(x\)</span> and <span class="math">\(y\)</span>.</p>
 </dd></dl>
 
@@ -82,13 +82,13 @@ vectors <span class="math">\(r\)</span>, <span class="math">\(s\)</span>, <span 
 entry of <span class="math">\(s\)</span>, <span class="math">\(\chi_i\)</span> is the <span class="math">\(i\)</span>&#8216;th entry of <span class="math">\(x\)</span>, and <span class="math">\(\eta_j\)</span>
 is the <span class="math">\(j\)</span>&#8216;th entry of <span class="math">\(y\)</span>.</p>
 <dl class="function">
-<dt id="CauchyLike__std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.Matrix:F:R">
-void <tt class="descname">CauchyLike</tt><big>(</big>const std::vector&lt;F&gt;&amp; <em>r</em>, const std::vector&lt;F&gt;&amp; <em>s</em>, const std::vector&lt;F&gt;&amp; <em>x</em>, const std::vector&lt;F&gt;&amp; <em>y</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#CauchyLike__std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dt id="CauchyLike__Matrix:F:R.std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.std::vector:F:CR">
+void <tt class="descname">CauchyLike</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, const std::vector&lt;F&gt;&amp; <em>r</em>, const std::vector&lt;F&gt;&amp; <em>s</em>, const std::vector&lt;F&gt;&amp; <em>x</em>, const std::vector&lt;F&gt;&amp; <em>y</em><big>)</big><a class="headerlink" href="#CauchyLike__Matrix:F:R.std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.std::vector:F:CR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="CauchyLike__std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.DistMatrix:F.U.V:R">
-void <tt class="descname">CauchyLike</tt><big>(</big>const std::vector&lt;F&gt;&amp; <em>r</em>, const std::vector&lt;F&gt;&amp; <em>s</em>, const std::vector&lt;F&gt;&amp; <em>x</em>, const std::vector&lt;F&gt;&amp; <em>y</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#CauchyLike__std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.DistMatrix:F.U.V:R" title="Permalink to this definition">¶</a></dt>
+<dt id="CauchyLike__DistMatrix:F.U.V:R.std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.std::vector:F:CR">
+void <tt class="descname">CauchyLike</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em>, const std::vector&lt;F&gt;&amp; <em>r</em>, const std::vector&lt;F&gt;&amp; <em>s</em>, const std::vector&lt;F&gt;&amp; <em>x</em>, const std::vector&lt;F&gt;&amp; <em>y</em><big>)</big><a class="headerlink" href="#CauchyLike__DistMatrix:F.U.V:R.std::vector:F:CR.std::vector:F:CR.std::vector:F:CR.std::vector:F:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a Cauchy-like matrix using the defining vectors: <span class="math">\(r\)</span>, <span class="math">\(s\)</span>, <span class="math">\(x\)</span>, and <span class="math">\(y\)</span>.</p>
 </dd></dl>
 
@@ -101,13 +101,13 @@ such that</p>
 \[\alpha_{i,j} = \beta_{(i-j) \bmod n},\]</div>
 <p>where <span class="math">\(\beta_k\)</span> is the <span class="math">\(k\)</span>&#8216;th entry of vector <span class="math">\(b\)</span>.</p>
 <dl class="function">
-<dt id="Circulant__std::vector:T:CR.Matrix:T:R">
-void <tt class="descname">Circulant</tt><big>(</big>const std::vector&lt;T&gt;&amp; <em>a</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Circulant__std::vector:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Circulant__Matrix:T:R.std::vector:T:CR">
+void <tt class="descname">Circulant</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, const std::vector&lt;T&gt;&amp; <em>a</em><big>)</big><a class="headerlink" href="#Circulant__Matrix:T:R.std::vector:T:CR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="Circulant__std::vector:T:CR.DistMatrix:T.U.V:R">
-void <tt class="descname">Circulant</tt><big>(</big>const std::vector&lt;T&gt;&amp; <em>a</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Circulant__std::vector:T:CR.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Circulant__DistMatrix:T.U.V:R.std::vector:T:CR">
+void <tt class="descname">Circulant</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, const std::vector&lt;T&gt;&amp; <em>a</em><big>)</big><a class="headerlink" href="#Circulant__DistMatrix:T.U.V:R.std::vector:T:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a circulant matrix using the vector <tt class="docutils literal"><span class="pre">a</span></tt>.</p>
 </dd></dl>
 
@@ -118,13 +118,13 @@ void <tt class="descname">Circulant</tt><big>(</big>const std::vector&lt;T&gt;&a
 <span class="math">\(i \neq j\)</span>, is <span class="math">\(0\)</span>. They are therefore defined by the <em>diagonal</em> values, where
 <span class="math">\(i = j\)</span>.</p>
 <dl class="function">
-<dt id="Diagonal__std::vector:T:CR.Matrix:T:R">
-void <tt class="descname">Diagonal</tt><big>(</big>const std::vector&lt;T&gt;&amp; <em>d</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>D</em><big>)</big><a class="headerlink" href="#Diagonal__std::vector:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Diagonal__Matrix:T:R.std::vector:T:CR">
+void <tt class="descname">Diagonal</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>D</em>, const std::vector&lt;T&gt;&amp; <em>d</em><big>)</big><a class="headerlink" href="#Diagonal__Matrix:T:R.std::vector:T:CR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="Diagonal__std::vector:T:CR.DistMatrix:T.U.V:R">
-void <tt class="descname">Diagonal</tt><big>(</big>const std::vector&lt;T&gt;&amp; <em>d</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>D</em><big>)</big><a class="headerlink" href="#Diagonal__std::vector:T:CR.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Diagonal__DistMatrix:T.U.V:R.std::vector:T:CR">
+void <tt class="descname">Diagonal</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>D</em>, const std::vector&lt;T&gt;&amp; <em>d</em><big>)</big><a class="headerlink" href="#Diagonal__DistMatrix:T.U.V:R.std::vector:T:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a diagonal matrix from the vector of diagonal values, <span class="math">\(d\)</span>.</p>
 </dd></dl>
 
@@ -135,13 +135,13 @@ void <tt class="descname">Diagonal</tt><big>(</big>const std::vector&lt;T&gt;&am
 <div class="math">
 \[\alpha_{i,j} = \frac{e^{-2\pi i j / n}}{\sqrt{n}}.\]</div>
 <dl class="function">
-<dt id="DiscreteFourier__i.Matrix:Complex:R::R">
-void <tt class="descname">DiscreteFourier</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#DiscreteFourier__i.Matrix:Complex:R::R" title="Permalink to this definition">¶</a></dt>
+<dt id="DiscreteFourier__Matrix:Complex:R::R.i">
+void <tt class="descname">DiscreteFourier</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, int <em>n</em><big>)</big><a class="headerlink" href="#DiscreteFourier__Matrix:Complex:R::R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="DiscreteFourier__i.DistMatrix:Complex:R:.U.V:R">
-void <tt class="descname">DiscreteFourier</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R:.U.V:__class" title="DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;">DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#DiscreteFourier__i.DistMatrix:Complex:R:.U.V:R" title="Permalink to this definition">¶</a></dt>
+<dt id="DiscreteFourier__DistMatrix:Complex:R:.U.V:R.i">
+void <tt class="descname">DiscreteFourier</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R:.U.V:__class" title="DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;">DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;&amp;</a> <em>A</em>, int <em>n</em><big>)</big><a class="headerlink" href="#DiscreteFourier__DistMatrix:Complex:R:.U.V:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the matrix <tt class="docutils literal"><span class="pre">A</span></tt> equal to the <span class="math">\(n \times n\)</span> DFT matrix.</p>
 </dd></dl>
 
@@ -158,6 +158,14 @@ matrix.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="extended-kahan">
+<h2>Extended Kahan<a class="headerlink" href="#extended-kahan" title="Permalink to this headline">¶</a></h2>
+<p><strong>TODO</strong></p>
+</div>
+<div class="section" id="golub-klema-stewart">
+<h2>Golub/Klema/Stewart<a class="headerlink" href="#golub-klema-stewart" title="Permalink to this headline">¶</a></h2>
+<p><strong>TODO</strong></p>
+</div>
 <div class="section" id="hankel">
 <h2>Hankel<a class="headerlink" href="#hankel" title="Permalink to this headline">¶</a></h2>
 <p>An <span class="math">\(m \times n\)</span> matrix <span class="math">\(A\)</span> is called a <em>Hankel matrix</em> if there
@@ -167,13 +175,13 @@ exists a vector <span class="math">\(b\)</span> such that</p>
 <p>where <span class="math">\(\alpha_{i,j}\)</span> is the <span class="math">\((i,j)\)</span> entry of <span class="math">\(A\)</span> and
 <span class="math">\(\beta_k\)</span> is the <span class="math">\(k\)</span>&#8216;th entry of the vector <span class="math">\(b\)</span>.</p>
 <dl class="function">
-<dt id="Hankel__i.i.std::vector:T:CR.Matrix:T:R">
-void <tt class="descname">Hankel</tt><big>(</big>int <em>m</em>, int <em>n</em>, const std::vector&lt;T&gt;&amp; <em>b</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Hankel__i.i.std::vector:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Hankel__Matrix:T:R.i.i.std::vector:T:CR">
+void <tt class="descname">Hankel</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, int <em>m</em>, int <em>n</em>, const std::vector&lt;T&gt;&amp; <em>b</em><big>)</big><a class="headerlink" href="#Hankel__Matrix:T:R.i.i.std::vector:T:CR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="Hankel__i.i.std::vector:T:CR.DistMatrix:T.U.V:R">
-void <tt class="descname">Hankel</tt><big>(</big>int <em>m</em>, int <em>n</em>, const std::vector&lt;T&gt;&amp; <em>b</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Hankel__i.i.std::vector:T:CR.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Hankel__DistMatrix:T.U.V:R.i.i.std::vector:T:CR">
+void <tt class="descname">Hankel</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, int <em>m</em>, int <em>n</em>, const std::vector&lt;T&gt;&amp; <em>b</em><big>)</big><a class="headerlink" href="#Hankel__DistMatrix:T.U.V:R.i.i.std::vector:T:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create an <span class="math">\(m \times n\)</span> Hankel matrix from the generate vector,
 <span class="math">\(b\)</span>.</p>
 </dd></dl>
@@ -184,13 +192,13 @@ void <tt class="descname">Hankel</tt><big>(</big>int <em>m</em>, int <em>n</em>,
 <p>The Hilbert matrix of order <span class="math">\(n\)</span> is the <span class="math">\(n \times n\)</span> matrix where
 entry <span class="math">\((i,j)\)</span> is equal to <span class="math">\(1/(i+j+1)\)</span>.</p>
 <dl class="function">
-<dt id="Hilbert__i.Matrix:F:R">
-void <tt class="descname">Hilbert</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Hilbert__i.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Hilbert__Matrix:F:R.i">
+void <tt class="descname">Hilbert</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Hilbert__Matrix:F:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="Hilbert__i.DistMatrix:F.U.V:R">
-void <tt class="descname">Hilbert</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Hilbert__i.DistMatrix:F.U.V:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Hilbert__DistMatrix:F.U.V:R.i">
+void <tt class="descname">Hilbert</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Hilbert__DistMatrix:F.U.V:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate the <span class="math">\(n \times n\)</span> Hilbert matrix <tt class="docutils literal"><span class="pre">A</span></tt>.</p>
 </dd></dl>
 
@@ -213,13 +221,13 @@ void <tt class="descname">MakeHilbert</tt><big>(</big><a class="reference intern
 reasons, we generalize this definition to nonsquare, <span class="math">\(m \times n\)</span>,
 matrices.</p>
 <dl class="function">
-<dt id="Identity__i.i.Matrix:T:R">
-void <tt class="descname">Identity</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Identity__i.i.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Identity__Matrix:T:R.i.i">
+void <tt class="descname">Identity</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, int <em>m</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Identity__Matrix:T:R.i.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="Identity__i.i.DistMatrix:T.U.V:R">
-void <tt class="descname">Identity</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Identity__i.i.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Identity__DistMatrix:T.U.V:R.i.i">
+void <tt class="descname">Identity</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, int <em>m</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Identity__DistMatrix:T.U.V:R.i.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the matrix <tt class="docutils literal"><span class="pre">A</span></tt> equal to the <span class="math">\(m \times n\)</span> identity(-like) matrix.</p>
 </dd></dl>
 
@@ -247,13 +255,13 @@ the corresponding <span class="math">\(n \times n\)</span> Kahan matrix is given
 \vdots &amp;        &amp;        &amp; 1      &amp; -\zeta \\
 0      &amp;        &amp; \cdots &amp;        &amp; 1 \end{pmatrix}\end{split}\]</div>
 <dl class="function">
-<dt id="Kahan__F.i.Matrix:F:R">
-void <tt class="descname">Kahan</tt><big>(</big>F <em>phi</em>, int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Kahan__F.i.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Kahan__Matrix:F:R.i.F">
+void <tt class="descname">Kahan</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, int <em>n</em>, F <em>phi</em><big>)</big><a class="headerlink" href="#Kahan__Matrix:F:R.i.F" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="Kahan__F.i.DistMatrix:F:R">
-void <tt class="descname">Kahan</tt><big>(</big>F <em>phi</em>, int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Kahan__F.i.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Kahan__DistMatrix:F:R.i.F">
+void <tt class="descname">Kahan</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, int <em>n</em>, F <em>phi</em><big>)</big><a class="headerlink" href="#Kahan__DistMatrix:F:R.i.F" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the matrix <tt class="docutils literal"><span class="pre">A</span></tt> equal to the <span class="math">\(n \times n\)</span> Kahan matrix with
 the specified value for <span class="math">\(\phi\)</span>.</p>
 </dd></dl>
@@ -273,13 +281,13 @@ Gaussian quadrature of order <span class="math">\(n\)</span>. The corresponding 
 by doubling the square of the first entry of the corresponding normalized
 eigenvector.</p>
 <dl class="function">
-<dt id="Legendre__i.Matrix:F:R">
-void <tt class="descname">Legendre</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Legendre__i.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Legendre__Matrix:F:R.i">
+void <tt class="descname">Legendre</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Legendre__Matrix:F:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="Legendre__i.DistMatrix:F.U.V:R">
-void <tt class="descname">Legendre</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Legendre__i.DistMatrix:F.U.V:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Legendre__DistMatrix:F.U.V:R.i">
+void <tt class="descname">Legendre</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Legendre__DistMatrix:F.U.V:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the matrix <tt class="docutils literal"><span class="pre">A</span></tt> equal to the <span class="math">\(n \times n\)</span> Jacobi matrix.</p>
 </dd></dl>
 
@@ -288,13 +296,13 @@ void <tt class="descname">Legendre</tt><big>(</big>int <em>n</em>, <a class="ref
 <h2>Ones<a class="headerlink" href="#ones" title="Permalink to this headline">¶</a></h2>
 <p>Create an <span class="math">\(m \times n\)</span> matrix of all ones.</p>
 <dl class="function">
-<dt id="Ones__i.i.Matrix:T:R">
-void <tt class="descname">Ones</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Ones__i.i.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Ones__Matrix:T:R.i.i">
+void <tt class="descname">Ones</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, int <em>m</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Ones__Matrix:T:R.i.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="Ones__i.i.DistMatrix:T.U.V:R">
-void <tt class="descname">Ones</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Ones__i.i.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Ones__DistMatrix:T.U.V:R.i.i">
+void <tt class="descname">Ones</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, int <em>m</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Ones__DistMatrix:T.U.V:R.i.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the matrix <tt class="docutils literal"><span class="pre">A</span></tt> to be an <span class="math">\(m \times n\)</span> matrix of all ones.</p>
 </dd></dl>
 
@@ -316,13 +324,13 @@ void <tt class="descname">MakeOnes</tt><big>(</big><a class="reference internal"
 <p>A &#8220;1-2-1&#8221; matrix is tridiagonal with a diagonal of all twos and sub- and
 super-diagonals of all ones.</p>
 <dl class="function">
-<dt id="OneTwoOne__i.Matrix:T:R">
-void <tt class="descname">OneTwoOne</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#OneTwoOne__i.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+<dt id="OneTwoOne__Matrix:T:R.i">
+void <tt class="descname">OneTwoOne</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, int <em>n</em><big>)</big><a class="headerlink" href="#OneTwoOne__Matrix:T:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="OneTwoOne__i.DistMatrix:T.U.V:R">
-void <tt class="descname">OneTwoOne</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#OneTwoOne__i.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+<dt id="OneTwoOne__DistMatrix:T.U.V:R.i">
+void <tt class="descname">OneTwoOne</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, int <em>n</em><big>)</big><a class="headerlink" href="#OneTwoOne__DistMatrix:T.U.V:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set <tt class="docutils literal"><span class="pre">A</span></tt> to a <span class="math">\(n \times n\)</span> &#8220;1-2-1&#8221; matrix.</p>
 </dd></dl>
 
@@ -345,26 +353,14 @@ void <tt class="descname">MakeOneTwoOne</tt><big>(</big><a class="reference inte
 \[\alpha_{i,j} = \beta_{i-j+(n-1)},\]</div>
 <p>where <span class="math">\(\beta_k\)</span> is the <span class="math">\(k\)</span>&#8216;th entry of <span class="math">\(b\)</span>.</p>
 <dl class="function">
-<dt id="Toeplitz__i.i.std::vector:T:CR.Matrix:T:R">
-void <tt class="descname">Toeplitz</tt><big>(</big>int <em>m</em>, int <em>n</em>, const std::vector&lt;T&gt;&amp; <em>b</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Toeplitz__i.i.std::vector:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Toeplitz__Matrix:T:R.i.i.std::vector:T:CR">
+void <tt class="descname">Toeplitz</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, int <em>m</em>, int <em>n</em>, const std::vector&lt;T&gt;&amp; <em>b</em><big>)</big><a class="headerlink" href="#Toeplitz__Matrix:T:R.i.i.std::vector:T:CR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="Toeplitz__i.i.std::vector:T:CR.DistMatrix:T.U.V:R">
-void <tt class="descname">Toeplitz</tt><big>(</big>int <em>m</em>, int <em>n</em>, const std::vector&lt;T&gt;&amp; <em>b</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Toeplitz__i.i.std::vector:T:CR.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Toeplitz__DistMatrix:T.U.V:R.i.i.std::vector:T:CR">
+void <tt class="descname">Toeplitz</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, int <em>m</em>, int <em>n</em>, const std::vector&lt;T&gt;&amp; <em>b</em><big>)</big><a class="headerlink" href="#Toeplitz__DistMatrix:T.U.V:R.i.i.std::vector:T:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build the matrix <tt class="docutils literal"><span class="pre">A</span></tt> using the generating vector <span class="math">\(b\)</span>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="MakeToeplitz__std::vector:T:CR.Matrix:T:R">
-void <tt class="descname">MakeToeplitz</tt><big>(</big>const std::vector&lt;T&gt;&amp; <em>b</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeToeplitz__std::vector:T:CR.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="MakeToeplitz__std::vector:T:CR.DistMatrix:T.U.V:R">
-void <tt class="descname">MakeToeplitz</tt><big>(</big>const std::vector&lt;T&gt;&amp; <em>b</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeToeplitz__std::vector:T:CR.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Turn the matrix <tt class="docutils literal"><span class="pre">A</span></tt> into a Toeplitz matrix defined from the generating
-vector <span class="math">\(b\)</span>.</p>
 </dd></dl>
 
 </div>
@@ -380,13 +376,13 @@ vector <span class="math">\(b\)</span>.</p>
 <p>A <em>binary</em> Walsh matrix changes the bottom-right entry of <span class="math">\(W_1\)</span> from
 <span class="math">\(-1\)</span> to <span class="math">\(0\)</span>.</p>
 <dl class="function">
-<dt id="Walsh__i.Matrix:T:R.b">
-void <tt class="descname">Walsh</tt><big>(</big>int <em>k</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>W</em>, bool <em>binary</em><em>=false </em><big>)</big><a class="headerlink" href="#Walsh__i.Matrix:T:R.b" title="Permalink to this definition">¶</a></dt>
+<dt id="Walsh__Matrix:T:R.i.b">
+void <tt class="descname">Walsh</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>W</em>, int <em>k</em>, bool <em>binary</em><em>=false </em><big>)</big><a class="headerlink" href="#Walsh__Matrix:T:R.i.b" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="Walsh__i.DistMatrix:T.U.V:R.b">
-void <tt class="descname">Walsh</tt><big>(</big>int <em>k</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>W</em>, bool <em>binary</em><em>=false </em><big>)</big><a class="headerlink" href="#Walsh__i.DistMatrix:T.U.V:R.b" title="Permalink to this definition">¶</a></dt>
+<dt id="Walsh__DistMatrix:T.U.V:R.i.b">
+void <tt class="descname">Walsh</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>W</em>, int <em>k</em>, bool <em>binary</em><em>=false </em><big>)</big><a class="headerlink" href="#Walsh__DistMatrix:T.U.V:R.i.b" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the matrix <span class="math">\(W\)</span> equal to the <span class="math">\(k\)</span>&#8216;th (possibly binary) Walsh
 matrix.</p>
 </dd></dl>
@@ -399,13 +395,13 @@ matrix.</p>
 \[[k,k-1,k-2,...,1,0,1,...,k-2,k-1,k],\]</div>
 <p>and sub- and super-diagonals of all ones.</p>
 <dl class="function">
-<dt id="Wilkinson__i.Matrix:T:R">
-void <tt class="descname">Wilkinson</tt><big>(</big>int <em>k</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>W</em><big>)</big><a class="headerlink" href="#Wilkinson__i.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Wilkinson__Matrix:T:R.i">
+void <tt class="descname">Wilkinson</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>W</em>, int <em>k</em><big>)</big><a class="headerlink" href="#Wilkinson__Matrix:T:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="Wilkinson__i.DistMatrix:T.U.V:R">
-void <tt class="descname">Wilkinson</tt><big>(</big>int <em>k</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>W</em><big>)</big><a class="headerlink" href="#Wilkinson__i.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Wilkinson__DistMatrix:T.U.V:R.i">
+void <tt class="descname">Wilkinson</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>W</em>, int <em>k</em><big>)</big><a class="headerlink" href="#Wilkinson__DistMatrix:T.U.V:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the matrix <span class="math">\(W\)</span> equal to the <span class="math">\(k\)</span>&#8216;th Wilkinson matrix.</p>
 </dd></dl>
 
@@ -414,13 +410,13 @@ void <tt class="descname">Wilkinson</tt><big>(</big>int <em>k</em>, <a class="re
 <h2>Zeros<a class="headerlink" href="#zeros" title="Permalink to this headline">¶</a></h2>
 <p>Create an <span class="math">\(m \times n\)</span> matrix of all zeros.</p>
 <dl class="function">
-<dt id="Zeros__i.i.Matrix:T:R">
-void <tt class="descname">Zeros</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Zeros__i.i.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Zeros__Matrix:T:R.i.i">
+void <tt class="descname">Zeros</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, int <em>m</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Zeros__Matrix:T:R.i.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="Zeros__i.i.DistMatrix:T.U.V:R">
-void <tt class="descname">Zeros</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Zeros__i.i.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Zeros__DistMatrix:T.U.V:R.i.i">
+void <tt class="descname">Zeros</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, int <em>m</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Zeros__DistMatrix:T.U.V:R.i.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the matrix <tt class="docutils literal"><span class="pre">A</span></tt> to be an <span class="math">\(m \times n\)</span> matrix of all zeros.</p>
 </dd></dl>
 
