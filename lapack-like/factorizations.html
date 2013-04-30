@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Factorizations &mdash; Elemental 0.79-dev documentation</title>
+    <title>Factorizations &mdash; Elemental 0.80-dev documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.79-dev',
+        VERSION:     '0.80-dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,14 +26,14 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/theme_extras.js"></script>
-    <link rel="top" title="Elemental 0.79-dev documentation" href="../index.html" />
+    <link rel="top" title="Elemental 0.80-dev documentation" href="../index.html" />
     <link rel="up" title="High-level linear algebra" href="../lapack-like.html" />
     <link rel="next" title="Linear solvers" href="solvers.html" />
     <link rel="prev" title="Invariants, inner products, norms, etc." href="invariants.html" /> 
   </head>
   <body>
       <div class="header"><img class="rightlogo" src="../_static/elemental_90.png" alt="Logo"/><h1 class="heading"><a href="../index.html">
-          <span>Elemental 0.79-dev documentation</span></a></h1>
+          <span>Elemental 0.80-dev documentation</span></a></h1>
         <h2 class="heading"><span>Factorizations</span></h2>
       </div>
       <div class="topnav">
@@ -315,6 +315,30 @@ void <tt class="descclassname">qr::</tt><tt class="descname">BusingerGolub</tt><
 void <tt class="descclassname">qr::</tt><tt class="descname">BusingerGolub</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R::__class" title="DistMatrix&lt;Complex&lt;R&gt;&gt;">DistMatrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R:.MD.STAR:__class" title="DistMatrix&lt;Complex&lt;R&gt;, MD, STAR&gt;">DistMatrix&lt;Complex&lt;R&gt;, MD, STAR&gt;&amp;</a> <em>t</em>, DistMatrix&lt;int, VR, STAR&gt;&amp; <em>p</em>, int <em>numSteps</em><big>)</big><a class="headerlink" href="#qr::BusingerGolub__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.MD.STAR:R.DistMatrix:i.VR.STAR:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as above, but only execute a fixed number of steps of the rank-revealing
 factorization.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="interpolative-decomposition-id">
+<h2>Interpolative Decomposition (ID)<a class="headerlink" href="#interpolative-decomposition-id" title="Permalink to this headline">¶</a></h2>
+<p>Interpolative Decompositions (ID&#8217;s) are closely related to pivoted QR
+factorizations and are useful for representing (approximately) low-rank
+matrices in terms of linear combinations of a few of their columns, i.e.,</p>
+<div class="math">
+\[\begin{split}A P = \hat{A} \begin{pmatrix} I &amp; Z \end{pmatrix},\end{split}\]</div>
+<p>where <span class="math">\(P\)</span> is a permutation matrix, <span class="math">\(\hat{A}\)</span> is a small set of
+columns of <span class="math">\(A\)</span>, and <span class="math">\(Z\)</span> is an interpolation matrix responsible for
+representing the remaining columns in terms of the selected columns of
+<span class="math">\(A\)</span>.</p>
+<dl class="function">
+<dt id="ID__Matrix:F:CR.Matrix:i:R.Matrix:F:R.i">
+void <tt class="descname">ID</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, Matrix&lt;int&gt;&amp; <em>p</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>Z</em>, int <em>numSteps</em><big>)</big><a class="headerlink" href="#ID__Matrix:F:CR.Matrix:i:R.Matrix:F:R.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ID__DistMatrix:F:CR.DistMatrix:i.VR.STAR:R.DistMatrix:F:R.i">
+void <tt class="descname">ID</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;int, VR, STAR&gt;&amp; <em>p</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>Z</em>, int <em>numSteps</em><big>)</big><a class="headerlink" href="#ID__DistMatrix:F:CR.DistMatrix:i.VR.STAR:R.DistMatrix:F:R.i" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>numSteps</cite> steps of a pivoted QR factorization are used to return an
+Interpolative Decomposition of <span class="math">\(A\)</span>.</p>
 </dd></dl>
 
 </div>
