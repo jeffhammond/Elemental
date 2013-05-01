@@ -77,10 +77,7 @@ should <strong>not</strong> be manually modified between the <tt class="docutils
 <span class="n">DistMatrix</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="n">MC</span><span class="p">,</span><span class="n">MR</span><span class="o">&gt;</span> <span class="n">A</span><span class="p">(</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">grid</span> <span class="p">);</span>
 
 <span class="c1">// Set every entry of A to zero</span>
-<span class="n">A</span><span class="p">.</span><span class="n">SetToZero</span><span class="p">();</span>
-
-<span class="c1">// Print the original A</span>
-<span class="n">A</span><span class="p">.</span><span class="n">Print</span><span class="p">(</span><span class="s">&quot;Original distributed A&quot;</span><span class="p">);</span>
+<span class="n">MakeZeros</span><span class="p">(</span> <span class="n">A</span> <span class="p">);</span>
 
 <span class="c1">// Open up a LOCAL_TO_GLOBAL interface to A</span>
 <span class="n">AxpyInterface</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">interface</span><span class="p">;</span>
@@ -94,8 +91,8 @@ should <strong>not</strong> be manually modified between the <tt class="docutils
 <span class="c1">//       desire at this point.</span>
 <span class="k">if</span><span class="p">(</span> <span class="n">grid</span><span class="p">.</span><span class="n">VCRank</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">Matrix</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">B</span><span class="p">(</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span> <span class="p">);</span>
-    <span class="n">B</span><span class="p">.</span><span class="n">SetToIdentity</span><span class="p">();</span>
+    <span class="n">Matrix</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">B</span><span class="p">;</span>
+    <span class="n">Identity</span><span class="p">(</span> <span class="n">B</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span> <span class="p">);</span>
     <span class="n">interface</span><span class="p">.</span><span class="n">Axpy</span><span class="p">(</span> <span class="mf">2.0</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span> <span class="p">);</span>
 <span class="p">}</span>
 
@@ -103,7 +100,7 @@ should <strong>not</strong> be manually modified between the <tt class="docutils
 <span class="n">interface</span><span class="p">.</span><span class="n">Detach</span><span class="p">();</span>
 
 <span class="c1">// Print the updated A</span>
-<span class="n">A</span><span class="p">.</span><span class="n">Print</span><span class="p">(</span><span class="s">&quot;Updated distributed A&quot;</span><span class="p">);</span>
+<span class="n">A</span><span class="p">.</span><span class="n">Print</span><span class="p">(</span><span class="s">&quot;Distributed A&quot;</span><span class="p">);</span>
 
 <span class="c1">// Reattach to A, but in the GLOBAL_TO_LOCAL direction</span>
 <span class="n">interface</span><span class="p">.</span><span class="n">Attach</span><span class="p">(</span> <span class="n">GLOBAL_TO_LOCAL</span><span class="p">,</span> <span class="n">A</span> <span class="p">);</span>
@@ -115,8 +112,7 @@ should <strong>not</strong> be manually modified between the <tt class="docutils
 <span class="n">Matrix</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">C</span><span class="p">;</span>
 <span class="k">if</span><span class="p">(</span> <span class="n">grid</span><span class="p">.</span><span class="n">VCRank</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">C</span><span class="p">.</span><span class="n">ResizeTo</span><span class="p">(</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span> <span class="p">);</span>
-    <span class="n">C</span><span class="p">.</span><span class="n">SetToZero</span><span class="p">();</span>
+    <span class="n">Zeros</span><span class="p">(</span> <span class="n">C</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span> <span class="p">);</span>
     <span class="n">interface</span><span class="p">.</span><span class="n">Axpy</span><span class="p">(</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">);</span>
 <span class="p">}</span>
 
@@ -129,17 +125,7 @@ should <strong>not</strong> be manually modified between the <tt class="docutils
 </pre></div>
 </div>
 <p>The output would be</p>
-<div class="highlight-python"><pre>Original distributed A
-0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0
-
-Updated distributed A
+<div class="highlight-python"><pre>Distributed A
 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0
