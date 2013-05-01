@@ -96,13 +96,13 @@ See <a class="reference external" href="https://github.com/poulson/Elemental/tre
 <div class="section" id="pseudoinverse">
 <h2>Pseudoinverse<a class="headerlink" href="#pseudoinverse" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt>
-<tt class="descname">Pseudoinverse( Matrix&lt;F&gt;&amp; A, BASE(F) tolerance=0 )</tt></dt>
+<dt id="Pseudoinverse__Matrix:F:R.typename-Base:F:::type">
+ <tt class="descname">Pseudoinverse</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>tolerance</em><em>=0 </em><big>)</big><a class="headerlink" href="#Pseudoinverse__Matrix:F:R.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">Pseudoinverse( DistMatrix&lt;F&gt;&amp; A, BASE(F) tolerance=0 )</tt></dt>
+<dt id="Pseudoinverse__DistMatrix:F:R.typename-Base:F:::type">
+ <tt class="descname">Pseudoinverse</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>tolerance</em><em>=0 </em><big>)</big><a class="headerlink" href="#Pseudoinverse__DistMatrix:F:R.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the pseudoinverse of a general matrix through computing its SVD,
 modifying the singular values with the function</p>
 <div class="math">
@@ -118,8 +118,8 @@ If a nonzero value for <cite>tolerance</cite> was specified, it is used instead 
 </dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">HermitianPseudoinverse( UpperOrLower uplo, DistMatrix&lt;F&gt;&amp; A, BASE(F) tolerance=0 )</tt></dt>
+<dt id="HermitianPseudoinverse__UpperOrLower.DistMatrix:F:R.typename-Base:F:::type">
+ <tt class="descname">HermitianPseudoinverse</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>tolerance</em><em>=0 </em><big>)</big><a class="headerlink" href="#HermitianPseudoinverse__UpperOrLower.DistMatrix:F:R.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the pseudoinverse of a Hermitian matrix through a customized version
 of <a class="reference internal" href="#RealHermitianFunction__UpperOrLower.DistMatrix:F:R.RealFunctorCR" title="RealHermitianFunction"><tt class="xref cpp cpp-func docutils literal"><span class="pre">RealHermitianFunction()</span></tt></a> which used the eigenvalue mapping
 function</p>

@@ -365,13 +365,13 @@ Interpolative Decomposition of <span class="math">\(A\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void ID( const Matrix&lt;F&gt;&amp; A, Matrix&lt;int&gt;&amp; p, Matrix&lt;F&gt;&amp; Z, int maxSteps, BASE(F) tol )</tt></dt>
+<dt id="ID__Matrix:F:CR.Matrix:i:R.Matrix:F:R.i.typename-Base:F:::type">
+void <tt class="descname">ID</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, Matrix&lt;int&gt;&amp; <em>p</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>Z</em>, int <em>maxSteps</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>tol</em><big>)</big><a class="headerlink" href="#ID__Matrix:F:CR.Matrix:i:R.Matrix:F:R.i.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void ID( const DistMatrix&lt;F&gt;&amp; A, DistMatrix&lt;int,VR,STAR&gt;&amp; p, DistMatrix&lt;F,STAR,VR&gt;&amp; Z, int maxSteps, BASE(F) tol )</tt></dt>
+<dt id="ID__DistMatrix:F:CR.DistMatrix:i.VR.STAR:R.DistMatrix:F.STAR.VR:R.i.typename-Base:F:::type">
+void <tt class="descname">ID</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;int, VR, STAR&gt;&amp; <em>p</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.STAR.VR:__class" title="DistMatrix&lt;F, STAR, VR&gt;">DistMatrix&lt;F, STAR, VR&gt;&amp;</a> <em>Z</em>, int <em>maxSteps</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>tol</em><big>)</big><a class="headerlink" href="#ID__DistMatrix:F:CR.DistMatrix:i.VR.STAR:R.DistMatrix:F.STAR.VR:R.i.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Either <cite>maxSteps</cite> steps of a pivoted QR factorization are used, or
 executation stopped after the maximum remaining column norm was less than or
 equal to <cite>tol</cite> times the maximum original column norm.</p>
@@ -390,13 +390,13 @@ convention that a skeleton decomposition is an approximation</p>
 (small) square matrix. When <span class="math">\(Z\)</span> is allowed to be rectangular, it is more
 common to call this a CUR decomposition.</p>
 <dl class="function">
-<dt>
-<tt class="descname">void Skeleton( const Matrix&lt;F&gt;&amp; A, Matrix&lt;int&gt;&amp; pR, Matrix&lt;int&gt;&amp; pC, Matrix&lt;F&gt;&amp; Z, int maxSteps, BASE(F) tol )</tt></dt>
+<dt id="Skeleton__Matrix:F:CR.Matrix:i:R.Matrix:i:R.Matrix:F:R.i.typename-Base:F:::type">
+void <tt class="descname">Skeleton</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, Matrix&lt;int&gt;&amp; <em>pR</em>, Matrix&lt;int&gt;&amp; <em>pC</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>Z</em>, int <em>maxSteps</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>tol</em><big>)</big><a class="headerlink" href="#Skeleton__Matrix:F:CR.Matrix:i:R.Matrix:i:R.Matrix:F:R.i.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt>
-<tt class="descname">void Skeleton( const DistMatrix&lt;F&gt;&amp; A, DistMatrix&lt;int,VR,STAR&gt;&amp; pR, DistMatrix&lt;int,VR,STAR&gt;&amp; pC, int maxSteps, BASE(F) tol )</tt></dt>
+<dt id="Skeleton__DistMatrix:F:CR.DistMatrix:i.VR.STAR:R.DistMatrix:i.VR.STAR:R.i.typename-Base:F:::type">
+void <tt class="descname">Skeleton</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;int, VR, STAR&gt;&amp; <em>pR</em>, DistMatrix&lt;int, VR, STAR&gt;&amp; <em>pC</em>, int <em>maxSteps</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>tol</em><big>)</big><a class="headerlink" href="#Skeleton__DistMatrix:F:CR.DistMatrix:i.VR.STAR:R.DistMatrix:i.VR.STAR:R.i.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rather than returning <span class="math">\(A_R\)</span> and <span class="math">\(A_C\)</span>, the permutation matrices
 which implicitly define them are returned instead. At most <cite>maxSteps</cite> steps
 of a pivoted QR decomposition will be used in order to generate the
