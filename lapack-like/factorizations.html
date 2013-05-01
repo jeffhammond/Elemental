@@ -317,6 +317,29 @@ void <tt class="descclassname">qr::</tt><tt class="descname">BusingerGolub</tt><
 factorization.</p>
 </dd></dl>
 
+<dl class="function">
+<dt id="qr::BusingerGolub__Matrix:R:R.Matrix:i:R.i.R">
+void <tt class="descclassname">qr::</tt><tt class="descname">BusingerGolub</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:R:__class" title="Matrix&lt;R&gt;">Matrix&lt;R&gt;&amp;</a> <em>A</em>, Matrix&lt;int&gt;&amp; <em>p</em>, int <em>maxSteps</em>, R <em>tol</em><big>)</big><a class="headerlink" href="#qr::BusingerGolub__Matrix:R:R.Matrix:i:R.i.R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="qr::BusingerGolub__DistMatrix:R:R.DistMatrix:i.VR.STAR:R.i.R">
+void <tt class="descclassname">qr::</tt><tt class="descname">BusingerGolub</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:R:__class" title="DistMatrix&lt;R&gt;">DistMatrix&lt;R&gt;&amp;</a> <em>A</em>, DistMatrix&lt;int, VR, STAR&gt;&amp; <em>p</em>, int <em>maxSteps</em>, R <em>tol</em><big>)</big><a class="headerlink" href="#qr::BusingerGolub__DistMatrix:R:R.DistMatrix:i.VR.STAR:R.i.R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="qr::BusingerGolub__Matrix:Complex:R::R.Matrix:Complex:R::R.Matrix:i:R.i.R">
+void <tt class="descclassname">qr::</tt><tt class="descname">BusingerGolub</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>t</em>, Matrix&lt;int&gt;&amp; <em>p</em>, int <em>maxSteps</em>, R <em>tol</em><big>)</big><a class="headerlink" href="#qr::BusingerGolub__Matrix:Complex:R::R.Matrix:Complex:R::R.Matrix:i:R.i.R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="qr::BusingerGolub__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.MD.STAR:R.DistMatrix:i.VR.STAR:R.i.R">
+void <tt class="descclassname">qr::</tt><tt class="descname">BusingerGolub</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R::__class" title="DistMatrix&lt;Complex&lt;R&gt;&gt;">DistMatrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R:.MD.STAR:__class" title="DistMatrix&lt;Complex&lt;R&gt;, MD, STAR&gt;">DistMatrix&lt;Complex&lt;R&gt;, MD, STAR&gt;&amp;</a> <em>t</em>, DistMatrix&lt;int, VR, STAR&gt;&amp; <em>p</em>, int <em>maxSteps</em>, R <em>tol</em><big>)</big><a class="headerlink" href="#qr::BusingerGolub__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.MD.STAR:R.DistMatrix:i.VR.STAR:R.i.R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Either execute <cite>maxSteps</cite> iterations or stop after the maximum remaining
+column norm is less than or equal to <cite>tol</cite> times the maximum original column
+norm.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="interpolative-decomposition-id">
 <h2>Interpolative Decomposition (ID)<a class="headerlink" href="#interpolative-decomposition-id" title="Permalink to this headline">¶</a></h2>
@@ -339,6 +362,19 @@ void <tt class="descname">ID</tt><big>(</big><a class="reference internal" href=
 void <tt class="descname">ID</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;int, VR, STAR&gt;&amp; <em>p</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>Z</em>, int <em>numSteps</em><big>)</big><a class="headerlink" href="#ID__DistMatrix:F:CR.DistMatrix:i.VR.STAR:R.DistMatrix:F:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p><cite>numSteps</cite> steps of a pivoted QR factorization are used to return an
 Interpolative Decomposition of <span class="math">\(A\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<tt class="descname">void ID( const Matrix&lt;F&gt;&amp; A, Matrix&lt;int&gt;&amp; p, Matrix&lt;F&gt;&amp; Z, int maxSteps, BASE(F) tol )</tt></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<tt class="descname">void ID( const DistMatrix&lt;F&gt;&amp; A, DistMatrix&lt;int,VR,STAR&gt;&amp; p, DistMatrix&lt;F&gt;&amp; Z, int maxSteps, BASE(F) tol )</tt></dt>
+<dd><p>Either <cite>maxSteps</cite> steps of a pivoted QR factorization are used, or
+executation stopped after the maximum remaining column norm was less than or
+equal to <cite>tol</cite> times the maximum original column norm.</p>
 </dd></dl>
 
 </div>
