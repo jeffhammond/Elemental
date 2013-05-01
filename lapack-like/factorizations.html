@@ -358,8 +358,8 @@ void <tt class="descname">ID</tt><big>(</big><a class="reference internal" href=
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="ID__DistMatrix:F:CR.DistMatrix:i.VR.STAR:R.DistMatrix:F:R.i">
-void <tt class="descname">ID</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;int, VR, STAR&gt;&amp; <em>p</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>Z</em>, int <em>numSteps</em><big>)</big><a class="headerlink" href="#ID__DistMatrix:F:CR.DistMatrix:i.VR.STAR:R.DistMatrix:F:R.i" title="Permalink to this definition">¶</a></dt>
+<dt id="ID__DistMatrix:F:CR.DistMatrix:i.VR.STAR:R.DistMatrix:F.STAR.VR:R.i">
+void <tt class="descname">ID</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;int, VR, STAR&gt;&amp; <em>p</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.STAR.VR:__class" title="DistMatrix&lt;F, STAR, VR&gt;">DistMatrix&lt;F, STAR, VR&gt;&amp;</a> <em>Z</em>, int <em>numSteps</em><big>)</big><a class="headerlink" href="#ID__DistMatrix:F:CR.DistMatrix:i.VR.STAR:R.DistMatrix:F.STAR.VR:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p><cite>numSteps</cite> steps of a pivoted QR factorization are used to return an
 Interpolative Decomposition of <span class="math">\(A\)</span>.</p>
 </dd></dl>
@@ -371,10 +371,37 @@ Interpolative Decomposition of <span class="math">\(A\)</span>.</p>
 
 <dl class="function">
 <dt>
-<tt class="descname">void ID( const DistMatrix&lt;F&gt;&amp; A, DistMatrix&lt;int,VR,STAR&gt;&amp; p, DistMatrix&lt;F&gt;&amp; Z, int maxSteps, BASE(F) tol )</tt></dt>
+<tt class="descname">void ID( const DistMatrix&lt;F&gt;&amp; A, DistMatrix&lt;int,VR,STAR&gt;&amp; p, DistMatrix&lt;F,STAR,VR&gt;&amp; Z, int maxSteps, BASE(F) tol )</tt></dt>
 <dd><p>Either <cite>maxSteps</cite> steps of a pivoted QR factorization are used, or
 executation stopped after the maximum remaining column norm was less than or
 equal to <cite>tol</cite> times the maximum original column norm.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="skeleton-decomposition">
+<h2>Skeleton decomposition<a class="headerlink" href="#skeleton-decomposition" title="Permalink to this headline">¶</a></h2>
+<p>Skeleton decompositions are essentially two-sided interpolative decompositions,
+but the terminology is unfortunately extremely contested. We follow the
+convention that a skeleton decomposition is an approximation</p>
+<div class="math">
+\[A \approx A_C Z A_R,\]</div>
+<p>where <span class="math">\(A_C\)</span> is a (small) selection of columns of <span class="math">\(A\)</span>,
+<span class="math">\(A_R\)</span> is a (small) selection of rows of <span class="math">\(A\)</span>, and <span class="math">\(Z\)</span> is a
+(small) square matrix. When <span class="math">\(Z\)</span> is allowed to be rectangular, it is more
+common to call this a CUR decomposition.</p>
+<dl class="function">
+<dt>
+<tt class="descname">void Skeleton( const Matrix&lt;F&gt;&amp; A, Matrix&lt;int&gt;&amp; pR, Matrix&lt;int&gt;&amp; pC, Matrix&lt;F&gt;&amp; Z, int maxSteps, BASE(F) tol )</tt></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<tt class="descname">void Skeleton( const DistMatrix&lt;F&gt;&amp; A, DistMatrix&lt;int,VR,STAR&gt;&amp; pR, DistMatrix&lt;int,VR,STAR&gt;&amp; pC, int maxSteps, BASE(F) tol )</tt></dt>
+<dd><p>Rather than returning <span class="math">\(A_R\)</span> and <span class="math">\(A_C\)</span>, the permutation matrices
+which implicitly define them are returned instead. At most <cite>maxSteps</cite> steps
+of a pivoted QR decomposition will be used in order to generate the
+row/column subsets, and less steps will be taken if a pivot norm is less
+than or equal to <cite>tolerance</cite> times the first pivot norm.</p>
 </dd></dl>
 
 </div>
