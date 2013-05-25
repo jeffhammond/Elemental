@@ -129,41 +129,63 @@ void <tt class="descname">Diagonal</tt><big>(</big><a class="reference internal"
 </dd></dl>
 
 </div>
-<div class="section" id="discretefourier">
-<h2>DiscreteFourier<a class="headerlink" href="#discretefourier" title="Permalink to this headline">¶</a></h2>
-<p>The <span class="math">\(n \times n\)</span> <em>Discrete Fourier Transform</em> (DFT) matrix, say <span class="math">\(A\)</span>, is given by</p>
-<div class="math">
-\[\alpha_{i,j} = \frac{e^{-2\pi i j / n}}{\sqrt{n}}.\]</div>
-<dl class="function">
-<dt id="DiscreteFourier__Matrix:Complex:R::R.i">
-void <tt class="descname">DiscreteFourier</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, int <em>n</em><big>)</big><a class="headerlink" href="#DiscreteFourier__Matrix:Complex:R::R.i" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="DiscreteFourier__DistMatrix:Complex:R:.U.V:R.i">
-void <tt class="descname">DiscreteFourier</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R:.U.V:__class" title="DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;">DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;&amp;</a> <em>A</em>, int <em>n</em><big>)</big><a class="headerlink" href="#DiscreteFourier__DistMatrix:Complex:R:.U.V:R.i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the matrix <tt class="docutils literal"><span class="pre">A</span></tt> equal to the <span class="math">\(n \times n\)</span> DFT matrix.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="MakeDiscreteFourier__Matrix:Complex:R::R">
-void <tt class="descname">MakeDiscreteFourier</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeDiscreteFourier__Matrix:Complex:R::R" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="MakeDiscreteFourier__DistMatrix:Complex:R:.U.V:R">
-void <tt class="descname">MakeDiscreteFourier</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R:.U.V:__class" title="DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;">DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeDiscreteFourier__DistMatrix:Complex:R:.U.V:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Turn the existing <span class="math">\(n \times n\)</span> matrix <tt class="docutils literal"><span class="pre">A</span></tt> into a discrete Fourier
-matrix.</p>
-</dd></dl>
-
+<div class="section" id="egorov">
+<h2>Egorov<a class="headerlink" href="#egorov" title="Permalink to this headline">¶</a></h2>
+<p><strong>TODO</strong></p>
 </div>
 <div class="section" id="extended-kahan">
 <h2>Extended Kahan<a class="headerlink" href="#extended-kahan" title="Permalink to this headline">¶</a></h2>
 <p><strong>TODO</strong></p>
 </div>
+<div class="section" id="fiedler">
+<h2>Fiedler<a class="headerlink" href="#fiedler" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="forsythe">
+<h2>Forsythe<a class="headerlink" href="#forsythe" title="Permalink to this headline">¶</a></h2>
+<p><strong>TODO</strong></p>
+</div>
+<div class="section" id="fourier">
+<h2>Fourier<a class="headerlink" href="#fourier" title="Permalink to this headline">¶</a></h2>
+<p>The <span class="math">\(n \times n\)</span> <em>Discrete Fourier Transform</em> (DFT) matrix, say <span class="math">\(A\)</span>, is given by</p>
+<div class="math">
+\[\alpha_{i,j} = \frac{e^{-2\pi i j / n}}{\sqrt{n}}.\]</div>
+<dl class="function">
+<dt id="Fourier__Matrix:Complex:R::R.i">
+void <tt class="descname">Fourier</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Fourier__Matrix:Complex:R::R.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Fourier__DistMatrix:Complex:R:.U.V:R.i">
+void <tt class="descname">Fourier</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R:.U.V:__class" title="DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;">DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;&amp;</a> <em>A</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Fourier__DistMatrix:Complex:R:.U.V:R.i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the matrix <tt class="docutils literal"><span class="pre">A</span></tt> equal to the <span class="math">\(n \times n\)</span> DFT matrix.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="MakeFourier__Matrix:Complex:R::R">
+void <tt class="descname">MakeFourier</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeFourier__Matrix:Complex:R::R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="MakeFourier__DistMatrix:Complex:R:.U.V:R">
+void <tt class="descname">MakeFourier</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R:.U.V:__class" title="DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;">DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeFourier__DistMatrix:Complex:R:.U.V:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn the existing <span class="math">\(n \times n\)</span> matrix <tt class="docutils literal"><span class="pre">A</span></tt> into a DFT matrix.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="gcd">
+<h2>GCD<a class="headerlink" href="#gcd" title="Permalink to this headline">¶</a></h2>
+<p><strong>TODO</strong></p>
+</div>
+<div class="section" id="gear">
+<h2>Gear<a class="headerlink" href="#gear" title="Permalink to this headline">¶</a></h2>
+<p><strong>TODO</strong></p>
+</div>
 <div class="section" id="golub-klema-stewart">
 <h2>Golub/Klema/Stewart<a class="headerlink" href="#golub-klema-stewart" title="Permalink to this headline">¶</a></h2>
+<p><strong>TODO</strong></p>
+</div>
+<div class="section" id="grcar">
+<h2>Grcar<a class="headerlink" href="#grcar" title="Permalink to this headline">¶</a></h2>
 <p><strong>TODO</strong></p>
 </div>
 <div class="section" id="hankel">
@@ -186,6 +208,10 @@ void <tt class="descname">Hankel</tt><big>(</big><a class="reference internal" h
 <span class="math">\(b\)</span>.</p>
 </dd></dl>
 
+</div>
+<div class="section" id="hanowa">
+<h2>Hanowa<a class="headerlink" href="#hanowa" title="Permalink to this headline">¶</a></h2>
+<p><strong>TODO</strong></p>
 </div>
 <div class="section" id="hilbert">
 <h2>Hilbert<a class="headerlink" href="#hilbert" title="Permalink to this headline">¶</a></h2>
@@ -243,6 +269,10 @@ void <tt class="descname">MakeIdentity</tt><big>(</big><a class="reference inter
 </dd></dl>
 
 </div>
+<div class="section" id="jordan">
+<h2>Jordan<a class="headerlink" href="#jordan" title="Permalink to this headline">¶</a></h2>
+<p><strong>TODO</strong></p>
+</div>
 <div class="section" id="kahan">
 <h2>Kahan<a class="headerlink" href="#kahan" title="Permalink to this headline">¶</a></h2>
 <p>For any pair <span class="math">\((\phi,\zeta)\)</span> such that <span class="math">\(|\phi|^2+|\zeta|^2=1\)</span>,
@@ -266,6 +296,14 @@ void <tt class="descname">Kahan</tt><big>(</big><a class="reference internal" hr
 the specified value for <span class="math">\(\phi\)</span>.</p>
 </dd></dl>
 
+</div>
+<div class="section" id="kms">
+<h2>KMS<a class="headerlink" href="#kms" title="Permalink to this headline">¶</a></h2>
+<p><strong>TODO</strong></p>
+</div>
+<div class="section" id="lauchli">
+<h2>Lauchli<a class="headerlink" href="#lauchli" title="Permalink to this headline">¶</a></h2>
+<p><strong>TODO</strong></p>
 </div>
 <div class="section" id="legendre">
 <h2>Legendre<a class="headerlink" href="#legendre" title="Permalink to this headline">¶</a></h2>
@@ -291,6 +329,18 @@ void <tt class="descname">Legendre</tt><big>(</big><a class="reference internal"
 <dd><p>Sets the matrix <tt class="docutils literal"><span class="pre">A</span></tt> equal to the <span class="math">\(n \times n\)</span> Jacobi matrix.</p>
 </dd></dl>
 
+</div>
+<div class="section" id="lehmer">
+<h2>Lehmer<a class="headerlink" href="#lehmer" title="Permalink to this headline">¶</a></h2>
+<p><strong>TODO</strong></p>
+</div>
+<div class="section" id="lotkin">
+<h2>Lotkin<a class="headerlink" href="#lotkin" title="Permalink to this headline">¶</a></h2>
+<p><strong>TODO</strong></p>
+</div>
+<div class="section" id="minij">
+<h2>MinIJ<a class="headerlink" href="#minij" title="Permalink to this headline">¶</a></h2>
+<p><strong>TODO</strong></p>
 </div>
 <div class="section" id="ones">
 <h2>Ones<a class="headerlink" href="#ones" title="Permalink to this headline">¶</a></h2>
@@ -346,6 +396,26 @@ void <tt class="descname">MakeOneTwoOne</tt><big>(</big><a class="reference inte
 </dd></dl>
 
 </div>
+<div class="section" id="parter">
+<h2>Parter<a class="headerlink" href="#parter" title="Permalink to this headline">¶</a></h2>
+<p><strong>TODO</strong></p>
+</div>
+<div class="section" id="pei">
+<h2>Pei<a class="headerlink" href="#pei" title="Permalink to this headline">¶</a></h2>
+<p><strong>TODO</strong></p>
+</div>
+<div class="section" id="redheffer">
+<h2>Redheffer<a class="headerlink" href="#redheffer" title="Permalink to this headline">¶</a></h2>
+<p><strong>TODO</strong></p>
+</div>
+<div class="section" id="riemann">
+<h2>Riemann<a class="headerlink" href="#riemann" title="Permalink to this headline">¶</a></h2>
+<p><strong>TODO</strong></p>
+</div>
+<div class="section" id="ris">
+<h2>Ris<a class="headerlink" href="#ris" title="Permalink to this headline">¶</a></h2>
+<p><strong>TODO</strong></p>
+</div>
 <div class="section" id="toeplitz">
 <h2>Toeplitz<a class="headerlink" href="#toeplitz" title="Permalink to this headline">¶</a></h2>
 <p>An <span class="math">\(m \times n\)</span> matrix is <em>Toeplitz</em> if there exists a vector <span class="math">\(b\)</span> such that, for each entry <span class="math">\(\alpha_{i,j}\)</span> of <span class="math">\(A\)</span>,</p>
@@ -363,6 +433,10 @@ void <tt class="descname">Toeplitz</tt><big>(</big><a class="reference internal"
 <dd><p>Build the matrix <tt class="docutils literal"><span class="pre">A</span></tt> using the generating vector <span class="math">\(b\)</span>.</p>
 </dd></dl>
 
+</div>
+<div class="section" id="triw">
+<h2>TriW<a class="headerlink" href="#triw" title="Permalink to this headline">¶</a></h2>
+<p><strong>TODO</strong></p>
 </div>
 <div class="section" id="walsh">
 <h2>Walsh<a class="headerlink" href="#walsh" title="Permalink to this headline">¶</a></h2>
