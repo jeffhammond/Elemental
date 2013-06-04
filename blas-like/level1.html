@@ -228,13 +228,13 @@ value of <tt class="docutils literal"><span class="pre">side</span></tt>; whethe
 <tt class="docutils literal"><span class="pre">uplo</span></tt> parameter, and the last diagonal is defined with the <tt class="docutils literal"><span class="pre">offset</span></tt>
 integer.</p>
 <dl class="function">
-<dt id="MakeTrapezoidal__LeftOrRight.UpperOrLower.i.Matrix:T:R">
-void <tt class="descname">MakeTrapezoidal</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, int <em>offset</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeTrapezoidal__LeftOrRight.UpperOrLower.i.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+<dt id="MakeTrapezoidal__UpperOrLower.Matrix:T:R.i.LeftOrRight">
+void <tt class="descname">MakeTrapezoidal</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, int <em>offset</em><em>=0</em>, <a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em><em>=LEFT </em><big>)</big><a class="headerlink" href="#MakeTrapezoidal__UpperOrLower.Matrix:T:R.i.LeftOrRight" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="MakeTrapezoidal__LeftOrRight.UpperOrLower.i.DistMatrix:T.U.V:R">
-void <tt class="descname">MakeTrapezoidal</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, int <em>offset</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeTrapezoidal__LeftOrRight.UpperOrLower.i.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+<dt id="MakeTrapezoidal__UpperOrLower.DistMatrix:T.U.V:R.i.LeftOrRight">
+void <tt class="descname">MakeTrapezoidal</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, int <em>offset</em><em>=0</em>, <a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em><em>=LEFT </em><big>)</big><a class="headerlink" href="#MakeTrapezoidal__UpperOrLower.DistMatrix:T.U.V:R.i.LeftOrRight" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -277,13 +277,13 @@ void <tt class="descname">Scal</tt><big>(</big>T <em>alpha</em>, <a class="refer
 <p>Scales the entries within the specified trapezoid of a general matrix.
 The parameter conventions follow those of <tt class="docutils literal"><span class="pre">MakeTrapezoidal</span></tt> described above.</p>
 <dl class="function">
-<dt id="ScaleTrapezoid__T.LeftOrRight.UpperOrLower.i.Matrix:T:R">
-void <tt class="descname">ScaleTrapezoid</tt><big>(</big>T <em>alpha</em>, <a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, int <em>offset</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#ScaleTrapezoid__T.LeftOrRight.UpperOrLower.i.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+<dt id="ScaleTrapezoid__T.UpperOrLower.Matrix:T:R.i.LeftOrRight">
+void <tt class="descname">ScaleTrapezoid</tt><big>(</big>T <em>alpha</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, int <em>offset</em><em>=0</em>, <a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em><em>=LEFT </em><big>)</big><a class="headerlink" href="#ScaleTrapezoid__T.UpperOrLower.Matrix:T:R.i.LeftOrRight" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="ScaleTrapezoid__T.LeftOrRight.UpperOrLower.i.DistMatrix:T.U.V:R">
-void <tt class="descname">ScaleTrapezoid</tt><big>(</big>T <em>alpha</em>, <a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, int <em>offset</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#ScaleTrapezoid__T.LeftOrRight.UpperOrLower.i.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+<dt id="ScaleTrapezoid__T.UpperOrLower.DistMatrix:T.U.V:R.i.LeftOrRight">
+void <tt class="descname">ScaleTrapezoid</tt><big>(</big>T <em>alpha</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, int <em>offset</em><em>=0</em>, <a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em><em>=LEFT </em><big>)</big><a class="headerlink" href="#ScaleTrapezoid__T.UpperOrLower.DistMatrix:T.U.V:R.i.LeftOrRight" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -341,13 +341,13 @@ void <tt class="descname">SetDiagonal</tt><big>(</big><a class="reference intern
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="SetDiagonal__LeftOrRight.i.Matrix:T:R.T">
-void <tt class="descname">SetDiagonal</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, int <em>offset</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, T <em>alpha</em><big>)</big><a class="headerlink" href="#SetDiagonal__LeftOrRight.i.Matrix:T:R.T" title="Permalink to this definition">¶</a></dt>
+<dt id="SetDiagonal__Matrix:T:R.T.i.LeftOrRight">
+void <tt class="descname">SetDiagonal</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, T <em>alpha</em>, int <em>offset</em><em>=0</em>, <a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em><em>=LEFT </em><big>)</big><a class="headerlink" href="#SetDiagonal__Matrix:T:R.T.i.LeftOrRight" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="SetDiagonal__LeftOrRight.i.DistMatrix:T.U.V:R.T">
-void <tt class="descname">SetDiagonal</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, int <em>offset</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, T <em>alpha</em><big>)</big><a class="headerlink" href="#SetDiagonal__LeftOrRight.i.DistMatrix:T.U.V:R.T" title="Permalink to this definition">¶</a></dt>
+<dt id="SetDiagonal__DistMatrix:T.U.V:R.T.i.LeftOrRight">
+void <tt class="descname">SetDiagonal</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, T <em>alpha</em>, int <em>offset</em><em>=0</em>, <a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em><em>=LEFT </em><big>)</big><a class="headerlink" href="#SetDiagonal__DistMatrix:T.U.V:R.T.i.LeftOrRight" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
