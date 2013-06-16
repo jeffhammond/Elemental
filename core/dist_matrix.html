@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The DistMatrix class &mdash; Elemental 0.80-dev documentation</title>
+    <title>The DistMatrix class &mdash; Elemental 0.81-dev documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.80-dev',
+        VERSION:     '0.81-dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,14 +26,14 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/theme_extras.js"></script>
-    <link rel="top" title="Elemental 0.80-dev documentation" href="../index.html" />
+    <link rel="top" title="Elemental 0.81-dev documentation" href="../index.html" />
     <link rel="up" title="Core functionality" href="../core.html" />
     <link rel="next" title="Viewing" href="viewing.html" />
     <link rel="prev" title="The Grid class" href="grid.html" /> 
   </head>
   <body>
       <div class="header"><img class="rightlogo" src="../_static/elemental_90.png" alt="Logo"/><h1 class="heading"><a href="../index.html">
-          <span>Elemental 0.80-dev documentation</span></a></h1>
+          <span>Elemental 0.81-dev documentation</span></a></h1>
         <h2 class="heading"><span>The DistMatrix class</span></h2>
       </div>
       <div class="topnav">
@@ -186,25 +186,6 @@ the returned pointer.</p>
 <dt id="AbstractDistMatrix:T:::LockedMatrixC">
 <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <tt class="descname">LockedMatrix</tt><big>(</big><big>)</big><tt class="descclassname"> const</tt><a class="headerlink" href="#AbstractDistMatrix:T:::LockedMatrixC" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return an unmodifiable reference to the local matrix.</p>
-</dd></dl>
-
-<p class="rubric">I/O</p>
-<dl class="function">
-<dt id="AbstractDistMatrix:T:::Print__ssCC">
-void <tt class="descname">Print</tt><big>(</big>const std::string <em>msg</em><em>=&quot;&quot;</em><big>)</big><tt class="descclassname"> const</tt><a class="headerlink" href="#AbstractDistMatrix:T:::Print__ssCC" title="Permalink to this definition">¶</a></dt>
-<dd><p>Print the distributed matrix to standard output (<tt class="docutils literal"><span class="pre">std::cout</span></tt>).</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="AbstractDistMatrix:T:::Print__osR.ssCC">
-void <tt class="descname">Print</tt><big>(</big>std::ostream&amp; <em>os</em>, const std::string <em>msg</em><em>=&quot;&quot;</em><big>)</big><tt class="descclassname"> const</tt><a class="headerlink" href="#AbstractDistMatrix:T:::Print__osR.ssCC" title="Permalink to this definition">¶</a></dt>
-<dd><p>Print the distributed matrix to the output stream <cite>os</cite>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="AbstractDistMatrix:T:::Write__ssC.ssCC">
-void <tt class="descname">Write</tt><big>(</big>const std::string <em>filename</em>, const std::string <em>msg</em><em>=&quot;&quot;</em><big>)</big><tt class="descclassname"> const</tt><a class="headerlink" href="#AbstractDistMatrix:T:::Write__ssC.ssCC" title="Permalink to this definition">¶</a></dt>
-<dd><p>Print the distributed matrix to the file named <cite>filename</cite>.</p>
 </dd></dl>
 
 <p class="rubric">Distribution details</p>
@@ -420,6 +401,12 @@ all allocated storage.</p>
 <dt id="AbstractDistMatrix:T:::ResizeTo__i.i">
 void <tt class="descname">ResizeTo</tt><big>(</big>int <em>height</em>, int <em>width</em><big>)</big><a class="headerlink" href="#AbstractDistMatrix:T:::ResizeTo__i.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reconfigure the matrix so that it is <cite>height</cite> <span class="math">\(\times\)</span> <cite>width</cite>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="AbstractDistMatrix:T:::ResizeTo__i.i.i">
+void <tt class="descname">ResizeTo</tt><big>(</big>int <em>height</em>, int <em>width</em>, int <em>ldim</em><big>)</big><a class="headerlink" href="#AbstractDistMatrix:T:::ResizeTo__i.i.i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as above, but the local leading dimension is also specified.</p>
 </dd></dl>
 
 <dl class="function">
@@ -1674,6 +1661,28 @@ sets of processes:</p>
 <dt id="DistMatrix:T.STAR.STAR:__class">
 <em class="property">type </em>class <tt class="descname">DistMatrix&lt;T, STAR, STAR&gt;</tt><a class="headerlink" href="#DistMatrix:T.STAR.STAR:__class" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>TODO:</strong> Add the member functions.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="o-o">
+<h2><tt class="docutils literal"><span class="pre">[o</span> <span class="pre">,o</span> <span class="pre">]</span></tt><a class="headerlink" href="#o-o" title="Permalink to this headline">¶</a></h2>
+<p>This <tt class="docutils literal"><span class="pre">distribution</span></tt> stores the entire matrix on a single process.</p>
+<dl class="type">
+<dt id="DistMatrix:T.CIRC.CIRC:__class">
+<em class="property">type </em>class <tt class="descname">DistMatrix&lt;T, CIRC, CIRC&gt;</tt><a class="headerlink" href="#DistMatrix:T.CIRC.CIRC:__class" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="function">
+<dt id="DistMatrix:T.CIRC.CIRC:::Root">
+int <tt class="descname">Root</tt><big>(</big><big>)</big><a class="headerlink" href="#DistMatrix:T.CIRC.CIRC:::Root" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the rank of the process owning the matrix.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="DistMatrix:T.CIRC.CIRC:::SetRoot__i">
+void <tt class="descname">SetRoot</tt><big>(</big>int <em>root</em><big>)</big><a class="headerlink" href="#DistMatrix:T.CIRC.CIRC:::SetRoot__i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the rank of the process owning the matrix (and clears the current
+contents).</p>
+</dd></dl>
+
 </dd></dl>
 
 <div class="section" id="id20">

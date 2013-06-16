@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The Matrix class &mdash; Elemental 0.80-dev documentation</title>
+    <title>The Matrix class &mdash; Elemental 0.81-dev documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.80-dev',
+        VERSION:     '0.81-dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,14 +26,14 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/theme_extras.js"></script>
-    <link rel="top" title="Elemental 0.80-dev documentation" href="../index.html" />
+    <link rel="top" title="Elemental 0.81-dev documentation" href="../index.html" />
     <link rel="up" title="Core functionality" href="../core.html" />
     <link rel="next" title="The Grid class" href="grid.html" />
     <link rel="prev" title="Environment" href="environment.html" /> 
   </head>
   <body>
       <div class="header"><img class="rightlogo" src="../_static/elemental_90.png" alt="Logo"/><h1 class="heading"><a href="../index.html">
-          <span>Elemental 0.80-dev documentation</span></a></h1>
+          <span>Elemental 0.81-dev documentation</span></a></h1>
         <h2 class="heading"><span>The Matrix class</span></h2>
       </div>
       <div class="topnav">
@@ -224,21 +224,6 @@ T* <tt class="descname">Buffer</tt><big>(</big>int <em>i</em>, int <em>j</em><bi
 const T* <tt class="descname">LockedBuffer</tt><big>(</big>int <em>i</em>, int <em>j</em><big>)</big><tt class="descclassname"> const</tt><a class="headerlink" href="#Matrix:T:::LockedBuffer__i.iC" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a pointer to the portion of the buffer that holds entry
 <span class="math">\((i,j)\)</span> that does not allow for modifying the data.</p>
-</dd></dl>
-
-<p class="rubric">I/O</p>
-<dl class="function">
-<dt id="Matrix:T:::Print__ssCC">
-void <tt class="descname">Print</tt><big>(</big>const std::string <em>msg</em><em>=&quot;&quot;</em><big>)</big><tt class="descclassname"> const</tt><a class="headerlink" href="#Matrix:T:::Print__ssCC" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<p>The matrix is printed to standard output (<tt class="docutils literal"><span class="pre">std::cout</span></tt>) with the preceding
-message <cite>msg</cite> (which is empty if unspecified).</p>
-<dl class="function">
-<dt id="Matrix:T:::Print__osR.ssCC">
-void <tt class="descname">Print</tt><big>(</big>std::ostream&amp; <em>os</em>, const std::string <em>msg</em><em>=&quot;&quot;</em><big>)</big><tt class="descclassname"> const</tt><a class="headerlink" href="#Matrix:T:::Print__osR.ssCC" title="Permalink to this definition">¶</a></dt>
-<dd><p>The matrix is printed to the output stream <cite>os</cite> with the preceding
-message <cite>msg</cite> (which is empty if unspecified).</p>
 </dd></dl>
 
 <p class="rubric">Entry manipulation</p>
