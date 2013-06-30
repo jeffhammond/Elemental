@@ -60,9 +60,9 @@ but when the function is complex-valued, the result is best characterized as
 normal.</p>
 <p>When the user-defined function, say <span class="math">\(f\)</span>, is analytic, we can say much
 more about the result: if the eigenvalue decomposition of the
-Hermitian matrix <span class="math">\(A\)</span> is <span class="math">\(A=Z \Omega Z^H\)</span>, then</p>
+Hermitian matrix <span class="math">\(A\)</span> is <span class="math">\(A=Z \Lambda Z^H\)</span>, then</p>
 <div class="math">
-\[f(A) = f(Z \Omega Z^H) = Z f(\Omega) Z^H.\]</div>
+\[f(A) = f(Z \Lambda Z^H) = Z f(\Lambda) Z^H.\]</div>
 <p>Two important special cases are <span class="math">\(f(\lambda) = \exp(\lambda)\)</span> and
 <span class="math">\(f(\lambda)=\exp(i \lambda)\)</span>, where the former results in a Hermitian
 matrix and the latter in a normal (in fact, unitary) matrix.</p>
@@ -72,21 +72,31 @@ matrix and the latter in a normal (in fact, unitary) matrix.</p>
 eigensolver, only double-precision results are supported as of now.</p>
 </div>
 <dl class="function">
+<dt id="RealHermitianFunction__UpperOrLower.Matrix:F:R.RealFunctorCR">
+void <tt class="descname">RealHermitianFunction</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, const RealFunctor&amp; <em>f</em><big>)</big><a class="headerlink" href="#RealHermitianFunction__UpperOrLower.Matrix:F:R.RealFunctorCR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="RealHermitianFunction__UpperOrLower.DistMatrix:F:R.RealFunctorCR">
 void <tt class="descname">RealHermitianFunction</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, const RealFunctor&amp; <em>f</em><big>)</big><a class="headerlink" href="#RealHermitianFunction__UpperOrLower.DistMatrix:F:R.RealFunctorCR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Modifies the eigenvalues of the passed-in Hermitian matrix by replacing
-each eigenvalue <span class="math">\(\omega_i\)</span> with <span class="math">\(f(\omega_i) \in \mathbb{R}\)</span>.
+each eigenvalue <span class="math">\(\lambda_i\)</span> with <span class="math">\(f(\lambda_i) \in \mathbb{R}\)</span>.
 <tt class="docutils literal"><span class="pre">RealFunctor</span></tt> is any
 class which has the member function <tt class="docutils literal"><span class="pre">R</span> <span class="pre">operator()(</span> <span class="pre">R</span> <span class="pre">omega</span> <span class="pre">)</span> <span class="pre">const</span></tt>.
 See <a class="reference external" href="https://github.com/poulson/Elemental/tree/master/examples/lapack-like/RealHermitianFunction.cpp">examples/lapack-like/RealSymmetricFunction.cpp</a> for an example usage.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="ComplexHermitianFunction__UpperOrLower.Matrix:Complex:R::R.ComplexFunctorCR">
+void <tt class="descname">ComplexHermitianFunction</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, const ComplexFunctor&amp; <em>f</em><big>)</big><a class="headerlink" href="#ComplexHermitianFunction__UpperOrLower.Matrix:Complex:R::R.ComplexFunctorCR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="ComplexHermitianFunction__UpperOrLower.DistMatrix:Complex:R::R.ComplexFunctorCR">
 void <tt class="descname">ComplexHermitianFunction</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R::__class" title="DistMatrix&lt;Complex&lt;R&gt;&gt;">DistMatrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, const ComplexFunctor&amp; <em>f</em><big>)</big><a class="headerlink" href="#ComplexHermitianFunction__UpperOrLower.DistMatrix:Complex:R::R.ComplexFunctorCR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Modifies the eigenvalues of the passed-in complex Hermitian matrix by
-replacing each eigenvalue <span class="math">\(\omega_i\)</span> with
-<span class="math">\(f(\omega_i) \in \mathbb{C}\)</span>. <tt class="docutils literal"><span class="pre">ComplexFunctor</span></tt> can be any class
+replacing each eigenvalue <span class="math">\(\lambda_i\)</span> with
+<span class="math">\(f(\lambda_i) \in \mathbb{C}\)</span>. <tt class="docutils literal"><span class="pre">ComplexFunctor</span></tt> can be any class
 which has the member function <tt class="docutils literal"><span class="pre">Complex&lt;R&gt;</span> <span class="pre">operator()(</span> <span class="pre">R</span> <span class="pre">omega</span> <span class="pre">)</span> <span class="pre">const</span></tt>.
 See <a class="reference external" href="https://github.com/poulson/Elemental/tree/master/examples/lapack-like/ComplexHermitianFunction.cpp">examples/lapack-like/ComplexHermitianFunction.cpp</a> for an example usage.</p>
 </dd></dl>
@@ -118,10 +128,15 @@ If a nonzero value for <cite>tolerance</cite> was specified, it is used instead 
 </dd></dl>
 
 <dl class="function">
+<dt id="HermitianPseudoinverse__UpperOrLower.Matrix:F:R.typename-Base:F:::type">
+ <tt class="descname">HermitianPseudoinverse</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>tolerance</em><em>=0 </em><big>)</big><a class="headerlink" href="#HermitianPseudoinverse__UpperOrLower.Matrix:F:R.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="HermitianPseudoinverse__UpperOrLower.DistMatrix:F:R.typename-Base:F:::type">
  <tt class="descname">HermitianPseudoinverse</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>tolerance</em><em>=0 </em><big>)</big><a class="headerlink" href="#HermitianPseudoinverse__UpperOrLower.DistMatrix:F:R.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the pseudoinverse of a Hermitian matrix through a customized version
-of <a class="reference internal" href="#RealHermitianFunction__UpperOrLower.DistMatrix:F:R.RealFunctorCR" title="RealHermitianFunction"><tt class="xref cpp cpp-func docutils literal"><span class="pre">RealHermitianFunction()</span></tt></a> which used the eigenvalue mapping
+of <a class="reference internal" href="#RealHermitianFunction__UpperOrLower.Matrix:F:R.RealFunctorCR" title="RealHermitianFunction"><tt class="xref cpp cpp-func docutils literal"><span class="pre">RealHermitianFunction()</span></tt></a> which used the eigenvalue mapping
 function</p>
 <div class="math">
 \[\begin{split}f(\omega) = \left\{\begin{array}{cc}
@@ -149,15 +164,20 @@ is guaranteed to exist as long as <span class="math">\(A\)</span> is diagonaliza
 <p>where each eigenvalue <span class="math">\(\lambda = r e^{i\theta}\)</span> maps to
 <span class="math">\(\sqrt{\lambda} = \sqrt{r} e^{i\theta/2}\)</span>.</p>
 <dl class="function">
+<dt id="HPSDSquareRoot__UpperOrLower.Matrix:F:R">
+void <tt class="descname">HPSDSquareRoot</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HPSDSquareRoot__UpperOrLower.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="HPSDSquareRoot__UpperOrLower.DistMatrix:F:R">
 void <tt class="descname">HPSDSquareRoot</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HPSDSquareRoot__UpperOrLower.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Hermitian matrices with non-negative eigenvalues have a natural matrix
-square root which remains Hermitian. This routine attempts to overwrite a
-matrix with its square root and throws a <a class="reference internal" href="../core/environment.html#NonHPSDMatrixException__class" title="NonHPSDMatrixException"><tt class="xref cpp cpp-type docutils literal"><span class="pre">NonHPSDMatrixException</span></tt></a>
-if any sufficiently negative eigenvalues are computed.</p>
+<dd><p>Computes the Hermitian EVD, square-roots the eigenvalues, and then
+reforms the matrix. If any of the eigenvalues were sufficiently negative,
+a <a class="reference internal" href="../core/environment.html#NonHPSDMatrixException__class" title="NonHPSDMatrixException"><tt class="xref cpp cpp-type docutils literal"><span class="pre">NonHPSDMatrixException</span></tt></a> is thrown.</p>
 </dd></dl>
 
-<p><strong>TODO: HermitianSquareRoot</strong></p>
+<p><strong>TODO: SquareRoot</strong>
+<strong>TODO: HermitianSquareRoot</strong></p>
 </div>
 <div class="section" id="semi-definite-cholesky">
 <h2>Semi-definite Cholesky<a class="headerlink" href="#semi-definite-cholesky" title="Permalink to this headline">¶</a></h2>
@@ -177,9 +197,92 @@ QR and LQ factorizations of <span class="math">\(B\)</span> yield Cholesky facto
 <span class="math">\(-n \epsilon \| A \|_2\)</span>, then a <a class="reference internal" href="../core/environment.html#NonHPSDMatrixException__class" title="NonHPSDMatrixException"><tt class="xref cpp cpp-type docutils literal"><span class="pre">NonHPSDMatrixException</span></tt></a> will
 be thrown.</p>
 <dl class="function">
+<dt id="HPSDCholesky__UpperOrLower.Matrix:F:R">
+void <tt class="descname">HPSDCholesky</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HPSDCholesky__UpperOrLower.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="HPSDCholesky__UpperOrLower.DistMatrix:F:R">
 void <tt class="descname">HPSDCholesky</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HPSDCholesky__UpperOrLower.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Overwrite the <cite>uplo</cite> triangle of the potentially singular matrix <cite>A</cite> with its Cholesky factor.</p>
+<dd><p>Overwrite the <cite>uplo</cite> triangle of the potentially singular matrix <cite>A</cite> with
+its Cholesky factor.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="sign">
+<h2>Sign<a class="headerlink" href="#sign" title="Permalink to this headline">¶</a></h2>
+<p>The matrix sign function can be written as</p>
+<div class="math">
+\[\text{sgn}(A) = A(A^2)^{-1/2},\]</div>
+<p>as long as <span class="math">\(A\)</span> does not have any pure-imaginary eigenvalues.</p>
+<dl class="function">
+<dt id="Sign__Matrix:F:R">
+void <tt class="descname">Sign</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Sign__Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Sign__DistMatrix:F:R">
+void <tt class="descname">Sign</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Sign__DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Sign__Matrix:F:R.Matrix:F:R">
+void <tt class="descname">Sign</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>N</em><big>)</big><a class="headerlink" href="#Sign__Matrix:F:R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Sign__DistMatrix:F:R.DistMatrix:F:R">
+void <tt class="descname">Sign</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>N</em><big>)</big><a class="headerlink" href="#Sign__DistMatrix:F:R.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the matrix sign through a globally-convergent Newton iteration
+scaled with the Frobenius norm of the iterate and its inverse.
+Optionally return the full decomposition, <span class="math">\(A=S N\)</span>, where <span class="math">\(A\)</span>
+is overwritten by <span class="math">\(S\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="HermitianSign__UpperOrLower.Matrix:F:R">
+void <tt class="descname">HermitianSign</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HermitianSign__UpperOrLower.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianSign__UpperOrLower.DistMatrix:F:R">
+void <tt class="descname">HermitianSign</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HermitianSign__UpperOrLower.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianSign__UpperOrLower.Matrix:F:R.Matrix:F:R">
+void <tt class="descname">HermitianSign</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>N</em><big>)</big><a class="headerlink" href="#HermitianSign__UpperOrLower.Matrix:F:R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianSign__UpperOrLower.DistMatrix:F:R.DistMatrix:F:R">
+void <tt class="descname">HermitianSign</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>N</em><big>)</big><a class="headerlink" href="#HermitianSign__UpperOrLower.DistMatrix:F:R.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the Hermitian EVD, replace the eigenvalues with their sign, and then
+reform the matrix. Optionally return the full decomposition, <span class="math">\(A=SN\)</span>,
+where <span class="math">\(A\)</span> is overwritten by <span class="math">\(S\)</span>. Note that this will also be
+a polar decomposition.</p>
+</dd></dl>
+
+<dl class="type">
+<dt id="sign::Scaling">
+<em class="property">type </em><tt class="descclassname">sign::</tt><tt class="descname">Scaling</tt><a class="headerlink" href="#sign::Scaling" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enum for specifying the scaling strategy to be used for the Newton
+iteration for the matrix sign function. It must be either <tt class="docutils literal"><span class="pre">NONE</span></tt>,
+<tt class="docutils literal"><span class="pre">DETERMINANT</span></tt>, or <tt class="docutils literal"><span class="pre">FROB_NORM</span></tt> (the default).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sign::Newton__Matrix:F:R.sign::Scaling.i.typename-Base:F:::type">
+int <tt class="descclassname">sign::</tt><tt class="descname">Newton</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="#sign::Scaling" title="sign::Scaling">sign::Scaling</a> <em>scaling</em><em>=FROB_NORM</em>, int <em>maxIts</em><em>=100</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>tol</em><em>=0 </em><big>)</big><a class="headerlink" href="#sign::Newton__Matrix:F:R.sign::Scaling.i.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="sign::Newton__DistMatrix:F:R.sign::Scaling.i.typename-Base:F:::type">
+int <tt class="descclassname">sign::</tt><tt class="descname">Newton</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="#sign::Scaling" title="sign::Scaling">sign::Scaling</a> <em>scaling</em><em>=FROB_NORM</em>, int <em>maxIts</em><em>=100</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>tol</em><em>=0 </em><big>)</big><a class="headerlink" href="#sign::Newton__DistMatrix:F:R.sign::Scaling.i.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs a (scaled) Newton iteration for at most <tt class="docutils literal"><span class="pre">maxIts</span></tt> iterations with
+the specified tolerance, which, if undefined, is set to <span class="math">\(n \epsilon\)</span>,
+where <span class="math">\(n\)</span> is the matrix dimension and <span class="math">\(\epsilon\)</span> is the
+machine epsilon. The return value is the number of performed iterations.</p>
 </dd></dl>
 
 </div>

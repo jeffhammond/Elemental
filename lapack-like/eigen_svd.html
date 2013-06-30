@@ -57,21 +57,21 @@
 <p>Elemental provides a collection of routines for both full and partial
 solution of the Hermitian eigenvalue problem</p>
 <div class="math">
-\[A Z = Z \Omega,\]</div>
+\[A Z = Z \Lambda,\]</div>
 <p>where <cite>A</cite> is the given Hermitian matrix, and unitary <cite>Z</cite> and real diagonal
-<span class="math">\(\Omega\)</span> are sought. In particular, with the eigenvalues and
+<span class="math">\(\Lambda\)</span> are sought. In particular, with the eigenvalues and
 corresponding eigenpairs labeled in non-decreasing order, the three basic
 modes are:</p>
 <ol class="arabic simple">
-<li>Compute all eigenvalues or eigenpairs, <span class="math">\(\{\omega_i\}_{i=0}^{n-1}\)</span> or
-<span class="math">\(\{(x_i,\omega_i)\}_{i=0}^{n-1}\)</span>.</li>
+<li>Compute all eigenvalues or eigenpairs, <span class="math">\(\{\lambda_i\}_{i=0}^{n-1}\)</span> or
+<span class="math">\(\{(z_i,\lambda_i)\}_{i=0}^{n-1}\)</span>.</li>
 <li>Compute the eigenvalues or eigenpairs with a given range of indices, say
-<span class="math">\(\{\omega_i\}_{i=a}^b\)</span> or <span class="math">\(\{(x_i,\omega_i)\}_{i=a}^b\)</span>,
+<span class="math">\(\{\lambda_i\}_{i=a}^b\)</span> or <span class="math">\(\{(z_i,\lambda_i)\}_{i=a}^b\)</span>,
 with <span class="math">\(0 \le a \le b &lt; n\)</span>.</li>
 <li>Compute all eigenpairs (or just eigenvalues) with eigenvalues lying in a
 particular half-open interval, either
-<span class="math">\(\{\omega_i \;|\; \omega_i \in (a,b] \}\)</span> or
-<span class="math">\(\{ (x_i,\omega_i) \;|\; \omega_i \in (a,b] \}\)</span>.</li>
+<span class="math">\(\{\lambda_i \;|\; \lambda_i \in (a,b] \}\)</span> or
+<span class="math">\(\{ (z_i,\lambda_i) \;|\; \lambda_i \in (a,b] \}\)</span>.</li>
 </ol>
 <p>As of now, all three approaches start with Householder tridiagonalization
 (ala <a class="reference internal" href="condensed.html#HermitianTridiag__UpperOrLower.Matrix:R:R" title="HermitianTridiag"><tt class="xref cpp cpp-func docutils literal"><span class="pre">HermitianTridiag()</span></tt></a>) and then call Matthias Petschow and
@@ -85,93 +85,141 @@ Elemental&#8217;s Hermitian eigensolvers.</p>
 <div class="section" id="full-spectrum-computation">
 <h3>Full spectrum computation<a class="headerlink" href="#full-spectrum-computation" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
+<dt id="HermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R">
+void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;double&gt;&amp; <em>A</em>, Matrix&lt;double&gt;&amp; <em>w</em><big>)</big><a class="headerlink" href="#HermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianEig__UpperOrLower.Matrix:Complex:double::R.Matrix:double:R">
+void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>A</em>, Matrix&lt;double&gt;&amp; <em>w</em><big>)</big><a class="headerlink" href="#HermitianEig__UpperOrLower.Matrix:Complex:double::R.Matrix:double:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="HermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R">
 void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em><big>)</big><a class="headerlink" href="#HermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the full set of eigenvalues of the double-precision real symmetric
-distributed matrix <cite>A</cite>.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="HermitianEig__UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R">
 void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em><big>)</big><a class="headerlink" href="#HermitianEig__UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the full set of eigenvalues of the double-precision complex
-Hermitian distributed matrix <cite>A</cite>.</p>
+<dd><p>Compute the full set of eigenvalues of the double-precision Hermitian matrix
+<cite>A</cite>.</p>
 </dd></dl>
+
+<dl class="function">
+<dt id="HermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:double:R">
+void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;double&gt;&amp; <em>A</em>, Matrix&lt;double&gt;&amp; <em>w</em>, Matrix&lt;double&gt;&amp; <em>Z</em><big>)</big><a class="headerlink" href="#HermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:double:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianEig__UpperOrLower.Matrix:Complex:double::R.Matrix:double:R.Matrix:double:R">
+void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>A</em>, Matrix&lt;double&gt;&amp; <em>w</em>, Matrix&lt;double&gt;&amp; <em>Z</em><big>)</big><a class="headerlink" href="#HermitianEig__UpperOrLower.Matrix:Complex:double::R.Matrix:double:R.Matrix:double:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="HermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.DistMatrix:double:R">
 void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>Z</em><big>)</big><a class="headerlink" href="#HermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.DistMatrix:double:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the full set of eigenpairs of the double-precision real symmetric
-distributed matrix <cite>A</cite>.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="HermitianEig__UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R.DistMatrix:double:R">
 void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>Z</em><big>)</big><a class="headerlink" href="#HermitianEig__UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R.DistMatrix:double:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the full set of eigenpairs of the double-precision complex Hermitian
-distributed matrix <cite>A</cite>.</p>
+<dd><p>Compute the full set of eigenpairs of the double-precision Hermitian matrix
+<cite>A</cite>.</p>
 </dd></dl>
 
 </div>
 <div class="section" id="index-based-subset-computation">
 <h3>Index-based subset computation<a class="headerlink" href="#index-based-subset-computation" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
+<dt id="HermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R.i.i">
+void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;double&gt;&amp; <em>A</em>, Matrix&lt;double&gt;&amp; <em>w</em>, int <em>a</em>, int <em>b</em><big>)</big><a class="headerlink" href="#HermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R.i.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianEig__UpperOrLower.Matrix:Complex:double::R.Matrix:double:R.i.i">
+void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>A</em>, Matrix&lt;double&gt;&amp; <em>w</em>, int <em>a</em>, int <em>b</em><big>)</big><a class="headerlink" href="#HermitianEig__UpperOrLower.Matrix:Complex:double::R.Matrix:double:R.i.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="HermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.i.i">
 void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em>, int <em>a</em>, int <em>b</em><big>)</big><a class="headerlink" href="#HermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.i.i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the eigenvalues of a double-precision real symmetric distributed
-matrix <cite>A</cite> with indices in the range <span class="math">\(a,a+1,...,b\)</span>.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="HermitianEig__UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R.i.i">
 void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em>, int <em>a</em>, int <em>b</em><big>)</big><a class="headerlink" href="#HermitianEig__UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R.i.i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the eigenvalues of a double-precision complex Hermitian distributed
-matrix <cite>A</cite> with indices in the range <span class="math">\(a,a+1,...,b\)</span>.</p>
+<dd><p>Compute the eigenvalues of a double-precision Hermitian matrix <cite>A</cite> with
+indices in the range <span class="math">\(a,a+1,...,b\)</span>.</p>
 </dd></dl>
+
+<dl class="function">
+<dt id="HermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:double:R.i.i">
+void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;double&gt;&amp; <em>A</em>, Matrix&lt;double&gt;&amp; <em>w</em>, Matrix&lt;double&gt;&amp; <em>Z</em>, int <em>a</em>, int <em>b</em><big>)</big><a class="headerlink" href="#HermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:double:R.i.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>A</em>, Matrix&lt;double&gt;&amp; <em>w</em>, Matrix&lt;double&gt;&amp; <em>Z</em><big>)</big></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="HermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.DistMatrix:double:R.i.i">
 void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>Z</em>, int <em>a</em>, int <em>b</em><big>)</big><a class="headerlink" href="#HermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.DistMatrix:double:R.i.i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the eigenpairs of a double-precision real symmetric distributed
-matrix <cite>A</cite> with indices in the range <span class="math">\(a,a+1,...,b\)</span>.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt>
 void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>Z</em><big>)</big></dt>
-<dd><p>Compute the eigenpairs of a double-precision complex Hermitian distributed
-matrix <cite>A</cite> with indices in the range <span class="math">\(a,a+1,...,b\)</span>.</p>
+<dd><p>Compute the eigenpairs of a double-precision Hermitian matrix <cite>A</cite> with
+indices in the range <span class="math">\(a,a+1,...,b\)</span>.</p>
 </dd></dl>
 
 </div>
 <div class="section" id="range-based-subset-computation">
 <h3>Range-based subset computation<a class="headerlink" href="#range-based-subset-computation" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
+<dt id="HermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R.double.double">
+void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;double&gt;&amp; <em>A</em>, Matrix&lt;double&gt;&amp; <em>w</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#HermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R.double.double" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianEig__UpperOrLower.Matrix:Complex:double::R.Matrix:double:R.double.double">
+void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>A</em>, Matrix&lt;double&gt;&amp; <em>w</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#HermitianEig__UpperOrLower.Matrix:Complex:double::R.Matrix:double:R.double.double" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="HermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.double.double">
 void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#HermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.double.double" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the eigenvalues of a double-precision real symmetric distributed
-matrix <cite>A</cite> lying in the half-open interval <span class="math">\((a,b]\)</span>.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="HermitianEig__UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R.double.double">
 void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#HermitianEig__UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R.double.double" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the eigenvalues of a double-precision complex Hermitian distributed
-matrix <cite>A</cite> lying in the half-open interval <span class="math">\((a,b]\)</span>.</p>
+<dd><p>Compute the eigenvalues of a double-precision Hermitian matrix <cite>A</cite> lying in
+the half-open interval <span class="math">\((a,b]\)</span>.</p>
 </dd></dl>
+
+<dl class="function">
+<dt id="HermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:double:R.double.double">
+void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;double&gt;&amp; <em>A</em>, Matrix&lt;double&gt;&amp; <em>w</em>, Matrix&lt;double&gt;&amp; <em>Z</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#HermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:double:R.double.double" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>A</em>, Matrix&lt;double&gt;&amp; <em>w</em>, Matrix&lt;double&gt;&amp; <em>Z</em><big>)</big></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="HermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.DistMatrix:double:R.double.double">
 void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>Z</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#HermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.DistMatrix:double:R.double.double" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the eigenpairs of a double-precision real symmetric distributed
-matrix <cite>A</cite> with eigenvalues lying in the half-open interval <span class="math">\((a,b]\)</span>.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt>
 void <tt class="descname">HermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>Z</em><big>)</big></dt>
-<dd><p>Compute the eigenpairs of a double-precision complex Hermitian distributed
-matrix <cite>A</cite> with eigenvalues lying in the half-open interval <span class="math">\((a,b]\)</span>.</p>
+<dd><p>Compute the eigenpairs of a double-precision Hermitian matrix <cite>A</cite> with
+eigenvalues lying in the half-open interval <span class="math">\((a,b]\)</span>.</p>
 </dd></dl>
 
 </div>
@@ -207,7 +255,7 @@ void <tt class="descclassname">hermitian_eig::</tt><tt class="descname">Sort</tt
 </div>
 <div class="section" id="skew-hermitian-eigensolver">
 <h2>Skew-Hermitian eigensolver<a class="headerlink" href="#skew-hermitian-eigensolver" title="Permalink to this headline">¶</a></h2>
-<p>Essentially identical to the Hermitian eigensolver, <a class="reference internal" href="#HermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R" title="HermitianEig"><tt class="xref cpp cpp-func docutils literal"><span class="pre">HermitianEig()</span></tt></a>;
+<p>Essentially identical to the Hermitian eigensolver, <a class="reference internal" href="#HermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R" title="HermitianEig"><tt class="xref cpp cpp-func docutils literal"><span class="pre">HermitianEig()</span></tt></a>;
 for any skew-Hermitian matrix <span class="math">\(G\)</span>, <span class="math">\(iG\)</span> is Hermitian, as</p>
 <div class="math">
 \[(iG)^H = -iG^H = iG.\]</div>
@@ -215,10 +263,10 @@ for any skew-Hermitian matrix <span class="math">\(G\)</span>, <span class="math
 <ol class="arabic simple">
 <li>Form <span class="math">\(iG\)</span> in <span class="math">\(O(n^2)\)</span> work
 (switching to complex arithmetic in the real case)</li>
-<li>Run a Hermitian eigensolve on <span class="math">\(iG\)</span>, yielding <span class="math">\(iG=Z \Omega Z^H\)</span>.</li>
-<li>Recognize that <span class="math">\(G=Z (-i \Omega) Z^H\)</span> provides an EVD of <span class="math">\(G\)</span>.</li>
+<li>Run a Hermitian eigensolve on <span class="math">\(iG\)</span>, yielding <span class="math">\(iG=Z \Lambda Z^H\)</span>.</li>
+<li>Recognize that <span class="math">\(G=Z (-i \Lambda) Z^H\)</span> provides an EVD of <span class="math">\(G\)</span>.</li>
 </ol>
-<p>Please see the <a class="reference internal" href="#HermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R" title="HermitianEig"><tt class="xref cpp cpp-func docutils literal"><span class="pre">HermitianEig()</span></tt></a> documentation for more details.</p>
+<p>Please see the <a class="reference internal" href="#HermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R" title="HermitianEig"><tt class="xref cpp cpp-func docutils literal"><span class="pre">HermitianEig()</span></tt></a> documentation for more details.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Please see the <a class="reference internal" href="tuning.html#lapack-tuning"><em>Tuning parameters</em></a> section for information on optimizing
@@ -228,94 +276,141 @@ Elemental&#8217;s Hermitian eigensolvers.</p>
 <div class="section" id="id1">
 <h3>Full spectrum computation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
+<dt id="SkewHermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R">
+void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;double&gt;&amp; <em>G</em>, Matrix&lt;double&gt;&amp; <em>wImag</em><big>)</big><a class="headerlink" href="#SkewHermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SkewHermitianEig__UpperOrLower.Matrix:Complex:double::R.Matrix:double:R">
+void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>G</em>, Matrix&lt;double&gt;&amp; <em>wImag</em><big>)</big><a class="headerlink" href="#SkewHermitianEig__UpperOrLower.Matrix:Complex:double::R.Matrix:double:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="SkewHermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R">
 void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>G</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>wImag</em><big>)</big><a class="headerlink" href="#SkewHermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the full set of eigenvalues of the double-precision real
-skew-symmetric distributed matrix <cite>G</cite>.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="SkewHermitianEig__UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R">
 void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>G</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>wImag</em><big>)</big><a class="headerlink" href="#SkewHermitianEig__UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the full set of eigenvalues of the double-precision complex
-skew-Hermitian distributed matrix <cite>G</cite>.</p>
+<dd><p>Compute the full set of eigenvalues of the double-precision skew-Hermitian
+matrix <cite>G</cite>.</p>
 </dd></dl>
+
+<dl class="function">
+<dt id="SkewHermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:Complex:double::R">
+void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;double&gt;&amp; <em>G</em>, Matrix&lt;double&gt;&amp; <em>wImag</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>Z</em><big>)</big><a class="headerlink" href="#SkewHermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:Complex:double::R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SkewHermitianEig__UpperOrLower.Matrix:Complex:double::R.Matrix:double:R.Matrix:Complex:double::R">
+void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>G</em>, Matrix&lt;double&gt;&amp; <em>wImag</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>Z</em><big>)</big><a class="headerlink" href="#SkewHermitianEig__UpperOrLower.Matrix:Complex:double::R.Matrix:double:R.Matrix:Complex:double::R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="SkewHermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.DistMatrix:Complex:double::R">
 void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>G</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>wImag</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>Z</em><big>)</big><a class="headerlink" href="#SkewHermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.DistMatrix:Complex:double::R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the full set of eigenpairs of the double-precision real
-skew-symmetric distributed matrix <cite>G</cite>.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="SkewHermitianEig__UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R.DistMatrix:Complex:double::R">
 void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>G</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>wImag</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>Z</em><big>)</big><a class="headerlink" href="#SkewHermitianEig__UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R.DistMatrix:Complex:double::R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the full set of eigenpairs of the double-precision complex
-skew-Hermitian distributed matrix <cite>G</cite>.</p>
+<dd><p>Compute the full set of eigenpairs of the double-precision skew-Hermitian
+matrix <cite>G</cite>.</p>
 </dd></dl>
 
 </div>
 <div class="section" id="id2">
 <h3>Index-based subset computation<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
+<dt id="SkewHermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R.i.i">
+void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;double&gt;&amp; <em>G</em>, Matrix&lt;double&gt;&amp; <em>wImag</em>, int <em>a</em>, int <em>b</em><big>)</big><a class="headerlink" href="#SkewHermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R.i.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SkewHermitianEig__UpperOrLower.Matrix:Complex:double::R.Matrix:double:R.i.i">
+void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>G</em>, Matrix&lt;double&gt;&amp; <em>wImag</em>, int <em>a</em>, int <em>b</em><big>)</big><a class="headerlink" href="#SkewHermitianEig__UpperOrLower.Matrix:Complex:double::R.Matrix:double:R.i.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="SkewHermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.i.i">
 void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>G</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>wImag</em>, int <em>a</em>, int <em>b</em><big>)</big><a class="headerlink" href="#SkewHermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.i.i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the eigenvalues of a double-precision real skew-symmetric
-distributed matrix <cite>G</cite> with indices in the range <span class="math">\(a,a+1,...,b\)</span>.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="SkewHermitianEig__UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R.i.i">
 void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>G</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>wImag</em>, int <em>a</em>, int <em>b</em><big>)</big><a class="headerlink" href="#SkewHermitianEig__UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R.i.i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the eigenvalues of a double-precision complex skew-Hermitian
-distributed matrix <cite>G</cite> with indices in the range <span class="math">\(a,a+1,...,b\)</span>.</p>
+<dd><p>Compute the eigenvalues of a double-precision skew-Hermitian matrix <cite>G</cite> with
+indices in the range <span class="math">\(a,a+1,...,b\)</span>.</p>
 </dd></dl>
+
+<dl class="function">
+<dt id="SkewHermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:Complex:double::R.i.i">
+void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;double&gt;&amp; <em>G</em>, Matrix&lt;double&gt;&amp; <em>wImag</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>Z</em>, int <em>a</em>, int <em>b</em><big>)</big><a class="headerlink" href="#SkewHermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:Complex:double::R.i.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>G</em>, Matrix&lt;double&gt;&amp; <em>wImag</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>Z</em><big>)</big></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="SkewHermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.DistMatrix:Complex:double::R.i.i">
 void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>G</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>wImag</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>Z</em>, int <em>a</em>, int <em>b</em><big>)</big><a class="headerlink" href="#SkewHermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.DistMatrix:Complex:double::R.i.i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the eigenpairs of a double-precision real skew-symmetric distributed
-matrix <cite>G</cite> with indices in the range <span class="math">\(a,a+1,...,b\)</span>.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt>
 void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>G</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>wImag</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>Z</em><big>)</big></dt>
-<dd><p>Compute the eigenpairs of a double-precision complex skew-Hermitian
-distributed matrix <cite>G</cite> with indices in the range <span class="math">\(a,a+1,...,b\)</span>.</p>
+<dd><p>Compute the eigenpairs of a double-precision skew-Hermitian matrix <cite>G</cite> with
+indices in the range <span class="math">\(a,a+1,...,b\)</span>.</p>
 </dd></dl>
 
 </div>
 <div class="section" id="id3">
 <h3>Range-based subset computation<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
+<dt id="SkewHermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R.double.double">
+void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;double&gt;&amp; <em>G</em>, Matrix&lt;double&gt;&amp; <em>wImag</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#SkewHermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R.double.double" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SkewHermitianEig__UpperOrLower.Matrix:Complex:double::R.Matrix:double:R.double.double">
+void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>G</em>, Matrix&lt;double&gt;&amp; <em>wImag</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#SkewHermitianEig__UpperOrLower.Matrix:Complex:double::R.Matrix:double:R.double.double" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="SkewHermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.double.double">
 void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>G</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>wImag</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#SkewHermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.double.double" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the eigenvalues of a double-precision real skew-symmetric distributed
-matrix <cite>G</cite> lying in the half-open interval <span class="math">\((a,b]i\)</span>.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="SkewHermitianEig__UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R.double.double">
 void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>G</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>wImag</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#SkewHermitianEig__UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R.double.double" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the eigenvalues of a double-precision complex skew-Hermitian
-distributed matrix <cite>G</cite> lying in the half-open interval <span class="math">\((a,b]i\)</span>.</p>
+<dd><p>Compute the eigenvalues of a double-precision skew-Hermitian matrix <cite>G</cite>
+lying in the half-open interval <span class="math">\((a,b]i\)</span>.</p>
 </dd></dl>
+
+<dl class="function">
+<dt id="SkewHermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:Complex:double::R.double.double">
+void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;double&gt;&amp; <em>G</em>, Matrix&lt;double&gt;&amp; <em>wImag</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>Z</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#SkewHermitianEig__UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:Complex:double::R.double.double" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>G</em>, Matrix&lt;double&gt;&amp; <em>wImag</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>Z</em><big>)</big></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="SkewHermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.DistMatrix:Complex:double::R.double.double">
 void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>G</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>wImag</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>Z</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#SkewHermitianEig__UpperOrLower.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.DistMatrix:Complex:double::R.double.double" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the eigenpairs of a double-precision real skew-symmetric distributed
-matrix <cite>G</cite> with eigenvalues lying in the half-open interval <span class="math">\((a,b]i\)</span>.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt>
 void <tt class="descname">SkewHermitianEig</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>G</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>wImag</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>Z</em><big>)</big></dt>
-<dd><p>Compute the eigenpairs of a double-precision complex skew-Hermitian
-distributed matrix <cite>G</cite> with eigenvalues lying in the half-open interval
-<span class="math">\((a,b]i\)</span>.</p>
+<dd><p>Compute the eigenpairs of a double-precision skew-Hermitian matrix <cite>G</cite> with
+eigenvalues lying in the half-open interval <span class="math">\((a,b]i\)</span>.</p>
 </dd></dl>
 
 </div>
@@ -326,14 +421,14 @@ distributed matrix <cite>G</cite> with eigenvalues lying in the half-open interv
 appear, where both <span class="math">\(A\)</span> and <span class="math">\(B\)</span> are Hermitian, and <span class="math">\(B\)</span> is
 additionally positive-definite:</p>
 <div class="math">
-\[ABx = \omega x,\]</div>
+\[ABx = \lambda x,\]</div>
 <p>which is denoted with the value <tt class="docutils literal"><span class="pre">ABX</span></tt> via the
 <a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType"><tt class="xref cpp cpp-type docutils literal"><span class="pre">HermitianGenDefiniteEigType</span></tt></a> enum,</p>
 <div class="math">
-\[BAx = \omega x,\]</div>
+\[BAx = \lambda x,\]</div>
 <p>which uses the <tt class="docutils literal"><span class="pre">BAX</span></tt> value, and finally</p>
 <div class="math">
-\[Ax = \omega B x,\]</div>
+\[Ax = \lambda B x,\]</div>
 <p>which uses the <tt class="docutils literal"><span class="pre">AXBX</span></tt> enum value.</p>
 <dl class="type">
 <dt id="HermitianGenDefiniteEigType">
@@ -345,107 +440,147 @@ generalized eigenvalue problems (described above).</p>
 <div class="section" id="id4">
 <h3>Full spectrum computation<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
+<dt id="HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:double:R">
+void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;double&gt;&amp; <em>A</em>, Matrix&lt;double&gt;&amp; <em>B</em>, Matrix&lt;double&gt;&amp; <em>w</em><big>)</big><a class="headerlink" href="#HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:double:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.Matrix:Complex:double::R.Matrix:Complex:double::R.Matrix:double:R">
+void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>A</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>B</em>, Matrix&lt;double&gt;&amp; <em>w</em><big>)</big><a class="headerlink" href="#HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.Matrix:Complex:double::R.Matrix:Complex:double::R.Matrix:double:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.DistMatrix:double:R.DistMatrix:double:R.DistMatrix:double.VR.STAR:R">
 void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>B</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em><big>)</big><a class="headerlink" href="#HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.DistMatrix:double:R.DistMatrix:double:R.DistMatrix:double.VR.STAR:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the full set of eigenvalues of a generalized EVP involving the
-double-precision real symmetric distributed matrices <cite>A</cite> and <cite>B</cite>, where
-<cite>B</cite> is also positive-definite.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R">
 void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>B</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em><big>)</big><a class="headerlink" href="#HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the full set of eigenvalues of a generalized EVP involving the
-double-precision complex Hermitian distributed matrices <cite>A</cite> and <cite>B</cite>, where
-<cite>B</cite> is also positive-definite.</p>
+double-precision Hermitian matrices <cite>A</cite> and <cite>B</cite>, where <cite>B</cite> is also
+positive-definite.</p>
 </dd></dl>
+
+<dl class="function">
+<dt id="HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:double:R.Matrix:double:R">
+void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;double&gt;&amp; <em>A</em>, Matrix&lt;double&gt;&amp; <em>B</em>, Matrix&lt;double&gt;&amp; <em>w</em>, Matrix&lt;double&gt;&amp; <em>Z</em><big>)</big><a class="headerlink" href="#HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:double:R.Matrix:double:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.Matrix:Complex:double::R.Matrix:Complex:double::R.Matrix:double:R.Matrix:double:R">
+void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>A</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>B</em>, Matrix&lt;double&gt;&amp; <em>w</em>, Matrix&lt;double&gt;&amp; <em>Z</em><big>)</big><a class="headerlink" href="#HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.Matrix:Complex:double::R.Matrix:Complex:double::R.Matrix:double:R.Matrix:double:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.DistMatrix:double:R.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.DistMatrix:double:R">
 void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>B</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>Z</em><big>)</big><a class="headerlink" href="#HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.DistMatrix:double:R.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.DistMatrix:double:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the full set of eigenpairs of a generalized EVP involving the
-double-precision real symmetric distributed matrices <cite>A</cite> and <cite>B</cite>, where
-<cite>B</cite> is also positive-definite.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R.DistMatrix:double:R">
 void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>B</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>Z</em><big>)</big><a class="headerlink" href="#HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R.DistMatrix:double:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the full set of eigenpairs of a generalized EVP involving the
-double-precision complex Hermitian distributed matrices <cite>A</cite> and <cite>B</cite>, where
-<cite>B</cite> is also positive-definite.</p>
+double-precision Hermitian matrices <cite>A</cite> and <cite>B</cite>, where <cite>B</cite> is also
+positive-definite.</p>
 </dd></dl>
 
 </div>
 <div class="section" id="id5">
 <h3>Index-based subset computation<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
+<dt id="HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:double:R.i.i">
+void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;double&gt;&amp; <em>A</em>, Matrix&lt;double&gt;&amp; <em>B</em>, Matrix&lt;double&gt;&amp; <em>w</em>, int <em>a</em>, int <em>b</em><big>)</big><a class="headerlink" href="#HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:double:R.i.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.Matrix:Complex:double::R.Matrix:Complex:double::R.Matrix:double:R.i.i">
+void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>A</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>B</em>, Matrix&lt;double&gt;&amp; <em>w</em>, int <em>a</em>, int <em>b</em><big>)</big><a class="headerlink" href="#HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.Matrix:Complex:double::R.Matrix:Complex:double::R.Matrix:double:R.i.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.DistMatrix:double:R.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.i.i">
 void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>B</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em>, int <em>a</em>, int <em>b</em><big>)</big><a class="headerlink" href="#HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.DistMatrix:double:R.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.i.i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the eigenvalues with indices in the range <span class="math">\(a,a+1,...,b\)</span> of a
-generalized EVP involving the double-precision real symmetric distributed
-matrices <cite>A</cite> and <cite>B</cite>, where <cite>B</cite> is also positive-definite.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R.i.i">
 void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>B</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em>, int <em>a</em>, int <em>b</em><big>)</big><a class="headerlink" href="#HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R.i.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the eigenvalues with indices in the range <span class="math">\(a,a+1,...,b\)</span> of a
-generalized EVP involving the double-precision complex Hermitian distributed
-matrices <cite>A</cite> and <cite>B</cite>, where <cite>B</cite> is also positive-definite.</p>
+generalized EVP involving the double-precision Hermitian matrices <cite>A</cite> and
+<cite>B</cite>, where <cite>B</cite> is also positive-definite.</p>
 </dd></dl>
+
+<dl class="function">
+<dt id="HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:double:R.Matrix:double:R.i.i">
+void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;double&gt;&amp; <em>A</em>, Matrix&lt;double&gt;&amp; <em>B</em>, Matrix&lt;double&gt;&amp; <em>w</em>, Matrix&lt;double&gt;&amp; <em>Z</em>, int <em>a</em>, int <em>b</em><big>)</big><a class="headerlink" href="#HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:double:R.Matrix:double:R.i.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>A</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>B</em>, Matrix&lt;double&gt;&amp; <em>w</em>, Matrix&lt;double&gt;&amp; <em>Z</em><big>)</big></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.DistMatrix:double:R.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.DistMatrix:double:R.i.i">
 void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>B</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>Z</em>, int <em>a</em>, int <em>b</em><big>)</big><a class="headerlink" href="#HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.DistMatrix:double:R.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.DistMatrix:double:R.i.i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the eigenpairs with indices in the range <span class="math">\(a,a+1,...,b\)</span> of a
-generalized EVP involving the double-precision real symmetric distributed
-matrices <cite>A</cite> and <cite>B</cite>, where <cite>B</cite> is also positive-definite.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt>
 void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>B</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>Z</em><big>)</big></dt>
 <dd><p>Compute the eigenpairs with indices in the range <span class="math">\(a,a+1,...,b\)</span> of a
-generalized EVP involving the double-precision complex Hermitian distributed
-matrices <cite>A</cite> and <cite>B</cite>, where <cite>B</cite> is also positive-definite.</p>
+generalized EVP involving the double-precision Hermitian matrices <cite>A</cite> and
+<cite>B</cite>, where <cite>B</cite> is also positive-definite.</p>
 </dd></dl>
 
 </div>
 <div class="section" id="id6">
 <h3>Range-based subset computation<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
+<dt id="HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:double:R.double.double">
+void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;double&gt;&amp; <em>A</em>, Matrix&lt;double&gt;&amp; <em>B</em>, Matrix&lt;double&gt;&amp; <em>w</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:double:R.double.double" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.Matrix:Complex:double::R.Matrix:Complex:double::R.Matrix:double:R.double.double">
+void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>A</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>B</em>, Matrix&lt;double&gt;&amp; <em>w</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.Matrix:Complex:double::R.Matrix:Complex:double::R.Matrix:double:R.double.double" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.DistMatrix:double:R.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.double.double">
 void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>B</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.DistMatrix:double:R.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.double.double" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the eigenvalues lying in the half-open interval <span class="math">\((a,b]\)</span> of a
-generalized EVP involving the double-precision real symmetric distributed
-matrices <cite>A</cite> and <cite>B</cite>, where <cite>B</cite> is also positive-definite.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R.double.double">
 void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>B</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.DistMatrix:Complex:double::R.DistMatrix:Complex:double::R.DistMatrix:double.VR.STAR:R.double.double" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the eigenvalues lying in the half-open interval <span class="math">\((a,b]\)</span> of a
-generalized EVP involving the double-precision complex Hermitian distributed
-matrices <cite>A</cite> and <cite>B</cite>, where <cite>B</cite> is also positive-definite.</p>
+generalized EVP involving the double-precision Hermitian matrices <cite>A</cite> and
+<cite>B</cite>, where <cite>B</cite> is also positive-definite.</p>
 </dd></dl>
+
+<dl class="function">
+<dt id="HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:double:R.Matrix:double:R.double.double">
+void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;double&gt;&amp; <em>A</em>, Matrix&lt;double&gt;&amp; <em>B</em>, Matrix&lt;double&gt;&amp; <em>w</em>, Matrix&lt;double&gt;&amp; <em>Z</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.Matrix:double:R.Matrix:double:R.Matrix:double:R.Matrix:double:R.double.double" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>A</em>, Matrix&lt;Complex&lt;double&gt;&gt;&amp; <em>B</em>, Matrix&lt;double&gt;&amp; <em>w</em>, Matrix&lt;double&gt;&amp; <em>Z</em><big>)</big></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.DistMatrix:double:R.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.DistMatrix:double:R.double.double">
 void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>B</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>Z</em>, double <em>a</em>, double <em>b</em><big>)</big><a class="headerlink" href="#HermitianGenDefiniteEig__HermitianGenDefiniteEigType.UpperOrLower.DistMatrix:double:R.DistMatrix:double:R.DistMatrix:double.VR.STAR:R.DistMatrix:double:R.double.double" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the eigenpairs whose eigenvalues lie in the half-open
-interval <span class="math">\((a,b]\)</span> of a generalized EVP involving the double-precision
-real symmetric distributed matrices <cite>A</cite> and <cite>B</cite>, where <cite>B</cite> is also
-positive-definite.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt>
 void <tt class="descname">HermitianGenDefiniteEig</tt><big>(</big><a class="reference internal" href="#HermitianGenDefiniteEigType" title="HermitianGenDefiniteEigType">HermitianGenDefiniteEigType</a> <em>type</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:double::__class" title="DistMatrix&lt;Complex&lt;double&gt;&gt;">DistMatrix&lt;Complex&lt;double&gt;&gt;&amp;</a> <em>B</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double.VR.STAR:__class" title="DistMatrix&lt;double, VR, STAR&gt;">DistMatrix&lt;double, VR, STAR&gt;&amp;</a> <em>w</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:double:__class" title="DistMatrix&lt;double&gt;">DistMatrix&lt;double&gt;&amp;</a> <em>Z</em><big>)</big></dt>
 <dd><p>Compute the eigenpairs whose eigenvalues lie in the half-open interval
-<span class="math">\((a,b]\)</span> of a generalized EVP involving the double-precision complex
-Hermitian distributed matrices <cite>A</cite> and <cite>B</cite>, where <cite>B</cite> is also
-positive-definite.</p>
+<span class="math">\((a,b]\)</span> of a generalized EVP involving the double-precision Hermitian
+matrices <cite>A</cite> and <cite>B</cite>, where <cite>B</cite> is also positive-definite.</p>
 </dd></dl>
 
 </div>
@@ -478,12 +613,22 @@ Then an SVD of <span class="math">\(A\)</span> can easily be computed as</p>
 <p>where the columns of <span class="math">\(U\)</span> equal the columns of <span class="math">\(V\)</span>, modulo sign
 flips introduced by negative eigenvalues.</p>
 <dl class="function">
+<dt id="HermitianSVD__UpperOrLower.Matrix:F:R.Matrix:typename-Base:F:::type:R.Matrix:F:R.Matrix:F:R">
+void <tt class="descname">HermitianSVD</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, Matrix&lt;typename Base&lt;F&gt;::type&gt;&amp; <em>s</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>U</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>V</em><big>)</big><a class="headerlink" href="#HermitianSVD__UpperOrLower.Matrix:F:R.Matrix:typename-Base:F:::type:R.Matrix:F:R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
 <dt id="HermitianSVD__UpperOrLower.DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R.DistMatrix:F:R.DistMatrix:F:R">
 void <tt class="descname">HermitianSVD</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;typename Base&lt;F&gt;::type, VR, STAR&gt;&amp; <em>s</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>U</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>V</em><big>)</big><a class="headerlink" href="#HermitianSVD__UpperOrLower.DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R.DistMatrix:F:R.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a vector of singular values, <span class="math">\(s\)</span>, and the left and right
 singular vector matrices, <span class="math">\(U\)</span> and <span class="math">\(V\)</span>, such that
 <span class="math">\(A=U \mathrm{diag}(s) V^H\)</span>.</p>
 </dd></dl>
+
+<dl class="function">
+<dt id="HermitianSVD__UpperOrLower.Matrix:F:R.Matrix:typename-Base:F:::type:R">
+void <tt class="descname">HermitianSVD</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, Matrix&lt;typename Base&lt;F&gt;::type&gt;&amp; <em>s</em><big>)</big><a class="headerlink" href="#HermitianSVD__UpperOrLower.Matrix:F:R.Matrix:typename-Base:F:::type:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="HermitianSVD__UpperOrLower.DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R">
@@ -500,7 +645,17 @@ unitary and <span class="math">\(P\)</span> is Hermitian and positive semi-defin
 the <em>polar decomposition</em> of <span class="math">\(A\)</span> and can be constructed as
 <span class="math">\(Q := U V^H\)</span> and <span class="math">\(P := V \Sigma V^H\)</span>, where
 <span class="math">\(A = U \Sigma V^H\)</span> is the SVD of <span class="math">\(A\)</span>. Alternatively, it can be
-computed through Halley iteration.</p>
+computed through (a dynamically-weighted) Halley iteration.</p>
+<dl class="function">
+<dt id="Polar__Matrix:F:R">
+void <tt class="descname">Polar</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Polar__Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Polar__DistMatrix:F:R">
+void <tt class="descname">Polar</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Polar__DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="function">
 <dt id="Polar__Matrix:F:R.Matrix:F:R">
 void <tt class="descname">Polar</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>P</em><big>)</big><a class="headerlink" href="#Polar__Matrix:F:R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
@@ -515,28 +670,40 @@ first computes the SVD.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="Halley__Matrix:F:R.typename-Base:F:::type">
-void <tt class="descname">Halley</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>upperBound</em><big>)</big><a class="headerlink" href="#Halley__Matrix:F:R.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dt id="HermitianPolar__UpperOrLower.Matrix:F:R">
+void <tt class="descname">HermitianPolar</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HermitianPolar__UpperOrLower.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="Halley__DistMatrix:F:R.typename-Base:F:::type">
-void <tt class="descname">Halley</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>upperBound</em><big>)</big><a class="headerlink" href="#Halley__DistMatrix:F:R.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
-<dd><p>Overwrites <span class="math">\(A\)</span> with the <span class="math">\(Q\)</span> from the polar decomposition using
-a simple QR-based Halley iteration. <strong>TODO: better explanation</strong></p>
+<dt id="HermitianPolar__UpperOrLower.DistMatrix:F:R">
+void <tt class="descname">HermitianPolar</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HermitianPolar__UpperOrLower.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianPolar__UpperOrLower.Matrix:F:R.Matrix:F:R">
+void <tt class="descname">HermitianPolar</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>P</em><big>)</big><a class="headerlink" href="#HermitianPolar__UpperOrLower.Matrix:F:R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianPolar__UpperOrLower.DistMatrix:F:R.DistMatrix:F:R">
+void <tt class="descname">HermitianPolar</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>P</em><big>)</big><a class="headerlink" href="#HermitianPolar__UpperOrLower.DistMatrix:F:R.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the polar decomposition through a Hermitian EVD. Since this is
+equivalent to a Hermitian sign decomposition (if <span class="math">\(\text{sgn}(0)\)</span> is
+set to 1), these routines are equivalent to <cite>HermitianSign</cite>.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="QDWH__Matrix:F:R.typename-Base:F:::type.typename-Base:F:::type">
-void <tt class="descname">QDWH</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>lowerBound</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>upperBound</em><big>)</big><a class="headerlink" href="#QDWH__Matrix:F:R.typename-Base:F:::type.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dt id="QDWH__Matrix:F:R.typename-Base:F:::type.typename-Base:F:::type.i">
+int <tt class="descname">QDWH</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>lowerBound</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>upperBound</em>, int <em>maxits</em><em>=100 </em><big>)</big><a class="headerlink" href="#QDWH__Matrix:F:R.typename-Base:F:::type.typename-Base:F:::type.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="QDWH__DistMatrix:F:R.typename-Base:F:::type.typename-Base:F:::type">
-void <tt class="descname">QDWH</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>lowerBound</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>upperBound</em><big>)</big><a class="headerlink" href="#QDWH__DistMatrix:F:R.typename-Base:F:::type.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dt id="QDWH__DistMatrix:F:R.typename-Base:F:::type.typename-Base:F:::type.i">
+int <tt class="descname">QDWH</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>lowerBound</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>upperBound</em>, int <em>maxIts</em><em>=100 </em><big>)</big><a class="headerlink" href="#QDWH__DistMatrix:F:R.typename-Base:F:::type.typename-Base:F:::type.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrites <span class="math">\(A\)</span> with the <span class="math">\(Q\)</span> from the polar decomposition using
-a QR-based dynamically weighted Halley iteration.
-<strong>TODO: better explanation</strong></p>
+a QR-based dynamically weighted Halley iteration. The number of iterations
+used is returned upon completion.
+<strong>TODO: reference to Yuji&#8217;s paper</strong></p>
 </dd></dl>
 
 </div>
