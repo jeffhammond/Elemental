@@ -164,6 +164,18 @@ is guaranteed to exist as long as <span class="math">\(A\)</span> is diagonaliza
 <p>where each eigenvalue <span class="math">\(\lambda = r e^{i\theta}\)</span> maps to
 <span class="math">\(\sqrt{\lambda} = \sqrt{r} e^{i\theta/2}\)</span>.</p>
 <dl class="function">
+<dt id="SquareRoot__Matrix:F:R">
+void <tt class="descname">SquareRoot</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#SquareRoot__Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SquareRoot__DistMatrix:F:R">
+void <tt class="descname">SquareRoot</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#SquareRoot__DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Currently uses a Newton iteration to compute the general matrix square-root.
+See <tt class="docutils literal"><span class="pre">square_root::Newton</span></tt> for the more detailed interface.</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="HPSDSquareRoot__UpperOrLower.Matrix:F:R">
 void <tt class="descname">HPSDSquareRoot</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HPSDSquareRoot__UpperOrLower.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -176,38 +188,24 @@ reforms the matrix. If any of the eigenvalues were sufficiently negative,
 a <a class="reference internal" href="../core/environment.html#NonHPSDMatrixException__class" title="NonHPSDMatrixException"><tt class="xref cpp cpp-type docutils literal"><span class="pre">NonHPSDMatrixException</span></tt></a> is thrown.</p>
 </dd></dl>
 
-<p><strong>TODO: SquareRoot</strong>
-<strong>TODO: HermitianSquareRoot</strong></p>
-</div>
-<div class="section" id="semi-definite-cholesky">
-<h2>Semi-definite Cholesky<a class="headerlink" href="#semi-definite-cholesky" title="Permalink to this headline">¶</a></h2>
-<p>It is possible to compute the Cholesky factor of a Hermitian positive
-semi-definite (HPSD) matrix through its eigenvalue decomposition, though it
-is significantly more expensive than the HPD case: Let <span class="math">\(A = U \Lambda U^H\)</span>
-be the eigenvalue decomposition of <span class="math">\(A\)</span>, where all entries of
-<span class="math">\(\Lambda\)</span> are non-negative. Then <span class="math">\(B = U \sqrt \Lambda U^H\)</span> is the
-matrix square root of <span class="math">\(A\)</span>, i.e., <span class="math">\(B B = A\)</span>, and it follows that the
-QR and LQ factorizations of <span class="math">\(B\)</span> yield Cholesky factors of <span class="math">\(A\)</span>:</p>
-<div class="math">
-\[A = B B = B^H B = (Q R)^H (Q R) = R^H Q^H Q R = R^H R,\]</div>
-<p>and</p>
-<div class="math">
-\[A = B B = B B^H = (L Q) (L Q)^H = L Q Q^H L^H = L L^H.\]</div>
-<p>If <span class="math">\(A\)</span> is found to have eigenvalues less than
-<span class="math">\(-n \epsilon \| A \|_2\)</span>, then a <a class="reference internal" href="../core/environment.html#NonHPSDMatrixException__class" title="NonHPSDMatrixException"><tt class="xref cpp cpp-type docutils literal"><span class="pre">NonHPSDMatrixException</span></tt></a> will
-be thrown.</p>
+<p><strong>TODO: HermitianSquareRoot</strong></p>
+<div class="section" id="detailed-interface">
+<h3>Detailed interface<a class="headerlink" href="#detailed-interface" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
-<dt id="HPSDCholesky__UpperOrLower.Matrix:F:R">
-void <tt class="descname">HPSDCholesky</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HPSDCholesky__UpperOrLower.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dt id="square_root::Newton__Matrix:F:R.i.X">
+int <tt class="descclassname">square_root::</tt><tt class="descname">Newton</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, int <em>maxIts</em><em>=100</em>, <em>typename Base&lt;F&gt;::tol</em><em>=0 </em><big>)</big><a class="headerlink" href="#square_root::Newton__Matrix:F:R.i.X" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="HPSDCholesky__UpperOrLower.DistMatrix:F:R">
-void <tt class="descname">HPSDCholesky</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HPSDCholesky__UpperOrLower.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Overwrite the <cite>uplo</cite> triangle of the potentially singular matrix <cite>A</cite> with
-its Cholesky factor.</p>
+<dt id="square_root::Newton__DistMatrix:F:R.i.X">
+int <tt class="descclassname">square_root::</tt><tt class="descname">Newton</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, int <em>maxIts</em><em>=100</em>, <em>typename Base&lt;F&gt;::tol</em><em>=0 </em><big>)</big><a class="headerlink" href="#square_root::Newton__DistMatrix:F:R.i.X" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs at most <tt class="docutils literal"><span class="pre">maxIts</span></tt> Newton steps in an attempt to compute the
+matrix square-root within the specified tolerance, which defaults to
+<span class="math">\(n \epsilon\)</span>, where <span class="math">\(n\)</span> is the matrix height and <span class="math">\(\epsilon\)</span>
+is the machine precision.</p>
 </dd></dl>
 
+</div>
 </div>
 <div class="section" id="sign">
 <h2>Sign<a class="headerlink" href="#sign" title="Permalink to this headline">¶</a></h2>
@@ -263,6 +261,8 @@ where <span class="math">\(A\)</span> is overwritten by <span class="math">\(S\)
 a polar decomposition.</p>
 </dd></dl>
 
+<div class="section" id="id1">
+<h3>Detailed interface<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <dl class="type">
 <dt id="sign::Scaling">
 <em class="property">type </em><tt class="descclassname">sign::</tt><tt class="descname">Scaling</tt><a class="headerlink" href="#sign::Scaling" title="Permalink to this definition">¶</a></dt>
@@ -285,6 +285,7 @@ where <span class="math">\(n\)</span> is the matrix dimension and <span class="m
 machine epsilon. The return value is the number of performed iterations.</p>
 </dd></dl>
 
+</div>
 </div>
 </div>
 

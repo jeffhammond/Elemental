@@ -71,11 +71,33 @@ void <tt class="descname">Cholesky</tt><big>(</big><a class="reference internal"
 <dd><p>Overwrite the <cite>uplo</cite> triangle of the HPD matrix <cite>A</cite> with its Cholesky factor.</p>
 </dd></dl>
 
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">See <a class="reference internal" href="functions.html#HPSDCholesky__UpperOrLower.Matrix:F:R" title="HPSDCholesky"><tt class="xref cpp cpp-func docutils literal"><span class="pre">HPSDCholesky()</span></tt></a> for a generalization which also works for
-semi-definite matrices.</p>
-</div>
+<p>It is possible to compute the Cholesky factor of a Hermitian positive
+semi-definite (HPSD) matrix through its eigenvalue decomposition, though it
+is significantly more expensive than the HPD case: Let <span class="math">\(A = U \Lambda U^H\)</span>
+be the eigenvalue decomposition of <span class="math">\(A\)</span>, where all entries of
+<span class="math">\(\Lambda\)</span> are non-negative. Then <span class="math">\(B = U \sqrt \Lambda U^H\)</span> is the
+matrix square root of <span class="math">\(A\)</span>, i.e., <span class="math">\(B B = A\)</span>, and it follows that the
+QR and LQ factorizations of <span class="math">\(B\)</span> yield Cholesky factors of <span class="math">\(A\)</span>:</p>
+<div class="math">
+\[A = B B = B^H B = (Q R)^H (Q R) = R^H Q^H Q R = R^H R,\]</div>
+<p>and</p>
+<div class="math">
+\[A = B B = B B^H = (L Q) (L Q)^H = L Q Q^H L^H = L L^H.\]</div>
+<p>If <span class="math">\(A\)</span> is found to have eigenvalues less than
+<span class="math">\(-n \epsilon \| A \|_2\)</span>, then a <a class="reference internal" href="../core/environment.html#NonHPSDMatrixException__class" title="NonHPSDMatrixException"><tt class="xref cpp cpp-type docutils literal"><span class="pre">NonHPSDMatrixException</span></tt></a> will
+be thrown.</p>
+<dl class="function">
+<dt id="HPSDCholesky__UpperOrLower.Matrix:F:R">
+void <tt class="descname">HPSDCholesky</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HPSDCholesky__UpperOrLower.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HPSDCholesky__UpperOrLower.DistMatrix:F:R">
+void <tt class="descname">HPSDCholesky</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#HPSDCholesky__UpperOrLower.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overwrite the <cite>uplo</cite> triangle of the potentially singular matrix <cite>A</cite> with
+its Cholesky factor.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="factorization">
 <h2><span class="math">\(LDL^H\)</span> factorization<a class="headerlink" href="#factorization" title="Permalink to this headline">¶</a></h2>
@@ -254,9 +276,7 @@ void <tt class="descname">QR</tt><big>(</big><a class="reference internal" href=
 <dl class="function">
 <dt id="QR__DistMatrix:R:R">
 void <tt class="descname">QR</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:R:__class" title="DistMatrix&lt;R&gt;">DistMatrix&lt;R&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#QR__DistMatrix:R:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Overwrite the real matrix <span class="math">\(A\)</span> with <span class="math">\(R\)</span> and the
-Householder reflectors representing <span class="math">\(\hat Q\)</span>.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="QR__Matrix:Complex:R::R.Matrix:Complex:R::R">
@@ -267,11 +287,35 @@ void <tt class="descname">QR</tt><big>(</big><a class="reference internal" href=
 <dt id="QR__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.MD.STAR:R">
 void <tt class="descname">QR</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R::__class" title="DistMatrix&lt;Complex&lt;R&gt;&gt;">DistMatrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R:.MD.STAR:__class" title="DistMatrix&lt;Complex&lt;R&gt;, MD, STAR&gt;">DistMatrix&lt;Complex&lt;R&gt;, MD, STAR&gt;&amp;</a> <em>t</em><big>)</big><a class="headerlink" href="#QR__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.MD.STAR:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrite the complex matrix <span class="math">\(A\)</span> with <span class="math">\(R\)</span> and the
-Householder reflectors representing <span class="math">\(\hat Q\)</span>; unlike the real case,
+Householder reflectors representing <span class="math">\(\hat Q\)</span>. In the complex case,
 phase information is needed in order to define the (generalized)
 Householder transformations and is stored in the column vector <cite>t</cite>.</p>
 </dd></dl>
 
+<dl class="function">
+<dt id="QR__Matrix:R:R.Matrix:i:R">
+void <tt class="descname">QR</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:R:__class" title="Matrix&lt;R&gt;">Matrix&lt;R&gt;&amp;</a> <em>A</em>, Matrix&lt;int&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#QR__Matrix:R:R.Matrix:i:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="QR__DistMatrix:R:R.DistMatrix:i.VR.STAR:R">
+void <tt class="descname">QR</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:R:__class" title="DistMatrix&lt;R&gt;">DistMatrix&lt;R&gt;&amp;</a> <em>A</em>, DistMatrix&lt;int, VR, STAR&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#QR__DistMatrix:R:R.DistMatrix:i.VR.STAR:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="QR__Matrix:Complex:R::R.Matrix:Complex:R::R.Matrix:i:R">
+void <tt class="descname">QR</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>t</em>, Matrix&lt;int&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#QR__Matrix:Complex:R::R.Matrix:Complex:R::R.Matrix:i:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="QR__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.MD.STAR:R.DistMatrix:i.VR.STAR:R">
+void <tt class="descname">QR</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R::__class" title="DistMatrix&lt;Complex&lt;R&gt;&gt;">DistMatrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R:.MD.STAR:__class" title="DistMatrix&lt;Complex&lt;R&gt;, MD, STAR&gt;">DistMatrix&lt;Complex&lt;R&gt;, MD, STAR&gt;&amp;</a> <em>t</em>, DistMatrix&lt;int, VR, STAR&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#QR__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.MD.STAR:R.DistMatrix:i.VR.STAR:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Column-pivoted QR factorization. The current implementation uses
+Businger-Golub pivoting.</p>
+</dd></dl>
+
+<div class="section" id="detailed-interface">
+<h3>Detailed interface<a class="headerlink" href="#detailed-interface" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
 <dt id="qr::BusingerGolub__Matrix:R:R.Matrix:i:R">
 void <tt class="descclassname">qr::</tt><tt class="descname">BusingerGolub</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:R:__class" title="Matrix&lt;R&gt;">Matrix&lt;R&gt;&amp;</a> <em>A</em>, Matrix&lt;int&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#qr::BusingerGolub__Matrix:R:R.Matrix:i:R" title="Permalink to this definition">¶</a></dt>
@@ -340,6 +384,7 @@ column norm is less than or equal to <cite>tol</cite> times the maximum original
 norm.</p>
 </dd></dl>
 
+</div>
 </div>
 <div class="section" id="interpolative-decomposition-id">
 <h2>Interpolative Decomposition (ID)<a class="headerlink" href="#interpolative-decomposition-id" title="Permalink to this headline">¶</a></h2>
