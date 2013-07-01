@@ -230,16 +230,14 @@ stored in the lower trapezoid of <span class="math">\(A\)</span> and the Househo
 representing <span class="math">\(\hat Q\)</span> are stored within the rows of the strictly upper
 trapezoid.</p>
 <dl class="function">
-<dt id="LQ__Matrix:R:R">
-void <tt class="descname">LQ</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:R:__class" title="Matrix&lt;R&gt;">Matrix&lt;R&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#LQ__Matrix:R:R" title="Permalink to this definition">¶</a></dt>
+<dt id="LQ__Matrix:F:R">
+void <tt class="descname">LQ</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#LQ__Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="LQ__DistMatrix:R:R">
-void <tt class="descname">LQ</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:R:__class" title="DistMatrix&lt;R&gt;">DistMatrix&lt;R&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#LQ__DistMatrix:R:R" title="Permalink to this definition">¶</a></dt>
-<dd><p>Overwrite the real matrix <span class="math">\(A\)</span> with <span class="math">\(L\)</span> and the
-Householder reflectors representing <span class="math">\(\hat Q\)</span>.</p>
-</dd></dl>
+<dt id="LQ__DistMatrix:F:R">
+void <tt class="descname">LQ</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#LQ__DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="LQ__Matrix:Complex:R::R.Matrix:Complex:R::R">
@@ -250,7 +248,7 @@ void <tt class="descname">LQ</tt><big>(</big><a class="reference internal" href=
 <dt id="LQ__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.MD.STAR:R">
 void <tt class="descname">LQ</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R::__class" title="DistMatrix&lt;Complex&lt;R&gt;&gt;">DistMatrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R:.MD.STAR:__class" title="DistMatrix&lt;Complex&lt;R&gt;, MD, STAR&gt;">DistMatrix&lt;Complex&lt;R&gt;, MD, STAR&gt;&amp;</a> <em>t</em><big>)</big><a class="headerlink" href="#LQ__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.MD.STAR:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrite the complex matrix <span class="math">\(A\)</span> with <span class="math">\(L\)</span> and the
-Householder reflectors representing <span class="math">\(\hat Q\)</span>; unlike the real case,
+Householder reflectors representing <span class="math">\(\hat Q\)</span>. In the complex case,
 phase information is needed in order to define the (generalized)
 Householder transformations and is stored in the column vector <cite>t</cite>.</p>
 </dd></dl>
@@ -269,13 +267,13 @@ stored in the upper trapezoid of <span class="math">\(A\)</span> and the Househo
 representing <span class="math">\(\hat Q\)</span> are stored within the columns of the strictly lower
 trapezoid.</p>
 <dl class="function">
-<dt id="QR__Matrix:R:R">
-void <tt class="descname">QR</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:R:__class" title="Matrix&lt;R&gt;">Matrix&lt;R&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#QR__Matrix:R:R" title="Permalink to this definition">¶</a></dt>
+<dt id="QR__Matrix:F:R">
+void <tt class="descname">QR</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#QR__Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="QR__DistMatrix:R:R">
-void <tt class="descname">QR</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:R:__class" title="DistMatrix&lt;R&gt;">DistMatrix&lt;R&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#QR__DistMatrix:R:R" title="Permalink to this definition">¶</a></dt>
+<dt id="QR__DistMatrix:F:R">
+void <tt class="descname">QR</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#QR__DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -293,13 +291,13 @@ Householder transformations and is stored in the column vector <cite>t</cite>.</
 </dd></dl>
 
 <dl class="function">
-<dt id="QR__Matrix:R:R.Matrix:i:R">
-void <tt class="descname">QR</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:R:__class" title="Matrix&lt;R&gt;">Matrix&lt;R&gt;&amp;</a> <em>A</em>, Matrix&lt;int&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#QR__Matrix:R:R.Matrix:i:R" title="Permalink to this definition">¶</a></dt>
+<dt id="QR__Matrix:F:R.Matrix:i:R">
+void <tt class="descname">QR</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, Matrix&lt;int&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#QR__Matrix:F:R.Matrix:i:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="QR__DistMatrix:R:R.DistMatrix:i.VR.STAR:R">
-void <tt class="descname">QR</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:R:__class" title="DistMatrix&lt;R&gt;">DistMatrix&lt;R&gt;&amp;</a> <em>A</em>, DistMatrix&lt;int, VR, STAR&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#QR__DistMatrix:R:R.DistMatrix:i.VR.STAR:R" title="Permalink to this definition">¶</a></dt>
+<dt id="QR__DistMatrix:F:R.DistMatrix:i.VR.STAR:R">
+void <tt class="descname">QR</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;int, VR, STAR&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#QR__DistMatrix:F:R.DistMatrix:i.VR.STAR:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -317,13 +315,13 @@ Businger-Golub pivoting.</p>
 <div class="section" id="detailed-interface">
 <h3>Detailed interface<a class="headerlink" href="#detailed-interface" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
-<dt id="qr::BusingerGolub__Matrix:R:R.Matrix:i:R">
-void <tt class="descclassname">qr::</tt><tt class="descname">BusingerGolub</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:R:__class" title="Matrix&lt;R&gt;">Matrix&lt;R&gt;&amp;</a> <em>A</em>, Matrix&lt;int&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#qr::BusingerGolub__Matrix:R:R.Matrix:i:R" title="Permalink to this definition">¶</a></dt>
+<dt id="qr::BusingerGolub__Matrix:F:R.Matrix:i:R">
+void <tt class="descclassname">qr::</tt><tt class="descname">BusingerGolub</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, Matrix&lt;int&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#qr::BusingerGolub__Matrix:F:R.Matrix:i:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="qr::BusingerGolub__DistMatrix:R:R.DistMatrix:i.VR.STAR:R">
-void <tt class="descclassname">qr::</tt><tt class="descname">BusingerGolub</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:R:__class" title="DistMatrix&lt;R&gt;">DistMatrix&lt;R&gt;&amp;</a> <em>A</em>, DistMatrix&lt;int, VR, STAR&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#qr::BusingerGolub__DistMatrix:R:R.DistMatrix:i.VR.STAR:R" title="Permalink to this definition">¶</a></dt>
+<dt id="qr::BusingerGolub__DistMatrix:F:R.DistMatrix:i.VR.STAR:R">
+void <tt class="descclassname">qr::</tt><tt class="descname">BusingerGolub</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;int, VR, STAR&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#qr::BusingerGolub__DistMatrix:F:R.DistMatrix:i.VR.STAR:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -340,13 +338,13 @@ two norm.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="qr::BusingerGolub__Matrix:R:R.Matrix:i:R.i">
-void <tt class="descclassname">qr::</tt><tt class="descname">BusingerGolub</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:R:__class" title="Matrix&lt;R&gt;">Matrix&lt;R&gt;&amp;</a> <em>A</em>, Matrix&lt;int&gt;&amp; <em>p</em>, int <em>numSteps</em><big>)</big><a class="headerlink" href="#qr::BusingerGolub__Matrix:R:R.Matrix:i:R.i" title="Permalink to this definition">¶</a></dt>
+<dt id="qr::BusingerGolub__Matrix:F:R.Matrix:i:R.i">
+void <tt class="descclassname">qr::</tt><tt class="descname">BusingerGolub</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, Matrix&lt;int&gt;&amp; <em>p</em>, int <em>numSteps</em><big>)</big><a class="headerlink" href="#qr::BusingerGolub__Matrix:F:R.Matrix:i:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="qr::BusingerGolub__DistMatrix:R:R.DistMatrix:i.VR.STAR:R.i">
-void <tt class="descclassname">qr::</tt><tt class="descname">BusingerGolub</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:R:__class" title="DistMatrix&lt;R&gt;">DistMatrix&lt;R&gt;&amp;</a> <em>A</em>, DistMatrix&lt;int, VR, STAR&gt;&amp; <em>p</em>, int <em>numSteps</em><big>)</big><a class="headerlink" href="#qr::BusingerGolub__DistMatrix:R:R.DistMatrix:i.VR.STAR:R.i" title="Permalink to this definition">¶</a></dt>
+<dt id="qr::BusingerGolub__DistMatrix:F:R.DistMatrix:i.VR.STAR:R.i">
+void <tt class="descclassname">qr::</tt><tt class="descname">BusingerGolub</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;int, VR, STAR&gt;&amp; <em>p</em>, int <em>numSteps</em><big>)</big><a class="headerlink" href="#qr::BusingerGolub__DistMatrix:F:R.DistMatrix:i.VR.STAR:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -362,13 +360,13 @@ factorization.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="qr::BusingerGolub__Matrix:R:R.Matrix:i:R.i.R">
-void <tt class="descclassname">qr::</tt><tt class="descname">BusingerGolub</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:R:__class" title="Matrix&lt;R&gt;">Matrix&lt;R&gt;&amp;</a> <em>A</em>, Matrix&lt;int&gt;&amp; <em>p</em>, int <em>maxSteps</em>, R <em>tol</em><big>)</big><a class="headerlink" href="#qr::BusingerGolub__Matrix:R:R.Matrix:i:R.i.R" title="Permalink to this definition">¶</a></dt>
+<dt id="qr::BusingerGolub__Matrix:F:R.Matrix:i:R.i.R">
+void <tt class="descclassname">qr::</tt><tt class="descname">BusingerGolub</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, Matrix&lt;int&gt;&amp; <em>p</em>, int <em>maxSteps</em>, R <em>tol</em><big>)</big><a class="headerlink" href="#qr::BusingerGolub__Matrix:F:R.Matrix:i:R.i.R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="qr::BusingerGolub__DistMatrix:R:R.DistMatrix:i.VR.STAR:R.i.R">
-void <tt class="descclassname">qr::</tt><tt class="descname">BusingerGolub</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:R:__class" title="DistMatrix&lt;R&gt;">DistMatrix&lt;R&gt;&amp;</a> <em>A</em>, DistMatrix&lt;int, VR, STAR&gt;&amp; <em>p</em>, int <em>maxSteps</em>, R <em>tol</em><big>)</big><a class="headerlink" href="#qr::BusingerGolub__DistMatrix:R:R.DistMatrix:i.VR.STAR:R.i.R" title="Permalink to this definition">¶</a></dt>
+<dt id="qr::BusingerGolub__DistMatrix:F:R.DistMatrix:i.VR.STAR:R.i.R">
+void <tt class="descclassname">qr::</tt><tt class="descname">BusingerGolub</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;int, VR, STAR&gt;&amp; <em>p</em>, int <em>maxSteps</em>, R <em>tol</em><big>)</big><a class="headerlink" href="#qr::BusingerGolub__DistMatrix:F:R.DistMatrix:i.VR.STAR:R.i.R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
