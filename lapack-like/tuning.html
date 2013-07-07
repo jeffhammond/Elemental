@@ -32,7 +32,7 @@
     <link rel="prev" title="Utilities" href="util.html" /> 
   </head>
   <body>
-      <div class="header"><img class="rightlogo" src="../_static/elemental_90.png" alt="Logo"/><h1 class="heading"><a href="../index.html">
+      <div class="header"><img class="rightlogo" src="../_static/elemental-half.png" alt="Logo"/><h1 class="heading"><a href="../index.html">
           <span>Elemental 0.81-dev documentation</span></a></h1>
         <h2 class="heading"><span>Tuning parameters</span></h2>
       </div>
@@ -69,7 +69,7 @@ of symmetric eigensolvers</em>&#8221;.</li>
 </ol>
 <p>There is clearly a small penalty associated with the extra redistributions
 necessary for the second approach, but the benefit from using a square process
-grid is usually quite signficant. By default, <a class="reference internal" href="condensed.html#HermitianTridiag__UpperOrLower.Matrix:R:R" title="HermitianTridiag"><tt class="xref cpp cpp-func docutils literal"><span class="pre">HermitianTridiag()</span></tt></a> will
+grid is usually quite signficant. By default, <a class="reference internal" href="condensed.html#HermitianTridiag__UpperOrLower.Matrix:F:R" title="HermitianTridiag"><tt class="xref cpp cpp-func docutils literal"><span class="pre">HermitianTridiag()</span></tt></a> will
 run the standard algorithm (approach 1) unless the matrix is already distributed
 over a square process grid. The reasoning is that good performance depends upon
 a &#8220;good&#8221; ordering of the square (say, <span class="math">\(\hat p \times \hat p\)</span>) subgrid,
@@ -108,7 +108,7 @@ are both 64.</p>
 <dl class="function">
 <dt id="SetHermitianTridiagApproach__HermitianTridiagApproach">
 void <tt class="descname">SetHermitianTridiagApproach</tt><big>(</big><a class="reference internal" href="#HermitianTridiagApproach" title="HermitianTridiagApproach">HermitianTridiagApproach</a> <em>approach</em><big>)</big><a class="headerlink" href="#SetHermitianTridiagApproach__HermitianTridiagApproach" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sets the algorithm used by subsequent calls to <a class="reference internal" href="condensed.html#HermitianTridiag__UpperOrLower.Matrix:R:R" title="HermitianTridiag"><tt class="xref cpp cpp-func docutils literal"><span class="pre">HermitianTridiag()</span></tt></a>.</p>
+<dd><p>Sets the algorithm used by subsequent calls to <a class="reference internal" href="condensed.html#HermitianTridiag__UpperOrLower.Matrix:F:R" title="HermitianTridiag"><tt class="xref cpp cpp-func docutils literal"><span class="pre">HermitianTridiag()</span></tt></a>.</p>
 </dd></dl>
 
 <dl class="function">
