@@ -74,7 +74,7 @@ should <strong>not</strong> be manually modified between the <tt class="docutils
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">elem</span><span class="p">;</span>
 <span class="p">...</span>
 <span class="c1">// Create an 8 x 8 distributed matrix over the given grid</span>
-<span class="n">DistMatrix</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="n">MC</span><span class="p">,</span><span class="n">MR</span><span class="o">&gt;</span> <span class="n">A</span><span class="p">(</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">grid</span> <span class="p">);</span>
+<span class="n">DistMatrix</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">A</span><span class="p">(</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">grid</span> <span class="p">);</span>
 
 <span class="c1">// Set every entry of A to zero</span>
 <span class="n">MakeZeros</span><span class="p">(</span> <span class="n">A</span> <span class="p">);</span>
@@ -100,7 +100,7 @@ should <strong>not</strong> be manually modified between the <tt class="docutils
 <span class="n">interface</span><span class="p">.</span><span class="n">Detach</span><span class="p">();</span>
 
 <span class="c1">// Print the updated A</span>
-<span class="n">A</span><span class="p">.</span><span class="n">Print</span><span class="p">(</span><span class="s">&quot;Distributed A&quot;</span><span class="p">);</span>
+<span class="n">Print</span><span class="p">(</span> <span class="n">A</span><span class="p">,</span> <span class="s">&quot;Distributed A&quot;</span> <span class="p">);</span>
 
 <span class="c1">// Reattach to A, but in the GLOBAL_TO_LOCAL direction</span>
 <span class="n">interface</span><span class="p">.</span><span class="n">Attach</span><span class="p">(</span> <span class="n">GLOBAL_TO_LOCAL</span><span class="p">,</span> <span class="n">A</span> <span class="p">);</span>
@@ -121,7 +121,7 @@ should <strong>not</strong> be manually modified between the <tt class="docutils
 
 <span class="c1">// Process 0 can now locally print its copy of A</span>
 <span class="k">if</span><span class="p">(</span> <span class="n">g</span><span class="p">.</span><span class="n">VCRank</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span>
-    <span class="n">C</span><span class="p">.</span><span class="n">Print</span><span class="p">(</span><span class="s">&quot;Process 0&#39;s local copy of A&quot;</span><span class="p">);</span>
+    <span class="n">Print</span><span class="p">(</span> <span class="n">C</span><span class="p">,</span> <span class="s">&quot;Process 0&#39;s local copy of A&quot;</span> <span class="p">);</span>
 </pre></div>
 </div>
 <p>The output would be</p>
