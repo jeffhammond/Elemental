@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Control theory &mdash; Elemental 0.81-dev documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.81-dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/theme_extras.js"></script>
+    <link rel="top" title="Elemental 0.81-dev documentation" href="index.html" />
+    <link rel="next" title="Special matrices" href="matrices.html" />
+    <link rel="prev" title="Convex optimization" href="convex.html" /> 
+  </head>
+  <body>
+      <div class="header"><img class="rightlogo" src="_static/elemental-half.png" alt="Logo"/><h1 class="heading"><a href="index.html">
+          <span>Elemental 0.81-dev documentation</span></a></h1>
+        <h2 class="heading"><span>Control theory</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="convex.html">Convex optimization</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="matrices.html">Special matrices</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="control-theory">
+<h1>Control theory<a class="headerlink" href="#control-theory" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The following algorithms draw heavily from the second chapter of
+Nicholas J. Higham&#8217;s &#8220;Functions of Matrices: Theory and Computation&#8221;, depend
+heavily on the matrix sign function, and are, as of yet, untested and
+unoptimized.</p>
+</div>
+<div class="section" id="sylvester">
+<h2>Sylvester<a class="headerlink" href="#sylvester" title="Permalink to this headline">¶</a></h2>
+<p>As long as both <span class="math">\(A\)</span> and <span class="math">\(B\)</span> only have eigenvalues in the open
+right-half plane, the following routines solve for <span class="math">\(X\)</span> in the <em>Sylvester
+equation</em></p>
+<div class="math">
+\[A X + X B = C\]</div>
+<p>via computing <span class="math">\(\text{sgn}(W)\)</span>, where</p>
+<div class="math">
+\[\begin{split}W = \begin{pmatrix} A &amp; -C \\ 0 &amp; -B \end{pmatrix}.\end{split}\]</div>
+<dl class="function">
+<dt id="Sylvester__Matrix:F:CR.Matrix:F:CR.Matrix:F:CR.Matrix:F:R">
+int <tt class="descname">Sylvester</tt><big>(</big><a class="reference internal" href="core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>B</em>, <a class="reference internal" href="core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>C</em>, <a class="reference internal" href="core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>X</em><big>)</big><a class="headerlink" href="#Sylvester__Matrix:F:CR.Matrix:F:CR.Matrix:F:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Sylvester__DistMatrix:F:CR.DistMatrix:F:CR.DistMatrix:F:CR.DistMatrix:F:R">
+int <tt class="descname">Sylvester</tt><big>(</big><a class="reference internal" href="core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>B</em>, <a class="reference internal" href="core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>C</em>, <a class="reference internal" href="core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>X</em><big>)</big><a class="headerlink" href="#Sylvester__DistMatrix:F:CR.DistMatrix:F:CR.DistMatrix:F:CR.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>One may also directly pass in <span class="math">\(W\)</span> in order to save space.</p>
+<dl class="function">
+<dt id="Sylvester__i.Matrix:F:R.Matrix:F:R">
+int <tt class="descname">Sylvester</tt><big>(</big>int <em>m</em>, <a class="reference internal" href="core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>W</em>, <a class="reference internal" href="core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>X</em><big>)</big><a class="headerlink" href="#Sylvester__i.Matrix:F:R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Sylvester__i.DistMatrix:F:R.DistMatrix:F:R">
+int <tt class="descname">Sylvester</tt><big>(</big>int <em>m</em>, <a class="reference internal" href="core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>W</em>, <a class="reference internal" href="core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>X</em><big>)</big><a class="headerlink" href="#Sylvester__i.DistMatrix:F:R.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="lyapunov">
+<h2>Lyapunov<a class="headerlink" href="#lyapunov" title="Permalink to this headline">¶</a></h2>
+<p>A special case of the Sylvester solver, where <span class="math">\(B = A^H\)</span>.</p>
+<dl class="function">
+<dt id="Lyapunov__Matrix:F:CR.Matrix:F:CR.Matrix:F:R">
+int <tt class="descname">Lyapunov</tt><big>(</big><a class="reference internal" href="core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>C</em>, <a class="reference internal" href="core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>X</em><big>)</big><a class="headerlink" href="#Lyapunov__Matrix:F:CR.Matrix:F:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Lyapunov__DistMatrix:F:CR.DistMatrix:F:CR.DistMatrix:F:R">
+int <tt class="descname">Lyapunov</tt><big>(</big><a class="reference internal" href="core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>C</em>, <a class="reference internal" href="core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>X</em><big>)</big><a class="headerlink" href="#Lyapunov__DistMatrix:F:CR.DistMatrix:F:CR.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="algebraic-ricatti">
+<h2>Algebraic Ricatti<a class="headerlink" href="#algebraic-ricatti" title="Permalink to this headline">¶</a></h2>
+<p>Under suitable conditions, the following routines solve for <span class="math">\(X\)</span> in the
+<em>algebraic Ricatti equation</em></p>
+<div class="math">
+\[X K X - A^H X - X A = L,\]</div>
+<p>where both <span class="math">\(K\)</span> and <span class="math">\(L\)</span> are Hermitian. In each case, the number
+of Newton iterations required for convergence of <span class="math">\(\text{sgn}(W)\)</span>, where</p>
+<div class="math">
+\[\begin{split}W = \begin{pmatrix} A^H &amp; L \\ K &amp; -A \end{pmatrix},\end{split}\]</div>
+<p>is returned.</p>
+<dl class="function">
+<dt id="Ricatti__UpperOrLower.Matrix:F:CR.Matrix:F:CR.Matrix:F:CR.Matrix:F:R">
+int <tt class="descname">Ricatti</tt><big>(</big><a class="reference internal" href="core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>K</em>, <a class="reference internal" href="core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>L</em>, <a class="reference internal" href="core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>X</em><big>)</big><a class="headerlink" href="#Ricatti__UpperOrLower.Matrix:F:CR.Matrix:F:CR.Matrix:F:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Ricatti__UpperOrLower.DistMatrix:F:CR.DistMatrix:F:CR.DistMatrix:F:CR.DistMatrix:F:R">
+int <tt class="descname">Ricatti</tt><big>(</big><a class="reference internal" href="core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>K</em>, <a class="reference internal" href="core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>L</em>, <a class="reference internal" href="core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>X</em><big>)</big><a class="headerlink" href="#Ricatti__UpperOrLower.DistMatrix:F:CR.DistMatrix:F:CR.DistMatrix:F:CR.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Alternatively, one may directly fill the matrix <span class="math">\(W\)</span>.</p>
+<dl class="function">
+<dt id="Ricatti__Matrix:F:R.Matrix:F:R">
+int <tt class="descname">Ricatti</tt><big>(</big><a class="reference internal" href="core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>W</em>, <a class="reference internal" href="core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>X</em><big>)</big><a class="headerlink" href="#Ricatti__Matrix:F:R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Ricatti__DistMatrix:F:R.DistMatrix:F:R">
+int <tt class="descname">Ricatti</tt><big>(</big><a class="reference internal" href="core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>W</em>, <a class="reference internal" href="core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>X</em><big>)</big><a class="headerlink" href="#Ricatti__DistMatrix:F:R.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="convex.html">Convex optimization</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="matrices.html">Special matrices</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2009-2013, Jack Poulson.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>
