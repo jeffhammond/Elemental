@@ -131,18 +131,62 @@ void <tt class="descname">Diagonal</tt><big>(</big><a class="reference internal"
 </div>
 <div class="section" id="egorov">
 <h2>Egorov<a class="headerlink" href="#egorov" title="Permalink to this headline">¶</a></h2>
-<p><strong>TODO</strong></p>
+<p>Sets <span class="math">\(A\)</span> to an <span class="math">\(n \times n\)</span> matrix with the <span class="math">\((i,j)\)</span> entry
+equal to</p>
+<div class="math">
+\[\exp(i \phi(i,j)).\]</div>
+<dl class="function">
+<dt id="Egorov__Matrix:Complex:R::R.RealFunctorCR.i">
+void <tt class="descname">Egorov</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, const RealFunctor&amp; <em>phase</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Egorov__Matrix:Complex:R::R.RealFunctorCR.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Egorov__DistMatrix:Complex:R:.U.V:R.RealFunctorCR.i">
+void <tt class="descname">Egorov</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R:.U.V:__class" title="DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;">DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;&amp;</a> <em>A</em>, const RealFunctor&amp; <em>phase</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Egorov__DistMatrix:Complex:R:.U.V:R.RealFunctorCR.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="extended-kahan">
 <h2>Extended Kahan<a class="headerlink" href="#extended-kahan" title="Permalink to this headline">¶</a></h2>
 <p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="ExtendedKahan__Matrix:F:R.i.typename-Base:F:::type.typename-Base:F:::type">
+void <tt class="descname">ExtendedKahan</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, int <em>k</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>phi</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>mu</em><big>)</big><a class="headerlink" href="#ExtendedKahan__Matrix:F:R.i.typename-Base:F:::type.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ExtendedKahan__DistMatrix:F.U.V:R.i.typename-Base:F:::type.typename-Base:F:::type">
+void <tt class="descname">ExtendedKahan</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em>, int <em>k</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>phi</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>mu</em><big>)</big><a class="headerlink" href="#ExtendedKahan__DistMatrix:F.U.V:R.i.typename-Base:F:::type.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="fiedler">
 <h2>Fiedler<a class="headerlink" href="#fiedler" title="Permalink to this headline">¶</a></h2>
+<p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="Fiedler__Matrix:F:R.std::vector:F:CR">
+void <tt class="descname">Fiedler</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, const std::vector&lt;F&gt;&amp; <em>c</em><big>)</big><a class="headerlink" href="#Fiedler__Matrix:F:R.std::vector:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Fiedler__DistMatrix:F.U.V:R.std::vector:F:CR">
+void <tt class="descname">Fiedler</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em>, const std::vector&lt;F&gt;&amp; <em>c</em><big>)</big><a class="headerlink" href="#Fiedler__DistMatrix:F.U.V:R.std::vector:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="forsythe">
 <h2>Forsythe<a class="headerlink" href="#forsythe" title="Permalink to this headline">¶</a></h2>
 <p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="Forsythe__Matrix:T:R.i.T.T">
+void <tt class="descname">Forsythe</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>J</em>, int <em>n</em>, T <em>alpha</em>, T <em>lambda</em><big>)</big><a class="headerlink" href="#Forsythe__Matrix:T:R.i.T.T" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Forsythe__DistMatrix:T.U.V:R.i.T.T">
+void <tt class="descname">Forsythe</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>J</em>, int <em>n</em>, T <em>alpha</em>, T <em>lambda</em><big>)</big><a class="headerlink" href="#Forsythe__DistMatrix:T.U.V:R.i.T.T" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="fourier">
 <h2>Fourier<a class="headerlink" href="#fourier" title="Permalink to this headline">¶</a></h2>
@@ -175,18 +219,58 @@ void <tt class="descname">MakeFourier</tt><big>(</big><a class="reference intern
 <div class="section" id="gcdmatrix">
 <h2>GCDMatrix<a class="headerlink" href="#gcdmatrix" title="Permalink to this headline">¶</a></h2>
 <p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="GCDMatrix__Matrix:T:R.i.i">
+void <tt class="descname">GCDMatrix</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>G</em>, int <em>m</em>, int <em>n</em><big>)</big><a class="headerlink" href="#GCDMatrix__Matrix:T:R.i.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="GCDMatrix__DistMatrix:T.U.V:R.i.i">
+void <tt class="descname">GCDMatrix</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>G</em>, int <em>m</em>, int <em>n</em><big>)</big><a class="headerlink" href="#GCDMatrix__DistMatrix:T.U.V:R.i.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="gear">
 <h2>Gear<a class="headerlink" href="#gear" title="Permalink to this headline">¶</a></h2>
 <p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="Gear__Matrix:T:R.i.i.i">
+void <tt class="descname">Gear</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>G</em>, int <em>n</em>, int <em>s</em>, int <em>t</em><big>)</big><a class="headerlink" href="#Gear__Matrix:T:R.i.i.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+<tt class="descname">void Gear( DistMatrix&lt;T,U,V&gt;&amp; int n, int s, int t )</tt></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="golub-klema-stewart">
 <h2>Golub/Klema/Stewart<a class="headerlink" href="#golub-klema-stewart" title="Permalink to this headline">¶</a></h2>
 <p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="GKS__Matrix:F:R.i">
+void <tt class="descname">GKS</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, int <em>n</em><big>)</big><a class="headerlink" href="#GKS__Matrix:F:R.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="GKS__DistMatrix:F.U.V:R.i">
+void <tt class="descname">GKS</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em>, int <em>n</em><big>)</big><a class="headerlink" href="#GKS__DistMatrix:F.U.V:R.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="grcar">
 <h2>Grcar<a class="headerlink" href="#grcar" title="Permalink to this headline">¶</a></h2>
 <p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="Grcar__Matrix:T:R.i.i">
+void <tt class="descname">Grcar</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, int <em>n</em>, int <em>k</em><em>=3 </em><big>)</big><a class="headerlink" href="#Grcar__Matrix:T:R.i.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Grcar__DistMatrix:T.U.V:R.i.i">
+void <tt class="descname">Grcar</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, int <em>n</em>, int <em>k</em><em>=3 </em><big>)</big><a class="headerlink" href="#Grcar__DistMatrix:T.U.V:R.i.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="hankel">
 <h2>Hankel<a class="headerlink" href="#hankel" title="Permalink to this headline">¶</a></h2>
@@ -212,10 +296,53 @@ void <tt class="descname">Hankel</tt><big>(</big><a class="reference internal" h
 <div class="section" id="hanowa">
 <h2>Hanowa<a class="headerlink" href="#hanowa" title="Permalink to this headline">¶</a></h2>
 <p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="Hanowa__Matrix:T:R.i.T">
+void <tt class="descname">Hanowa</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, int <em>n</em>, T <em>mu</em><big>)</big><a class="headerlink" href="#Hanowa__Matrix:T:R.i.T" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Hanowa__DistMatrix:T.U.V:R.i.T">
+void <tt class="descname">Hanowa</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, int <em>n</em>, T <em>mu</em><big>)</big><a class="headerlink" href="#Hanowa__DistMatrix:T.U.V:R.i.T" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="helmholtz">
 <h2>Helmholtz<a class="headerlink" href="#helmholtz" title="Permalink to this headline">¶</a></h2>
 <p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="Helmholtz__Matrix:F:R.i.F">
+void <tt class="descname">Helmholtz</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>H</em>, int <em>n</em>, F <em>shift</em><big>)</big><a class="headerlink" href="#Helmholtz__Matrix:F:R.i.F" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Helmholtz__DistMatrix:F.U.V:R.i.F">
+void <tt class="descname">Helmholtz</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>H</em>, int <em>n</em>, F <em>shift</em><big>)</big><a class="headerlink" href="#Helmholtz__DistMatrix:F.U.V:R.i.F" title="Permalink to this definition">¶</a></dt>
+<dd><p>1D Helmholtz: <strong>TODO</strong></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Helmholtz__Matrix:F:R.i.i.F">
+void <tt class="descname">Helmholtz</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>H</em>, int <em>nx</em>, int <em>ny</em>, F <em>shift</em><big>)</big><a class="headerlink" href="#Helmholtz__Matrix:F:R.i.i.F" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Helmholtz__DistMatrix:F.U.V:R.i.i.F">
+void <tt class="descname">Helmholtz</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>H</em>, int <em>nx</em>, int <em>ny</em>, F <em>shift</em><big>)</big><a class="headerlink" href="#Helmholtz__DistMatrix:F.U.V:R.i.i.F" title="Permalink to this definition">¶</a></dt>
+<dd><p>2D Helmholtz: <strong>TODO</strong></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Helmholtz__Matrix:F:R.i.i.i.F">
+void <tt class="descname">Helmholtz</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>H</em>, int <em>nx</em>, int <em>ny</em>, int <em>nz</em>, F <em>shift</em><big>)</big><a class="headerlink" href="#Helmholtz__Matrix:F:R.i.i.i.F" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Helmholtz__DistMatrix:F.U.V:R.i.i.i.F">
+void <tt class="descname">Helmholtz</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>H</em>, int <em>nx</em>, int <em>ny</em>, int <em>nz</em>, F <em>shift</em><big>)</big><a class="headerlink" href="#Helmholtz__DistMatrix:F.U.V:R.i.i.i.F" title="Permalink to this definition">¶</a></dt>
+<dd><p>3D Helmholtz: <strong>TODO</strong></p>
+</dd></dl>
+
 </div>
 <div class="section" id="hilbert">
 <h2>Hilbert<a class="headerlink" href="#hilbert" title="Permalink to this headline">¶</a></h2>
@@ -241,6 +368,25 @@ void <tt class="descname">MakeHilbert</tt><big>(</big><a class="reference intern
 <dt id="MakeHilbert__DistMatrix:F.U.V:R">
 void <tt class="descname">MakeHilbert</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MakeHilbert__DistMatrix:F.U.V:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Turn the square matrix <tt class="docutils literal"><span class="pre">A</span></tt> into a Hilbert matrix.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="hermitianfromevd">
+<h2>HermitianFromEVD<a class="headerlink" href="#hermitianfromevd" title="Permalink to this headline">¶</a></h2>
+<p>Form
+.. math:</p>
+<div class="highlight-python"><pre>A := Z \Omega Z^H,</pre>
+</div>
+<p>where <span class="math">\(\Omega\)</span> is a real diagonal matrix.</p>
+<dl class="function">
+<dt id="HermitianFromEVD__UpperOrLower.Matrix:F:R.Matrix:typename-Base:F:::val:CR.Matrix:F:CR">
+void <tt class="descname">HermitianFromEVD</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, const Matrix&lt;typename Base&lt;F&gt;::val&gt;&amp; <em>w</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>Z</em><big>)</big><a class="headerlink" href="#HermitianFromEVD__UpperOrLower.Matrix:F:R.Matrix:typename-Base:F:::val:CR.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianFromEVD__UpperOrLower.DistMatrix:F:R.DistMatrix:typename-Base:F:::val.VR.STAR:CR.DistMatrix:F:CR">
+void <tt class="descname">HermitianFromEVD</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, const DistMatrix&lt;typename Base&lt;F&gt;::val, VR, STAR&gt;&amp; <em>w</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>Z</em><big>)</big><a class="headerlink" href="#HermitianFromEVD__UpperOrLower.DistMatrix:F:R.DistMatrix:typename-Base:F:::val.VR.STAR:CR.DistMatrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd><p>The diagonal entries of <span class="math">\(\Omega\)</span> are given by the vector <span class="math">\(w\)</span>.</p>
 </dd></dl>
 
 </div>
@@ -276,6 +422,16 @@ void <tt class="descname">MakeIdentity</tt><big>(</big><a class="reference inter
 <div class="section" id="jordan">
 <h2>Jordan<a class="headerlink" href="#jordan" title="Permalink to this headline">¶</a></h2>
 <p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="Jordan__Matrix:T:R.i.T">
+void <tt class="descname">Jordan</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>J</em>, int <em>n</em>, T <em>lambda</em><big>)</big><a class="headerlink" href="#Jordan__Matrix:T:R.i.T" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Jordan__DistMatrix:T.U.V:R.i.T">
+void <tt class="descname">Jordan</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>J</em>, int <em>n</em>, T <em>lambda</em><big>)</big><a class="headerlink" href="#Jordan__DistMatrix:T.U.V:R.i.T" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="kahan">
 <h2>Kahan<a class="headerlink" href="#kahan" title="Permalink to this headline">¶</a></h2>
@@ -304,14 +460,67 @@ the specified value for <span class="math">\(\phi\)</span>.</p>
 <div class="section" id="kms">
 <h2>KMS<a class="headerlink" href="#kms" title="Permalink to this headline">¶</a></h2>
 <p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="KMS__Matrix:T:R.i.T">
+void <tt class="descname">KMS</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>K</em>, int <em>n</em>, T <em>rho</em><big>)</big><a class="headerlink" href="#KMS__Matrix:T:R.i.T" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="KMS__DistMatrix:T.U.V:R.i.T">
+void <tt class="descname">KMS</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>K</em>, int <em>n</em>, T <em>rho</em><big>)</big><a class="headerlink" href="#KMS__DistMatrix:T.U.V:R.i.T" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="laplacian">
 <h2>Laplacian<a class="headerlink" href="#laplacian" title="Permalink to this headline">¶</a></h2>
 <p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="Laplacian__Matrix:F:R.i">
+void <tt class="descname">Laplacian</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>L</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Laplacian__Matrix:F:R.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Laplacian__DistMatrix:F.U.V:R.i">
+void <tt class="descname">Laplacian</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>L</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Laplacian__DistMatrix:F.U.V:R.i" title="Permalink to this definition">¶</a></dt>
+<dd><p>1D Laplacian: <strong>TODO</strong></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Laplacian__Matrix:F:R.i.i">
+void <tt class="descname">Laplacian</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>L</em>, int <em>nx</em>, int <em>ny</em><big>)</big><a class="headerlink" href="#Laplacian__Matrix:F:R.i.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Laplacian__DistMatrix:F.U.V:R.i.i">
+void <tt class="descname">Laplacian</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>L</em>, int <em>nx</em>, int <em>ny</em><big>)</big><a class="headerlink" href="#Laplacian__DistMatrix:F.U.V:R.i.i" title="Permalink to this definition">¶</a></dt>
+<dd><p>2D Laplacian: <strong>TODO</strong></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Laplacian__Matrix:F:R.i.i.i">
+void <tt class="descname">Laplacian</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>L</em>, int <em>nx</em>, int <em>ny</em>, int <em>nz</em><big>)</big><a class="headerlink" href="#Laplacian__Matrix:F:R.i.i.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Laplacian__DistMatrix:F.U.V:R.i.i.i">
+void <tt class="descname">Laplacian</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>L</em>, int <em>nx</em>, int <em>ny</em>, int <em>nz</em><big>)</big><a class="headerlink" href="#Laplacian__DistMatrix:F.U.V:R.i.i.i" title="Permalink to this definition">¶</a></dt>
+<dd><p>3D Laplacian: <strong>TODO</strong></p>
+</dd></dl>
+
 </div>
 <div class="section" id="lauchli">
 <h2>Lauchli<a class="headerlink" href="#lauchli" title="Permalink to this headline">¶</a></h2>
 <p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="Lauchli__Matrix:T:R.i.T">
+void <tt class="descname">Lauchli</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, int <em>n</em>, T <em>mu</em><big>)</big><a class="headerlink" href="#Lauchli__Matrix:T:R.i.T" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Lauchli__DistMatrix:T.U.V:R.i.T">
+void <tt class="descname">Lauchli</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, int <em>n</em>, T <em>mu</em><big>)</big><a class="headerlink" href="#Lauchli__DistMatrix:T.U.V:R.i.T" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="legendre">
 <h2>Legendre<a class="headerlink" href="#legendre" title="Permalink to this headline">¶</a></h2>
@@ -341,14 +550,63 @@ void <tt class="descname">Legendre</tt><big>(</big><a class="reference internal"
 <div class="section" id="lehmer">
 <h2>Lehmer<a class="headerlink" href="#lehmer" title="Permalink to this headline">¶</a></h2>
 <p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="Lehmer__Matrix:F:R.i">
+void <tt class="descname">Lehmer</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>L</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Lehmer__Matrix:F:R.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Lehmer__DistMatrix:F.U.V:R.i">
+void <tt class="descname">Lehmer</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>L</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Lehmer__DistMatrix:F.U.V:R.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="lotkin">
 <h2>Lotkin<a class="headerlink" href="#lotkin" title="Permalink to this headline">¶</a></h2>
 <p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="Lotkin__Matrix:F:R.i">
+void <tt class="descname">Lotkin</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Lotkin__Matrix:F:R.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Lotkin__DistMatrix:F.U.V:R.i">
+void <tt class="descname">Lotkin</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Lotkin__DistMatrix:F.U.V:R.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="minij">
 <h2>MinIJ<a class="headerlink" href="#minij" title="Permalink to this headline">¶</a></h2>
 <p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="MinIJ__Matrix:T:R.i">
+void <tt class="descname">MinIJ</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>M</em>, int <em>n</em><big>)</big><a class="headerlink" href="#MinIJ__Matrix:T:R.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="MinIJ__DistMatrix:T.U.V:R.i">
+void <tt class="descname">MinIJ</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>M</em>, int <em>n</em><big>)</big><a class="headerlink" href="#MinIJ__DistMatrix:T.U.V:R.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="normalfromevd">
+<h2>NormalFromEVD<a class="headerlink" href="#normalfromevd" title="Permalink to this headline">¶</a></h2>
+<p>Form
+.. math:</p>
+<div class="highlight-python"><pre>A := Z \Omega Z^H,</pre>
+</div>
+<p>where <span class="math">\(\Omega\)</span> is a complex diagonal matrix.</p>
+<dl class="function">
+<dt id="NormalFromEVD__Matrix:Complex:R::R.Matrix:Complex:R::CR.Matrix:Complex:R::CR">
+void <tt class="descname">NormalFromEVD</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">const Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>w</em>, <a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">const Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>Z</em><big>)</big><a class="headerlink" href="#NormalFromEVD__Matrix:Complex:R::R.Matrix:Complex:R::CR.Matrix:Complex:R::CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="NormalFromEVD__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.VR.STAR:CR.DistMatrix:Complex:R::CR">
+void <tt class="descname">NormalFromEVD</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R::__class" title="DistMatrix&lt;Complex&lt;R&gt;&gt;">DistMatrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R:.VR.STAR:__class" title="DistMatrix&lt;Complex&lt;R&gt;, VR, STAR&gt;">const DistMatrix&lt;Complex&lt;R&gt;, VR, STAR&gt;&amp;</a> <em>w</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R::__class" title="DistMatrix&lt;Complex&lt;R&gt;&gt;">const DistMatrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>Z</em><big>)</big><a class="headerlink" href="#NormalFromEVD__DistMatrix:Complex:R::R.DistMatrix:Complex:R:.VR.STAR:CR.DistMatrix:Complex:R::CR" title="Permalink to this definition">¶</a></dt>
+<dd><p>The diagonal entries of <span class="math">\(\Omega\)</span> are given by the vector <span class="math">\(w\)</span>.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="ones">
 <h2>Ones<a class="headerlink" href="#ones" title="Permalink to this headline">¶</a></h2>
@@ -407,22 +665,72 @@ void <tt class="descname">MakeOneTwoOne</tt><big>(</big><a class="reference inte
 <div class="section" id="parter">
 <h2>Parter<a class="headerlink" href="#parter" title="Permalink to this headline">¶</a></h2>
 <p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="Parter__Matrix:F:R.i">
+void <tt class="descname">Parter</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>P</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Parter__Matrix:F:R.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Parter__DistMatrix:F.U.V:R.i">
+void <tt class="descname">Parter</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>P</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Parter__DistMatrix:F.U.V:R.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="pei">
 <h2>Pei<a class="headerlink" href="#pei" title="Permalink to this headline">¶</a></h2>
 <p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="Pei__Matrix:T:R.i.T">
+void <tt class="descname">Pei</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>P</em>, int <em>n</em>, T <em>alpha</em><big>)</big><a class="headerlink" href="#Pei__Matrix:T:R.i.T" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Pei__DistMatrix:T.U.V:R.i.T">
+void <tt class="descname">Pei</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>P</em>, int <em>n</em>, T <em>alpha</em><big>)</big><a class="headerlink" href="#Pei__DistMatrix:T.U.V:R.i.T" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="redheffer">
 <h2>Redheffer<a class="headerlink" href="#redheffer" title="Permalink to this headline">¶</a></h2>
 <p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="Redheffer__Matrix:T:R.i">
+void <tt class="descname">Redheffer</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>R</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Redheffer__Matrix:T:R.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Redheffer__DistMatrix:T.U.V:R.i">
+void <tt class="descname">Redheffer</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>R</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Redheffer__DistMatrix:T.U.V:R.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="riemann">
 <h2>Riemann<a class="headerlink" href="#riemann" title="Permalink to this headline">¶</a></h2>
 <p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="Riemann__Matrix:T:R.i">
+void <tt class="descname">Riemann</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>R</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Riemann__Matrix:T:R.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Riemann__DistMatrix:T.U.V:R.i">
+void <tt class="descname">Riemann</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>R</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Riemann__DistMatrix:T.U.V:R.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="ris">
 <h2>Ris<a class="headerlink" href="#ris" title="Permalink to this headline">¶</a></h2>
 <p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="Ris__Matrix:F:R.i">
+void <tt class="descname">Ris</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>R</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Ris__Matrix:F:R.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Ris__DistMatrix:F.U.V:R.i">
+void <tt class="descname">Ris</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>R</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Ris__DistMatrix:F.U.V:R.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="toeplitz">
 <h2>Toeplitz<a class="headerlink" href="#toeplitz" title="Permalink to this headline">¶</a></h2>
@@ -445,6 +753,16 @@ void <tt class="descname">Toeplitz</tt><big>(</big><a class="reference internal"
 <div class="section" id="triw">
 <h2>TriW<a class="headerlink" href="#triw" title="Permalink to this headline">¶</a></h2>
 <p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="TriW__Matrix:T:R.i.i.T.i">
+void <tt class="descname">TriW</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, int <em>m</em>, int <em>n</em>, T <em>alpha</em>, int <em>k</em><big>)</big><a class="headerlink" href="#TriW__Matrix:T:R.i.i.T.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="TriW__DistMatrix:T.U.V:R.i.i.T.i">
+void <tt class="descname">TriW</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, int <em>m</em>, int <em>n</em>, T <em>alpha</em>, int <em>k</em><big>)</big><a class="headerlink" href="#TriW__DistMatrix:T.U.V:R.i.i.T.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="walsh">
 <h2>Walsh<a class="headerlink" href="#walsh" title="Permalink to this headline">¶</a></h2>
