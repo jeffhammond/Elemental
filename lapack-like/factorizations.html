@@ -384,6 +384,35 @@ norm.</p>
 
 </div>
 </div>
+<div class="section" id="id5">
+<h2><span class="math">\(RQ\)</span> factorization<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Just like an LQ factorization, but the orthogonalization process starts from the bottom row and produces a
+much sparser triangular factor when the matrix is wider than it is tall.</p>
+<dl class="function">
+<dt id="RQ__Matrix:F:R">
+void <tt class="descname">RQ</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#RQ__Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="RQ__DistMatrix:F:R">
+void <tt class="descname">RQ</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#RQ__DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="RQ__Matrix:F:R.Matrix:F:R">
+void <tt class="descname">RQ</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>t</em><big>)</big><a class="headerlink" href="#RQ__Matrix:F:R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="RQ__DistMatrix:F:R.DistMatrix:F.MD.STAR:R">
+void <tt class="descname">RQ</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.MD.STAR:__class" title="DistMatrix&lt;F, MD, STAR&gt;">DistMatrix&lt;F, MD, STAR&gt;&amp;</a> <em>t</em><big>)</big><a class="headerlink" href="#RQ__DistMatrix:F:R.DistMatrix:F.MD.STAR:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overwrite the complex matrix <span class="math">\(A\)</span> with <span class="math">\(R\)</span> and the
+Householder reflectors representing <span class="math">\(\hat Q\)</span>. In the complex case,
+phase information is needed in order to define the (generalized)
+Householder transformations and is stored in the column vector <cite>t</cite>.</p>
+</dd></dl>
+
+</div>
 <div class="section" id="interpolative-decomposition-id">
 <h2>Interpolative Decomposition (ID)<a class="headerlink" href="#interpolative-decomposition-id" title="Permalink to this headline">¶</a></h2>
 <p>Interpolative Decompositions (ID&#8217;s) are closely related to pivoted QR
