@@ -204,6 +204,7 @@ entry :math:`(i,j)` is equal to :math:`1/(i+j+1)`.
 HermitianFromEVD
 ----------------
 Form
+
 .. math::
 
    A := Z \Omega Z^H,
@@ -338,6 +339,7 @@ MinIJ
 NormalFromEVD
 -------------
 Form
+
 .. math::
 
    A := Z \Omega Z^H,
