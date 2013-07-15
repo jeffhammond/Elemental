@@ -88,6 +88,27 @@ to be applied (in the column vector <cite>t</cite>).</p>
 
 <p>Please see the <a class="reference internal" href="tuning.html#lapack-tuning"><em>Tuning parameters</em></a> section for extensive information on
 maximizing the performance of Householder tridiagonalization.</p>
+<div class="section" id="detailed-interface">
+<h3>Detailed interface<a class="headerlink" href="#detailed-interface" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="hermitian_tridiag::ApplyQ__LeftOrRight.UpperOrLower.Orientation.Matrix:F:CR.Matrix:F:CR.Matrix:F:R">
+void <tt class="descclassname">hermitian_tridiag::</tt><tt class="descname">ApplyQ</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>t</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#hermitian_tridiag::ApplyQ__LeftOrRight.UpperOrLower.Orientation.Matrix:F:CR.Matrix:F:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="hermitian_tridiag::ApplyQ__LeftOrRight.UpperOrLower.Orientation.DistMatrix:F:CR.DistMatrix:F.MD.STAR:CR.DistMatrix:F:R">
+void <tt class="descclassname">hermitian_tridiag::</tt><tt class="descname">ApplyQ</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.MD.STAR:__class" title="DistMatrix&lt;F, MD, STAR&gt;">const DistMatrix&lt;F, MD, STAR&gt;&amp;</a> <em>t</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#hermitian_tridiag::ApplyQ__LeftOrRight.UpperOrLower.Orientation.DistMatrix:F:CR.DistMatrix:F.MD.STAR:CR.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="hermitian_tridiag::ApplyQ__LeftOrRight.UpperOrLower.Orientation.DistMatrix:F:CR.DistMatrix:F.STAR.STAR:CR.DistMatrix:F:R">
+void <tt class="descclassname">hermitian_tridiag::</tt><tt class="descname">ApplyQ</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.STAR.STAR:__class" title="DistMatrix&lt;F, STAR, STAR&gt;">const DistMatrix&lt;F, STAR, STAR&gt;&amp;</a> <em>t</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#hermitian_tridiag::ApplyQ__LeftOrRight.UpperOrLower.Orientation.DistMatrix:F:CR.DistMatrix:F.STAR.STAR:CR.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply (from the left or right) the implicitly defined unitary matrix
+(or its adjoint) represented by the Householder transformations stored within
+the specified triangle of <cite>A</cite> and the phase information stored in <cite>t</cite>.</p>
+</dd></dl>
+
+</div>
 </div>
 <div class="section" id="general-to-hessenberg">
 <h2>General to Hessenberg<a class="headerlink" href="#general-to-hessenberg" title="Permalink to this headline">¶</a></h2>
@@ -131,6 +152,40 @@ version.</p>
 </div>
 </dd></dl>
 
+<div class="section" id="id1">
+<h3>Detailed interface<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="ApplyU__LeftOrRight.Orientation.Matrix:F:CR.Matrix:F:CR.Matrix:F:R">
+void <tt class="descname">ApplyU</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>t</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#ApplyU__LeftOrRight.Orientation.Matrix:F:CR.Matrix:F:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ApplyU__LeftOrRight.Orientation.DistMatrix:F:CR.DistMatrix:F.MD.STAR:CR.DistMatrix:F:R">
+void <tt class="descname">ApplyU</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.MD.STAR:__class" title="DistMatrix&lt;F, MD, STAR&gt;">const DistMatrix&lt;F, MD, STAR&gt;&amp;</a> <em>t</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#ApplyU__LeftOrRight.Orientation.DistMatrix:F:CR.DistMatrix:F.MD.STAR:CR.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ApplyU__LeftOrRight.Orientation.DistMatrix:F:CR.DistMatrix:F.STAR.STAR:CR.DistMatrix:F:R">
+void <tt class="descname">ApplyU</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.STAR.STAR:__class" title="DistMatrix&lt;F, STAR, STAR&gt;">const DistMatrix&lt;F, STAR, STAR&gt;&amp;</a> <em>t</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#ApplyU__LeftOrRight.Orientation.DistMatrix:F:CR.DistMatrix:F.STAR.STAR:CR.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ApplyV__LeftOrRight.Orientation.Matrix:F:CR.Matrix:F:CR.Matrix:F:R">
+void <tt class="descname">ApplyV</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>t</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#ApplyV__LeftOrRight.Orientation.Matrix:F:CR.Matrix:F:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ApplyV__LeftOrRight.Orientation.DistMatrix:F:CR.DistMatrix:F.MD.STAR:CR.DistMatrix:F:R">
+void <tt class="descname">ApplyV</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.MD.STAR:__class" title="DistMatrix&lt;F, MD, STAR&gt;">const DistMatrix&lt;F, MD, STAR&gt;&amp;</a> <em>t</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#ApplyV__LeftOrRight.Orientation.DistMatrix:F:CR.DistMatrix:F.MD.STAR:CR.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ApplyV__LeftOrRight.Orientation.DistMatrix:F:CR.DistMatrix:F.STAR.STAR:CR.DistMatrix:F:R">
+void <tt class="descname">ApplyV</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.STAR.STAR:__class" title="DistMatrix&lt;F, STAR, STAR&gt;">const DistMatrix&lt;F, STAR, STAR&gt;&amp;</a> <em>t</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#ApplyV__LeftOrRight.Orientation.DistMatrix:F:CR.DistMatrix:F.STAR.STAR:CR.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
 </div>
 </div>
 
