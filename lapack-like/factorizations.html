@@ -253,6 +253,21 @@ phase information is needed in order to define the (generalized)
 Householder transformations and is stored in the column vector <cite>t</cite>.</p>
 </dd></dl>
 
+<div class="section" id="detailed-interface">
+<h3>Detailed interface<a class="headerlink" href="#detailed-interface" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="lq::Apply__LeftOrRight.Orientation.Matrix:F:CR.Matrix:F:CR.Matrix:F:R">
+void <tt class="descclassname">lq::</tt><tt class="descname">Apply</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>t</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#lq::Apply__LeftOrRight.Orientation.Matrix:F:CR.Matrix:F:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="lq::Apply__LeftOrRight.Orientation.DistMatrix:F:CR.DistMatrix:F.MD.STAR:CR.DistMatrix:F:R">
+void <tt class="descclassname">lq::</tt><tt class="descname">Apply</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.MD.STAR:__class" title="DistMatrix&lt;F, MD, STAR&gt;">const DistMatrix&lt;F, MD, STAR&gt;&amp;</a> <em>t</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#lq::Apply__LeftOrRight.Orientation.DistMatrix:F:CR.DistMatrix:F.MD.STAR:CR.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the implicitly-defined <span class="math">\(Q\)</span> (or its adjoint) stored within
+<cite>A</cite> and <cite>t</cite> from either the left or the right to <span class="math">\(B\)</span>.</p>
+</dd></dl>
+
+</div>
 </div>
 <div class="section" id="id4">
 <h2><span class="math">\(QR\)</span> factorization<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
@@ -312,8 +327,20 @@ void <tt class="descname">QR</tt><big>(</big><a class="reference internal" href=
 Businger-Golub pivoting.</p>
 </dd></dl>
 
-<div class="section" id="detailed-interface">
-<h3>Detailed interface<a class="headerlink" href="#detailed-interface" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>Detailed interface<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="qr::Apply__LeftOrRight.Orientation.Matrix:F:CR.Matrix:F:CR.Matrix:F:R">
+void <tt class="descclassname">qr::</tt><tt class="descname">Apply</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>t</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#qr::Apply__LeftOrRight.Orientation.Matrix:F:CR.Matrix:F:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="qr::Apply__LeftOrRight.Orientation.DistMatrix:F:CR.DistMatrix:F.MD.STAR:CR.DistMatrix:F:R">
+void <tt class="descclassname">qr::</tt><tt class="descname">Apply</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.MD.STAR:__class" title="DistMatrix&lt;F, MD, STAR&gt;">const DistMatrix&lt;F, MD, STAR&gt;&amp;</a> <em>t</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#qr::Apply__LeftOrRight.Orientation.DistMatrix:F:CR.DistMatrix:F.MD.STAR:CR.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies the implicitly-defined <span class="math">\(Q\)</span> (or its adjoint) stored within
+<cite>A</cite> and <cite>t</cite> from either the left or the right to <span class="math">\(B\)</span>.</p>
+</dd></dl>
+
 <dl class="function">
 <dt id="qr::BusingerGolub__Matrix:F:R.Matrix:i:R">
 void <tt class="descclassname">qr::</tt><tt class="descname">BusingerGolub</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, Matrix&lt;int&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#qr::BusingerGolub__Matrix:F:R.Matrix:i:R" title="Permalink to this definition">¶</a></dt>
@@ -384,8 +411,8 @@ norm.</p>
 
 </div>
 </div>
-<div class="section" id="id5">
-<h2><span class="math">\(RQ\)</span> factorization<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2><span class="math">\(RQ\)</span> factorization<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>Just like an LQ factorization, but the orthogonalization process starts from the bottom row and produces a
 much sparser triangular factor when the matrix is wider than it is tall.</p>
 <dl class="function">
@@ -412,6 +439,21 @@ phase information is needed in order to define the (generalized)
 Householder transformations and is stored in the column vector <cite>t</cite>.</p>
 </dd></dl>
 
+<div class="section" id="id7">
+<h3>Detailed interface<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt>
+void <tt class="descclassname">qr::</tt><tt class="descname">Apply</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>t</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+void <tt class="descclassname">qr::</tt><tt class="descname">Apply</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.MD.STAR:__class" title="DistMatrix&lt;F, MD, STAR&gt;">const DistMatrix&lt;F, MD, STAR&gt;&amp;</a> <em>t</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big></dt>
+<dd><p>Applies the implicitly-defined <span class="math">\(Q\)</span> (or its adjoint) stored within
+<cite>A</cite> and <cite>t</cite> from either the left or the right to <span class="math">\(B\)</span>.</p>
+</dd></dl>
+
+</div>
 </div>
 <div class="section" id="interpolative-decomposition-id">
 <h2>Interpolative Decomposition (ID)<a class="headerlink" href="#interpolative-decomposition-id" title="Permalink to this headline">¶</a></h2>
