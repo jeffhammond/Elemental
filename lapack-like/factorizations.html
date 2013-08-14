@@ -216,6 +216,19 @@ void <tt class="descname">LU</tt><big>(</big><a class="reference internal" href=
 <span class="math">\(PA\)</span>, where <span class="math">\(P\)</span> is represented by the pivot vector <cite>p</cite>.</p>
 </dd></dl>
 
+<dl class="function">
+<dt id="LU__Matrix:F:R.Matrix:i:R.Matrix:i:R">
+void <tt class="descname">LU</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, Matrix&lt;int&gt;&amp; <em>p</em>, Matrix&lt;int&gt;&amp; <em>q</em><big>)</big><a class="headerlink" href="#LU__Matrix:F:R.Matrix:i:R.Matrix:i:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="LU__DistMatrix:F:R.DistMatrix:F.VC.STAR:R.DistMatrix:F.VC.STAR:R">
+void <tt class="descname">LU</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.VC.STAR:__class" title="DistMatrix&lt;F, VC, STAR&gt;">DistMatrix&lt;F, VC, STAR&gt;&amp;</a> <em>p</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.VC.STAR:__class" title="DistMatrix&lt;F, VC, STAR&gt;">DistMatrix&lt;F, VC, STAR&gt;&amp;</a> <em>q</em><big>)</big><a class="headerlink" href="#LU__DistMatrix:F:R.DistMatrix:F.VC.STAR:R.DistMatrix:F.VC.STAR:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overwrites the matrix <span class="math">\(A\)</span> with the LU decomposition of
+<span class="math">\(PAQ\)</span>, where <span class="math">\(P\)</span> is represented by the pivot vector <cite>p</cite>,
+and likewise for <span class="math">\(Q\)</span>.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="id3">
 <h2><span class="math">\(LQ\)</span> factorization<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>

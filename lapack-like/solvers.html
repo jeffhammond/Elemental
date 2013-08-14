@@ -167,6 +167,21 @@ its LU factors with partial pivoting, which satisfy <span class="math">\(P A = L
 the permutation matrix <span class="math">\(P\)</span> is represented by the pivot vector <tt class="docutils literal"><span class="pre">p</span></tt>.</p>
 </dd></dl>
 
+<dl class="function">
+<dt id="lu::SolveAfter__Orientation.Matrix:F:CR.Matrix:i:CR.Matrix:i:CR.Matrix:F:R">
+void <tt class="descclassname">lu::</tt><tt class="descname">SolveAfter</tt><big>(</big><a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, const Matrix&lt;int&gt;&amp; <em>p</em>, const Matrix&lt;int&gt;&amp; <em>q</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#lu::SolveAfter__Orientation.Matrix:F:CR.Matrix:i:CR.Matrix:i:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="lu::SolveAfter__Orientation.DistMatrix:F:CR.DistMatrix:i.VC.STAR:CR.DistMatrix:i.VC.STAR:CR.DistMatrix:F:R">
+void <tt class="descclassname">lu::</tt><tt class="descname">SolveAfter</tt><big>(</big><a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, const DistMatrix&lt;int, VC, STAR&gt;&amp; <em>p</em>, const DistMatrix&lt;int, VC, STAR&gt;&amp; <em>q</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#lu::SolveAfter__Orientation.DistMatrix:F:CR.DistMatrix:i.VC.STAR:CR.DistMatrix:i.VC.STAR:CR.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update <span class="math">\(B := A^{-1} B\)</span>, <span class="math">\(B := A^{-T} B\)</span>, or
+<span class="math">\(B := A^{-H} B\)</span>, where <span class="math">\(A\)</span> has been overwritten with
+its LU factors with full pivoting, which satisfy <span class="math">\(P A Q = L U\)</span>, where
+the permutation matrices <span class="math">\(P\)</span> and <span class="math">\(Q\)</span> are represented by the
+pivot vector <tt class="docutils literal"><span class="pre">p</span></tt> and <tt class="docutils literal"><span class="pre">q</span></tt>, respectively.</p>
+</dd></dl>
+
 </div>
 </div>
 
