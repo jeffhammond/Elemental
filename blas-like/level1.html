@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Level 1 &mdash; Elemental 0.81-dev documentation</title>
+    <title>Level 1 &mdash; Elemental 0.82-dev documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.81-dev',
+        VERSION:     '0.82-dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -26,14 +26,14 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/theme_extras.js"></script>
-    <link rel="top" title="Elemental 0.81-dev documentation" href="../index.html" />
+    <link rel="top" title="Elemental 0.82-dev documentation" href="../index.html" />
     <link rel="up" title="Basic linear algebra" href="../blas-like.html" />
     <link rel="next" title="Level 2" href="level2.html" />
     <link rel="prev" title="Basic linear algebra" href="../blas-like.html" /> 
   </head>
   <body>
       <div class="header"><img class="rightlogo" src="../_static/elemental-half.png" alt="Logo"/><h1 class="heading"><a href="../index.html">
-          <span>Elemental 0.81-dev documentation</span></a></h1>
+          <span>Elemental 0.82-dev documentation</span></a></h1>
         <h2 class="heading"><span>Level 1</span></h2>
       </div>
       <div class="topnav">
@@ -348,6 +348,34 @@ void <tt class="descname">SetDiagonal</tt><big>(</big><a class="reference intern
 <dl class="function">
 <dt id="SetDiagonal__DistMatrix:T.U.V:R.T.i.LeftOrRight">
 void <tt class="descname">SetDiagonal</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, T <em>alpha</em>, int <em>offset</em><em>=0</em>, <a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em><em>=LEFT </em><big>)</big><a class="headerlink" href="#SetDiagonal__DistMatrix:T.U.V:R.T.i.LeftOrRight" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="updatediagonal">
+<h2>UpdateDiagonal<a class="headerlink" href="#updatediagonal" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is not a standard BLAS routine.</p>
+</div>
+<p>Adds a given value to the diagonal of a matrix.</p>
+<dl class="function">
+<dt id="UpdateDiagonal__Matrix:T:R.T">
+void <tt class="descname">UpdateDiagonal</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, T <em>alpha</em><big>)</big><a class="headerlink" href="#UpdateDiagonal__Matrix:T:R.T" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="UpdateDiagonal__DistMatrix:T.U.V:R.T">
+void <tt class="descname">UpdateDiagonal</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, T <em>alpha</em><big>)</big><a class="headerlink" href="#UpdateDiagonal__DistMatrix:T.U.V:R.T" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="UpdateDiagonal__Matrix:T:R.T.i.LeftOrRight">
+void <tt class="descname">UpdateDiagonal</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, T <em>alpha</em>, int <em>offset</em><em>=0</em>, <a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em><em>=LEFT </em><big>)</big><a class="headerlink" href="#UpdateDiagonal__Matrix:T:R.T.i.LeftOrRight" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="UpdateDiagonal__DistMatrix:T.U.V:R.T.i.LeftOrRight">
+void <tt class="descname">UpdateDiagonal</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, T <em>alpha</em>, int <em>offset</em><em>=0</em>, <a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em><em>=LEFT </em><big>)</big><a class="headerlink" href="#UpdateDiagonal__DistMatrix:T.U.V:R.T.i.LeftOrRight" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
