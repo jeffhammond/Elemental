@@ -52,9 +52,74 @@
         
   <div class="section" id="random">
 <h1>Random<a class="headerlink" href="#random" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="gaussian">
+<h2>Gaussian<a class="headerlink" href="#gaussian" title="Permalink to this headline">¶</a></h2>
+<p>An <span class="math">\(m \times n\)</span> matrix is Gaussian if each entry is independently drawn
+from a normal distribution.</p>
+<dl class="function">
+<dt id="Gaussian__i.i.Matrix:T:R.T.typename-Base:T:::type">
+void <tt class="descname">Gaussian</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, T <em>mean</em><em>=0</em>, typename Base&lt;T&gt;::type <em>stddev</em><em>=1 </em><big>)</big><a class="headerlink" href="#Gaussian__i.i.Matrix:T:R.T.typename-Base:T:::type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Gaussian__i.i.DistMatrix:T.U.V:R.T.typename-Base:T:::type">
+void <tt class="descname">Gaussian</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, T <em>mean</em><em>=0</em>, typename Base&lt;T&gt;::type <em>stddev</em><em>=1 </em><big>)</big><a class="headerlink" href="#Gaussian__i.i.DistMatrix:T.U.V:R.T.typename-Base:T:::type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the matrix <tt class="docutils literal"><span class="pre">A</span></tt> to an <span class="math">\(m \times n\)</span> Gaussian matrix with the
+specified mean and standard deviation.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="MakeGaussian__Matrix:T:R.T.typename-Base:T:::type">
+void <tt class="descname">MakeGaussian</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, T <em>mean</em><em>=0</em>, typename Base&lt;T&gt;::type <em>stddev</em><em>=1 </em><big>)</big><a class="headerlink" href="#MakeGaussian__Matrix:T:R.T.typename-Base:T:::type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="MakeGaussian__DistMatrix:T.U.V:R.T.typename-Base:T:::type">
+void <tt class="descname">MakeGaussian</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, T <em>mean</em><em>=0</em>, typename Base&lt;T&gt;::type <em>stddev</em><em>=1 </em><big>)</big><a class="headerlink" href="#MakeGaussian__DistMatrix:T.U.V:R.T.typename-Base:T:::type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes each entry to an independent sample from the specified normal
+distribution.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="wigner">
+<h2>Wigner<a class="headerlink" href="#wigner" title="Permalink to this headline">¶</a></h2>
+<p>A Hermitian matrix whose entries in one triangle are all independent samples
+from a normal distribution. The spectra of these matrices are well-studied.</p>
+<dl class="function">
+<dt id="Wigner__i.Matrix:T:R.T.typename-Base:T:::type">
+void <tt class="descname">Wigner</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, T <em>mean</em><em>=0</em>, typename Base&lt;T&gt;::type <em>stddev</em><em>=1 </em><big>)</big><a class="headerlink" href="#Wigner__i.Matrix:T:R.T.typename-Base:T:::type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Wigner__i.DistMatrix:T.U.V:R.T.typename-Base:T:::type">
+void <tt class="descname">Wigner</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, T <em>mean</em><em>=0</em>, typename Base&lt;T&gt;::type <em>stddev</em><em>=1 </em><big>)</big><a class="headerlink" href="#Wigner__i.DistMatrix:T.U.V:R.T.typename-Base:T:::type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the matrix <tt class="docutils literal"><span class="pre">A</span></tt> to an <span class="math">\(n \times n\)</span> Wigner matrix with the
+specified mean and standard deviation.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="haar">
+<h2>Haar<a class="headerlink" href="#haar" title="Permalink to this headline">¶</a></h2>
+<p>The Haar distribution is the uniform distribution over the space of real or
+complex unitary matrices.</p>
+<dl class="function">
+<dt id="Haar__i.Matrix:T:R">
+void <tt class="descname">Haar</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Haar__i.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Haar__i.DistMatrix:T:R">
+void <tt class="descname">Haar</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T:__class" title="DistMatrix&lt;T&gt;">DistMatrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Haar__i.DistMatrix:T:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws <tt class="docutils literal"><span class="pre">A</span></tt> from the Haar distribution. The current scheme performs a QR
+factorization of a Gaussian matrix, but Stewart introduced a well-known
+scheme which only requires quadratic work for the implicit representation
+as a product of random Householder reflectors.</p>
+</dd></dl>
+
+</div>
 <div class="section" id="uniform">
 <h2>Uniform<a class="headerlink" href="#uniform" title="Permalink to this headline">¶</a></h2>
-<p>We call an <span class="math">\(m \times n\)</span> matrix uniformly random if each entry is drawn
+<p>We call an <span class="math">\(m \times n\)</span> matrix is uniformly random if each entry is drawn
 from a uniform distribution over some ball <span class="math">\(B_r(x)\)</span>, which is centered
 around some point <span class="math">\(x\)</span> and of radius <span class="math">\(r\)</span>.</p>
 <dl class="function">
