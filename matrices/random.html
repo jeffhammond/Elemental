@@ -57,13 +57,13 @@
 <p>An <span class="math">\(m \times n\)</span> matrix is Gaussian if each entry is independently drawn
 from a normal distribution.</p>
 <dl class="function">
-<dt id="Gaussian__i.i.Matrix:T:R.T.typename-Base:T:::type">
-void <tt class="descname">Gaussian</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, T <em>mean</em><em>=0</em>, typename Base&lt;T&gt;::type <em>stddev</em><em>=1 </em><big>)</big><a class="headerlink" href="#Gaussian__i.i.Matrix:T:R.T.typename-Base:T:::type" title="Permalink to this definition">¶</a></dt>
+<dt id="Gaussian__Matrix:T:R.i.i.T.typename-Base:T:::type">
+void <tt class="descname">Gaussian</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, int <em>m</em>, int <em>n</em>, T <em>mean</em><em>=0</em>, typename Base&lt;T&gt;::type <em>stddev</em><em>=1 </em><big>)</big><a class="headerlink" href="#Gaussian__Matrix:T:R.i.i.T.typename-Base:T:::type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="Gaussian__i.i.DistMatrix:T.U.V:R.T.typename-Base:T:::type">
-void <tt class="descname">Gaussian</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, T <em>mean</em><em>=0</em>, typename Base&lt;T&gt;::type <em>stddev</em><em>=1 </em><big>)</big><a class="headerlink" href="#Gaussian__i.i.DistMatrix:T.U.V:R.T.typename-Base:T:::type" title="Permalink to this definition">¶</a></dt>
+<dt id="Gaussian__DistMatrix:T.U.V:R.i.i.T.typename-Base:T:::type">
+void <tt class="descname">Gaussian</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, int <em>m</em>, int <em>n</em>, T <em>mean</em><em>=0</em>, typename Base&lt;T&gt;::type <em>stddev</em><em>=1 </em><big>)</big><a class="headerlink" href="#Gaussian__DistMatrix:T.U.V:R.i.i.T.typename-Base:T:::type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the matrix <tt class="docutils literal"><span class="pre">A</span></tt> to an <span class="math">\(m \times n\)</span> Gaussian matrix with the
 specified mean and standard deviation.</p>
 </dd></dl>
@@ -86,13 +86,13 @@ distribution.</p>
 <p>A Hermitian matrix whose entries in one triangle are all independent samples
 from a normal distribution. The spectra of these matrices are well-studied.</p>
 <dl class="function">
-<dt id="Wigner__i.Matrix:T:R.T.typename-Base:T:::type">
-void <tt class="descname">Wigner</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, T <em>mean</em><em>=0</em>, typename Base&lt;T&gt;::type <em>stddev</em><em>=1 </em><big>)</big><a class="headerlink" href="#Wigner__i.Matrix:T:R.T.typename-Base:T:::type" title="Permalink to this definition">¶</a></dt>
+<dt id="Wigner__Matrix:T:R.i.T.typename-Base:T:::type">
+void <tt class="descname">Wigner</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, int <em>n</em>, T <em>mean</em><em>=0</em>, typename Base&lt;T&gt;::type <em>stddev</em><em>=1 </em><big>)</big><a class="headerlink" href="#Wigner__Matrix:T:R.i.T.typename-Base:T:::type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="Wigner__i.DistMatrix:T.U.V:R.T.typename-Base:T:::type">
-void <tt class="descname">Wigner</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, T <em>mean</em><em>=0</em>, typename Base&lt;T&gt;::type <em>stddev</em><em>=1 </em><big>)</big><a class="headerlink" href="#Wigner__i.DistMatrix:T.U.V:R.T.typename-Base:T:::type" title="Permalink to this definition">¶</a></dt>
+<dt id="Wigner__DistMatrix:T.U.V:R.i.T.typename-Base:T:::type">
+void <tt class="descname">Wigner</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, int <em>n</em>, T <em>mean</em><em>=0</em>, typename Base&lt;T&gt;::type <em>stddev</em><em>=1 </em><big>)</big><a class="headerlink" href="#Wigner__DistMatrix:T.U.V:R.i.T.typename-Base:T:::type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the matrix <tt class="docutils literal"><span class="pre">A</span></tt> to an <span class="math">\(n \times n\)</span> Wigner matrix with the
 specified mean and standard deviation.</p>
 </dd></dl>
@@ -103,17 +103,30 @@ specified mean and standard deviation.</p>
 <p>The Haar distribution is the uniform distribution over the space of real or
 complex unitary matrices.</p>
 <dl class="function">
-<dt id="Haar__i.Matrix:T:R">
-void <tt class="descname">Haar</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Haar__i.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Haar__Matrix:F:R.i">
+void <tt class="descname">Haar</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Haar__Matrix:F:R.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="Haar__i.DistMatrix:T:R">
-void <tt class="descname">Haar</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T:__class" title="DistMatrix&lt;T&gt;">DistMatrix&lt;T&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#Haar__i.DistMatrix:T:R" title="Permalink to this definition">¶</a></dt>
+<dt id="Haar__DistMatrix:F:R.i">
+void <tt class="descname">Haar</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, int <em>n</em><big>)</big><a class="headerlink" href="#Haar__DistMatrix:F:R.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draws <tt class="docutils literal"><span class="pre">A</span></tt> from the Haar distribution. The current scheme performs a QR
 factorization of a Gaussian matrix, but Stewart introduced a well-known
 scheme which only requires quadratic work for the implicit representation
 as a product of random Householder reflectors.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ImplicitHaar__Matrix:F:R.Matrix:F:R.i">
+void <tt class="descname">ImplicitHaar</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>t</em>, int <em>n</em><big>)</big><a class="headerlink" href="#ImplicitHaar__Matrix:F:R.Matrix:F:R.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ImplicitHaar__DistMatrix:F:R.DistMatrix:F.MD.STAR:R.i">
+void <tt class="descname">ImplicitHaar</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.MD.STAR:__class" title="DistMatrix&lt;F, MD, STAR&gt;">DistMatrix&lt;F, MD, STAR&gt;&amp;</a> <em>t</em>, int <em>n</em><big>)</big><a class="headerlink" href="#ImplicitHaar__DistMatrix:F:R.DistMatrix:F.MD.STAR:R.i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets <tt class="docutils literal"><span class="pre">A</span></tt> to a set of Householder reflectors with the same structure as
+the result of a QR decomposition. The product of these reflectors is a
+sample from the Haar distribution.</p>
 </dd></dl>
 
 </div>
@@ -123,13 +136,13 @@ as a product of random Householder reflectors.</p>
 from a uniform distribution over some ball <span class="math">\(B_r(x)\)</span>, which is centered
 around some point <span class="math">\(x\)</span> and of radius <span class="math">\(r\)</span>.</p>
 <dl class="function">
-<dt id="Uniform__i.i.Matrix:T:R.T.typename-Base:T:::type">
-void <tt class="descname">Uniform</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, T <em>center</em><em>=0</em>, typename Base&lt;T&gt;::type <em>radius</em><em>=1 </em><big>)</big><a class="headerlink" href="#Uniform__i.i.Matrix:T:R.T.typename-Base:T:::type" title="Permalink to this definition">¶</a></dt>
+<dt id="Uniform__Matrix:T:R.i.i.T.typename-Base:T:::type">
+void <tt class="descname">Uniform</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, int <em>m</em>, int <em>n</em>, T <em>center</em><em>=0</em>, typename Base&lt;T&gt;::type <em>radius</em><em>=1 </em><big>)</big><a class="headerlink" href="#Uniform__Matrix:T:R.i.i.T.typename-Base:T:::type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="Uniform__i.i.DistMatrix:T.U.V:R.T.typename-Base:T:::type">
-void <tt class="descname">Uniform</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, T <em>center</em><em>=0</em>, typename Base&lt;T&gt;::type <em>radius</em><em>=1 </em><big>)</big><a class="headerlink" href="#Uniform__i.i.DistMatrix:T.U.V:R.T.typename-Base:T:::type" title="Permalink to this definition">¶</a></dt>
+<dt id="Uniform__DistMatrix:T.U.V:R.i.i.T.typename-Base:T:::type">
+void <tt class="descname">Uniform</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, int <em>m</em>, int <em>n</em>, T <em>center</em><em>=0</em>, typename Base&lt;T&gt;::type <em>radius</em><em>=1 </em><big>)</big><a class="headerlink" href="#Uniform__DistMatrix:T.U.V:R.i.i.T.typename-Base:T:::type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the matrix <tt class="docutils literal"><span class="pre">A</span></tt> to an <span class="math">\(m \times n\)</span> matrix with each entry sampled from the uniform distribution centered at <cite>center</cite> with radius <cite>radius</cite>.</p>
 </dd></dl>
 
@@ -151,13 +164,13 @@ void <tt class="descname">MakeUniform</tt><big>(</big><a class="reference intern
 real line and then perform a similarity transformation using a random
 Householder transform.</p>
 <dl class="function">
-<dt id="HermitianUniformSpectrum__i.Matrix:F:R.typename-Base:F:::type.typename-Base:F:::type">
-void <tt class="descname">HermitianUniformSpectrum</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>lower</em><em>=0</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>upper</em><em>=1 </em><big>)</big><a class="headerlink" href="#HermitianUniformSpectrum__i.Matrix:F:R.typename-Base:F:::type.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dt id="HermitianUniformSpectrum__Matrix:F:R.i.typename-Base:F:::type.typename-Base:F:::type">
+void <tt class="descname">HermitianUniformSpectrum</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, int <em>n</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>lower</em><em>=0</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>upper</em><em>=1 </em><big>)</big><a class="headerlink" href="#HermitianUniformSpectrum__Matrix:F:R.i.typename-Base:F:::type.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="HermitianUniformSpectrum__i.DistMatrix:F.U.V:R.typename-Base:F:::type.typename-Base:F:::type">
-void <tt class="descname">HermitianUniformSpectrum</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>lower</em><em>=0</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>upper</em><em>=1 </em><big>)</big><a class="headerlink" href="#HermitianUniformSpectrum__i.DistMatrix:F.U.V:R.typename-Base:F:::type.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dt id="HermitianUniformSpectrum__DistMatrix:F.U.V:R.i.typename-Base:F:::type.typename-Base:F:::type">
+void <tt class="descname">HermitianUniformSpectrum</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em>, int <em>n</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>lower</em><em>=0</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>upper</em><em>=1 </em><big>)</big><a class="headerlink" href="#HermitianUniformSpectrum__DistMatrix:F.U.V:R.i.typename-Base:F:::type.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build the <span class="math">\(n \times n\)</span> matrix <tt class="docutils literal"><span class="pre">A</span></tt> with a spectrum sampled uniformly
 from the interval <span class="math">\((lower,upper]\)</span>.</p>
 </dd></dl>
@@ -181,13 +194,13 @@ void <tt class="descname">MakeHermitianUniformSpectrum</tt><big>(</big><a class=
 complex plane and then perform a similarity transformation using a random
 Householder transform.</p>
 <dl class="function">
-<dt id="NormalUniformSpectrum__i.Matrix:Complex:R::R.Complex:R:.R">
-void <tt class="descname">NormalUniformSpectrum</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <em>center</em><em>=0</em>, R <em>radius</em><em>=1 </em><big>)</big><a class="headerlink" href="#NormalUniformSpectrum__i.Matrix:Complex:R::R.Complex:R:.R" title="Permalink to this definition">¶</a></dt>
+<dt id="NormalUniformSpectrum__Matrix:Complex:R::R.i.Complex:R:.R">
+void <tt class="descname">NormalUniformSpectrum</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:Complex:R::__class" title="Matrix&lt;Complex&lt;R&gt;&gt;">Matrix&lt;Complex&lt;R&gt;&gt;&amp;</a> <em>A</em>, int <em>n</em>, <a class="reference internal" href="../core/environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <em>center</em><em>=0</em>, R <em>radius</em><em>=1 </em><big>)</big><a class="headerlink" href="#NormalUniformSpectrum__Matrix:Complex:R::R.i.Complex:R:.R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="NormalUniformSpectrum__i.DistMatrix:Complex:R:.U.V:R.Complex:R:.R">
-void <tt class="descname">NormalUniformSpectrum</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R:.U.V:__class" title="DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;">DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <em>center</em><em>=0</em>, R <em>radius</em><em>=1 </em><big>)</big><a class="headerlink" href="#NormalUniformSpectrum__i.DistMatrix:Complex:R:.U.V:R.Complex:R:.R" title="Permalink to this definition">¶</a></dt>
+<dt id="NormalUniformSpectrum__DistMatrix:Complex:R:.U.V:R.i.Complex:R:.R">
+void <tt class="descname">NormalUniformSpectrum</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:Complex:R:.U.V:__class" title="DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;">DistMatrix&lt;Complex&lt;R&gt;, U, V&gt;&amp;</a> <em>A</em>, int <em>n</em>, <a class="reference internal" href="../core/environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;</a> <em>center</em><em>=0</em>, R <em>radius</em><em>=1 </em><big>)</big><a class="headerlink" href="#NormalUniformSpectrum__DistMatrix:Complex:R:.U.V:R.i.Complex:R:.R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build the <span class="math">\(n \times n\)</span> matrix <tt class="docutils literal"><span class="pre">A</span></tt> with a spectrum sampled uniformly
 from the ball <span class="math">\(B_{\mathrm{radius}}(\mathrm{center})\)</span>.</p>
 </dd></dl>
