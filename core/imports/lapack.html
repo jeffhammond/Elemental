@@ -147,8 +147,8 @@ void <tt class="descclassname">lapack::</tt><tt class="descname">ComputeGivens</
 <div class="section" id="mrrr-based-hermitian-evp">
 <h2>MRRR-based Hermitian EVP<a class="headerlink" href="#mrrr-based-hermitian-evp" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt>
-<tt class="descname">void lapack::HermitianEig( char job, char range, char uplo, int n, F* A, int lda, BASE(F) vl, BASE(F) vu, int il, int iu, BASE(F) abstol, BASE(F)* w, F* Z, int ldz )</tt></dt>
+<dt id="lapack::HermitianEig__c.c.c.i.FP.i.typename-Base:F:::type.typename-Base:F:::type.i.i.typename-Base:F:::type.typename-Base:F:::typeP.FP.i">
+void <tt class="descclassname">lapack::</tt><tt class="descname">HermitianEig</tt><big>(</big>char <em>job</em>, char <em>range</em>, char <em>uplo</em>, int <em>n</em>, F* <em>A</em>, int <em>lda</em>, <a class="reference internal" href="../environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>vl</em>, <a class="reference internal" href="../environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>vu</em>, int <em>il</em>, int <em>iu</em>, <a class="reference internal" href="../environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>abstol</em>, <a class="reference internal" href="../environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type*</a> <em>w</em>, F* <em>Z</em>, int <em>ldz</em><big>)</big><a class="headerlink" href="#lapack::HermitianEig__c.c.c.i.FP.i.typename-Base:F:::type.typename-Base:F:::type.i.i.typename-Base:F:::type.typename-Base:F:::typeP.FP.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the eigenvalue decomposition of a Hermitian matrix using MRRR.</p>
 </dd></dl>
 
@@ -202,14 +202,14 @@ algorithm.</p>
 <div class="section" id="schur-decomposition">
 <h2>Schur decomposition<a class="headerlink" href="#schur-decomposition" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="lapack::Eig__i.FP.i.Complex:typename-Base:F:::type:P">
-void <tt class="descclassname">lapack::</tt><tt class="descname">Eig</tt><big>(</big>int <em>n</em>, F* <em>A</em>, int <em>lda</em>, Complex&lt;typename Base&lt;F&gt;::type&gt;* <em>w</em><big>)</big><a class="headerlink" href="#lapack::Eig__i.FP.i.Complex:typename-Base:F:::type:P" title="Permalink to this definition">¶</a></dt>
+<dt id="lapack::Eig__i.FP.i.Complex:typename-Base:F:::type:P.b">
+void <tt class="descclassname">lapack::</tt><tt class="descname">Eig</tt><big>(</big>int <em>n</em>, F* <em>A</em>, int <em>lda</em>, Complex&lt;typename Base&lt;F&gt;::type&gt;* <em>w</em>, bool <em>fullTriangle</em><em>=false </em><big>)</big><a class="headerlink" href="#lapack::Eig__i.FP.i.Complex:typename-Base:F:::type:P.b" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the eigenvalues of a square matrix using the QR algorithm.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="lapack::Schur__i.FP.i.FP.i.Complex:typename-Base:F:::type:P">
-void <tt class="descclassname">lapack::</tt><tt class="descname">Schur</tt><big>(</big>int <em>n</em>, F* <em>A</em>, int <em>lda</em>, F* <em>Q</em>, int <em>ldq</em>, Complex&lt;typename Base&lt;F&gt;::type&gt;* <em>w</em><big>)</big><a class="headerlink" href="#lapack::Schur__i.FP.i.FP.i.Complex:typename-Base:F:::type:P" title="Permalink to this definition">¶</a></dt>
+<dt id="lapack::Schur__i.FP.i.FP.i.Complex:typename-Base:F:::type:P.b">
+void <tt class="descclassname">lapack::</tt><tt class="descname">Schur</tt><big>(</big>int <em>n</em>, F* <em>A</em>, int <em>lda</em>, F* <em>Q</em>, int <em>ldq</em>, Complex&lt;typename Base&lt;F&gt;::type&gt;* <em>w</em>, bool <em>fullTriangle</em><em>=true </em><big>)</big><a class="headerlink" href="#lapack::Schur__i.FP.i.FP.i.Complex:typename-Base:F:::type:P.b" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the Schur decomposition of a square matrix using the QR algorithm.</p>
 </dd></dl>
 
