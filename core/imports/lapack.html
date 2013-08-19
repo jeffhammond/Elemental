@@ -138,87 +138,81 @@ under/overflow. <cite>R</cite> can be equal to either <cite>float</cite> or <cit
 <p>where <span class="math">\(c^2 + |s|^2 = 1\)</span> and the mapping from <span class="math">\((\phi,\gamma) \rightarrow (c,s,\rho)\)</span> is &#8220;as continuous as possible&#8221;, in the manner described by
 Kahan and Demmel&#8217;s &#8220;On computing Givens rotations reliably and efficiently&#8221;.</p>
 <dl class="function">
-<dt id="lapack::ComputeGivens__R.R.RP.RP.RP">
-void <tt class="descclassname">lapack::</tt><tt class="descname">ComputeGivens</tt><big>(</big>R <em>phi</em>, R <em>gamma</em>, R* <em>c</em>, R* <em>s</em>, R* <em>rho</em><big>)</big><a class="headerlink" href="#lapack::ComputeGivens__R.R.RP.RP.RP" title="Permalink to this definition">¶</a></dt>
-<dd><p>Computes a Givens rotation for real <span class="math">\(\phi\)</span> and <span class="math">\(\gamma\)</span>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="lapack::ComputeGivens__C.C.RP.CP.CP">
-void <tt class="descclassname">lapack::</tt><tt class="descname">ComputeGivens</tt><big>(</big>C <em>phi</em>, C <em>gamma</em>, R* <em>c</em>, C* <em>s</em>, C* <em>rho</em><big>)</big><a class="headerlink" href="#lapack::ComputeGivens__C.C.RP.CP.CP" title="Permalink to this definition">¶</a></dt>
-<dd><p>Computes a Givens rotation for complex <span class="math">\(\phi\)</span> and <span class="math">\(\gamma\)</span>.</p>
+<dt id="lapack::ComputeGivens__F.F.typename-Base:F:::typeP.FP.FP">
+void <tt class="descclassname">lapack::</tt><tt class="descname">ComputeGivens</tt><big>(</big>F <em>phi</em>, F <em>gamma</em>, <a class="reference internal" href="../environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type*</a> <em>c</em>, F* <em>s</em>, F* <em>rho</em><big>)</big><a class="headerlink" href="#lapack::ComputeGivens__F.F.typename-Base:F:::typeP.FP.FP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes a Givens rotation.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="qr-based-svd">
-<h2>QR-based SVD<a class="headerlink" href="#qr-based-svd" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mrrr-based-hermitian-evp">
+<h2>MRRR-based Hermitian EVP<a class="headerlink" href="#mrrr-based-hermitian-evp" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="lapack::QRSVD__i.i.RP.i.RP.RP.i.RP.i">
-void <tt class="descclassname">lapack::</tt><tt class="descname">QRSVD</tt><big>(</big>int <em>m</em>, int <em>n</em>, R* <em>A</em>, int <em>lda</em>, R* <em>s</em>, R* <em>U</em>, int <em>ldu</em>, R* <em>VTrans</em>, int <em>ldvt</em><big>)</big><a class="headerlink" href="#lapack::QRSVD__i.i.RP.i.RP.RP.i.RP.i" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt>
+<tt class="descname">void lapack::HermitianEig( char job, char range, char uplo, int n, F* A, int lda, BASE(F) vl, BASE(F) vu, int il, int iu, BASE(F) abstol, BASE(F)* w, F* Z, int ldz )</tt></dt>
+<dd><p>Computes the eigenvalue decomposition of a Hermitian matrix using MRRR.</p>
+</dd></dl>
 
+</div>
+<div class="section" id="qr-and-dqds-based-svd">
+<h2>QR- and DQDS-based SVD<a class="headerlink" href="#qr-and-dqds-based-svd" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="lapack::QRSVD__i.i.Complex:R:P.i.RP.Complex:R:P.i.Complex:R:P.i">
-void <tt class="descclassname">lapack::</tt><tt class="descname">QRSVD</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>A</em>, int <em>lda</em>, R* <em>s</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>U</em>, int <em>ldu</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>VAdj</em>, int <em>ldva</em><big>)</big><a class="headerlink" href="#lapack::QRSVD__i.i.Complex:R:P.i.RP.Complex:R:P.i.Complex:R:P.i" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<p>Computes the singular value decomposition of a general matrix by running the
+<dt id="lapack::QRSVD__i.i.FP.i.typename-Base:F:::typeP.FP.i.FP.i">
+void <tt class="descclassname">lapack::</tt><tt class="descname">QRSVD</tt><big>(</big>int <em>m</em>, int <em>n</em>, F* <em>A</em>, int <em>lda</em>, <a class="reference internal" href="../environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type*</a> <em>s</em>, F* <em>U</em>, int <em>ldu</em>, F* <em>VAdj</em>, int <em>ldva</em><big>)</big><a class="headerlink" href="#lapack::QRSVD__i.i.FP.i.typename-Base:F:::typeP.FP.i.FP.i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the singular value decomposition of a general matrix by running the
 QR algorithm on the condensed bidiagonal matrix.</p>
-<dl class="function">
-<dt id="lapack::SVD__i.i.RP.i.RP">
-void <tt class="descclassname">lapack::</tt><tt class="descname">SVD</tt><big>(</big>int <em>m</em>, int <em>n</em>, R* <em>A</em>, int <em>lda</em>, R* <em>s</em><big>)</big><a class="headerlink" href="#lapack::SVD__i.i.RP.i.RP" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+</dd></dl>
 
 <dl class="function">
-<dt id="lapack::SVD__i.i.Complex:R:P.i.RP">
-void <tt class="descclassname">lapack::</tt><tt class="descname">SVD</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>A</em>, int <em>lda</em>, R* <em>s</em><big>)</big><a class="headerlink" href="#lapack::SVD__i.i.Complex:R:P.i.RP" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="lapack::SVD__i.i.FP.i.typename-Base:F:::typeP">
+void <tt class="descclassname">lapack::</tt><tt class="descname">SVD</tt><big>(</big>int <em>m</em>, int <em>n</em>, F* <em>A</em>, int <em>lda</em>, <a class="reference internal" href="../environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type*</a> <em>s</em><big>)</big><a class="headerlink" href="#lapack::SVD__i.i.FP.i.typename-Base:F:::typeP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the singular values of a general matrix by running DQDS on the
+condensed bidiagonal matrix.</p>
+</dd></dl>
 
-<p>Computes the singular values of a general matrix by running the QR algorithm
-on the condensed bidiagonal matrix.</p>
 </div>
 <div class="section" id="divide-and-conquer-svd">
 <h2>Divide-and-conquer SVD<a class="headerlink" href="#divide-and-conquer-svd" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="lapack::DivideAndConquerSVD__i.i.RP.i.RP.RP.i.RP.i">
-void <tt class="descclassname">lapack::</tt><tt class="descname">DivideAndConquerSVD</tt><big>(</big>int <em>m</em>, int <em>n</em>, R* <em>A</em>, int <em>lda</em>, R* <em>s</em>, R* <em>U</em>, int <em>ldu</em>, R* <em>VTrans</em>, int <em>ldvt</em><big>)</big><a class="headerlink" href="#lapack::DivideAndConquerSVD__i.i.RP.i.RP.RP.i.RP.i" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="lapack::DivideAndConquerSVD__i.i.Complex:R:P.i.RP.Complex:R:P.i.Complex:R:P.i">
-void <tt class="descclassname">lapack::</tt><tt class="descname">DivideAndConquerSVD</tt><big>(</big>int <em>m</em>, int <em>n</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>A</em>, int <em>lda</em>, R* <em>s</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>U</em>, int <em>ldu</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>VAdj</em>, int <em>ldva</em><big>)</big><a class="headerlink" href="#lapack::DivideAndConquerSVD__i.i.Complex:R:P.i.RP.Complex:R:P.i.Complex:R:P.i" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<p>Computes the SVD of a general matrix using a divide-and-conquer algorithm on
+<dt id="lapack::DivideAndConquerSVD__i.i.FP.i.typename-Base:F:::typeP.FP.i.FP.i">
+void <tt class="descclassname">lapack::</tt><tt class="descname">DivideAndConquerSVD</tt><big>(</big>int <em>m</em>, int <em>n</em>, F* <em>A</em>, int <em>lda</em>, <a class="reference internal" href="../environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type*</a> <em>s</em>, F* <em>U</em>, int <em>ldu</em>, F* <em>VAdj</em>, int <em>ldva</em><big>)</big><a class="headerlink" href="#lapack::DivideAndConquerSVD__i.i.FP.i.typename-Base:F:::typeP.FP.i.FP.i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the SVD of a general matrix using a divide-and-conquer algorithm on
 the condensed bidiagonal matrix.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="bidiagonal-qr">
 <h2>Bidiagonal QR<a class="headerlink" href="#bidiagonal-qr" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="lapack::BidiagQRAlg__c.i.i.i.RP.RP.RP.i.RP.i">
-void <tt class="descclassname">lapack::</tt><tt class="descname">BidiagQRAlg</tt><big>(</big>char <em>uplo</em>, int <em>n</em>, int <em>numColsVTrans</em>, int <em>numRowsU</em>, R* <em>d</em>, R* <em>e</em>, R* <em>VTrans</em>, int <em>ldvt</em>, R* <em>U</em>, int <em>ldu</em><big>)</big><a class="headerlink" href="#lapack::BidiagQRAlg__c.i.i.i.RP.RP.RP.i.RP.i" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="lapack::BidiagQRAlg__c.i.i.i.typename-Base:F:::typeP.typename-Base:F:::typeP.FP.i.FP.i">
+void <tt class="descclassname">lapack::</tt><tt class="descname">BidiagQRAlg</tt><big>(</big>char <em>uplo</em>, int <em>n</em>, int <em>numColsVTrans</em>, int <em>numRowsU</em>, <a class="reference internal" href="../environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type*</a> <em>d</em>, <a class="reference internal" href="../environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type*</a> <em>e</em>, F* <em>VAdj</em>, int <em>ldva</em>, F* <em>U</em>, int <em>ldu</em><big>)</big><a class="headerlink" href="#lapack::BidiagQRAlg__c.i.i.i.typename-Base:F:::typeP.typename-Base:F:::typeP.FP.i.FP.i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the SVD of a bidiagonal matrix using the QR algorithm.</p>
+</dd></dl>
 
-<dl class="function">
-<dt id="lapack::BidiagQRAlg__c.i.i.i.RP.RP.Complex:R:P.i.Complex:R:P.i">
-void <tt class="descclassname">lapack::</tt><tt class="descname">BidiagQRAlg</tt><big>(</big>char <em>uplo</em>, int <em>n</em>, int <em>numColsVAdj</em>, int <em>numRowsU</em>, R* <em>d</em>, R* <em>e</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>VAdj</em>, int <em>ldva</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>U</em>, int <em>ldu</em><big>)</big><a class="headerlink" href="#lapack::BidiagQRAlg__c.i.i.i.RP.RP.Complex:R:P.i.Complex:R:P.i" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<p>Computes the SVD of a bidiagonal matrix using the QR algorithm.</p>
 </div>
 <div class="section" id="hessenberg-qr">
 <h2>Hessenberg QR<a class="headerlink" href="#hessenberg-qr" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="lapack::HessenbergEig__i.RP.i.Complex:R:P">
-void <tt class="descclassname">lapack::</tt><tt class="descname">HessenbergEig</tt><big>(</big>int <em>n</em>, R* <em>H</em>, int <em>ldh</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>w</em><big>)</big><a class="headerlink" href="#lapack::HessenbergEig__i.RP.i.Complex:R:P" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="lapack::HessenbergEig__i.FP.i.Complex:typename-Base:F:::type:P">
+void <tt class="descclassname">lapack::</tt><tt class="descname">HessenbergEig</tt><big>(</big>int <em>n</em>, F* <em>H</em>, int <em>ldh</em>, Complex&lt;typename Base&lt;F&gt;::type&gt;* <em>w</em><big>)</big><a class="headerlink" href="#lapack::HessenbergEig__i.FP.i.Complex:typename-Base:F:::type:P" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the eigenvalues of an upper Hessenberg matrix using the QR
+algorithm.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="schur-decomposition">
+<h2>Schur decomposition<a class="headerlink" href="#schur-decomposition" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="lapack::Eig__i.FP.i.Complex:typename-Base:F:::type:P">
+void <tt class="descclassname">lapack::</tt><tt class="descname">Eig</tt><big>(</big>int <em>n</em>, F* <em>A</em>, int <em>lda</em>, Complex&lt;typename Base&lt;F&gt;::type&gt;* <em>w</em><big>)</big><a class="headerlink" href="#lapack::Eig__i.FP.i.Complex:typename-Base:F:::type:P" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the eigenvalues of a square matrix using the QR algorithm.</p>
+</dd></dl>
 
 <dl class="function">
-<dt id="lapack::HessenbergEig__i.Complex:R:P.i.Complex:R:P">
-void <tt class="descclassname">lapack::</tt><tt class="descname">HessenbergEig</tt><big>(</big>int <em>n</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>H</em>, int <em>ldh</em>, <a class="reference internal" href="../environment.html#Complex:R:__struct" title="Complex&lt;R&gt;">Complex&lt;R&gt;*</a> <em>w</em><big>)</big><a class="headerlink" href="#lapack::HessenbergEig__i.Complex:R:P.i.Complex:R:P" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="lapack::Schur__i.FP.i.FP.i.Complex:typename-Base:F:::type:P">
+void <tt class="descclassname">lapack::</tt><tt class="descname">Schur</tt><big>(</big>int <em>n</em>, F* <em>A</em>, int <em>lda</em>, F* <em>Q</em>, int <em>ldq</em>, Complex&lt;typename Base&lt;F&gt;::type&gt;* <em>w</em><big>)</big><a class="headerlink" href="#lapack::Schur__i.FP.i.FP.i.Complex:typename-Base:F:::type:P" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the Schur decomposition of a square matrix using the QR algorithm.</p>
+</dd></dl>
 
-<p>Computes the eigenvalues of an upper Hessenberg matrix using the QR algorithm.</p>
 </div>
 </div>
 
