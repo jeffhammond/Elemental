@@ -360,13 +360,22 @@ computed through (a dynamically-weighted) Halley iteration.
 Detailed interface
 ^^^^^^^^^^^^^^^^^^
 
-.. cpp:function:: int polar::QDWH( Matrix<F>& A, typename Base<F>::type lowerBound, typename Base<F>::type upperBound, int maxits=100 )
-.. cpp:function:: int polar::QDWH( DistMatrix<F>& A, typename Base<F>::type lowerBound, typename Base<F>::type upperBound, int maxIts=100 )
+.. cpp:function:: int polar::QDWH( Matrix<F>& A, bool colPiv=false, int maxits=20 )
+.. cpp:function:: int polar::QDWH( DistMatrix<F>& A, bool colPiv=false, int maxIts=20 )
+.. cpp:function:: int hermitian_polar::QDWH( UpperOrLower uplo, Matrix<F>& A, bool colPiv=false, int maxits=20 )
+.. cpp:function:: int hermitian_polar::QDWH( UpperOrLower uplo, DistMatrix<F>& A, bool colPiv=false, int maxIts=20 )
 
    Overwrites :math:`A` with the :math:`Q` from the polar decomposition using 
    a QR-based dynamically weighted Halley iteration. The number of iterations
    used is returned upon completion.
    **TODO: reference to Yuji's paper**
+
+.. cpp:function:: int polar::QDWH( Matrix<F>& A, Matrix<F>& P, bool colPiv=false, int maxits=20 )
+.. cpp:function:: int polar::QDWH( DistMatrix<F>& A, DistMatrix<F>& P, bool colPiv=false, int maxIts=20 )
+.. cpp:function:: int hermitian_polar::QDWH( UpperOrLower uplo, Matrix<F>& A, Matrix<F>& P, bool colPiv=false, int maxits=20 )
+.. cpp:function:: int hermitian_polar::QDWH( UpperOrLower uplo, DistMatrix<F>& A, DistMatrix<F>& P, bool colPiv=false, int maxIts=20 )
+
+   Return the full polar decomposition, where :math:`P` is HPD.
 
 SVD
 ---
