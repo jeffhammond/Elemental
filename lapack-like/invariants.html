@@ -54,18 +54,76 @@
 <h1>Invariants, inner products, norms, etc.<a class="headerlink" href="#invariants-inner-products-norms-etc" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="condition-number">
 <h2>Condition number<a class="headerlink" href="#condition-number" title="Permalink to this headline">¶</a></h2>
-<p>The two-norm condition number</p>
+<p>The condition number of a matrix with respect to a particular norm is</p>
 <div class="math">
-\[\kappa_2(A) = \|A\|_2 \|A^{-1}\|_2.\]</div>
+\[\kappa(A) = \|A\| \|A^{-1}\|,\]</div>
+<p>with the most common choice being the matrix two-norm.</p>
 <dl class="function">
-<dt id="ConditionNumber__Matrix:F:CR">
-<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">ConditionNumber</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#ConditionNumber__Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dt id="Condition__Matrix:F:CR.NormType">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">Condition</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType__enum" title="NormType">NormType</a> <em>type</em><em>=TWO_NORM </em><big>)</big><a class="headerlink" href="#Condition__Matrix:F:CR.NormType" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="ConditionNumber__DistMatrix:F.U.V:CR">
-<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">ConditionNumber</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#ConditionNumber__DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dt id="Condition__DistMatrix:F.U.V:CR.NormType">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">Condition</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#NormType__enum" title="NormType">NormType</a> <em>type</em><em>=TWO_NORM </em><big>)</big><a class="headerlink" href="#Condition__DistMatrix:F.U.V:CR.NormType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the condition number with respect to the specified norm
+(one, two, or Frobenius).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="FrobeniusCondition__Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">FrobeniusCondition</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#FrobeniusCondition__Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="function">
+<dt id="FrobeniusCondition__DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">FrobeniusCondition</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#FrobeniusCondition__DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the condition number with respect to the Frobenius norm.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="InfinityCondition__Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">InfinityCondition</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#InfinityCondition__Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="InfinityCondition__DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">InfinityCondition</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#InfinityCondition__DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the condition number with respect to the infinity norm.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="MaxCondition__Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">MaxCondition</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MaxCondition__Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="MaxCondition__DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">MaxCondition</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#MaxCondition__DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the condition number with respect to the entrywise maximum norm.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="OneCondition__Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">OneCondition</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#OneCondition__Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="OneCondition__DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">OneCondition</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#OneCondition__DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the condition number with respect to the one norm.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="TwoCondition__Matrix:F:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">TwoCondition</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#TwoCondition__Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="TwoCondition__DistMatrix:F.U.V:CR">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">TwoCondition</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.U.V:__class" title="DistMatrix&lt;F, U, V&gt;">const DistMatrix&lt;F, U, V&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#TwoCondition__DistMatrix:F.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the condition number with respect to the two norm.</p>
+</dd></dl>
 
 </div>
 <div class="section" id="determinant">
@@ -608,46 +666,36 @@ int <tt class="descname">SymmetricZeroNorm</tt><big>(</big><a class="reference i
 </div>
 <div class="section" id="two-norm-estimates">
 <h2>Two-norm estimates<a class="headerlink" href="#two-norm-estimates" title="Permalink to this headline">¶</a></h2>
-<p>Since the two-norm is extremely useful, but expensive to compute, it is useful
-to be able to compute rough lower and upper bounds for it. The following
-routines provide cheap, rough estimates. The ability to compute sharper
-estimates will likely be added later.</p>
 <dl class="function">
-<dt id="TwoNormLowerBound__Matrix:F:CR">
-<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">TwoNormLowerBound</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#TwoNormLowerBound__Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dt id="TwoNormEstimate__Matrix:F:R.typename-Base:F:::type">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">TwoNormEstimate</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>tol</em><em>=1e-6 </em><big>)</big><a class="headerlink" href="#TwoNormEstimate__Matrix:F:R.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="TwoNormLowerBound__DistMatrix:F:CR">
-<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">TwoNormLowerBound</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#TwoNormLowerBound__DistMatrix:F:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the tightest lower bound on <span class="math">\(\|A\|_2\)</span> implied by the following inequalities:</p>
-<div class="math">
-\[\|A\|_2 \ge \|A\|_{\mathrm{max}},\]</div>
-<div class="math">
-\[\|A\|_2 \ge \frac{1}{\sqrt{n}} \|A\|_{\infty},\]</div>
-<div class="math">
-\[\|A\|_2 \ge \frac{1}{\sqrt{m}} \|A\|_1,\;\;\mathrm{and}\]</div>
-<div class="math">
-\[\|A\|_2 \ge \frac{1}{\mathrm{min}(m,n)} \|A\|_F.\]</div>
-</dd></dl>
-
-<dl class="function">
-<dt id="TwoNormUpperBound__Matrix:F:CR">
-<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">TwoNormUpperBound</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#TwoNormUpperBound__Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dt id="TwoNormEstimate__DistMatrix:F:R.typename-Base:F:::type">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">TwoNormEstimate</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>tol</em><em>=1e-6 </em><big>)</big><a class="headerlink" href="#TwoNormEstimate__DistMatrix:F:R.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="TwoNormUpperBound__DistMatrix:F:CR">
-<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">TwoNormUpperBound</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#TwoNormUpperBound__DistMatrix:F:CR" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the tightest upper bound on <span class="math">\(\|A\|_2\)</span> implied by the following inequalities:</p>
-<div class="math">
-\[\|A\|_2 \le \sqrt{m n} \|A\|_{\mathrm{max}},\]</div>
-<div class="math">
-\[\|A\|_2 \le \sqrt{m} \|A\|_{\infty},\]</div>
-<div class="math">
-\[\|A\|_2 \le \sqrt{n} \|A\|_1,\;\;\mathrm{and}\]</div>
-<div class="math">
-\[\|A\|_2 \le \sqrt{ \|A\|_1 \|A\|_{\infty} }.\]</div>
+<dt id="HermitianTwoNormEstimate__Matrix:F:R.typename-Base:F:::type">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianTwoNormEstimate</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>tol</em><em>=1e-6 </em><big>)</big><a class="headerlink" href="#HermitianTwoNormEstimate__Matrix:F:R.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="HermitianTwoNormEstimate__DistMatrix:F:R.typename-Base:F:::type">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">HermitianTwoNormEstimate</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>tol</em><em>=1e-6 </em><big>)</big><a class="headerlink" href="#HermitianTwoNormEstimate__DistMatrix:F:R.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SymmetricTwoNormEstimate__Matrix:F:R.typename-Base:F:::type">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricTwoNormEstimate</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>tol</em><em>=1e-6 </em><big>)</big><a class="headerlink" href="#SymmetricTwoNormEstimate__Matrix:F:R.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SymmetricTwoNormEstimate__DistMatrix:F:R.typename-Base:F:::type">
+<a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <tt class="descname">SymmetricTwoNormEstimate</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>tol</em><em>=1e-6 </em><big>)</big><a class="headerlink" href="#SymmetricTwoNormEstimate__DistMatrix:F:R.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an estimate for the two-norm which should be accurate within a
+factor of <span class="math">\(n\)</span> times the specified tolerance.</p>
 </dd></dl>
 
 </div>

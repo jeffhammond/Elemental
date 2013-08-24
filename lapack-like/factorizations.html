@@ -348,6 +348,29 @@ Businger-Golub pivoting.</p>
 <div class="section" id="id5">
 <h3>Detailed interface<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
+<dt id="qr::Explicit__Matrix:F:R.b">
+void <tt class="descclassname">qr::</tt><tt class="descname">Explicit</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, bool <em>colPiv</em><em>=false </em><big>)</big><a class="headerlink" href="#qr::Explicit__Matrix:F:R.b" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="qr::Explicit__DistMatrix:F:R.b">
+void <tt class="descclassname">qr::</tt><tt class="descname">Explicit</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, bool <em>colPiv</em><em>=false </em><big>)</big><a class="headerlink" href="#qr::Explicit__DistMatrix:F:R.b" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overwrite <span class="math">\(A\)</span> with the orthogonal matrix from its QR factorization
+(with or without column pivoting).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="qr::Explicit__Matrix:F:R.Matrix:F:R.b">
+void <tt class="descclassname">qr::</tt><tt class="descname">Explicit</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>R</em>, bool <em>colPiv</em><em>=false </em><big>)</big><a class="headerlink" href="#qr::Explicit__Matrix:F:R.Matrix:F:R.b" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="qr::Explicit__DistMatrix:F:R.DistMatrix:F:R.b">
+void <tt class="descclassname">qr::</tt><tt class="descname">Explicit</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>R</em>, bool <em>colPiv</em><em>=false </em><big>)</big><a class="headerlink" href="#qr::Explicit__DistMatrix:F:R.DistMatrix:F:R.b" title="Permalink to this definition">¶</a></dt>
+<dd><p>Additionally explicitly return the <span class="math">\(R\)</span> from the QR factorization.</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="qr::ApplyQ__LeftOrRight.Orientation.Matrix:F:CR.Matrix:F:CR.Matrix:F:R">
 void <tt class="descclassname">qr::</tt><tt class="descname">ApplyQ</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#Orientation__enum" title="Orientation">Orientation</a> <em>orientation</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>t</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#qr::ApplyQ__LeftOrRight.Orientation.Matrix:F:CR.Matrix:F:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
