@@ -66,6 +66,17 @@ void <tt class="descname">View</tt><big>(</big><a class="reference internal" hre
 </dd></dl>
 
 <dl class="function">
+<dt id="View__Matrix:T:R">
+<a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;</a> <tt class="descname">View</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#View__Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="View__DistMatrix:T.U.V:R">
+<a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;</a> <tt class="descname">View</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#View__DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a view of the matrix <cite>B</cite>.</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="LockedView__Matrix:T:R.Matrix:T:CR">
 void <tt class="descname">LockedView</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#LockedView__Matrix:T:R.Matrix:T:CR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -74,6 +85,17 @@ void <tt class="descname">LockedView</tt><big>(</big><a class="reference interna
 <dt id="LockedView__DistMatrix:T.U.V:R.DistMatrix:T.U.V:CR">
 void <tt class="descname">LockedView</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#LockedView__DistMatrix:T.U.V:R.DistMatrix:T.U.V:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make <cite>A</cite> a non-mutable view of the matrix <cite>B</cite>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="LockedView__Matrix:T:CR">
+<a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;</a> <tt class="descname">LockedView</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#LockedView__Matrix:T:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="LockedView__DistMatrix:T.U.V:CR">
+<a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;</a> <tt class="descname">LockedView</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>B</em><big>)</big><a class="headerlink" href="#LockedView__DistMatrix:T.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a view of the matrix <cite>B</cite>.</p>
 </dd></dl>
 
 </div>
@@ -92,6 +114,17 @@ coordinate <tt class="docutils literal"><span class="pre">(i,j)</span></tt>.</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="View__Matrix:T:R.i.i.i.i">
+<a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;</a> <tt class="descname">View</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>B</em>, int <em>i</em>, int <em>j</em>, int <em>height</em>, int <em>width</em><big>)</big><a class="headerlink" href="#View__Matrix:T:R.i.i.i.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="View__DistMatrix:T.U.V:R.i.i.i.i">
+<a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;</a> <tt class="descname">View</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>B</em>, int <em>i</em>, int <em>j</em>, int <em>height</em>, int <em>width</em><big>)</big><a class="headerlink" href="#View__DistMatrix:T.U.V:R.i.i.i.i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a view of the specified submatrix of <cite>B</cite>.</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="LockedView__Matrix:T:R.Matrix:T:CR.i.i.i.i">
 void <tt class="descname">LockedView</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>B</em>, int <em>i</em>, int <em>j</em>, int <em>height</em>, int <em>width</em><big>)</big><a class="headerlink" href="#LockedView__Matrix:T:R.Matrix:T:CR.i.i.i.i" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -101,6 +134,17 @@ void <tt class="descname">LockedView</tt><big>(</big><a class="reference interna
 void <tt class="descname">LockedView</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>B</em>, int <em>i</em>, int <em>j</em>, int <em>height</em>, int <em>width</em><big>)</big><a class="headerlink" href="#LockedView__DistMatrix:T.U.V:R.DistMatrix:T.U.V:CR.i.i.i.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make <cite>A</cite> a non-mutable view of the <cite>height x width</cite> submatrix of <cite>B</cite>
 starting at coordinate <tt class="docutils literal"><span class="pre">(i,j)</span></tt>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="LockedView__Matrix:T:CR.i.i.i.i">
+<a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;</a> <tt class="descname">LockedView</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>B</em>, int <em>i</em>, int <em>j</em>, int <em>height</em>, int <em>width</em><big>)</big><a class="headerlink" href="#LockedView__Matrix:T:CR.i.i.i.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="LockedView__DistMatrix:T.U.V:CR.i.i.i.i">
+<a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;</a> <tt class="descname">LockedView</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>B</em>, int <em>i</em>, int <em>j</em>, int <em>height</em>, int <em>width</em><big>)</big><a class="headerlink" href="#LockedView__DistMatrix:T.U.V:CR.i.i.i.i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an immutable view of the specified submatrix of <cite>B</cite>.</p>
 </dd></dl>
 
 </div>
