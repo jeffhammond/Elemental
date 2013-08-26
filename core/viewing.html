@@ -163,6 +163,17 @@ void <tt class="descname">View1x2</tt><big>(</big><a class="reference internal" 
 </dd></dl>
 
 <dl class="function">
+<dt id="View1x2__Matrix:T:R.Matrix:T:R">
+<a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;</a> <tt class="descname">View1x2</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>BL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>BR</em><big>)</big><a class="headerlink" href="#View1x2__Matrix:T:R.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="View1x2__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R">
+<a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;</a> <tt class="descname">View1x2</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BR</em><big>)</big><a class="headerlink" href="#View1x2__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a view of the merged matrix.</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="LockedView1x2__Matrix:T:R.Matrix:T:CR.Matrix:T:CR">
 void <tt class="descname">LockedView1x2</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>BL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>BR</em><big>)</big><a class="headerlink" href="#LockedView1x2__Matrix:T:R.Matrix:T:CR.Matrix:T:CR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -172,6 +183,17 @@ void <tt class="descname">LockedView1x2</tt><big>(</big><a class="reference inte
 void <tt class="descname">LockedView1x2</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BR</em><big>)</big><a class="headerlink" href="#LockedView1x2__DistMatrix:T.U.V:R.DistMatrix:T.U.V:CR.DistMatrix:T.U.V:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make <cite>A</cite> a non-mutable view of the matrix
 <span class="math">\(\left(\begin{array}{cc} B_L &amp; B_R \end{array}\right)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="LockedView1x2__Matrix:T:CR.Matrix:T:CR">
+<a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;</a> <tt class="descname">LockedView1x2</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>BL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>BR</em><big>)</big><a class="headerlink" href="#LockedView1x2__Matrix:T:CR.Matrix:T:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="LockedView1x2__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:CR">
+<a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;</a> <tt class="descname">LockedView1x2</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BR</em><big>)</big><a class="headerlink" href="#LockedView1x2__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an immutable view of the merged matrix.</p>
 </dd></dl>
 
 </div>
@@ -190,6 +212,17 @@ void <tt class="descname">View2x1</tt><big>(</big><a class="reference internal" 
 </dd></dl>
 
 <dl class="function">
+<dt id="View2x1__Matrix:T:R.Matrix:T:R">
+<a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;</a> <tt class="descname">View2x1</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>BT</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>BB</em><big>)</big><a class="headerlink" href="#View2x1__Matrix:T:R.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="View2x1__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R">
+<a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;</a> <tt class="descname">View2x1</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BT</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BB</em><big>)</big><a class="headerlink" href="#View2x1__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a view of the merged matrix.</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="LockedView2x1__Matrix:T:R.Matrix:T:CR.Matrix:T:CR">
 void <tt class="descname">LockedView2x1</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>BT</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>BB</em><big>)</big><a class="headerlink" href="#LockedView2x1__Matrix:T:R.Matrix:T:CR.Matrix:T:CR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -199,6 +232,17 @@ void <tt class="descname">LockedView2x1</tt><big>(</big><a class="reference inte
 void <tt class="descname">LockedView2x1</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BT</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BB</em><big>)</big><a class="headerlink" href="#LockedView2x1__DistMatrix:T.U.V:R.DistMatrix:T.U.V:CR.DistMatrix:T.U.V:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make <cite>A</cite> a non-mutable view of the matrix
 <span class="math">\(\left(\begin{array}{c} B_T \\ B_B \end{array}\right)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="LockedView2x1__Matrix:T:CR.Matrix:T:CR">
+<a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;</a> <tt class="descname">LockedView2x1</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>BT</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>BB</em><big>)</big><a class="headerlink" href="#LockedView2x1__Matrix:T:CR.Matrix:T:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="LockedView2x1__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:CR">
+<a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;</a> <tt class="descname">LockedView2x1</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BT</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BB</em><big>)</big><a class="headerlink" href="#LockedView2x1__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a view of the merged matrix.</p>
 </dd></dl>
 
 </div>
@@ -217,6 +261,17 @@ void <tt class="descname">View2x2</tt><big>(</big><a class="reference internal" 
 </dd></dl>
 
 <dl class="function">
+<dt id="View2x2__Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R">
+<a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;</a> <tt class="descname">View2x2</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>BTL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>BTR</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>BBL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>BBR</em><big>)</big><a class="headerlink" href="#View2x2__Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="View2x2__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R">
+<a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;</a> <tt class="descname">View2x2</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BTL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BTR</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BBL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BBR</em><big>)</big><a class="headerlink" href="#View2x2__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a view of the merged matrix.</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="LockedView2x2__Matrix:T:R.Matrix:T:CR.Matrix:T:CR.Matrix:T:CR.Matrix:T:CR">
 void <tt class="descname">LockedView2x2</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>BTL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>BTR</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>BBL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>BBR</em><big>)</big><a class="headerlink" href="#LockedView2x2__Matrix:T:R.Matrix:T:CR.Matrix:T:CR.Matrix:T:CR.Matrix:T:CR" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -226,6 +281,17 @@ void <tt class="descname">LockedView2x2</tt><big>(</big><a class="reference inte
 void <tt class="descname">LockedView2x2</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BTL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BTR</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BBL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BBR</em><big>)</big><a class="headerlink" href="#LockedView2x2__DistMatrix:T.U.V:R.DistMatrix:T.U.V:CR.DistMatrix:T.U.V:CR.DistMatrix:T.U.V:CR.DistMatrix:T.U.V:CR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make <cite>A</cite> a non-mutable view of the matrix
 <span class="math">\(\left(\begin{array}{cc} B_{TL} &amp; B_{TR} \\ B_{BB} &amp; B_{BR} \end{array}\right)\)</span>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="LockedView2x2__Matrix:T:CR.Matrix:T:CR.Matrix:T:CR.Matrix:T:CR">
+<a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;</a> <tt class="descname">LockedView2x2</tt><big>(</big><a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>BTL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>BTR</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>BBL</em>, <a class="reference internal" href="matrix.html#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>BBR</em><big>)</big><a class="headerlink" href="#LockedView2x2__Matrix:T:CR.Matrix:T:CR.Matrix:T:CR.Matrix:T:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="LockedView2x2__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:CR.DistMatrix:T.U.V:CR.DistMatrix:T.U.V:CR">
+<a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">DistMatrix&lt;T, U, V&gt;</a> <tt class="descname">LockedView2x2</tt><big>(</big><a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BTL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BTR</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BBL</em>, <a class="reference internal" href="dist_matrix.html#DistMatrix:T.U.V:__class" title="DistMatrix&lt;T, U, V&gt;">const DistMatrix&lt;T, U, V&gt;&amp;</a> <em>BBR</em><big>)</big><a class="headerlink" href="#LockedView2x2__DistMatrix:T.U.V:CR.DistMatrix:T.U.V:CR.DistMatrix:T.U.V:CR.DistMatrix:T.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an immutable view of the merged matrix.</p>
 </dd></dl>
 
 </div>
