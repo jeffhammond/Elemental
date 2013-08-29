@@ -104,8 +104,7 @@ to view the bottom-right <span class="math">\(6 \times 7\)</span> submatrix usin
 <blockquote>
 <div><div class="highlight-cpp"><div class="highlight"><pre><span class="cp">#include &quot;elemental.hpp&quot;</span>
 <span class="p">...</span>
-<span class="n">Matrix</span><span class="o">&lt;</span><span class="n">Complex</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">ABR</span><span class="p">;</span>
-<span class="n">View</span><span class="p">(</span> <span class="n">ABR</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span> <span class="p">);</span>
+<span class="k">auto</span> <span class="n">ABR</span> <span class="o">=</span> <span class="n">View</span><span class="p">(</span> <span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span> <span class="p">);</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -255,6 +254,12 @@ superdiagonal has offset <span class="math">\(+1\)</span>).</p>
 </dd></dl>
 
 <dl class="function">
+<dt id="Matrix:T:::GetDiagonal__IntC">
+<a class="reference internal" href="#Matrix:T:__class" title="Matrix&lt;T&gt;">Matrix&lt;T&gt;</a> <tt class="descname">GetDiagonal</tt><big>(</big>Int <em>offset</em><em>=0 </em><big>)</big><tt class="descclassname"> const</tt><a class="headerlink" href="#Matrix:T:::GetDiagonal__IntC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Efficiently construct and return the diagonal via C++11 move semantics.</p>
+</dd></dl>
+
+<dl class="function">
 <dt id="Matrix:T:::SetDiagonal__Matrix:T:CR.i">
 void <tt class="descname">SetDiagonal</tt><big>(</big><a class="reference internal" href="#Matrix:T:__class" title="Matrix&lt;T&gt;">const Matrix&lt;T&gt;&amp;</a> <em>d</em>, int <em>offset</em><em>=0 </em><big>)</big><a class="headerlink" href="#Matrix:T:::SetDiagonal__Matrix:T:CR.i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the entries in the <cite>offset</cite> diagonal entries from the contents of
@@ -274,79 +279,82 @@ void <tt class="descname">UpdateDiagonal</tt><big>(</big><a class="reference int
 <dl class="function">
 <dt id="Matrix:T:::GetRealPart__i.iC">
 typename Base&lt;T&gt;::type <tt class="descname">GetRealPart</tt><big>(</big>int <em>i</em>, int <em>j</em><big>)</big><tt class="descclassname"> const</tt><a class="headerlink" href="#Matrix:T:::GetRealPart__i.iC" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the real part of entry <span class="math">\((i,j)\)</span>.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="Matrix:T:::GetImagPart__i.iC">
 typename Base&lt;T&gt;::type <tt class="descname">GetImagPart</tt><big>(</big>int <em>i</em>, int <em>j</em><big>)</big><tt class="descclassname"> const</tt><a class="headerlink" href="#Matrix:T:::GetImagPart__i.iC" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the imaginary part of entry <span class="math">\((i,j)\)</span>.</p>
+<dd><p>Return the real (imaginary) part of entry <span class="math">\((i,j)\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="Matrix:T:::SetRealPart__i.i.typename-Base:T:::type">
 void <tt class="descname">SetRealPart</tt><big>(</big>int <em>i</em>, int <em>j</em>, typename Base&lt;T&gt;::type <em>alpha</em><big>)</big><a class="headerlink" href="#Matrix:T:::SetRealPart__i.i.typename-Base:T:::type" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the real part of entry <span class="math">\((i,j)\)</span> to <span class="math">\(\alpha\)</span>.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="Matrix:T:::SetImagPart__i.i.typename-Base:T:::type">
 void <tt class="descname">SetImagPart</tt><big>(</big>int <em>i</em>, int <em>j</em>, typename Base&lt;T&gt;::type <em>alpha</em><big>)</big><a class="headerlink" href="#Matrix:T:::SetImagPart__i.i.typename-Base:T:::type" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the imaginary part of entry <span class="math">\((i,j)\)</span> to <span class="math">\(\alpha\)</span>.</p>
+<dd><p>Set the real (imaginary) part of entry <span class="math">\((i,j)\)</span> to <span class="math">\(\alpha\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="Matrix:T:::UpdateRealPart__i.i.typename-Base:T:::type">
 void <tt class="descname">UpdateRealPart</tt><big>(</big>int <em>i</em>, int <em>j</em>, typename Base&lt;T&gt;::type <em>alpha</em><big>)</big><a class="headerlink" href="#Matrix:T:::UpdateRealPart__i.i.typename-Base:T:::type" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add <span class="math">\(\alpha\)</span> to the real part of entry <span class="math">\((i,j)\)</span>.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="Matrix:T:::UpdateImagPart__i.i.typename-Base:T:::type">
 void <tt class="descname">UpdateImagPart</tt><big>(</big>int <em>i</em>, int <em>j</em>, typename Base&lt;T&gt;::type <em>alpha</em><big>)</big><a class="headerlink" href="#Matrix:T:::UpdateImagPart__i.i.typename-Base:T:::type" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add <span class="math">\(\alpha\)</span> to the imaginary part of entry <span class="math">\((i,j)\)</span>.</p>
+<dd><p>Add <span class="math">\(\alpha\)</span> to the real (imaginary) part of entry <span class="math">\((i,j)\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="Matrix:T:::GetRealPartOfDiagonal__Matrix:typename-Base:T:::type:R.iC">
 void <tt class="descname">GetRealPartOfDiagonal</tt><big>(</big>Matrix&lt;typename Base&lt;T&gt;::type&gt;&amp; <em>d</em>, int <em>offset</em><em>=0 </em><big>)</big><tt class="descclassname"> const</tt><a class="headerlink" href="#Matrix:T:::GetRealPartOfDiagonal__Matrix:typename-Base:T:::type:R.iC" title="Permalink to this definition">¶</a></dt>
-<dd><p>Modify <span class="math">\(d\)</span> into a column-vector containing the real parts of the
-entries in the <cite>offset</cite> diagonal.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="Matrix:T:::GetImagPartOfDiagonal__Matrix:typename-Base:T:::type:R.iC">
 void <tt class="descname">GetImagPartOfDiagonal</tt><big>(</big>Matrix&lt;typename Base&lt;T&gt;::type&gt;&amp; <em>d</em>, int <em>offset</em><em>=0 </em><big>)</big><tt class="descclassname"> const</tt><a class="headerlink" href="#Matrix:T:::GetImagPartOfDiagonal__Matrix:typename-Base:T:::type:R.iC" title="Permalink to this definition">¶</a></dt>
-<dd><p>Modify <span class="math">\(d\)</span> into a column-vector containing the imaginary parts of
-the entries in the <cite>offset</cite> diagonal.</p>
+<dd><p>Modify <span class="math">\(d\)</span> into a column-vector containing the real (imaginary)
+parts of the entries in the <cite>offset</cite> diagonal.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Matrix:T:::GetRealPartOfDiagonal__IntC">
+Matrix&lt;typename Base&lt;T&gt;::type&gt; <tt class="descname">GetRealPartOfDiagonal</tt><big>(</big>Int <em>offset</em><em>=0 </em><big>)</big><tt class="descclassname"> const</tt><a class="headerlink" href="#Matrix:T:::GetRealPartOfDiagonal__IntC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt>
+Matrix&lt;typename Base&lt;T&gt;::type&gt; <tt class="descname">GetRealPartOfDiagonal</tt><big>(</big>Int <em>offset</em><em>=0 </em><big>)</big><tt class="descclassname"> const</tt></dt>
+<dd><p>Use C++11 move semantics to return the real (imaginary) part of the
+diagonal.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="Matrix:T:::SetRealPartOfDiagonal__Matrix:typename-Base:T:::type:CR.i">
 void <tt class="descname">SetRealPartOfDiagonal</tt><big>(</big>const Matrix&lt;typename Base&lt;T&gt;::type&gt;&amp; <em>d</em>, int <em>offset</em><em>=0 </em><big>)</big><a class="headerlink" href="#Matrix:T:::SetRealPartOfDiagonal__Matrix:typename-Base:T:::type:CR.i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the real parts of the entries in the <cite>offset</cite> diagonal from the
-contents of the column-vector <span class="math">\(d\)</span>.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="Matrix:T:::SetImagPartOfDiagonal__Matrix:typename-Base:T:::type:CR.i">
 void <tt class="descname">SetImagPartOfDiagonal</tt><big>(</big>const Matrix&lt;typename Base&lt;T&gt;::type&gt;&amp; <em>d</em>, int <em>offset</em><em>=0 </em><big>)</big><a class="headerlink" href="#Matrix:T:::SetImagPartOfDiagonal__Matrix:typename-Base:T:::type:CR.i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the imaginary parts of the entries in the <cite>offset</cite> diagonal from
-the column-vector <span class="math">\(d\)</span>.</p>
+<dd><p>Set the real (imaginary) parts of the entries in the <cite>offset</cite> diagonal
+from the contents of the column-vector <span class="math">\(d\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="Matrix:T:::UpdateRealPartOfDiagonal__Matrix:typename-Base:T:::type:CR.i">
 void <tt class="descname">UpdateRealPartOfDiagonal</tt><big>(</big>const Matrix&lt;typename Base&lt;T&gt;::type&gt;&amp; <em>d</em>, int <em>offset</em><em>=0 </em><big>)</big><a class="headerlink" href="#Matrix:T:::UpdateRealPartOfDiagonal__Matrix:typename-Base:T:::type:CR.i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add the contents of the column-vector <span class="math">\(d\)</span> onto the real parts of the
-entries in the <cite>offset</cite> diagonal.</p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="function">
 <dt id="Matrix:T:::UpdateImagPartOfDiagonal__Matrix:typename-Base:T:::type:CR.i">
 void <tt class="descname">UpdateImagPartOfDiagonal</tt><big>(</big>const Matrix&lt;typename Base&lt;T&gt;::type&gt;&amp; <em>d</em>, int <em>offset</em><em>=0 </em><big>)</big><a class="headerlink" href="#Matrix:T:::UpdateImagPartOfDiagonal__Matrix:typename-Base:T:::type:CR.i" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add the contents of the column-vector <span class="math">\(d\)</span> onto the imaginary parts
-of the entries in the <cite>offset</cite> diagonal.</p>
+<dd><p>Add the contents of the column-vector <span class="math">\(d\)</span> onto the real (imaginary)
+parts of the entries in the <cite>offset</cite> diagonal.</p>
 </dd></dl>
 
 <p class="rubric">Views</p>

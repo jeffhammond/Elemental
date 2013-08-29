@@ -197,8 +197,6 @@
   <dt><a href="core/dist_matrix.html#AbstractDistMatrix:T:::Matrix">AbstractDistMatrix&lt;T&gt;::Matrix (C++ function)</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="core/dist_matrix.html#AbstractDistMatrix:T:::ResizeTo__i.i">AbstractDistMatrix&lt;T&gt;::ResizeTo (C++ function)</a>, <a href="core/dist_matrix.html#AbstractDistMatrix:T:::ResizeTo__i.i.i">[1]</a>
   </dt>
@@ -211,6 +209,8 @@
   <dt><a href="core/dist_matrix.html#AbstractDistMatrix:T:::RowShiftC">AbstractDistMatrix&lt;T&gt;::RowShift (C++ function)</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="core/dist_matrix.html#AbstractDistMatrix:T:::RowStrideC">AbstractDistMatrix&lt;T&gt;::RowStride (C++ function)</a>
   </dt>
@@ -277,6 +277,26 @@
 
       
   <dt><a href="blas-like/level1.html#Adjoint__Matrix:T:CR.Matrix:T:R">Adjoint (C++ function)</a>, <a href="blas-like/level1.html#Adjoint__DistMatrix:T.U.V:CR.DistMatrix:T.W.Z:R">[1]</a>
+  </dt>
+
+      
+  <dt><a href="lapack-like/util.html#ApplyColumnPivots__Matrix:F:R.Matrix:i:CR">ApplyColumnPivots (C++ function)</a>, <a href="lapack-like/util.html#ApplyColumnPivots__DistMatrix:F:R.DistMatrix:i.U.V:CR">[1]</a>
+  </dt>
+
+      
+  <dt><a href="lapack-like/util.html#ApplyInverseColumnPivots__Matrix:F:R.Matrix:i:CR">ApplyInverseColumnPivots (C++ function)</a>, <a href="lapack-like/util.html#ApplyInverseColumnPivots__DistMatrix:F:R.DistMatrix:i.U.V:CR">[1]</a>
+  </dt>
+
+      
+  <dt><a href="lapack-like/util.html#ApplyInverseRowPivots__Matrix:F:R.Matrix:i:CR">ApplyInverseRowPivots (C++ function)</a>, <a href="lapack-like/util.html#ApplyInverseRowPivots__DistMatrix:F:R.DistMatrix:i.U.V:CR">[1]</a>
+  </dt>
+
+      
+  <dt><a href="lapack-like/util.html#ApplyPackedReflectors__LeftOrRight.UpperOrLower.VerticalOrHorizontal.ForwardOrBackward.Conjugation.Int.Matrix:F:CR.Matrix:F:CR.Matrix:F:R">ApplyPackedReflectors (C++ function)</a>, <a href="lapack-like/util.html#ApplyPackedReflectors__LeftOrRight.UpperOrLower.VerticalOrHorizontal.ForwardOrBackward.Conjugation.Int.DistMatrix:F:CR.DistMatrix:F.MD.STAR:CR.DistMatrix:F:R">[1]</a>, <a href="lapack-like/util.html#ApplyPackedReflectors__LeftOrRight.UpperOrLower.VerticalOrHorizontal.ForwardOrBackward.Conjugation.Int.DistMatrix:F:CR.DistMatrix:F.STAR.STAR:CR.DistMatrix:F:R">[2]</a>
+  </dt>
+
+      
+  <dt><a href="lapack-like/util.html#ApplyRowPivots__Matrix:F:R.Matrix:i:CR">ApplyRowPivots (C++ function)</a>, <a href="lapack-like/util.html#ApplyRowPivots__DistMatrix:F:R.DistMatrix:i.U.V:CR">[1]</a>
   </dt>
 
       
@@ -968,11 +988,11 @@
   </dt>
 
       
-  <dt><a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::GetImagPartOfDiagonal__DistMatrix:typename-Base:T:::type.MD.STAR:R.iC">DistMatrix&lt;T, MC, MR&gt;::GetImagPartOfDiagonal (C++ function)</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::GetImagPartOfDiagonal__DistMatrix:typename-Base:T:::type.STAR.MD:R.iC">[1]</a>
+  <dt><a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::GetImagPartOfDiagonal__DistMatrix:typename-Base:T:::type.MD.STAR:R.iC">DistMatrix&lt;T, MC, MR&gt;::GetImagPartOfDiagonal (C++ function)</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::GetImagPartOfDiagonal__DistMatrix:typename-Base:T:::type.STAR.MD:R.iC">[1]</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::GetImagPartOfDiagonal__iC">[2]</a>
   </dt>
 
       
-  <dt><a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::GetRealPartOfDiagonal__DistMatrix:typename-Base:T:::type.MD.STAR:R.iC">DistMatrix&lt;T, MC, MR&gt;::GetRealPartOfDiagonal (C++ function)</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::GetRealPartOfDiagonal__DistMatrix:typename-Base:T:::type.STAR.MD:R.iC">[1]</a>
+  <dt><a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::GetRealPartOfDiagonal__DistMatrix:typename-Base:T:::type.MD.STAR:R.iC">DistMatrix&lt;T, MC, MR&gt;::GetRealPartOfDiagonal (C++ function)</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::GetRealPartOfDiagonal__DistMatrix:typename-Base:T:::type.STAR.MD:R.iC">[1]</a>, <a href="core/dist_matrix.html#DistMatrix:T.MC.MR:::GetRealPartOfDiagonal__iC">[2]</a>
   </dt>
 
       
@@ -1105,6 +1125,10 @@
   <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="core/environment.html#Exp__FCR">Exp (C++ function)</a>
+  </dt>
+
+      
+  <dt><a href="lapack-like/util.html#ExpandPackedReflectors__UpperOrLower.VerticalOrHorizontal.Conjugation.Int.Matrix:F:R.Matrix:F:CR">ExpandPackedReflectors (C++ function)</a>, <a href="lapack-like/util.html#ExpandPackedReflectors__UpperOrLower.VerticalOrHorizontal.Conjugation.Int.DistMatrix:F:R.DistMatrix:F.MD.STAR:CR">[1]</a>, <a href="lapack-like/util.html#ExpandPackedReflectors__UpperOrLower.VerticalOrHorizontal.Conjugation.Int.DistMatrix:F:R.DistMatrix:F.STAR.STAR:CR">[2]</a>
   </dt>
 
       
@@ -1932,7 +1956,7 @@
   </dt>
 
       
-  <dt><a href="core/matrix.html#Matrix:T:::GetDiagonal__Matrix:T:R.iC">Matrix&lt;T&gt;::GetDiagonal (C++ function)</a>
+  <dt><a href="core/matrix.html#Matrix:T:::GetDiagonal__Matrix:T:R.iC">Matrix&lt;T&gt;::GetDiagonal (C++ function)</a>, <a href="core/matrix.html#Matrix:T:::GetDiagonal__IntC">[1]</a>
   </dt>
 
       
@@ -1948,7 +1972,7 @@
   </dt>
 
       
-  <dt><a href="core/matrix.html#Matrix:T:::GetRealPartOfDiagonal__Matrix:typename-Base:T:::type:R.iC">Matrix&lt;T&gt;::GetRealPartOfDiagonal (C++ function)</a>
+  <dt><a href="core/matrix.html#Matrix:T:::GetRealPartOfDiagonal__Matrix:typename-Base:T:::type:R.iC">Matrix&lt;T&gt;::GetRealPartOfDiagonal (C++ function)</a>, <a href="core/matrix.html#Matrix:T:::GetRealPartOfDiagonal__IntC">[1]</a>, <a href="core/matrix.html#Matrix:T:::GetRealPartOfDiagonal__IntC">[2]</a>
   </dt>
 
       
@@ -2049,6 +2073,10 @@
 
       
   <dt><a href="lapack-like/invariants.html#MaxNorm__Matrix:F:CR">MaxNorm (C++ function)</a>, <a href="lapack-like/invariants.html#MaxNorm__DistMatrix:F.U.V:CR">[1]</a>
+  </dt>
+
+      
+  <dt><a href="lapack-like/util.html#Median__Matrix:Real:CR">Median (C++ function)</a>, <a href="lapack-like/util.html#Median__DistMatrix:Real.U.V:CR">[1]</a>
   </dt>
 
       
@@ -2428,7 +2456,7 @@
   </dt>
 
       
-  <dt><a href="core/grid.html#neq-operator__GridCR.GridCR">operator!= (C++ function)</a>, <a href="core/environment.html#neq-operator__Complex:R:CR.Complex:R:CR">[1]</a>, <a href="core/environment.html#neq-operator__Complex:R:CR.RCR">[2]</a>, <a href="core/environment.html#neq-operator__RCR.Complex:R:CR">[3]</a>
+  <dt><a href="core/environment.html#neq-operator__Complex:R:CR.Complex:R:CR">operator!= (C++ function)</a>, <a href="core/environment.html#neq-operator__Complex:R:CR.RCR">[1]</a>, <a href="core/environment.html#neq-operator__RCR.Complex:R:CR">[2]</a>, <a href="core/grid.html#neq-operator__GridCR.GridCR">[3]</a>
   </dt>
 
       
@@ -2454,7 +2482,7 @@
   </dt>
 
       
-  <dt><a href="core/grid.html#eq-operator__GridCR.GridCR">operator== (C++ function)</a>, <a href="core/environment.html#eq-operator__Complex:R:CR.Complex:R:CR">[1]</a>, <a href="core/environment.html#eq-operator__Complex:R:CR.RCR">[2]</a>, <a href="core/environment.html#eq-operator__RCR.Complex:R:CR">[3]</a>
+  <dt><a href="core/environment.html#eq-operator__Complex:R:CR.Complex:R:CR">operator== (C++ function)</a>, <a href="core/environment.html#eq-operator__Complex:R:CR.RCR">[1]</a>, <a href="core/environment.html#eq-operator__RCR.Complex:R:CR">[2]</a>, <a href="core/grid.html#eq-operator__GridCR.GridCR">[3]</a>
   </dt>
 
       
@@ -2640,6 +2668,18 @@
   </dt>
 
       
+  <dt><a href="lapack-like/util.html#Reflector__Matrix:F:R.Matrix:F:R">Reflector (C++ function)</a>, <a href="lapack-like/util.html#Reflector__DistMatrix:F:R.DistMatrix:F:R">[1]</a>
+  </dt>
+
+      
+  <dt><a href="lapack-like/util.html#reflector::Col__DistMatrix:F:R.DistMatrix:F:R">reflector::Col (C++ function)</a>
+  </dt>
+
+      
+  <dt><a href="lapack-like/util.html#reflector::Row__DistMatrix:F:R.DistMatrix:F:R">reflector::Row (C++ function)</a>
+  </dt>
+
+      
   <dt><a href="core/repartitioning.html#RepartitionDown__Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i">RepartitionDown (C++ function)</a>, <a href="core/repartitioning.html#RepartitionDown__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i">[1]</a>
   </dt>
 
@@ -2651,6 +2691,8 @@
   <dt><a href="core/repartitioning.html#RepartitionLeft__Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i">RepartitionLeft (C++ function)</a>, <a href="core/repartitioning.html#RepartitionLeft__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i">[1]</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="core/repartitioning.html#RepartitionRight__Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i">RepartitionRight (C++ function)</a>, <a href="core/repartitioning.html#RepartitionRight__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i">[1]</a>
   </dt>
@@ -2659,8 +2701,6 @@
   <dt><a href="core/repartitioning.html#RepartitionUp__Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i">RepartitionUp (C++ function)</a>, <a href="core/repartitioning.html#RepartitionUp__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i">[1]</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="core/repartitioning.html#RepartitionUpDiagonal__Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.Matrix:T:R.i">RepartitionUpDiagonal (C++ function)</a>, <a href="core/repartitioning.html#RepartitionUpDiagonal__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.i">[1]</a>
   </dt>
@@ -2831,12 +2871,12 @@
   <dt><a href="core/slide_partition.html#SlideLockedPartitionLeft__Matrix:T:R.Matrix:T:R.Matrix:T:CR.Matrix:T:CR.Matrix:T:CR">SlideLockedPartitionLeft (C++ function)</a>, <a href="core/slide_partition.html#SlideLockedPartitionLeft__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:CR.DistMatrix:T.U.V:CR.DistMatrix:T.U.V:CR">[1]</a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="core/slide_partition.html#SlideLockedPartitionRight__Matrix:T:R.Matrix:T:R.Matrix:T:CR.Matrix:T:CR.Matrix:T:CR">SlideLockedPartitionRight (C++ function)</a>, <a href="core/slide_partition.html#SlideLockedPartitionRight__DistMatrix:T.U.V:R.DistMatrix:T.U.V:R.DistMatrix:T.U.V:CR.DistMatrix:T.U.V:CR.DistMatrix:T.U.V:CR">[1]</a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="core/slide_partition.html#SlideLockedPartitionUp__Matrix:T:R.Matrix:T:CR.Matrix:T:CR.Matrix:T:R.Matrix:T:CR">SlideLockedPartitionUp (C++ function)</a>, <a href="core/slide_partition.html#SlideLockedPartitionUp__DistMatrix:T.U.V:R.DistMatrix:T.U.V:CR.DistMatrix:T.U.V:CR.DistMatrix:T.U.V:R.DistMatrix:T.U.V:CR">[1]</a>
   </dt>
@@ -2859,6 +2899,10 @@
 
       
   <dt><a href="convex.html#SoftThreshold__Matrix:F:R.typename-Base:F:::type">SoftThreshold (C++ function)</a>, <a href="convex.html#SoftThreshold__DistMatrix:F:R.typename-Base:F:::type">[1]</a>
+  </dt>
+
+      
+  <dt><a href="lapack-like/util.html#Sort__Matrix:Real:R.SortType">Sort (C++ function)</a>, <a href="lapack-like/util.html#Sort__DistMatrix:Real.U.V:R.SortType">[1]</a>
   </dt>
 
       
@@ -2975,6 +3019,10 @@
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="lapack-like/util.html#TaggedSort__Matrix:Real:CR.SortType">TaggedSort (C++ function)</a>, <a href="lapack-like/util.html#TaggedSort__DistMatrix:Real.U.V:CR.SortType">[1]</a>
+  </dt>
+
       
   <dt><a href="core/environment.html#Tan__FCR">Tan (C++ function)</a>
   </dt>

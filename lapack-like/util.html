@@ -57,14 +57,132 @@
 <p><strong>TODO:</strong> Describe major difference from LAPACK&#8217;s conventions (i.e., we do not
 treat the identity matrix as a Householder transform since it requires the
 <span class="math">\(u\)</span> in <span class="math">\(H=I-2uu'\)</span> to have norm zero rather than one).</p>
-</div>
-<div class="section" id="applying-packed-householder-transforms">
-<h2>Applying packed Householder transforms<a class="headerlink" href="#applying-packed-householder-transforms" title="Permalink to this headline">¶</a></h2>
-<p><strong>TODO:</strong> Describe <tt class="docutils literal"><span class="pre">ApplyPackedReflectors</span></tt> here.</p>
+<dl class="function">
+<dt id="Reflector__Matrix:F:R.Matrix:F:R">
+F <tt class="descname">Reflector</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>chi</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>x</em><big>)</big><a class="headerlink" href="#Reflector__Matrix:F:R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Reflector__DistMatrix:F:R.DistMatrix:F:R">
+F <tt class="descname">Reflector</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>chi</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>x</em><big>)</big><a class="headerlink" href="#Reflector__DistMatrix:F:R.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="reflector::Col__DistMatrix:F:R.DistMatrix:F:R">
+F <tt class="descclassname">reflector::</tt><tt class="descname">Col</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>chi</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>x</em><big>)</big><a class="headerlink" href="#reflector::Col__DistMatrix:F:R.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="reflector::Row__DistMatrix:F:R.DistMatrix:F:R">
+F <tt class="descclassname">reflector::</tt><tt class="descname">Row</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>chi</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>x</em><big>)</big><a class="headerlink" href="#reflector::Row__DistMatrix:F:R.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ApplyPackedReflectors__LeftOrRight.UpperOrLower.VerticalOrHorizontal.ForwardOrBackward.Conjugation.Int.Matrix:F:CR.Matrix:F:CR.Matrix:F:R">
+void <tt class="descname">ApplyPackedReflectors</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/environment.html#VerticalOrHorizontal__enum" title="VerticalOrHorizontal">VerticalOrHorizontal</a> <em>dir</em>, <a class="reference internal" href="../core/environment.html#ForwardOrBackward__enum" title="ForwardOrBackward">ForwardOrBackward</a> <em>order</em>, <a class="reference internal" href="../core/environment.html#Conjugation__enum" title="Conjugation">Conjugation</a> <em>conjugation</em>, Int <em>offset</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>H</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>t</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#ApplyPackedReflectors__LeftOrRight.UpperOrLower.VerticalOrHorizontal.ForwardOrBackward.Conjugation.Int.Matrix:F:CR.Matrix:F:CR.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ApplyPackedReflectors__LeftOrRight.UpperOrLower.VerticalOrHorizontal.ForwardOrBackward.Conjugation.Int.DistMatrix:F:CR.DistMatrix:F.MD.STAR:CR.DistMatrix:F:R">
+void <tt class="descname">ApplyPackedReflectors</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/environment.html#VerticalOrHorizontal__enum" title="VerticalOrHorizontal">VerticalOrHorizontal</a> <em>dir</em>, <a class="reference internal" href="../core/environment.html#ForwardOrBackward__enum" title="ForwardOrBackward">ForwardOrBackward</a> <em>order</em>, <a class="reference internal" href="../core/environment.html#Conjugation__enum" title="Conjugation">Conjugation</a> <em>conjugation</em>, Int <em>offset</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>H</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.MD.STAR:__class" title="DistMatrix&lt;F, MD, STAR&gt;">const DistMatrix&lt;F, MD, STAR&gt;&amp;</a> <em>t</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#ApplyPackedReflectors__LeftOrRight.UpperOrLower.VerticalOrHorizontal.ForwardOrBackward.Conjugation.Int.DistMatrix:F:CR.DistMatrix:F.MD.STAR:CR.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ApplyPackedReflectors__LeftOrRight.UpperOrLower.VerticalOrHorizontal.ForwardOrBackward.Conjugation.Int.DistMatrix:F:CR.DistMatrix:F.STAR.STAR:CR.DistMatrix:F:R">
+void <tt class="descname">ApplyPackedReflectors</tt><big>(</big><a class="reference internal" href="../core/environment.html#LeftOrRight__enum" title="LeftOrRight">LeftOrRight</a> <em>side</em>, <a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/environment.html#VerticalOrHorizontal__enum" title="VerticalOrHorizontal">VerticalOrHorizontal</a> <em>dir</em>, <a class="reference internal" href="../core/environment.html#ForwardOrBackward__enum" title="ForwardOrBackward">ForwardOrBackward</a> <em>order</em>, <a class="reference internal" href="../core/environment.html#Conjugation__enum" title="Conjugation">Conjugation</a> <em>conjugation</em>, Int <em>offset</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">const DistMatrix&lt;F&gt;&amp;</a> <em>H</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.STAR.STAR:__class" title="DistMatrix&lt;F, STAR, STAR&gt;">const DistMatrix&lt;F, STAR, STAR&gt;&amp;</a> <em>t</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#ApplyPackedReflectors__LeftOrRight.UpperOrLower.VerticalOrHorizontal.ForwardOrBackward.Conjugation.Int.DistMatrix:F:CR.DistMatrix:F.STAR.STAR:CR.DistMatrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ExpandPackedReflectors__UpperOrLower.VerticalOrHorizontal.Conjugation.Int.Matrix:F:R.Matrix:F:CR">
+void <tt class="descname">ExpandPackedReflectors</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/environment.html#VerticalOrHorizontal__enum" title="VerticalOrHorizontal">VerticalOrHorizontal</a> <em>dir</em>, <a class="reference internal" href="../core/environment.html#Conjugation__enum" title="Conjugation">Conjugation</a> <em>conjugation</em>, Int <em>offset</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>H</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">const Matrix&lt;F&gt;&amp;</a> <em>t</em><big>)</big><a class="headerlink" href="#ExpandPackedReflectors__UpperOrLower.VerticalOrHorizontal.Conjugation.Int.Matrix:F:R.Matrix:F:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ExpandPackedReflectors__UpperOrLower.VerticalOrHorizontal.Conjugation.Int.DistMatrix:F:R.DistMatrix:F.MD.STAR:CR">
+void <tt class="descname">ExpandPackedReflectors</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/environment.html#VerticalOrHorizontal__enum" title="VerticalOrHorizontal">VerticalOrHorizontal</a> <em>dir</em>, <a class="reference internal" href="../core/environment.html#Conjugation__enum" title="Conjugation">Conjugation</a> <em>conjugation</em>, Int <em>offset</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>H</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.MD.STAR:__class" title="DistMatrix&lt;F, MD, STAR&gt;">const DistMatrix&lt;F, MD, STAR&gt;&amp;</a> <em>t</em><big>)</big><a class="headerlink" href="#ExpandPackedReflectors__UpperOrLower.VerticalOrHorizontal.Conjugation.Int.DistMatrix:F:R.DistMatrix:F.MD.STAR:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ExpandPackedReflectors__UpperOrLower.VerticalOrHorizontal.Conjugation.Int.DistMatrix:F:R.DistMatrix:F.STAR.STAR:CR">
+void <tt class="descname">ExpandPackedReflectors</tt><big>(</big><a class="reference internal" href="../core/environment.html#UpperOrLower__enum" title="UpperOrLower">UpperOrLower</a> <em>uplo</em>, <a class="reference internal" href="../core/environment.html#VerticalOrHorizontal__enum" title="VerticalOrHorizontal">VerticalOrHorizontal</a> <em>dir</em>, <a class="reference internal" href="../core/environment.html#Conjugation__enum" title="Conjugation">Conjugation</a> <em>conjugation</em>, Int <em>offset</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>H</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F.STAR.STAR:__class" title="DistMatrix&lt;F, STAR, STAR&gt;">const DistMatrix&lt;F, STAR, STAR&gt;&amp;</a> <em>t</em><big>)</big><a class="headerlink" href="#ExpandPackedReflectors__UpperOrLower.VerticalOrHorizontal.Conjugation.Int.DistMatrix:F:R.DistMatrix:F.STAR.STAR:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 <div class="section" id="applying-pivots">
 <h2>Applying pivots<a class="headerlink" href="#applying-pivots" title="Permalink to this headline">¶</a></h2>
-<p><strong>TODO</strong></p>
+<dl class="function">
+<dt id="ApplyColumnPivots__Matrix:F:R.Matrix:i:CR">
+void <tt class="descname">ApplyColumnPivots</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, const Matrix&lt;int&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#ApplyColumnPivots__Matrix:F:R.Matrix:i:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ApplyColumnPivots__DistMatrix:F:R.DistMatrix:i.U.V:CR">
+void <tt class="descname">ApplyColumnPivots</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, const DistMatrix&lt;int, U, V&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#ApplyColumnPivots__DistMatrix:F:R.DistMatrix:i.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ApplyInverseColumnPivots__Matrix:F:R.Matrix:i:CR">
+void <tt class="descname">ApplyInverseColumnPivots</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, const Matrix&lt;int&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#ApplyInverseColumnPivots__Matrix:F:R.Matrix:i:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ApplyInverseColumnPivots__DistMatrix:F:R.DistMatrix:i.U.V:CR">
+void <tt class="descname">ApplyInverseColumnPivots</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, const DistMatrix&lt;int, U, V&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#ApplyInverseColumnPivots__DistMatrix:F:R.DistMatrix:i.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ApplyRowPivots__Matrix:F:R.Matrix:i:CR">
+void <tt class="descname">ApplyRowPivots</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, const Matrix&lt;int&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#ApplyRowPivots__Matrix:F:R.Matrix:i:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ApplyRowPivots__DistMatrix:F:R.DistMatrix:i.U.V:CR">
+void <tt class="descname">ApplyRowPivots</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, const DistMatrix&lt;int, U, V&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#ApplyRowPivots__DistMatrix:F:R.DistMatrix:i.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ApplyInverseRowPivots__Matrix:F:R.Matrix:i:CR">
+void <tt class="descname">ApplyInverseRowPivots</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, const Matrix&lt;int&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#ApplyInverseRowPivots__Matrix:F:R.Matrix:i:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="ApplyInverseRowPivots__DistMatrix:F:R.DistMatrix:i.U.V:CR">
+void <tt class="descname">ApplyInverseRowPivots</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, const DistMatrix&lt;int, U, V&gt;&amp; <em>p</em><big>)</big><a class="headerlink" href="#ApplyInverseRowPivots__DistMatrix:F:R.DistMatrix:i.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="sorting">
+<h2>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="Sort__Matrix:Real:R.SortType">
+void <tt class="descname">Sort</tt><big>(</big>Matrix&lt;Real&gt;&amp; <em>X</em>, <a class="reference internal" href="../core/environment.html#SortType__enum" title="SortType">SortType</a> <em>sort</em><em>=ASCENDING </em><big>)</big><a class="headerlink" href="#Sort__Matrix:Real:R.SortType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Sort__DistMatrix:Real.U.V:R.SortType">
+void <tt class="descname">Sort</tt><big>(</big>DistMatrix&lt;Real, U, V&gt;&amp; <em>X</em>, <a class="reference internal" href="../core/environment.html#SortType__enum" title="SortType">SortType</a> <em>sort</em><em>=ASCENDING </em><big>)</big><a class="headerlink" href="#Sort__DistMatrix:Real.U.V:R.SortType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="TaggedSort__Matrix:Real:CR.SortType">
+std::vector&lt;ValueInt&lt;Real&gt;&gt; <tt class="descname">TaggedSort</tt><big>(</big>const Matrix&lt;Real&gt;&amp; <em>X</em>, <a class="reference internal" href="../core/environment.html#SortType__enum" title="SortType">SortType</a> <em>sort</em><em>=ASCENDING </em><big>)</big><a class="headerlink" href="#TaggedSort__Matrix:Real:CR.SortType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="TaggedSort__DistMatrix:Real.U.V:CR.SortType">
+std::vector&lt;ValueInt&lt;Real&gt;&gt; <tt class="descname">TaggedSort</tt><big>(</big>const DistMatrix&lt;Real, U, V&gt;&amp; <em>X</em>, <a class="reference internal" href="../core/environment.html#SortType__enum" title="SortType">SortType</a> <em>sort</em><em>=ASCENDING </em><big>)</big><a class="headerlink" href="#TaggedSort__DistMatrix:Real.U.V:CR.SortType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Median__Matrix:Real:CR">
+ValueInt&lt;Real&gt; <tt class="descname">Median</tt><big>(</big>const Matrix&lt;Real&gt;&amp; <em>x</em><big>)</big><a class="headerlink" href="#Median__Matrix:Real:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="Median__DistMatrix:Real.U.V:CR">
+ValueInt&lt;Real&gt; <tt class="descname">Median</tt><big>(</big>const DistMatrix&lt;Real, U, V&gt;&amp; <em>x</em><big>)</big><a class="headerlink" href="#Median__DistMatrix:Real.U.V:CR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 </div>
 
