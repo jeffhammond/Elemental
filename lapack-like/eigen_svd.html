@@ -167,6 +167,39 @@ the half-open interval <span class="math">\((a,b]\)</span>.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="spectral-divide-and-conquer">
+<h3>Spectral divide and conquer<a class="headerlink" href="#spectral-divide-and-conquer" title="Permalink to this headline">¶</a></h3>
+<p>The primary references for this approach is Demmel et al.&#8217;s <em>Fast linear algebra
+is stable</em> and Nakatsukasa et al.&#8217;s <em>Stable and efficient spectral divide and conquer algorithms for the symmetric eigenvalue problem</em>.</p>
+<dl class="function">
+<dt id="hermitian_eig::SDC__Matrix:F:R.Matrix:typename-Base:F:::type:R.Int.Int.Int.typename-Base:F:::type">
+void <tt class="descclassname">hermitian_eig::</tt><tt class="descname">SDC</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, Matrix&lt;typename Base&lt;F&gt;::type&gt;&amp; <em>w</em>, Int <em>cutoff</em><em>=256</em>, Int <em>maxInnerIts</em><em>=1</em>, Int <em>maxOuterIts</em><em>=10</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>relTol</em><em>=0 </em><big>)</big><a class="headerlink" href="#hermitian_eig::SDC__Matrix:F:R.Matrix:typename-Base:F:::type:R.Int.Int.Int.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="hermitian_eig::SDC__DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R.Int.Int.Int.typename-Base:F:::type">
+void <tt class="descclassname">hermitian_eig::</tt><tt class="descname">SDC</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;typename Base&lt;F&gt;::type, VR, STAR&gt;&amp; <em>w</em>, Int <em>cutoff</em><em>=256</em>, Int <em>maxInnerIts</em><em>=1</em>, Int <em>maxOuterIts</em><em>=10</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>relTol</em><em>=0 </em><big>)</big><a class="headerlink" href="#hermitian_eig::SDC__DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R.Int.Int.Int.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the eigenvalues of the matrix <span class="math">\(A\)</span> via a QDWH-based spectral
+divide and conquer process.</p>
+<p>The cutoff controls when the problem is sufficiently small to switch to
+a standard algorithm, the number of inner iterations is how many attempts
+to make with the same randomized URV decomposition, and the number of outer
+iterations is how many random Mobius transformations to try for each spectral
+split before giving up.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="hermitian_eig::SDC__Matrix:F:R.Matrix:typename-Base:F:::type:R.Matrix:F:R.Int.Int.Int.typename-Base:F:::type">
+void <tt class="descclassname">hermitian_eig::</tt><tt class="descname">SDC</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, Matrix&lt;typename Base&lt;F&gt;::type&gt;&amp; <em>w</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>Q</em>, Int <em>cutoff</em><em>=256</em>, Int <em>maxInnerIts</em><em>=1</em>, Int <em>maxOuterIts</em><em>=10</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>relTol</em><em>=0 </em><big>)</big><a class="headerlink" href="#hermitian_eig::SDC__Matrix:F:R.Matrix:typename-Base:F:::type:R.Matrix:F:R.Int.Int.Int.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="hermitian_eig::SDC__DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R.DistMatrix:F:R.Int.Int.Int.typename-Base:F:::type">
+void <tt class="descclassname">hermitian_eig::</tt><tt class="descname">SDC</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;typename Base&lt;F&gt;::type, VR, STAR&gt;&amp; <em>w</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>Q</em>, Int <em>cutoff</em><em>=256</em>, Int <em>maxInnerIts</em><em>=1</em>, Int <em>maxOuterIts</em><em>=10</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>relTol</em><em>=0 </em><big>)</big><a class="headerlink" href="#hermitian_eig::SDC__DistMatrix:F:R.DistMatrix:typename-Base:F:::type.VR.STAR:R.DistMatrix:F:R.Int.Int.Int.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attempt to also compute the eigenvectors.</p>
+</dd></dl>
+
+</div>
 </div>
 <div class="section" id="skew-hermitian-eigensolver">
 <h2>Skew-Hermitian eigensolver<a class="headerlink" href="#skew-hermitian-eigensolver" title="Permalink to this headline">¶</a></h2>
@@ -426,31 +459,31 @@ void <tt class="descname">Schur</tt><big>(</big><a class="reference internal" hr
 <div class="section" id="hessenberg-qr-algorithm">
 <h3>Hessenberg QR algorithm<a class="headerlink" href="#hessenberg-qr-algorithm" title="Permalink to this headline">¶</a></h3>
 <dl class="function">
-<dt id="schur::QR__Matrix:F:R">
-void <tt class="descclassname">schur::</tt><tt class="descname">QR</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em><big>)</big><a class="headerlink" href="#schur::QR__Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dt id="schur::QR__Matrix:F:R.Matrix:Complex:typename-Base:F:::type::R">
+void <tt class="descclassname">schur::</tt><tt class="descname">QR</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, Matrix&lt;Complex&lt;typename Base&lt;F&gt;::type&gt;&gt;&amp; <em>w</em><big>)</big><a class="headerlink" href="#schur::QR__Matrix:F:R.Matrix:Complex:typename-Base:F:::type::R" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="schur::QR__Matrix:F:R.Matrix:F:R">
-void <tt class="descclassname">schur::</tt><tt class="descname">QR</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>Q</em><big>)</big><a class="headerlink" href="#schur::QR__Matrix:F:R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
+<dt id="schur::QR__Matrix:F:R.Matrix:Complex:typename-Base:F:::type::R.Matrix:F:R">
+void <tt class="descclassname">schur::</tt><tt class="descname">QR</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, Matrix&lt;Complex&lt;typename Base&lt;F&gt;::type&gt;&gt;&amp; <em>w</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>Q</em><big>)</big><a class="headerlink" href="#schur::QR__Matrix:F:R.Matrix:Complex:typename-Base:F:::type::R.Matrix:F:R" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use a sequential QR algorithm to compute the Schur decomposition.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="spectral-divide-and-conquer">
-<h3>Spectral divide and conquer<a class="headerlink" href="#spectral-divide-and-conquer" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>Spectral divide and conquer<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>The primary reference for this approach is Demmel et al.&#8217;s <em>Fast linear algebra
 is stable</em>. While the current implementation needs a large number of algorithmic
 improvements, especially with respect to choosing the Mobius transformations,
 it tends to succeed on random matrices.</p>
 <dl class="function">
-<dt id="schur::SDC__Matrix:F:R.b.Int.Int.Int.typename-Base:F:::type">
-void <tt class="descclassname">schur::</tt><tt class="descname">SDC</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, bool <em>formATR</em><em>=false</em>, Int <em>cutoff</em><em>=256</em>, Int <em>maxInnerIts</em><em>=1</em>, Int <em>maxOuterIts</em><em>=10</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>relTol</em><em>=0 </em><big>)</big><a class="headerlink" href="#schur::SDC__Matrix:F:R.b.Int.Int.Int.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dt id="schur::SDC__Matrix:F:R.Matrix:Complex:typename-Base:F:::type::R.b.Int.Int.Int.typename-Base:F:::type">
+void <tt class="descclassname">schur::</tt><tt class="descname">SDC</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, Matrix&lt;Complex&lt;typename Base&lt;F&gt;::type&gt;&gt;&amp; <em>w</em>, bool <em>formATR</em><em>=false</em>, Int <em>cutoff</em><em>=256</em>, Int <em>maxInnerIts</em><em>=1</em>, Int <em>maxOuterIts</em><em>=10</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>relTol</em><em>=0 </em><big>)</big><a class="headerlink" href="#schur::SDC__Matrix:F:R.Matrix:Complex:typename-Base:F:::type::R.b.Int.Int.Int.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="schur::SDC__DistMatrix:F:R.b.Int.Int.Int.typename-Base:F:::type">
-void <tt class="descclassname">schur::</tt><tt class="descname">SDC</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, bool <em>formATR</em><em>=false</em>, Int <em>cutoff</em><em>=256</em>, Int <em>maxInnerIts</em><em>=1</em>, Int <em>maxOuterIts</em><em>=10</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>relTol</em><em>=0 </em><big>)</big><a class="headerlink" href="#schur::SDC__DistMatrix:F:R.b.Int.Int.Int.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dt id="schur::SDC__DistMatrix:F:R.DistMatrix:Complex:typename-Base:F:::type:.VR.STAR:R.b.Int.Int.Int.typename-Base:F:::type">
+void <tt class="descclassname">schur::</tt><tt class="descname">SDC</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;Complex&lt;typename Base&lt;F&gt;::type&gt;, VR, STAR&gt;&amp; <em>w</em>, bool <em>formATR</em><em>=false</em>, Int <em>cutoff</em><em>=256</em>, Int <em>maxInnerIts</em><em>=1</em>, Int <em>maxOuterIts</em><em>=10</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>relTol</em><em>=0 </em><big>)</big><a class="headerlink" href="#schur::SDC__DistMatrix:F:R.DistMatrix:Complex:typename-Base:F:::type:.VR.STAR:R.b.Int.Int.Int.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the eigenvalues of the matrix <span class="math">\(A\)</span> via a spectral divide and
 conquer process. On exit, the eigenvalues of <span class="math">\(A\)</span> will be stored on its
 diagonal, and, if <tt class="docutils literal"><span class="pre">formATR</span></tt> was set to true, the upper triangle of
@@ -463,13 +496,13 @@ try for each spectral split before giving up.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="schur::SDC__Matrix:F:R.Matrix:F:R.b.Int.Int.Int.typename-Base:F:::type">
-void <tt class="descclassname">schur::</tt><tt class="descname">SDC</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>Q</em>, bool <em>formATR</em><em>=true</em>, Int <em>cutoff</em><em>=256</em>, Int <em>maxInnerIts</em><em>=1</em>, Int <em>maxOuterIts</em><em>=10</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>relTol</em><em>=0 </em><big>)</big><a class="headerlink" href="#schur::SDC__Matrix:F:R.Matrix:F:R.b.Int.Int.Int.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dt id="schur::SDC__Matrix:F:R.Matrix:Complex:typename-Base:F:::type::R.Matrix:F:R.b.Int.Int.Int.typename-Base:F:::type">
+void <tt class="descclassname">schur::</tt><tt class="descname">SDC</tt><big>(</big><a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>A</em>, Matrix&lt;Complex&lt;typename Base&lt;F&gt;::type&gt;&gt;&amp; <em>w</em>, <a class="reference internal" href="../core/matrix.html#Matrix:F:__class" title="Matrix&lt;F&gt;">Matrix&lt;F&gt;&amp;</a> <em>Q</em>, bool <em>formATR</em><em>=true</em>, Int <em>cutoff</em><em>=256</em>, Int <em>maxInnerIts</em><em>=1</em>, Int <em>maxOuterIts</em><em>=10</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>relTol</em><em>=0 </em><big>)</big><a class="headerlink" href="#schur::SDC__Matrix:F:R.Matrix:Complex:typename-Base:F:::type::R.Matrix:F:R.b.Int.Int.Int.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
-<dt id="schur::SDC__DistMatrix:F:R.DistMatrix:F:R.b.Int.Int.Int.typename-Base:F:::type">
-void <tt class="descclassname">schur::</tt><tt class="descname">SDC</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>Q</em>, bool <em>formATR</em><em>=true</em>, Int <em>cutoff</em><em>=256</em>, Int <em>maxInnerIts</em><em>=1</em>, Int <em>maxOuterIts</em><em>=10</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>relTol</em><em>=0 </em><big>)</big><a class="headerlink" href="#schur::SDC__DistMatrix:F:R.DistMatrix:F:R.b.Int.Int.Int.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
+<dt id="schur::SDC__DistMatrix:F:R.DistMatrix:Complex:typename-Base:F:::type:.VR.STAR:R.DistMatrix:F:R.b.Int.Int.Int.typename-Base:F:::type">
+void <tt class="descclassname">schur::</tt><tt class="descname">SDC</tt><big>(</big><a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>A</em>, DistMatrix&lt;Complex&lt;typename Base&lt;F&gt;::type&gt;, VR, STAR&gt;&amp; <em>w</em>, <a class="reference internal" href="../core/dist_matrix.html#DistMatrix:F:__class" title="DistMatrix&lt;F&gt;">DistMatrix&lt;F&gt;&amp;</a> <em>Q</em>, bool <em>formATR</em><em>=true</em>, Int <em>cutoff</em><em>=256</em>, Int <em>maxInnerIts</em><em>=1</em>, Int <em>maxOuterIts</em><em>=10</em>, <a class="reference internal" href="../core/environment.html#Base:F:::type" title="Base&lt;F&gt;::type">typename Base&lt;F&gt;::type</a> <em>relTol</em><em>=0 </em><big>)</big><a class="headerlink" href="#schur::SDC__DistMatrix:F:R.DistMatrix:Complex:typename-Base:F:::type:.VR.STAR:R.DistMatrix:F:R.b.Int.Int.Int.typename-Base:F:::type" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempt to also compute the Schur vectors.</p>
 </dd></dl>
 
