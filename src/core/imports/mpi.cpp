@@ -1146,6 +1146,17 @@ void Broadcast( R* buf, int count, int root, Comm comm )
     SafeMpi( MPI_Bcast( buf, count, TypeMap<R>(), root, comm.comm ) );
 }
 
+template<typename R, typename C>
+void Broadcast( R* buf, C count, int root, Comm comm )
+{
+    DEBUG_ONLY(CallStackEntry cse("mpi::Broadcast"))
+    MPI_Datatype bigtype;
+    SafeMpi( MPIX_Type_contiguous_x(static_cast<MPI_Aint>(count), TypeMap<R>(), &bigtype) );
+    SafeMpi( MPI_Type_commit(&bigtype) );
+    SafeMpi( MPI_Bcast( buf, 1, bigtype, root, comm.comm ) );
+    SafeMpi( MPI_Type_free(&bigtype) );
+}
+
 template<typename R>
 void Broadcast( Complex<R>* buf, int count, int root, Comm comm )
 {
