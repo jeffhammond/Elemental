@@ -6,20 +6,13 @@
    which can be found in the LICENSE file in the root directory, or at 
    http://opensource.org/licenses/BSD-2-Clause
 */
-// NOTE: It is possible to simply include "elemental.hpp" instead
-#include "elemental-lite.hpp"
-#include ELEM_MAKETRIANGULAR_INC
-#include ELEM_UPDATEDIAGONAL_INC
+// NOTE: It is possible to simply include "El.hpp" instead
+#include "El-lite.hpp"
 
-#include ELEM_QR_INC
-#include ELEM_FROBENIUSNORM_INC
-
-#include ELEM_PERMUTECOLS_INC
-
-#include ELEM_IDENTITY_INC
-#include ELEM_UNIFORM_INC
+#include EL_IDENTITY_INC
+#include EL_UNIFORM_INC
 using namespace std;
-using namespace elem;
+using namespace El;
 
 typedef double Real;
 typedef Complex<Real> C;
@@ -34,9 +27,6 @@ main( int argc, char* argv[] )
     {
         const Int m = Input("--height","height of matrix",100);
         const Int n = Input("--width","width of matrix",100);
-        const bool alwaysRecompute = Input("--always","no norm updates?",false);
-        const bool blockedUnpiv = 
-            Input("--blockUnpiv","blocked unpivoted QR?",false);
         const bool display = Input("--display","display matrices?",false);
         const bool print = Input("--print","print matrices?",false);
         ProcessInput();
@@ -55,7 +45,7 @@ main( int argc, char* argv[] )
         DistMatrix<C,MD,STAR> tPiv;
         DistMatrix<Real,MD,STAR> dPiv;
         DistMatrix<Int,VR,STAR> perm;
-        qr::BusingerGolub( QRPiv, tPiv, dPiv, perm, alwaysRecompute );
+        QR( QRPiv, tPiv, dPiv, perm );
         if( display )
         {
             Display( QRPiv, "QRPiv" );
@@ -75,10 +65,7 @@ main( int argc, char* argv[] )
         auto QRNoPiv( A );
         DistMatrix<C,MD,STAR> tNoPiv;
         DistMatrix<Real,MD,STAR> dNoPiv;
-        if( blockedUnpiv )
-            QR( QRNoPiv, tNoPiv, dNoPiv );
-        else
-            qr::PanelHouseholder( QRNoPiv, tNoPiv, dNoPiv );
+        QR( QRNoPiv, tNoPiv, dNoPiv );
         if( display )
         {
             Display( QRNoPiv, "QRNoPiv" );

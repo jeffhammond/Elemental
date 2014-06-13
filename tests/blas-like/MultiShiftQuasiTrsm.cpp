@@ -6,16 +6,12 @@
    which can be found in the LICENSE file in the root directory, or at 
    http://opensource.org/licenses/BSD-2-Clause
 */
-// NOTE: It is possible to simply include "elemental.hpp" instead
-#include "elemental-lite.hpp"
-#include ELEM_MAKETRAPEZOIDAL_INC
-#include ELEM_GEMM_INC
-#include ELEM_MULTISHIFTQUASITRSM_INC
-#include ELEM_FROBENIUSNORM_INC
-#include ELEM_HERMITIANUNIFORMSPECTRUM_INC
-#include ELEM_UNIFORM_INC
+// NOTE: It is possible to simply include "El.hpp" instead
+#include "El-lite.hpp"
+#include EL_HERMITIANUNIFORMSPECTRUM_INC
+#include EL_UNIFORM_INC
 using namespace std;
-using namespace elem;
+using namespace El;
 
 template<typename F>
 void MakeQuasiTriangular( UpperOrLower uplo, DistMatrix<F>& A )
@@ -71,12 +67,12 @@ void TestMultiShiftQuasiTrsm
     if( side == LEFT )
     {
         HermitianUniformSpectrum( H, m, 1, 10 );
-        Uniform( shifts, m, 1, F(0), Real(0.5) );
+        Uniform( shifts, n, 1, F(0), Real(0.5) );
     }
     else
     {
         HermitianUniformSpectrum( H, n, 1, 10 );
-        Uniform( shifts, n, 1, F(0), Real(0.5) );
+        Uniform( shifts, m, 1, F(0), Real(0.5) );
     }
     MakeQuasiTriangular( uplo, H );
 

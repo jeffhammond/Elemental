@@ -6,25 +6,24 @@
    which can be found in the LICENSE file in the root directory, or at 
    http://opensource.org/licenses/BSD-2-Clause
 */
-// NOTE: It is possible to simply include "elemental.hpp" instead
-#include "elemental-lite.hpp"
-#include ELEM_ENTRYWISEMAP_INC
-#include ELEM_FROBENIUSNORM_INC
-#include ELEM_PSEUDOSPECTRUM_INC
-
-#include ELEM_BULLSHEAD_INC
-#include ELEM_FOXLI_INC
-#include ELEM_GRCAR_INC
-#include ELEM_HATANONELSON_INC
-#include ELEM_HELMHOLTZPML_INC
-#include ELEM_LOTKIN_INC
-#include ELEM_TREFETHEN_INC
-#include ELEM_TRIANGLE_INC
-#include ELEM_UNIFORM_INC
-#include ELEM_UNIFORMHELMHOLTZGREENS_INC
-#include ELEM_WHALE_INC
+// NOTE: It is possible to simply include "El.hpp" instead
+#include "El-lite.hpp"
+#include EL_BULLSHEAD_INC
+#include EL_EHRENFEST_INC
+#include EL_FOXLI_INC
+#include EL_GRCAR_INC
+#include EL_HAAR_INC
+#include EL_HATANONELSON_INC
+#include EL_HELMHOLTZPML_INC
+#include EL_LOTKIN_INC
+#include EL_RIFFLE_INC
+#include EL_TREFETHEN_INC
+#include EL_TRIANGLE_INC
+#include EL_UNIFORM_INC
+#include EL_UNIFORMHELMHOLTZGREENS_INC
+#include EL_WHALE_INC
 using namespace std;
-using namespace elem;
+using namespace El;
 
 typedef double Real;
 typedef Complex<Real> C;
@@ -42,10 +41,12 @@ main( int argc, char* argv[] )
             Input("--matType","0:uniform,1:Haar,2:Lotkin,3:Grcar,4:FoxLi,"
                               "5:HelmholtzPML1D,6:HelmholtzPML2D,7:Trefethen,"
                               "8:Bull's head,9:Triangle,10:Whale,"
-                              "11:UniformHelmholtzGreen's,12:HatanoNelson",4);
+                              "11:UniformHelmholtzGreen's,12:HatanoNelson,"
+                              "13:Ehrenfest,14:Riffle",4);
+        const Int normInt = Input("--norm","0:two norm,1:one norm",0);
         const Int n = Input("--size","height of matrix",100);
         const Int nbAlg = Input("--nbAlg","algorithmic blocksize",96);
-#ifdef ELEM_HAVE_SCALAPACK
+#ifdef EL_HAVE_SCALAPACK
         // QR algorithm options
         const Int nbDist = Input("--nbDist","distribution blocksize",32);
 #else
@@ -120,6 +121,8 @@ main( int argc, char* argv[] )
         const GridOrder order = ( colMajor ? COLUMN_MAJOR : ROW_MAJOR );
         const Grid g( mpi::COMM_WORLD, r, order );
         SetBlocksize( nbAlg );
+        if( normInt < 0 || normInt > 1 )
+            LogicError("Invalid pseudospec norm type");
         if( numFormatInt < 1 || numFormatInt >= FileFormat_MAX )
             LogicError("Invalid numerical format integer, should be in [1,",
                        FileFormat_MAX,")");
@@ -127,9 +130,10 @@ main( int argc, char* argv[] )
             LogicError("Invalid image format integer, should be in [1,",
                        FileFormat_MAX,")");
 
-        const FileFormat numFormat = static_cast<FileFormat>(numFormatInt);
-        const FileFormat imgFormat = static_cast<FileFormat>(imgFormatInt);
-        const ColorMap colorMap = static_cast<ColorMap>(colorMapInt);
+        const auto psNorm    = static_cast<PseudospecNorm>(normInt);
+        const auto numFormat = static_cast<FileFormat>(numFormatInt);
+        const auto imgFormat = static_cast<FileFormat>(imgFormatInt);
+        const auto colorMap  = static_cast<ColorMap>(colorMapInt);
         SetColorMap( colorMap );
         const C center(realCenter,imagCenter);
         const C uniformCenter(uniformRealCenter,uniformImagCenter);
@@ -195,6 +199,16 @@ main( int argc, char* argv[] )
                  ( AReal, n, realCenter, uniformRadius, gHatano, periodic );
                  isReal = true;
                  break;
+        case 13: matName="Ehrenfest";
+                 // Force the complex matrix to allow for one-norm pseudospectra
+                 EhrenfestDecay( ACpx, n );
+                 isReal = false;
+                 break;
+        case 14: matName="Riffle";
+                 // Force the complex matrix to allow for one-norm pseudospectra
+                 RiffleDecay( ACpx, n );
+                 isReal = false;
+                 break;
         default: LogicError("Invalid matrix type");
         }
         if( display )
@@ -223,46 +237,46 @@ main( int argc, char* argv[] )
         DistMatrix<C,VR,STAR> w(g);
         mpi::Barrier( mpi::COMM_WORLD );
         const bool formATR = true;
-#ifdef ELEM_HAVE_SCALAPACK
-        SetDefaultBlockHeight( nbDist );
-        SetDefaultBlockWidth( nbDist );
-        timer.Start();
-        if( isReal )
-            schur::QR( AReal, w, formATR );
-        else
-            schur::QR( ACpx, w, formATR );
-        mpi::Barrier( mpi::COMM_WORLD );
-        const double qrTime = timer.Stop();
-        if( mpi::WorldRank() == 0 )
-            std::cout << "QR algorithm took " << qrTime << " seconds" 
-                      << std::endl; 
+        DistMatrix<Real> QReal(g);
+        DistMatrix<C> QCpx(g);
+        SchurCtrl<Real> ctrl;
+#ifdef EL_HAVE_SCALAPACK
+        ctrl.qrCtrl.blockHeight = nbDist;
+        ctrl.qrCtrl.blockWidth = nbDist;
+        ctrl.qrCtrl.aed = false;
 #else
-        SdcCtrl<Real> sdcCtrl;
-        sdcCtrl.cutoff = cutoff;
-        sdcCtrl.maxInnerIts = maxInnerIts;
-        sdcCtrl.maxOuterIts = maxOuterIts;
-        sdcCtrl.tol = sdcTol;
-        sdcCtrl.spreadFactor = spreadFactor;
-        sdcCtrl.random = random;
-        sdcCtrl.progress = progress;
-        sdcCtrl.signCtrl.tol = signTol;
-        sdcCtrl.signCtrl.progress = progress;
+        ctrl.useSdc = true;
+        ctrl.sdcCtrl.cutoff = cutoff;
+        ctrl.sdcCtrl.maxInnerIts = maxInnerIts;
+        ctrl.sdcCtrl.maxOuterIts = maxOuterIts;
+        ctrl.sdcCtrl.tol = sdcTol;
+        ctrl.sdcCtrl.spreadFactor = spreadFactor;
+        ctrl.sdcCtrl.random = random;
+        ctrl.sdcCtrl.progress = progress;
+        ctrl.sdcCtrl.signCtrl.tol = signTol;
+        ctrl.sdcCtrl.signCtrl.progress = progress;
+#endif
         timer.Start();
         if( isReal )
         {
-            DistMatrix<Real> XReal(g);
-            schur::SDC( AReal, w, XReal, formATR, sdcCtrl );
+            if( psNorm == PS_TWO_NORM )
+                Schur( AReal, w, formATR, ctrl );
+            else
+                Schur( AReal, w, QReal, formATR, ctrl );
         }
         else
         {
-            DistMatrix<C> XCpx(g);
-            schur::SDC( ACpx, w, XCpx, formATR, sdcCtrl );
+            if( psNorm == PS_TWO_NORM )
+                Schur( ACpx, w, formATR, ctrl );
+            else
+                Schur( ACpx, w, QCpx, formATR, ctrl );
         }
         mpi::Barrier( mpi::COMM_WORLD );
-        const double sdcTime = timer.Stop();
+        const double schurTime = timer.Stop();
         if( mpi::WorldRank() == 0 )
-            std::cout << "SDC took " << sdcTime << " seconds" << std::endl; 
-#endif
+            std::cout << "Schur decomposition took " << schurTime << " seconds" 
+                      << std::endl; 
+
         if( saveSchur )
         {
             if( mpi::WorldRank() == 0 )
@@ -273,19 +287,39 @@ main( int argc, char* argv[] )
             timer.Start();
             if( isReal )
             {
-                std::ostringstream os;
-                os << matName << "-" 
-                   << AReal.ColStride() << "x" << AReal.RowStride()
-                   << "-" << AReal.DistRank();
-                write::Binary( AReal.LockedMatrix(), os.str() );
+                {
+                    std::ostringstream os;
+                    os << matName << "-" 
+                       << AReal.ColStride() << "x" << AReal.RowStride()
+                       << "-" << AReal.DistRank();
+                    write::Binary( AReal.LockedMatrix(), os.str() );
+                }
+                if( psNorm == PS_ONE_NORM )
+                {
+                    std::ostringstream os;
+                    os << matName << "-Q-"
+                       << QReal.ColStride() << "x" << QReal.RowStride()
+                       << "-" << QReal.DistRank();
+                    write::Binary( QReal.LockedMatrix(), os.str() );
+                }
             } 
             else
             {
-                std::ostringstream os;
-                os << matName << "-" 
-                   << ACpx.ColStride() << "x" << ACpx.RowStride()
-                   << "-" << ACpx.DistRank();
-                write::Binary( ACpx.LockedMatrix(), os.str() );
+                {
+                    std::ostringstream os;
+                    os << matName << "-" 
+                       << ACpx.ColStride() << "x" << ACpx.RowStride()
+                       << "-" << ACpx.DistRank();
+                    write::Binary( ACpx.LockedMatrix(), os.str() );
+                }
+                if( psNorm == PS_ONE_NORM )
+                {
+                    std::ostringstream os;
+                    os << matName << "-Q-"
+                       << QCpx.ColStride() << "x" << QCpx.RowStride()
+                       << "-" << QCpx.DistRank();
+                    write::Binary( QCpx.LockedMatrix(), os.str() );
+                }
             }
             mpi::Barrier( mpi::COMM_WORLD );
             const double saveSchurTime = timer.Stop();
@@ -328,6 +362,7 @@ main( int argc, char* argv[] )
         }
 
         PseudospecCtrl<Real> psCtrl;
+        psCtrl.norm = psNorm;
         psCtrl.schur = true;
         psCtrl.maxIts = maxIts;
         psCtrl.tol = psTol;
@@ -382,14 +417,14 @@ main( int argc, char* argv[] )
                 if( isReal )
                 {
                     itCountMap = QuasiTriangularPseudospectrum
-                    ( AReal, invNormMap, chunkCenter, 
+                    ( AReal, QReal, invNormMap, chunkCenter, 
                       realChunkWidth, imagChunkWidth, 
                       realChunkSize, imagChunkSize, psCtrl );
                 }
                 else
                 {
                     itCountMap = TriangularPseudospectrum
-                    ( ACpx, invNormMap, chunkCenter, 
+                    ( ACpx, QCpx, invNormMap, chunkCenter, 
                       realChunkWidth, imagChunkWidth, 
                       realChunkSize, imagChunkSize, psCtrl );
                 }

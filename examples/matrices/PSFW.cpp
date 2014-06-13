@@ -6,11 +6,10 @@
    which can be found in the LICENSE file in the root directory, or at 
    http://opensource.org/licenses/BSD-2-Clause
 */
-// NOTE: It is possible to simply include "elemental.hpp" instead
-#include "elemental-lite.hpp"
-#include ELEM_HERMITIANTRIDIAGEIG_INC
-#include ELEM_ZEROS_INC
-using namespace elem;
+// NOTE: It is possible to simply include "El.hpp" instead
+#include "El-lite.hpp"
+#include EL_ZEROS_INC
+using namespace El;
 
 /*
    This is a testbed for some of the formulas for 
@@ -81,7 +80,7 @@ main( int argc, char* argv[] )
         }
 
         DistMatrix<double,VR,  STAR> wEven, wOdd;
-        DistMatrix<double> XEven, XOdd;
+        DistMatrix<double,STAR,VR> XEven, XOdd;
         HermitianTridiagEig
         ( AEven.GetDiagonal(), AEven.GetDiagonal(-1), wEven, XEven, ASCENDING );
         HermitianTridiagEig

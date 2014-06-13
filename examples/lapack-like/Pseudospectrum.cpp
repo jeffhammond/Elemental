@@ -6,25 +6,24 @@
    which can be found in the LICENSE file in the root directory, or at 
    http://opensource.org/licenses/BSD-2-Clause
 */
-// NOTE: It is possible to simply include "elemental.hpp" instead
-#include "elemental-lite.hpp"
-#include ELEM_ENTRYWISEMAP_INC
-#include ELEM_FROBENIUSNORM_INC
-#include ELEM_PSEUDOSPECTRUM_INC
-
-#include ELEM_BULLSHEAD_INC
-#include ELEM_GRCAR_INC
-#include ELEM_HATANONELSON_INC
-#include ELEM_FOXLI_INC
-#include ELEM_HELMHOLTZPML_INC
-#include ELEM_LOTKIN_INC
-#include ELEM_TREFETHEN_INC
-#include ELEM_TRIANGLE_INC
-#include ELEM_UNIFORM_INC
-#include ELEM_UNIFORMHELMHOLTZGREENS_INC
-#include ELEM_WHALE_INC
+// NOTE: It is possible to simply include "El.hpp" instead
+#include "El-lite.hpp"
+#include EL_BULLSHEAD_INC
+#include EL_EHRENFEST_INC
+#include EL_FOXLI_INC
+#include EL_GRCAR_INC
+#include EL_HAAR_INC
+#include EL_HATANONELSON_INC
+#include EL_HELMHOLTZPML_INC
+#include EL_LOTKIN_INC
+#include EL_RIFFLE_INC
+#include EL_TREFETHEN_INC
+#include EL_TRIANGLE_INC
+#include EL_UNIFORM_INC
+#include EL_UNIFORMHELMHOLTZGREENS_INC
+#include EL_WHALE_INC
 using namespace std;
-using namespace elem;
+using namespace El;
 
 typedef double Real;
 typedef Complex<Real> C;
@@ -42,10 +41,12 @@ main( int argc, char* argv[] )
             Input("--matType","0:uniform,1:Haar,2:Lotkin,3:Grcar,4:FoxLi,"
                               "5:HelmholtzPML1D,6:HelmholtzPML2D,7:Trefethen,"
                               "8:Bull's head,9:Triangle,10:Whale,"
-                              "11:UniformHelmholtzGreen's,12:HatanoNelson",4);
+                              "11:UniformHelmholtzGreen's,12:HatanoNelson,"
+                              "13:Ehrenfest,14:Riffle",4);
+        const Int normInt = Input("--norm","0:two norm,1:one norm",0);
         const Int n = Input("--size","height of matrix",100);
         const Int nbAlg = Input("--nbAlg","algorithmic blocksize",96);
-#ifdef ELEM_HAVE_SCALAPACK
+#ifdef EL_HAVE_SCALAPACK
         // QR algorithm options
         const Int nbDist = Input("--nbDist","distribution blocksize",32);
 #else
@@ -124,10 +125,8 @@ main( int argc, char* argv[] )
         const GridOrder order = ( colMajor ? COLUMN_MAJOR : ROW_MAJOR );
         const Grid g( mpi::COMM_WORLD, r, order );
         SetBlocksize( nbAlg );
-#ifdef ELEM_HAVE_SCALAPACK
-        SetDefaultBlockHeight( nbDist );
-        SetDefaultBlockWidth( nbDist );
-#endif
+        if( normInt < 0 || normInt > 1 )
+            LogicError("Invalid norm");
         if( numFormatInt < 1 || numFormatInt >= FileFormat_MAX )
             LogicError("Invalid numerical format integer, should be in [1,",
                        FileFormat_MAX,")");
@@ -135,9 +134,10 @@ main( int argc, char* argv[] )
             LogicError("Invalid image format integer, should be in [1,",
                        FileFormat_MAX,")");
 
-        const FileFormat numFormat = static_cast<FileFormat>(numFormatInt);
-        const FileFormat imgFormat = static_cast<FileFormat>(imgFormatInt);
-        const ColorMap colorMap = static_cast<ColorMap>(colorMapInt);
+        const auto psNorm    = static_cast<PseudospecNorm>(normInt);
+        const auto numFormat = static_cast<FileFormat>(numFormatInt);
+        const auto imgFormat = static_cast<FileFormat>(imgFormatInt);
+        const auto colorMap  = static_cast<ColorMap>(colorMapInt);
         SetColorMap( colorMap );
         const C center(realCenter,imagCenter);
         const C uniformCenter(uniformRealCenter,uniformImagCenter);
@@ -203,6 +203,16 @@ main( int argc, char* argv[] )
                  ( AReal, n, realCenter, uniformRadius, gHatano, periodic );
                  isReal = true;
                  break;
+        case 13: matName="Ehrenfest";
+                 // Force the complex matrix to allow for one-norm pseudospectra
+                 EhrenfestDecay( ACpx, n );
+                 isReal = false;
+                 break;
+        case 14: matName="Riffle";
+                 // Force the complex matrix to allow for one-norm pseudospectra
+                 RiffleDecay( ACpx, n );
+                 isReal = false;
+                 break;
         default: LogicError("Invalid matrix type");
         }
         if( display )
@@ -227,6 +237,7 @@ main( int argc, char* argv[] )
         }
 
         PseudospecCtrl<Real> psCtrl;
+        psCtrl.norm = psNorm;
         psCtrl.schur = schur;
         psCtrl.forceComplexSchur = forceComplexSchur;
         psCtrl.forceComplexPs = forceComplexPs;
@@ -236,16 +247,20 @@ main( int argc, char* argv[] )
         psCtrl.arnoldi = arnoldi;
         psCtrl.basisSize = basisSize;
         psCtrl.progress = progress;
-#ifndef ELEM_HAVE_SCALAPACK
-        psCtrl.sdcCtrl.cutoff = cutoff;
-        psCtrl.sdcCtrl.maxInnerIts = maxInnerIts;
-        psCtrl.sdcCtrl.maxOuterIts = maxOuterIts;
-        psCtrl.sdcCtrl.tol = sdcTol;
-        psCtrl.sdcCtrl.spreadFactor = spreadFactor;
-        psCtrl.sdcCtrl.random = random;
-        psCtrl.sdcCtrl.progress = progress;
-        psCtrl.sdcCtrl.signCtrl.tol = signTol;
-        psCtrl.sdcCtrl.signCtrl.progress = progress;
+#ifdef EL_HAVE_SCALAPACK
+        psCtrl.schurCtrl.qrCtrl.blockHeight = nbDist;
+        psCtrl.schurCtrl.qrCtrl.blockWidth = nbDist;
+        psCtrl.schurCtrl.qrCtrl.aed = false;
+#else
+        psCtrl.schurCtrl.sdcCtrl.cutoff = cutoff;
+        psCtrl.schurCtrl.sdcCtrl.maxInnerIts = maxInnerIts;
+        psCtrl.schurCtrl.sdcCtrl.maxOuterIts = maxOuterIts;
+        psCtrl.schurCtrl.sdcCtrl.tol = sdcTol;
+        psCtrl.schurCtrl.sdcCtrl.spreadFactor = spreadFactor;
+        psCtrl.schurCtrl.sdcCtrl.random = random;
+        psCtrl.schurCtrl.sdcCtrl.progress = progress;
+        psCtrl.schurCtrl.sdcCtrl.signCtrl.tol = signTol;
+        psCtrl.schurCtrl.sdcCtrl.signCtrl.progress = progress;
 #endif
         psCtrl.snapCtrl.imgSaveFreq = imgSaveFreq;
         psCtrl.snapCtrl.numSaveFreq = numSaveFreq;
