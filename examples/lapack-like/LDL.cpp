@@ -6,20 +6,11 @@
    which can be found in the LICENSE file in the root directory, or at 
    http://opensource.org/licenses/BSD-2-Clause
 */
-// NOTE: It is possible to simply include "elemental.hpp" instead
-#include "elemental-lite.hpp"
-#include ELEM_AXPY_INC
-#include ELEM_DIAGONALSCALE_INC
-#include ELEM_MAKESYMMETRIC_INC
-#include ELEM_MAKETRIANGULAR_INC
-#include ELEM_SETDIAGONAL_INC
-#include ELEM_TRANSPOSE_INC
-#include ELEM_APPLYPACKEDREFLECTORS_INC
-#include ELEM_LDL_INC
-#include ELEM_FROBENIUSNORM_INC
-#include ELEM_WIGNER_INC
+// NOTE: It is possible to simply include "El.hpp" instead
+#include "El-lite.hpp"
+#include EL_WIGNER_INC
 using namespace std;
-using namespace elem;
+using namespace El;
 
 // Typedef our real and complex types to 'Real' and 'C' for convenience
 typedef double Real;
@@ -56,10 +47,7 @@ main( int argc, char* argv[] )
         // Make a copy of A and then overwrite it with its LDL factorization
         // WARNING: There is no pivoting here!
         DistMatrix<C> factA( A );
-        if( conjugate )
-            LDLH( factA );
-        else
-            LDLT( factA );
+        LDL( factA, conjugate );
         auto d = factA.GetDiagonal();
 
         DistMatrix<C> L( factA );

@@ -6,13 +6,12 @@
    which can be found in the LICENSE file in the root directory, or at 
    http://opensource.org/licenses/BSD-2-Clause
 */
-// NOTE: It is possible to simply include "elemental.hpp" instead
-#include "elemental-lite.hpp"
-#include ELEM_POLAR_INC
-#include ELEM_FROBENIUSNORM_INC
-#include ELEM_HERMITIANUNIFORMSPECTRUM_INC
+// NOTE: It is possible to simply include "El.hpp" instead
+#include "El-lite.hpp"
+#include EL_HERMITIANUNIFORMSPECTRUM_INC
+#include EL_IDENTITY_INC
 using namespace std;
-using namespace elem;
+using namespace El;
 
 // Typedef our real and complex types to 'Real' and 'C' for convenience
 typedef double Real;
@@ -37,7 +36,10 @@ main( int argc, char* argv[] )
         // Compute the polar decomp of A using a QR-based Dynamically Weighted
         // Halley (QDWH) iteration
         Q = A;
-        const Int numItsQDWH = herm_polar::QDWH( LOWER, Q, colPiv );
+        PolarCtrl ctrl;
+        ctrl.qdwh = true;
+        ctrl.colPiv = colPiv;
+        HermitianPolar( LOWER, Q, ctrl );
         Zeros( P, n, n );
         Gemm( ADJOINT, NORMAL, C(1), Q, A, C(0), P );
 
@@ -50,7 +52,7 @@ main( int argc, char* argv[] )
         const Real frobQDWHOrthog = HermitianFrobeniusNorm( LOWER, B );
         if( mpi::WorldRank() == 0 )
         {
-            std::cout << numItsQDWH << " iterations of QDWH\n"
+            std::cout << ctrl.numIts << " iterations of QDWH\n"
                       << "||A - QP||_F / ||A||_F = " 
                       << frobQDWH/frobA << "\n"
                       << "||I - QQ^H||_F / ||A||_F = " 

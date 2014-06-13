@@ -6,17 +6,12 @@
    which can be found in the LICENSE file in the root directory, or at 
    http://opensource.org/licenses/BSD-2-Clause
 */
-// NOTE: It is possible to simply include "elemental.hpp" instead
-#include "elemental-lite.hpp"
-#include ELEM_GEMM_INC
-#include ELEM_SKELETON_INC
-#include ELEM_FROBENIUSNORM_INC
-#include ELEM_PERMUTECOLS_INC
-#include ELEM_PERMUTEROWS_INC
-#include ELEM_UNIFORM_INC
-#include ELEM_ZEROS_INC
+// NOTE: It is possible to simply include "El.hpp" instead
+#include "El-lite.hpp"
+#include EL_UNIFORM_INC
+#include EL_ZEROS_INC
 using namespace std;
-using namespace elem;
+using namespace El;
 
 typedef double Real;
 typedef Complex<Real> C;
@@ -47,9 +42,17 @@ main( int argc, char* argv[] )
             Print( A, "A" );
 
         const Grid& g = A.Grid();
+        QRCtrl<double> ctrl;
+        ctrl.boundRank = true;
+        ctrl.maxRank = maxSteps;
+        if( tol != -1. )
+        {
+            ctrl.adaptive = true;
+            ctrl.tol = tol;
+        }
         DistMatrix<Int,VR,STAR> permR(g), permC(g);
         DistMatrix<C> Z(g);
-        Skeleton( A, permR, permC, Z, maxSteps, tol );
+        Skeleton( A, permR, permC, Z, ctrl );
         const Int rank = Z.Height();
         if( print )
         {

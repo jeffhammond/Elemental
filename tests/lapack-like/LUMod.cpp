@@ -6,19 +6,11 @@
    which can be found in the LICENSE file in the root directory, or at 
    http://opensource.org/licenses/BSD-2-Clause
 */
-// NOTE: It is possible to simply include "elemental.hpp" instead
-#include "elemental-lite.hpp"
-#include ELEM_GEMM_INC
-#include ELEM_GER_INC
-#include ELEM_GERU_INC
-#include ELEM_LU_INC
-#include ELEM_FROBENIUSNORM_INC
-#include ELEM_INFINITYNORM_INC
-#include ELEM_ONENORM_INC
-#include ELEM_UNIFORM_INC
-#include ELEM_EXPLICITPERMUTATION_INC
+// NOTE: It is possible to simply include "El.hpp" instead
+#include "El-lite.hpp"
+#include EL_UNIFORM_INC
 using namespace std;
-using namespace elem;
+using namespace El;
 
 template<typename F,Dist UPerm> 
 void TestCorrectness
@@ -187,11 +179,11 @@ main( int argc, char* argv[] )
 
         if( commRank == 0 )
             cout << "Testing with doubles:" << endl;
-        TestLUMod<double,MC>( conjugate, tau, testCorrectness, print, m, g );
+        TestLUMod<double,VC>( conjugate, tau, testCorrectness, print, m, g );
 
         if( commRank == 0 )
             cout << "Testing with double-precision complex:" << endl;
-        TestLUMod<Complex<double>,MC>
+        TestLUMod<Complex<double>,VC>
         ( conjugate, tau, testCorrectness, print, m, g );
     }
     catch( exception& e ) { ReportException(e); }
