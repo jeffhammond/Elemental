@@ -30,7 +30,6 @@ RmaInterface<T>::RmaInterface( const DistMatrix<T>& X )
 template<typename T>
 RmaInterface<T>::~RmaInterface()
 {
-    if( attachedForLocalToGlobal_ || attachedForGlobalToLocal_ )
     {
         if( std::uncaught_exception() )
         {

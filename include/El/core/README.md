@@ -5,6 +5,11 @@
 -  `AxpyInterface/`:
 -  `AxpyInterface.hpp`:
 
+#### RMA Axpy interface
+
+-  `RmaInterface/`:
+-  `RmaInterface.hpp`:
+
 #### Scalar arithmetic 
 
 -  `Scalar/`:
