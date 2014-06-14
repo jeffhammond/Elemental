@@ -37,26 +37,26 @@ main( int argc, char* argv[] )
             Zeros( A, m, n );
 
             RmaInterface<double> interface;
-            interface.Attach( LOCAL_TO_GLOBAL, A );
+            interface.Attach( A );
             Matrix<double> X( commSize, 1 );
             for( Int j=0; j<X.Width(); ++j )
                 for( Int i=0; i<commSize; ++i )
                     X.Set(i,j,commRank+1);
             for( Int i=0; i<5; ++i )
             {
-                interface.Axpy( 2, X, 2*commRank, commRank );
-                interface.Axpy( 2, X, 2*commRank, commRank+1 );
+                //interface.Axpy( 2, X, 2*commRank, commRank );
+                //`interface.Axpy( 2, X, 2*commRank, commRank+1 );
             }
             interface.Detach();
 
             Print( A, "A" );
 
-            interface.Attach( GLOBAL_TO_LOCAL, A );
+            interface.Attach( A );
             Matrix<double> Y;
             if( commRank == 0 )
             {
                 Zeros( Y, m, n );
-                interface.Axpy( 1.0, Y, 0, 0 );
+                //interface.Axpy( 1.0, Y, 0, 0 );
             }
             interface.Detach();
 

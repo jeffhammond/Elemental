@@ -17,11 +17,6 @@
 
 namespace El {
 
-namespace RmaTypeNS {
-enum RmaType { LOCAL_TO_GLOBAL, GLOBAL_TO_LOCAL };
-}
-using namespace RmaTypeNS;
-
 template<typename T>
 class RmaInterface
 {
@@ -29,20 +24,24 @@ public:
     RmaInterface();
     ~RmaInterface();
 
-    RmaInterface( RmaType type,       DistMatrix<T,MC,MR>& Z );
-    RmaInterface( RmaType type, const DistMatrix<T,MC,MR>& Z );
+    RmaInterface(       DistMatrix<T,MC,MR>& Z );
+    RmaInterface( const DistMatrix<T,MC,MR>& Z );
 
-    void Attach( RmaType type,       DistMatrix<T,MC,MR>& Z );
-    void Attach( RmaType type, const DistMatrix<T,MC,MR>& Z );
+    void Attach(       DistMatrix<T,MC,MR>& Z );
+    void Attach( const DistMatrix<T,MC,MR>& Z );
 
-    void Axpy( T alpha,       Matrix<T>& Z, Int i, Int j );
-    void Axpy( T alpha, const Matrix<T>& Z, Int i, Int j );
+    void Put(       Matrix<T>& Z, Int i, Int j );
+    void Put( const Matrix<T>& Z, Int i, Int j );
+
+    void Get(       Matrix<T>& Z, Int i, Int j );
+    void Get( const Matrix<T>& Z, Int i, Int j );
+
+    void Acc(       Matrix<T>& Z, Int i, Int j );
+    void Acc( const Matrix<T>& Z, Int i, Int j );
 
     void Detach();
 
 private:
-    void RmaLocalToGlobal( T alpha, const Matrix<T>& X, Int i, Int j );
-    void RmaGlobalToLocal( T alpha,       Matrix<T>& Y, Int i, Int j );
 
 };
 
