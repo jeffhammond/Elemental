@@ -8,7 +8,7 @@
 */
 // NOTE: It is possible to simply include "El.hpp" instead
 #include "El-lite.hpp"
-#include EL_UNIFORM_INC
+
 using namespace El;
 
 // This driver calls an adaptation of the solver described at
@@ -49,8 +49,8 @@ main( int argc, char* argv[] )
         Uniform( b, m, 1 );
         if( print )
         {
-            Print( A,     "A"     );
-            Print( b,     "b"     );
+            Print( A, "A" );
+            Print( b, "b" );
         }
         if( display )
             Display( A, "A" );

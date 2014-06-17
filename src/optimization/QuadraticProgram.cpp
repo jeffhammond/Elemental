@@ -8,8 +8,6 @@
 */
 #include "El-lite.hpp"
 
-#include EL_ZEROS_INC
-
 // These implementations are adaptations of the solver described at
 //    http://www.stanford.edu/~boyd/papers/admm/quadprog/quadprog.html
 // which is derived from the distributed ADMM article of Boyd et al.
@@ -89,15 +87,11 @@ Int QuadraticProgram
         Axpy( Real(1),  XHat, U );
         Axpy( Real(-1), Z,    U );
 
-        // Form (1/2) x' P x + s' x
-        Zeros( T, n, k );
-        Hemm( LEFT, LOWER, Real(1), P, X, Real(0), T );
-        const Real objective = HilbertSchmidt(X,T)/2 + HilbertSchmidt(S,X);
-
         // rNorm := || x - z ||_2
         T = X;
         Axpy( Real(-1), Z, T );
         const Real rNorm = FrobeniusNorm( T );
+
         // sNorm := |rho| || z - zOld ||_2
         T = Z;
         Axpy( Real(-1), ZOld, T );
@@ -110,6 +104,11 @@ Int QuadraticProgram
 
         if( progress )
         {
+            // Form (1/2) x' P x + s' x
+            Zeros( T, n, k );
+            Hemm( LEFT, LOWER, Real(1), P, X, Real(0), T );
+            const Real objective = HilbertSchmidt(X,T)/2 + HilbertSchmidt(S,X);
+
             T = X;
             Clip( T, lb, ub );
             Axpy( Real(-1), X, T );
@@ -198,15 +197,11 @@ Int QuadraticProgram
         Axpy( Real(1),  XHat, U );
         Axpy( Real(-1), Z,    U );
 
-        // Form (1/2) x' P x + s' x
-        Zeros( T, n, k );
-        Hemm( LEFT, LOWER, Real(1), P, X, Real(0), T );
-        const Real objective = HilbertSchmidt(X,T)/2 + HilbertSchmidt(S,X);
-
         // rNorm := || x - z ||_2
         T = X;
         Axpy( Real(-1), Z, T );
         const Real rNorm = FrobeniusNorm( T );
+
         // sNorm := |rho| || z - zOld ||_2
         T = Z;
         Axpy( Real(-1), ZOld, T );
@@ -219,6 +214,11 @@ Int QuadraticProgram
 
         if( progress )
         {
+            // Form (1/2) x' P x + s' x
+            Zeros( T, n, k );
+            Hemm( LEFT, LOWER, Real(1), P, X, Real(0), T );
+            const Real objective = HilbertSchmidt(X,T)/2 + HilbertSchmidt(S,X);
+
             T = X;
             Clip( T, lb, ub );
             Axpy( Real(-1), X, T );
