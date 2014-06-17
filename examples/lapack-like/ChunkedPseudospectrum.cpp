@@ -8,7 +8,6 @@
 */
 // NOTE: It is possible to simply include "El.hpp" instead
 #include "El-lite.hpp"
-#include EL_BULLSHEAD_INC
 #include EL_EHRENFEST_INC
 #include EL_FOXLI_INC
 #include EL_GRCAR_INC
@@ -19,7 +18,7 @@
 #include EL_RIFFLE_INC
 #include EL_TREFETHEN_INC
 #include EL_TRIANGLE_INC
-#include EL_UNIFORM_INC
+
 #include EL_UNIFORMHELMHOLTZGREENS_INC
 #include EL_WHALE_INC
 using namespace std;
